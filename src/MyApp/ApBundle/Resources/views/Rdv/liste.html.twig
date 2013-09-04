@@ -1,10 +1,10 @@
 <table>
 <tr>
 {# sorting of properties based on query components #}
-    <th>{{ pagination.sortable('Date', 'a.date')|raw }}</th>
-    <th>{{ pagination.sortable('Nom', 'a.nom')|raw }}</th>
-    <th>{{ pagination.sortable('Prénom', 'a.prenom')|raw }}</th>
-    <th>{{ pagination.sortable('Téléphone', 'a.phoneNumber')|raw }}</th>
+    <th>{{ knp_pagination_sortable(pagination, 'N.', 'c.numero')|raw }}</th>
+    <th>{{ knp_pagination_sortable(pagination, 'Nom', 'a.nom')|raw }}</th>
+    <th>{{ knp_pagination_sortable(pagination, 'Prénom', 'a.prenom')|raw }}</th>
+    <th>{{ knp_pagination_sortable(pagination, 'Téléphone', 'a.phoneNumber')|raw }}</th>
     <th>Service</th>
     <th>Ville</th>
 </tr>
@@ -24,5 +24,5 @@
 </table>
 {# display navigation #}
 <div class="navigation">
-    {{ pagination.render()|raw }}
+    {{ knp_pagination_render(pagination) }}</div>
 </div>

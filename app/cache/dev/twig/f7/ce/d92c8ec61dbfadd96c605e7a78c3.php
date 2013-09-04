@@ -21,19 +21,19 @@ class __TwigTemplate_f7ced92c8ec61dbfadd96c605e7a78c3 extends Twig_Template
 ";
         // line 4
         echo "    <th>";
-        echo $this->getAttribute((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "sortable", array(0 => "Date", 1 => "a.date"), "method");
+        echo $this->env->getExtension('knp_pagination')->sortable((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "N.", "c.numero");
         echo "</th>
     <th>";
         // line 5
-        echo $this->getAttribute((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "sortable", array(0 => "Nom", 1 => "a.nom"), "method");
+        echo $this->env->getExtension('knp_pagination')->sortable((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "Nom", "a.nom");
         echo "</th>
     <th>";
         // line 6
-        echo $this->getAttribute((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "sortable", array(0 => "Prénom", 1 => "a.prenom"), "method");
+        echo $this->env->getExtension('knp_pagination')->sortable((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "Prénom", "a.prenom");
         echo "</th>
     <th>";
         // line 7
-        echo $this->getAttribute((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "sortable", array(0 => "Téléphone", 1 => "a.phoneNumber"), "method");
+        echo $this->env->getExtension('knp_pagination')->sortable((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "Téléphone", "a.phoneNumber");
         echo "</th>
     <th>Service</th>
     <th>Ville</th>
@@ -116,8 +116,8 @@ class __TwigTemplate_f7ced92c8ec61dbfadd96c605e7a78c3 extends Twig_Template
         echo "<div class=\"navigation\">
     ";
         // line 27
-        echo $this->getAttribute((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")), "render", array(), "method");
-        echo "
+        echo $this->env->getExtension('knp_pagination')->render((isset($context["pagination"]) ? $context["pagination"] : $this->getContext($context, "pagination")));
+        echo "</div>
 </div>";
     }
 
@@ -133,6 +133,6 @@ class __TwigTemplate_f7ced92c8ec61dbfadd96c605e7a78c3 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  119 => 27,  116 => 26,  113 => 24,  94 => 21,  90 => 20,  86 => 19,  82 => 18,  78 => 17,  72 => 16,  68 => 15,  61 => 14,  44 => 13,  32 => 6,  28 => 5,  23 => 4,  49 => 11,  45 => 10,  41 => 9,  37 => 8,  33 => 7,  29 => 6,  24 => 4,  19 => 1,  48 => 7,  43 => 6,  39 => 4,  36 => 7,  30 => 2,);
+        return array (  119 => 27,  116 => 26,  113 => 24,  94 => 21,  90 => 20,  86 => 19,  82 => 18,  78 => 17,  72 => 16,  68 => 15,  61 => 14,  44 => 13,  36 => 7,  32 => 6,  28 => 5,  23 => 4,  19 => 1,);
     }
 }

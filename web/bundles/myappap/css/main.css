@@ -38,8 +38,6 @@ body {
 #test {
     color: #000;
     font: normal 90% Tahoma, Verdana, Helvetica, Sans-Serif;
-    border-left:solid;
-    border-right:solid;
     width:950px;
     min-height: 400px;
     margin: 0 auto;
@@ -55,6 +53,8 @@ body {
     float: left;
     background-color: white;
     font-family: Century Gothic, sans-serif;
+    border-left:solid;
+    border-right:solid;
 }
 
 #logo {    
@@ -102,10 +102,14 @@ a:hover {
     clear:both;
     display: block;
     top: 15%;
-    margin: 0 auto;
     margin-top: 5px;
     margin-left: -60px;
+    padding-bottom: 15px;
     background-color: white;
+    border: 1px solid gray;
+}
+#menu ul{
+    margin: 0px;
 }
 
 #menu li {   
@@ -214,8 +218,11 @@ a:hover {
 #recherche {    
     float: left;
     margin-bottom: 0px;
-    margin-top: 10px;
+    padding: 10px 0px 0px 10px;
     background-color: white;
+    width: 950px;
+    border-left:solid;
+    border-right:solid;
    } 
  
 #messages table {    
@@ -669,6 +676,7 @@ body {
 
 #no-margin{
     margin-top: -10px;
+    float: left;
 }
 
 .left-map{
