@@ -11,8 +11,11 @@
 
 namespace Ivory\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Base\Coordinate,
-    Ivory\GoogleMap\Exception\DirectionsException;
+use \DateTime;
+use Ivory\GoogleMap\Base\Coordinate;
+use Ivory\GoogleMap\Exception\DirectionsException;
+use Ivory\GoogleMap\Services\Base\TravelMode;
+use Ivory\GoogleMap\Services\Base\UnitSystem;
 
 /**
  * Directions request represents a google map directions request.
@@ -36,6 +39,12 @@ class DirectionsRequest
 
     /** @var string | \Ivory\GoogleMap\Base\Coordinate */
     protected $origin;
+
+    /** @var \DateTime */
+    protected $departureTime;
+
+    /** @var  \DateTime */
+    protected $arrivalTime;
 
     /** @var boolean */
     protected $provideRouteAlternatives;
@@ -175,13 +184,9 @@ class DirectionsRequest
 
         if (isset($args[0]) && is_string($args[0])) {
             $this->destination = $args[0];
-        } else if (isset($args[0]) && ($args[0] instanceof Coordinate)) {
+        } elseif (isset($args[0]) && ($args[0] instanceof Coordinate)) {
             $this->destination = $args[0];
-        } else if (
-            (isset($args[0]) && is_numeric($args[0]))
-            &&
-            (isset($args[1]) && is_numeric($args[1]))
-        ) {
+        } elseif ((isset($args[0]) && is_numeric($args[0])) && (isset($args[1]) && is_numeric($args[1]))) {
             if ($this->destination === null) {
                 $this->destination = new Coordinate();
             }
@@ -269,13 +274,9 @@ class DirectionsRequest
 
         if (isset($args[0]) && is_string($args[0])) {
             $this->origin = $args[0];
-        } else if (isset($args[0]) && ($args[0] instanceof Coordinate)) {
+        } elseif (isset($args[0]) && ($args[0] instanceof Coordinate)) {
             $this->origin = $args[0];
-        } else if (
-            (isset($args[0]) && is_numeric($args[0]))
-            &&
-            (isset($args[1]) && is_numeric($args[1]))
-        ) {
+        } elseif ((isset($args[0]) && is_numeric($args[0])) && (isset($args[1]) && is_numeric($args[1]))) {
             if ($this->origin === null) {
                 $this->origin = new Coordinate();
             }
@@ -289,6 +290,66 @@ class DirectionsRequest
         } else {
             throw DirectionsException::invalidDirectionsRequestOrigin();
         }
+    }
+
+    /**
+     * Checks if the directions request has a departure time.
+     *
+     * @return boolean TRUE if the directions request has a departure time else FALSE.
+     */
+    public function hasDepartureTime()
+    {
+        return $this->departureTime !== null;
+    }
+
+    /**
+     * Gets the directions request departure time.
+     *
+     * @return \DateTime The directions request departure time.
+     */
+    public function getDepartureTime()
+    {
+        return $this->departureTime;
+    }
+
+    /**
+     * Sets the directions departure time
+     *
+     * @param \DateTime $departureTime The directions departure time.
+     */
+    public function setDepartureTime(DateTime $departureTime = null)
+    {
+        $this->departureTime = $departureTime;
+    }
+
+    /**
+     * Checks if the directions request has an arrival time.
+     *
+     * @return boolean TRUE if the directions request has an arrival time else FALSE.
+     */
+    public function hasArrivalTime()
+    {
+        return $this->arrivalTime !== null;
+    }
+
+    /**
+     * Gets the directions request arrival time.
+     *
+     * @return \DateTime The directions request arrival time.
+     */
+    public function getArrivalTime()
+    {
+        return $this->arrivalTime;
+    }
+
+    /**
+     * Sets the directions arrival time
+     *
+     * @param \DateTime $arrivalTime The directions arrival time.
+     */
+    public function  setArrivalTime(DateTime $arrivalTime = null)
+    {
+        $this->arrivalTime = $arrivalTime;
     }
 
     /**
@@ -474,7 +535,7 @@ class DirectionsRequest
     /**
      * Checks if the directions request has waypoints.
      *
-     * @return boolean TRUE if the directions requesthas waypoints else FALSE.
+     * @return boolean TRUE if the directions request has waypoints else FALSE.
      */
     public function hasWaypoints()
     {
@@ -522,11 +583,7 @@ class DirectionsRequest
 
         if (isset($args[0]) && ($args[0] instanceof DirectionsWaypoint)) {
             $this->waypoints[] = $args[0];
-        } else if (
-            (isset($args[0]) && is_numeric($args[0]))
-            &&
-            (isset($args[1]) && is_numeric($args[1]))
-        ) {
+        } elseif ((isset($args[0]) && is_numeric($args[0])) && (isset($args[1]) && is_numeric($args[1]))) {
             $waypoint = new DirectionsWaypoint();
             $waypoint->setLocation($args[0], $args[1]);
 
@@ -535,11 +592,7 @@ class DirectionsRequest
             }
 
             $this->waypoints[] = $waypoint;
-        } else if (
-            isset($args[0])
-            &&
-            (is_string($args[0]) || ($args[0] instanceof Coordinate))
-        ) {
+        } elseif (isset($args[0]) && (is_string($args[0]) || ($args[0] instanceof Coordinate))) {
             $waypoint = new DirectionsWaypoint();
             $waypoint->setLocation($args[0]);
 
@@ -584,8 +637,12 @@ class DirectionsRequest
     {
         $isValid = $this->hasDestination() && $this->hasOrigin();
 
-        for ($i = 0 ; $isValid && ($i < count($this->waypoints)) ; $i++) {
+        for ($i = 0; $isValid && ($i < count($this->waypoints)); $i++) {
             $isValid = $this->waypoints[$i]->isValid();
+        }
+
+        if ($this->getTravelMode() === TravelMode::TRANSIT) {
+            $isValid = $this->hasArrivalTime() || $this->hasDepartureTime();
         }
 
         return $isValid;

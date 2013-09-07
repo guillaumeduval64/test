@@ -10,6 +10,7 @@ use MyApp\ApBundle\Entity\Client;
 use MyApp\ApBundle\Entity\ClientService;
 use MyApp\ApBundle\Entity\Service;
 use MyApp\ApBundle\Entity\Note;
+use MyApp\ApBundle\Entity\Phone;
 use MyApp\ApBundle\Entity\DateTable;
 use MyApp\ApBundle\Form\ClientServiceForm;
 use MyApp\ApBundle\Form\ClientForm;
@@ -129,25 +130,24 @@ $testt = array(array('semaine', 'P', 'prod id'));
 
        
         
-        $form = $this->container->get('form.factory')->create(new ClientRechercheForm());
+        $formRecherche = $this->container->get('form.factory')->create(new ClientRechercheForm());
          $client = new Client();
         
-         $formClient = $this->container->get('form.factory')->create(new ClientForm(), $client);
+         $form = $this->container->get('form.factory')->create(new ClientForm(), $client);
         $request = $this->container->get('request');
         if ($request->getMethod() == 'POST') 
         {
-            $formClient->bind($request);
+            $form->bind($request);
                     
-            if ($formClient->isValid()) 
+            if ($form->isValid()) 
                 {      
-                    $em = $this->container->get('doctrine')->getEntityManager();
                     $user = $this->container->get('security.context')->getToken()->getUser();
                     
-                    $number = $formClient['number']->getData();
+                    $number = $form['number']->getData();
 
-                    $street = $formClient['street']->getData();
-                    $city = $formClient['city']->getData();
-                    $pc = $formClient['pc']->getData();
+                    $street = $form['street']->getData();
+                 	$city = $form['city']->getData();
+                    $pc = $form['pc']->getData();
                     $ville= $city ->getCity();
 
                     $address= $number." ".$street." ".$ville." ".$pc ;
@@ -170,12 +170,17 @@ $testt = array(array('semaine', 'P', 'prod id'));
                     $em->persist($client);
                     $em->persist($date);
                     $em->flush();
-$twilio = $this->container->get('twilio.api');
+$PhoneTypeExist = $client -> getPhones();
+if (isset($PhoneTypeExist)) {
+    $twilio = $this->container->get('twilio.api');
                             $message = $twilio->account->sms_messages->create(
             '15146120598', // From a valid Twilio number
             '15149916552', // Text this number
-            "Hello monkey2!"
+            "Merci de nous faire confiance! 
+        Peinture et Lavage de vitres Guillaume DUVAL"
         );
+}
+
                     
                 }
                 
@@ -215,8 +220,8 @@ $twilio = $this->container->get('twilio.api');
         'pagination' => $pagination,  
    //     'clientsSearch' => $clientsSearch, 
         'message' => '',
+        'formRecherche' => $formRecherche->createView(),
         'form' => $form->createView(),
-        'formClient' => $formClient->createView(),
         'test' => $testt,
 
  	));
@@ -318,6 +323,18 @@ $twilio = $this->container->get('twilio.api');
                         $date ->setDate(new \DateTime());
                         $em->persist($client);
                         $em->flush();
+
+$PhoneTypeExist = $client -> getPhones();
+if (isset($PhoneTypeExist)) {
+    $twilio = $this->container->get('twilio.api');
+                            $message = $twilio->account->sms_messages->create(
+            '15146120598', // From a valid Twilio number
+            '15149916552', // Text this number
+            "Merci de nous faire confiance! 
+        Peinture et Lavage de vitres Guillaume DUVAL"
+        );
+}
+
                         if (isset($id)) 
                             {
                             $message='Client modifié avec succès !';

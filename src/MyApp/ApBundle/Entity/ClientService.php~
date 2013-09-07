@@ -239,4 +239,27 @@ class ClientService
     {
         return $this->dateTable;
     }
+
+    /**
+     * Set image
+     *
+     * @param \MyApp\ApBundle\Entity\Image $image
+     * @return ClientService
+     */
+    public function setImage(\MyApp\ApBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+    
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \MyApp\ApBundle\Entity\Image 
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
 }

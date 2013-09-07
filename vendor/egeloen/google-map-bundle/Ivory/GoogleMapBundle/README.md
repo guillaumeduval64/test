@@ -19,6 +19,7 @@ your Symfony2 project.
        - [Rectangle](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/overlays/rectangle.md)
        - [Circle](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/overlays/circle.md)
        - [Ground overlay](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/overlays/ground_overlay.md)
+       - [Marker cluster](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/overlays/marker_cluster.md)
     - [Controls](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/controls/index.md)
        - [Map type](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/controls/map_type.md)
        - [Overview](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/controls/overview.md)
@@ -30,10 +31,15 @@ your Symfony2 project.
     - [Layers](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/layers/index.md)
        - [KML Layer](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/layers/kml_layer.md)
     - [Events](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/events.md)
+    - [Places](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/places/index.md)
+         - [Autocomplete](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/places/autocomplete.md)
     - [Services](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/services/index.md)
        - [Geocoding API](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/services/geocoding/geocoder.md)
        - [Directions API](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/services/directions/directions.md)
        - [Distance Matrix API](http://github.com/egeloen/IvoryGoogleMapBundle/blob/master/Resources/doc/usage/services/distance_matrix/distance_matrix.md)
+
+The bundle is compatible with all Symfony2 versions. For BC reasons, you must use the 2.0 branch of the bundle for
+Symfony 2.0 (2.0.* version of the bundle) and the master branch for Symfony >= 2.1 (2.1.* version of the bundle).
 
 ## Cookbook
 

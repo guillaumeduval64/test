@@ -11,10 +11,9 @@
 
 namespace Ivory\GoogleMapBundle\Tests\Twig;
 
-use \Twig_Environment,
-    \Twig_Loader_String;
-
 use Ivory\GoogleMapBundle\Twig\GoogleMapExtension;
+use Twig_Environment;
+use Twig_Loader_String;
 
 /**
  * Google map extension test.
@@ -26,16 +25,19 @@ class GoogleMapExtensionTest extends \PHPUnit_Framework_TestCase
     /** @var \Ivory\GoogleMapBundle\Twig\GoogleMapExtension */
     protected $googleMapExtension;
 
-    /** @var \Ivory\GoogleMap\Templating\Helper\MapHelper */
-    protected $mapHelperMock;
+    /** @var \Ivory\GoogleMapBundle\Templating\Helper\TemplateHelper */
+    protected $templateHelperMock;
 
     /**
      * {@inheritdoc}
      */
     protected function setUp()
     {
-        $this->mapHelperMock = $this->getMock('Ivory\GoogleMap\Templating\Helper\MapHelper');
-        $this->googleMapExtension = new GoogleMapExtension($this->mapHelperMock);
+        $this->templateHelperMock = $this->getMockBuilder('Ivory\GoogleMapBundle\Helper\TemplateHelper')
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $this->googleMapExtension = new GoogleMapExtension($this->templateHelperMock);
     }
 
     /**
@@ -44,26 +46,27 @@ class GoogleMapExtensionTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         unset($this->googleMapExtension);
+        unset($this->templateHelperMock);
     }
 
     public function testRenderContainer()
     {
         $map = $this->getMock('Ivory\GoogleMap\Map');
 
-        $this->mapHelperMock
+        $this->templateHelperMock
             ->expects($this->once())
-            ->method('renderContainer')
+            ->method('renderHtmlContainer')
             ->with($this->equalTo($map))
             ->will($this->returnValue('foo'));
 
-        $this->assertSame('foo', $this->googleMapExtension->renderContainer($map));
+        $this->assertSame('foo', $this->googleMapExtension->renderHtmlContainer($map));
     }
 
     public function testRenderJavascripts()
     {
         $map = $this->getMock('Ivory\GoogleMap\Map');
 
-        $this->mapHelperMock
+        $this->templateHelperMock
             ->expects($this->once())
             ->method('renderJavascripts')
             ->with($this->equalTo($map))
@@ -76,7 +79,7 @@ class GoogleMapExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $map = $this->getMock('Ivory\GoogleMap\Map');
 
-        $this->mapHelperMock
+        $this->templateHelperMock
             ->expects($this->once())
             ->method('renderStylesheets')
             ->with($this->equalTo($map))
@@ -92,9 +95,9 @@ class GoogleMapExtensionTest extends \PHPUnit_Framework_TestCase
 
         $map = $this->getMock('Ivory\GoogleMap\Map');
 
-        $this->mapHelperMock
+        $this->templateHelperMock
             ->expects($this->once())
-            ->method('renderContainer')
+            ->method('renderHtmlContainer')
             ->with($this->equalTo($map))
             ->will($this->returnValue('foo'));
 
@@ -108,7 +111,7 @@ class GoogleMapExtensionTest extends \PHPUnit_Framework_TestCase
 
         $map = $this->getMock('Ivory\GoogleMap\Map');
 
-        $this->mapHelperMock
+        $this->templateHelperMock
             ->expects($this->once())
             ->method('renderJavascripts')
             ->with($this->equalTo($map))
@@ -124,7 +127,7 @@ class GoogleMapExtensionTest extends \PHPUnit_Framework_TestCase
 
         $map = $this->getMock('Ivory\GoogleMap\Map');
 
-        $this->mapHelperMock
+        $this->templateHelperMock
             ->expects($this->once())
             ->method('renderStylesheets')
             ->with($this->equalTo($map))

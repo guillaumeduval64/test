@@ -11,12 +11,12 @@
 
 namespace Ivory\Tests\GoogleMap;
 
-use Ivory\GoogleMap\Controls\ControlPosition,
-    Ivory\GoogleMap\Controls\MapTypeControlStyle,
-    Ivory\GoogleMap\Controls\ScaleControlStyle,
-    Ivory\GoogleMap\Controls\ZoomControlStyle,
-    Ivory\GoogleMap\Map,
-    Ivory\GoogleMap\MapTypeId;
+use Ivory\GoogleMap\Controls\ControlPosition;
+use Ivory\GoogleMap\Controls\MapTypeControlStyle;
+use Ivory\GoogleMap\Controls\ScaleControlStyle;
+use Ivory\GoogleMap\Controls\ZoomControlStyle;
+use Ivory\GoogleMap\Map;
+use Ivory\GoogleMap\MapTypeId;
 
 /**
  * Map test.
@@ -84,6 +84,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($this->map->hasZoomControl());
 
         $this->assertInstanceOf('Ivory\GoogleMap\Events\EventManager', $this->map->getEventManager());
+        $this->assertInstanceOf('Ivory\GoogleMap\Overlays\MarkerCluster', $this->map->getMarkerCluster());
 
         $this->assertEmpty($this->map->getMarkers());
         $this->assertEmpty($this->map->getInfoWindows());
@@ -96,6 +97,7 @@ class MapTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEmpty($this->map->getKMLLayers());
 
+        $this->assertFalse($this->map->hasLibraries());
         $this->assertSame('en', $this->map->getLanguage());
     }
 
@@ -223,7 +225,14 @@ class MapTest extends \PHPUnit_Framework_TestCase
      * The available prototypes are :
      * - function setBound(Ivory\GoogleMap\Base\Bound $bound)
      * - function setBount(Ivory\GoogleMap\Base\Coordinate $southWest, Ivory\GoogleMap\Base\Coordinate $northEast)
-     * - function setBound(double $southWestLatitude, double $southWestLongitude, double $northEastLatitude, double $northEastLongitude, boolean southWestNoWrap = true, boolean $northEastNoWrap = true)
+     * - function setBound(
+     *     double $southWestLatitude,
+     *     double $southWestLongitude,
+     *     double $northEastLatitude,
+     *     double $northEastLongitude,
+     *     boolean southWestNoWrap = true,
+     *     boolean $northEastNoWrap = true
+     * )
      */
     public function testBoundWithInvalidValue()
     {
@@ -628,6 +637,14 @@ class MapTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($eventManager, $this->map->getEventManager());
     }
 
+    public function testMarkerCluster()
+    {
+        $markerCluster = $this->getMock('Ivory\GoogleMap\Overlays\MarkerCluster');
+        $this->map->setMarkerCluster($markerCluster);
+
+        $this->assertSame($markerCluster, $this->map->getMarkerCluster());
+    }
+
     public function testMarkerWithAutoZoom()
     {
         $marker = $this->getMock('Ivory\GoogleMap\Overlays\Marker');
@@ -874,6 +891,14 @@ class MapTest extends \PHPUnit_Framework_TestCase
         $this->map->addKMLLayer($kmlLayer);
 
         $this->assertSame(array($kmlLayer), $this->map->getKMLLayers());
+    }
+
+    public function testLibraries()
+    {
+        $this->map->setLibraries(array('foo'));
+
+        $this->assertTrue($this->map->hasLibraries());
+        $this->assertSame(array('foo'), $this->map->getLibraries());
     }
 
     public function testLanguage()

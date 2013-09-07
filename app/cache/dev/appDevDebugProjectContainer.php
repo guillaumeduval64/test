@@ -145,6 +145,9 @@ class appDevDebugProjectContainer extends Container
             'ivory_google_map.directions' => 'getIvoryGoogleMap_DirectionsService',
             'ivory_google_map.directions_request' => 'getIvoryGoogleMap_DirectionsRequestService',
             'ivory_google_map.directions_request.builder' => 'getIvoryGoogleMap_DirectionsRequest_BuilderService',
+            'ivory_google_map.distance_matrix' => 'getIvoryGoogleMap_DistanceMatrixService',
+            'ivory_google_map.distance_matrix_request' => 'getIvoryGoogleMap_DistanceMatrixRequestService',
+            'ivory_google_map.distance_matrix_request.builder' => 'getIvoryGoogleMap_DistanceMatrixRequest_BuilderService',
             'ivory_google_map.encoded_polyline' => 'getIvoryGoogleMap_EncodedPolylineService',
             'ivory_google_map.encoded_polyline.builder' => 'getIvoryGoogleMap_EncodedPolyline_BuilderService',
             'ivory_google_map.event' => 'getIvoryGoogleMap_EventService',
@@ -156,6 +159,9 @@ class appDevDebugProjectContainer extends Container
             'ivory_google_map.geocoder_request.builder' => 'getIvoryGoogleMap_GeocoderRequest_BuilderService',
             'ivory_google_map.ground_overlay' => 'getIvoryGoogleMap_GroundOverlayService',
             'ivory_google_map.ground_overlay.builder' => 'getIvoryGoogleMap_GroundOverlay_BuilderService',
+            'ivory_google_map.helper.api' => 'getIvoryGoogleMap_Helper_ApiService',
+            'ivory_google_map.helper.bound' => 'getIvoryGoogleMap_Helper_BoundService',
+            'ivory_google_map.helper.coordinate' => 'getIvoryGoogleMap_Helper_CoordinateService',
             'ivory_google_map.helper.map' => 'getIvoryGoogleMap_Helper_MapService',
             'ivory_google_map.info_window' => 'getIvoryGoogleMap_InfoWindowService',
             'ivory_google_map.info_window.builder' => 'getIvoryGoogleMap_InfoWindow_BuilderService',
@@ -167,6 +173,8 @@ class appDevDebugProjectContainer extends Container
             'ivory_google_map.map_type_control.builder' => 'getIvoryGoogleMap_MapTypeControl_BuilderService',
             'ivory_google_map.marker' => 'getIvoryGoogleMap_MarkerService',
             'ivory_google_map.marker.builder' => 'getIvoryGoogleMap_Marker_BuilderService',
+            'ivory_google_map.marker_cluster' => 'getIvoryGoogleMap_MarkerClusterService',
+            'ivory_google_map.marker_cluster.builder' => 'getIvoryGoogleMap_MarkerCluster_BuilderService',
             'ivory_google_map.marker_image' => 'getIvoryGoogleMap_MarkerImageService',
             'ivory_google_map.marker_image.builder' => 'getIvoryGoogleMap_MarkerImage_BuilderService',
             'ivory_google_map.marker_shape' => 'getIvoryGoogleMap_MarkerShapeService',
@@ -175,6 +183,8 @@ class appDevDebugProjectContainer extends Container
             'ivory_google_map.overview_map_control.builder' => 'getIvoryGoogleMap_OverviewMapControl_BuilderService',
             'ivory_google_map.pan_control' => 'getIvoryGoogleMap_PanControlService',
             'ivory_google_map.pan_control.builder' => 'getIvoryGoogleMap_PanControl_BuilderService',
+            'ivory_google_map.places_autocomplete.form.type' => 'getIvoryGoogleMap_PlacesAutocomplete_Form_TypeService',
+            'ivory_google_map.places_autocomplete.helper' => 'getIvoryGoogleMap_PlacesAutocomplete_HelperService',
             'ivory_google_map.point' => 'getIvoryGoogleMap_PointService',
             'ivory_google_map.point.builder' => 'getIvoryGoogleMap_Point_BuilderService',
             'ivory_google_map.polygon' => 'getIvoryGoogleMap_PolygonService',
@@ -191,18 +201,20 @@ class appDevDebugProjectContainer extends Container
             'ivory_google_map.size.builder' => 'getIvoryGoogleMap_Size_BuilderService',
             'ivory_google_map.street_view_control' => 'getIvoryGoogleMap_StreetViewControlService',
             'ivory_google_map.street_view_control.builder' => 'getIvoryGoogleMap_StreetViewControl_BuilderService',
+            'ivory_google_map.template.helper' => 'getIvoryGoogleMap_Template_HelperService',
             'ivory_google_map.zoom_control' => 'getIvoryGoogleMap_ZoomControlService',
             'ivory_google_map.zoom_control.builder' => 'getIvoryGoogleMap_ZoomControl_BuilderService',
             'kernel' => 'getKernelService',
             'knp_paginator' => 'getKnpPaginatorService',
+            'knp_paginator.helper.processor' => 'getKnpPaginator_Helper_ProcessorService',
             'knp_paginator.subscriber.filtration' => 'getKnpPaginator_Subscriber_FiltrationService',
             'knp_paginator.subscriber.paginate' => 'getKnpPaginator_Subscriber_PaginateService',
             'knp_paginator.subscriber.sliding_pagination' => 'getKnpPaginator_Subscriber_SlidingPaginationService',
             'knp_paginator.subscriber.sortable' => 'getKnpPaginator_Subscriber_SortableService',
+            'knp_paginator.templating.helper.pagination' => 'getKnpPaginator_Templating_Helper_PaginationService',
             'knp_paginator.twig.extension.pagination' => 'getKnpPaginator_Twig_Extension_PaginationService',
             'locale_listener' => 'getLocaleListenerService',
             'logger' => 'getLoggerService',
-            'mailer' => 'getMailerService',
             'monolog.handler.chromephp' => 'getMonolog_Handler_ChromephpService',
             'monolog.handler.debug' => 'getMonolog_Handler_DebugService',
             'monolog.handler.firephp' => 'getMonolog_Handler_FirephpService',
@@ -238,7 +250,7 @@ class appDevDebugProjectContainer extends Container
             'security.secure_random' => 'getSecurity_SecureRandomService',
             'security.user_checker' => 'getSecurity_UserCheckerService',
             'security.validator.user_password' => 'getSecurity_Validator_UserPasswordService',
-            'sensio.distribution.webconfigurator' => 'getSensio_Distribution_WebconfiguratorService',
+            'sensio_distribution.webconfigurator' => 'getSensioDistribution_WebconfiguratorService',
             'sensio_framework_extra.cache.listener' => 'getSensioFrameworkExtra_Cache_ListenerService',
             'sensio_framework_extra.controller.listener' => 'getSensioFrameworkExtra_Controller_ListenerService',
             'sensio_framework_extra.converter.datetime' => 'getSensioFrameworkExtra_Converter_DatetimeService',
@@ -256,11 +268,12 @@ class appDevDebugProjectContainer extends Container
             'session_listener' => 'getSessionListenerService',
             'streamed_response_listener' => 'getStreamedResponseListenerService',
             'swiftmailer.email_sender.listener' => 'getSwiftmailer_EmailSender_ListenerService',
-            'swiftmailer.plugin.messagelogger' => 'getSwiftmailer_Plugin_MessageloggerService',
-            'swiftmailer.spool' => 'getSwiftmailer_SpoolService',
-            'swiftmailer.transport' => 'getSwiftmailer_TransportService',
-            'swiftmailer.transport.eventdispatcher' => 'getSwiftmailer_Transport_EventdispatcherService',
-            'swiftmailer.transport.real' => 'getSwiftmailer_Transport_RealService',
+            'swiftmailer.mailer.default' => 'getSwiftmailer_Mailer_DefaultService',
+            'swiftmailer.mailer.default.plugin.messagelogger' => 'getSwiftmailer_Mailer_Default_Plugin_MessageloggerService',
+            'swiftmailer.mailer.default.spool' => 'getSwiftmailer_Mailer_Default_SpoolService',
+            'swiftmailer.mailer.default.transport' => 'getSwiftmailer_Mailer_Default_TransportService',
+            'swiftmailer.mailer.default.transport.eventdispatcher' => 'getSwiftmailer_Mailer_Default_Transport_EventdispatcherService',
+            'swiftmailer.mailer.default.transport.real' => 'getSwiftmailer_Mailer_Default_Transport_RealService',
             'templating' => 'getTemplatingService',
             'templating.asset.package_factory' => 'getTemplating_Asset_PackageFactoryService',
             'templating.filename_parser' => 'getTemplating_FilenameParserService',
@@ -322,7 +335,14 @@ class appDevDebugProjectContainer extends Container
             'debug.templating.engine.twig' => 'templating',
             'doctrine.orm.entity_manager' => 'doctrine.orm.default_entity_manager',
             'fos_user.util.username_canonicalizer' => 'fos_user.util.email_canonicalizer',
+            'mailer' => 'swiftmailer.mailer.default',
+            'sensio.distribution.webconfigurator' => 'sensio_distribution.webconfigurator',
             'session.storage' => 'session.storage.native',
+            'swiftmailer.mailer' => 'swiftmailer.mailer.default',
+            'swiftmailer.plugin.messagelogger' => 'swiftmailer.mailer.default.plugin.messagelogger',
+            'swiftmailer.spool' => 'swiftmailer.mailer.default.spool',
+            'swiftmailer.transport' => 'swiftmailer.mailer.default.transport',
+            'swiftmailer.transport.real' => 'swiftmailer.mailer.default.transport.real',
             'translator' => 'translator.default',
         );
     }
@@ -337,7 +357,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAnnotationReaderService()
     {
-        return $this->services['annotation_reader'] = new \Doctrine\Common\Annotations\FileCacheReader(new \Doctrine\Common\Annotations\AnnotationReader(), '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/annotations', true);
+        return $this->services['annotation_reader'] = new \Doctrine\Common\Annotations\FileCacheReader(new \Doctrine\Common\Annotations\AnnotationReader(), 'C:/wamp/www/test/app/cache/dev/annotations', true);
     }
 
     /**
@@ -352,11 +372,11 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('templating.loader');
 
-        $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($this->get('assetic.asset_factory'), array('twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig')), new \Assetic\Cache\ConfigCache('/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/assetic/config'), true)));
+        $this->services['assetic.asset_manager'] = $instance = new \Assetic\Factory\LazyAssetManager($this->get('assetic.asset_factory'), array('twig' => new \Assetic\Factory\Loader\CachedFormulaLoader(new \Assetic\Extension\Twig\TwigFormulaLoader($this->get('twig')), new \Assetic\Cache\ConfigCache('C:/wamp/www/test/app/cache/dev/assetic/config'), true)));
 
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'MyAppApBundle', '/Applications/MAMP/htdocs/symfony/symfony2/app/Resources/MyAppApBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'MyAppApBundle', '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'FrontEndSuperBundle', '/Applications/MAMP/htdocs/symfony/symfony2/app/Resources/FrontEndSuperBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'FrontEndSuperBundle', '/Applications/MAMP/htdocs/symfony/symfony2/src/FrontEnd/SuperBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
-        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, '', '/Applications/MAMP/htdocs/symfony/symfony2/app/Resources/views', '/\\.[^.]+\\.twig$/'), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'MyAppApBundle', 'C:/wamp/www/test/app/Resources/MyAppApBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'MyAppApBundle', 'C:\\wamp\\www\\test\\src\\MyApp\\ApBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource(array(0 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'FrontEndSuperBundle', 'C:/wamp/www/test/app/Resources/FrontEndSuperBundle/views', '/\\.[^.]+\\.twig$/'), 1 => new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, 'FrontEndSuperBundle', 'C:\\wamp\\www\\test\\src\\FrontEnd\\SuperBundle/Resources/views', '/\\.[^.]+\\.twig$/'))), 'twig');
+        $instance->addResource(new \Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource($a, '', 'C:/wamp/www/test/app/Resources/views', '/\\.[^.]+\\.twig$/'), 'twig');
 
         return $instance;
     }
@@ -442,7 +462,7 @@ class appDevDebugProjectContainer extends Container
         $a = $this->get('kernel');
         $b = $this->get('templating.filename_parser');
 
-        $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, '/Applications/MAMP/htdocs/symfony/symfony2/app/Resources');
+        $c = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder($a, $b, 'C:/wamp/www/test/app/Resources');
 
         return $this->services['cache_warmer'] = new \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate(array(0 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer($c, $this->get('templating.locator')), 1 => new \Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer($this), 2 => new \Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer($this->get('router')), 3 => new \Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheCacheWarmer($this, $c), 4 => new \Symfony\Bridge\Doctrine\CacheWarmer\ProxyCacheWarmer($this->get('doctrine'))));
     }
@@ -567,7 +587,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['debug.templating.engine.php'] = $instance = new \Symfony\Bundle\FrameworkBundle\Templating\TimedPhpEngine($this->get('templating.name_parser'), $this, $this->get('templating.loader'), $this->get('debug.stopwatch'), $this->get('templating.globals'));
 
-        $instance->setHelpers(array('slots' => 'templating.helper.slots', 'assets' => 'templating.helper.assets', 'request' => 'templating.helper.request', 'session' => 'templating.helper.session', 'router' => 'templating.helper.router', 'actions' => 'templating.helper.actions', 'code' => 'templating.helper.code', 'translator' => 'templating.helper.translator', 'form' => 'templating.helper.form', 'logout_url' => 'templating.helper.logout_url', 'security' => 'templating.helper.security', 'assetic' => 'assetic.helper.dynamic', 'ivory_google_map' => 'ivory_google_map.helper.map'));
+        $instance->setHelpers(array('slots' => 'templating.helper.slots', 'assets' => 'templating.helper.assets', 'request' => 'templating.helper.request', 'session' => 'templating.helper.session', 'router' => 'templating.helper.router', 'actions' => 'templating.helper.actions', 'code' => 'templating.helper.code', 'translator' => 'templating.helper.translator', 'form' => 'templating.helper.form', 'logout_url' => 'templating.helper.logout_url', 'security' => 'templating.helper.security', 'assetic' => 'assetic.helper.dynamic', 'ivory_google_map' => 'ivory_google_map.template.helper', 'knp_pagination' => 'knp_paginator.templating.helper.pagination'));
 
         return $instance;
     }
@@ -615,7 +635,7 @@ class appDevDebugProjectContainer extends Container
         $b = new \Doctrine\DBAL\Configuration();
         $b->setSQLLogger($a);
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'peint493_ap', 'host' => 'localhost', 'port' => NULL, 'user' => 'root', 'password' => 'root', 'charset' => 'UTF8', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $b, new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this), array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'peint493_ap', 'host' => 'localhost', 'port' => NULL, 'user' => 'root', 'password' => NULL, 'charset' => 'UTF8', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $b, new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this), array());
     }
 
     /**
@@ -631,17 +651,17 @@ class appDevDebugProjectContainer extends Container
         $a = $this->get('annotation_reader');
 
         $b = new \Doctrine\Common\Cache\ArrayCache();
-        $b->setNamespace('sf2orm_default_6887745a647a50405456dc57b490b979');
+        $b->setNamespace('sf2orm_default_dc5da65aa7f60ca874b712294702f393');
 
         $c = new \Doctrine\Common\Cache\ArrayCache();
-        $c->setNamespace('sf2orm_default_6887745a647a50405456dc57b490b979');
+        $c->setNamespace('sf2orm_default_dc5da65aa7f60ca874b712294702f393');
 
         $d = new \Doctrine\Common\Cache\ArrayCache();
-        $d->setNamespace('sf2orm_default_6887745a647a50405456dc57b490b979');
+        $d->setNamespace('sf2orm_default_dc5da65aa7f60ca874b712294702f393');
 
-        $e = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Entity', 1 => '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/UtilisateurBundle/Entity'));
+        $e = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => 'C:\\wamp\\www\\test\\src\\MyApp\\ApBundle\\Entity', 1 => 'C:\\wamp\\www\\test\\src\\MyApp\\UtilisateurBundle\\Entity'));
 
-        $f = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array('/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/doctrine' => 'FOS\\UserBundle\\Entity', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/egeloen/google-map-bundle/Ivory/GoogleMapBundle/Resources/config/doctrine' => 'Ivory\\GoogleMapBundle\\Entity'));
+        $f = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array('C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle\\Resources\\config\\doctrine' => 'FOS\\UserBundle\\Entity', 'C:\\wamp\\www\\test\\vendor\\egeloen\\google-map-bundle\\Ivory\\GoogleMapBundle\\Resources\\config\\doctrine' => 'Ivory\\GoogleMapBundle\\Entity'));
         $f->setGlobalBasename('mapping');
 
         $g = new \Doctrine\ORM\Mapping\Driver\DriverChain();
@@ -649,7 +669,7 @@ class appDevDebugProjectContainer extends Container
         $g->addDriver($e, 'MyApp\\UtilisateurBundle\\Entity');
         $g->addDriver($f, 'FOS\\UserBundle\\Entity');
         $g->addDriver($f, 'Ivory\\GoogleMapBundle\\Entity');
-        $g->addDriver(new \Doctrine\ORM\Mapping\Driver\XmlDriver(new \Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator(array('/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/doctrine/model' => 'FOS\\UserBundle\\Model'), '.orm.xml')), 'FOS\\UserBundle\\Model');
+        $g->addDriver(new \Doctrine\ORM\Mapping\Driver\XmlDriver(new \Doctrine\Common\Persistence\Mapping\Driver\SymfonyFileLocator(array('C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle\\Resources\\config\\doctrine\\model' => 'FOS\\UserBundle\\Model'), '.orm.xml')), 'FOS\\UserBundle\\Model');
 
         $h = new \Doctrine\ORM\Configuration();
         $h->setEntityNamespaces(array('MyAppApBundle' => 'MyApp\\ApBundle\\Entity', 'FOSUserBundle' => 'FOS\\UserBundle\\Entity', 'MyAppUtilisateurBundle' => 'MyApp\\UtilisateurBundle\\Entity', 'IvoryGoogleMapBundle' => 'Ivory\\GoogleMapBundle\\Entity'));
@@ -657,7 +677,7 @@ class appDevDebugProjectContainer extends Container
         $h->setQueryCacheImpl($c);
         $h->setResultCacheImpl($d);
         $h->setMetadataDriverImpl($g);
-        $h->setProxyDir('/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/doctrine/orm/Proxies');
+        $h->setProxyDir('C:/wamp/www/test/app/cache/dev/doctrine/orm/Proxies');
         $h->setProxyNamespace('Proxies');
         $h->setAutoGenerateProxyClasses(true);
         $h->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
@@ -769,7 +789,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getFileLocatorService()
     {
-        return $this->services['file_locator'] = new \Symfony\Component\HttpKernel\Config\FileLocator($this->get('kernel'), '/Applications/MAMP/htdocs/symfony/symfony2/app/Resources');
+        return $this->services['file_locator'] = new \Symfony\Component\HttpKernel\Config\FileLocator($this->get('kernel'), 'C:/wamp/www/test/app/Resources');
     }
 
     /**
@@ -821,7 +841,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getForm_RegistryService()
     {
-        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension($this, array('form' => 'form.type.form', 'birthday' => 'form.type.birthday', 'checkbox' => 'form.type.checkbox', 'choice' => 'form.type.choice', 'collection' => 'form.type.collection', 'country' => 'form.type.country', 'date' => 'form.type.date', 'datetime' => 'form.type.datetime', 'email' => 'form.type.email', 'file' => 'form.type.file', 'hidden' => 'form.type.hidden', 'integer' => 'form.type.integer', 'language' => 'form.type.language', 'locale' => 'form.type.locale', 'money' => 'form.type.money', 'number' => 'form.type.number', 'password' => 'form.type.password', 'percent' => 'form.type.percent', 'radio' => 'form.type.radio', 'repeated' => 'form.type.repeated', 'search' => 'form.type.search', 'textarea' => 'form.type.textarea', 'text' => 'form.type.text', 'time' => 'form.type.time', 'timezone' => 'form.type.timezone', 'url' => 'form.type.url', 'button' => 'form.type.button', 'submit' => 'form.type.submit', 'reset' => 'form.type.reset', 'currency' => 'form.type.currency', 'entity' => 'form.type.entity', 'fos_user_username' => 'fos_user.username_form_type', 'fos_user_profile' => 'fos_user.profile.form.type', 'fos_user_registration' => 'fos_user.registration.form.type', 'fos_user_change_password' => 'fos_user.change_password.form.type', 'fos_user_resetting' => 'fos_user.resetting.form.type', 'fos_user_group' => 'fos_user.group.form.type', 'myapp_utilisateur_registration' => 'myapp_utilisateur_registration.form.type'), array('form' => array(0 => 'form.type_extension.form.http_foundation', 1 => 'form.type_extension.form.validator', 2 => 'form.type_extension.csrf'), 'repeated' => array(0 => 'form.type_extension.repeated.validator'), 'submit' => array(0 => 'form.type_extension.submit.validator')), array(0 => 'form.type_guesser.validator', 1 => 'form.type_guesser.doctrine'))), $this->get('form.resolved_type_factory'));
+        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension($this, array('form' => 'form.type.form', 'birthday' => 'form.type.birthday', 'checkbox' => 'form.type.checkbox', 'choice' => 'form.type.choice', 'collection' => 'form.type.collection', 'country' => 'form.type.country', 'date' => 'form.type.date', 'datetime' => 'form.type.datetime', 'email' => 'form.type.email', 'file' => 'form.type.file', 'hidden' => 'form.type.hidden', 'integer' => 'form.type.integer', 'language' => 'form.type.language', 'locale' => 'form.type.locale', 'money' => 'form.type.money', 'number' => 'form.type.number', 'password' => 'form.type.password', 'percent' => 'form.type.percent', 'radio' => 'form.type.radio', 'repeated' => 'form.type.repeated', 'search' => 'form.type.search', 'textarea' => 'form.type.textarea', 'text' => 'form.type.text', 'time' => 'form.type.time', 'timezone' => 'form.type.timezone', 'url' => 'form.type.url', 'button' => 'form.type.button', 'submit' => 'form.type.submit', 'reset' => 'form.type.reset', 'currency' => 'form.type.currency', 'entity' => 'form.type.entity', 'fos_user_username' => 'fos_user.username_form_type', 'fos_user_profile' => 'fos_user.profile.form.type', 'fos_user_registration' => 'fos_user.registration.form.type', 'fos_user_change_password' => 'fos_user.change_password.form.type', 'fos_user_resetting' => 'fos_user.resetting.form.type', 'fos_user_group' => 'fos_user.group.form.type', 'myapp_utilisateur_registration' => 'myapp_utilisateur_registration.form.type', 'places_autocomplete' => 'ivory_google_map.places_autocomplete.form.type'), array('form' => array(0 => 'form.type_extension.form.http_foundation', 1 => 'form.type_extension.form.validator', 2 => 'form.type_extension.csrf'), 'repeated' => array(0 => 'form.type_extension.repeated.validator'), 'submit' => array(0 => 'form.type_extension.submit.validator')), array(0 => 'form.type_guesser.validator', 1 => 'form.type_guesser.doctrine'))), $this->get('form.resolved_type_factory'));
     }
 
     /**
@@ -1445,7 +1465,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getFosUser_MailerService()
     {
-        return $this->services['fos_user.mailer'] = new \FOS\UserBundle\Mailer\Mailer($this->get('mailer'), $this->get('router'), $this->get('templating'), array('confirmation.template' => 'FOSUserBundle:Registration:email.txt.twig', 'resetting.template' => 'FOSUserBundle:Resetting:email.txt.twig', 'from_email' => array('confirmation' => array('webmaster@example.com' => 'webmaster'), 'resetting' => array('webmaster@example.com' => 'webmaster'))));
+        return $this->services['fos_user.mailer'] = new \FOS\UserBundle\Mailer\Mailer($this->get('swiftmailer.mailer.default'), $this->get('router'), $this->get('templating'), array('confirmation.template' => 'FOSUserBundle:Registration:email.txt.twig', 'resetting.template' => 'FOSUserBundle:Resetting:email.txt.twig', 'from_email' => array('confirmation' => array('webmaster@example.com' => 'webmaster'), 'resetting' => array('webmaster@example.com' => 'webmaster'))));
     }
 
     /**
@@ -1808,6 +1828,42 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'ivory_google_map.distance_matrix' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix A Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix instance.
+     */
+    protected function getIvoryGoogleMap_DistanceMatrixService()
+    {
+        return $this->services['ivory_google_map.distance_matrix'] = new \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix();
+    }
+
+    /**
+     * Gets the 'ivory_google_map.distance_matrix_request' service.
+     *
+     * @return Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest A Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrixRequest instance.
+     */
+    protected function getIvoryGoogleMap_DistanceMatrixRequestService()
+    {
+        return $this->get('ivory_google_map.distance_matrix_request.builder')->build();
+    }
+
+    /**
+     * Gets the 'ivory_google_map.distance_matrix_request.builder' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Ivory\GoogleMapBundle\Model\Services\DistanceMatrix\DistanceMatrixRequestBuilder A Ivory\GoogleMapBundle\Model\Services\DistanceMatrix\DistanceMatrixRequestBuilder instance.
+     */
+    protected function getIvoryGoogleMap_DistanceMatrixRequest_BuilderService()
+    {
+        return $this->services['ivory_google_map.distance_matrix_request.builder'] = new \Ivory\GoogleMapBundle\Model\Services\DistanceMatrix\DistanceMatrixRequestBuilder('Ivory\\GoogleMap\\Services\\DistanceMatrix\\DistanceMatrixRequest');
+    }
+
+    /**
      * Gets the 'ivory_google_map.encoded_polyline' service.
      *
      * @return Ivory\GoogleMap\Overlays\EncodedPolyline A Ivory\GoogleMap\Overlays\EncodedPolyline instance.
@@ -1950,23 +2006,21 @@ class appDevDebugProjectContainer extends Container
      * This service is shared.
      * This method always returns the same instance of the service.
      *
-     * @return Ivory\GoogleMap\Templating\Helper\MapHelper A Ivory\GoogleMap\Templating\Helper\MapHelper instance.
+     * @return Ivory\GoogleMap\Helper\MapHelper A Ivory\GoogleMap\Helper\MapHelper instance.
      */
     protected function getIvoryGoogleMap_Helper_MapService()
     {
-        $a = new \Ivory\GoogleMap\Templating\Helper\Base\CoordinateHelper();
+        $a = new \Ivory\GoogleMap\Helper\MapTypeIdHelper();
 
-        $b = new \Ivory\GoogleMap\Templating\Helper\Base\BoundHelper($a);
+        $b = new \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper();
 
-        $c = new \Ivory\GoogleMap\Templating\Helper\MapTypeIdHelper();
+        $c = new \Ivory\GoogleMap\Helper\Overlays\AnimationHelper();
 
-        $d = new \Ivory\GoogleMap\Templating\Helper\Controls\ControlPositionHelper();
+        $d = new \Ivory\GoogleMap\Helper\Overlays\MarkerHelper($c);
 
-        $e = new \Ivory\GoogleMap\Templating\Helper\Base\SizeHelper();
+        $e = new \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper();
 
-        $f = new \Ivory\GoogleMap\Templating\Helper\Overlays\InfoWindowHelper($a, $e);
-
-        return $this->services['ivory_google_map.helper.map'] = new \Ivory\GoogleMap\Templating\Helper\MapHelper($a, $b, $c, new \Ivory\GoogleMap\Templating\Helper\Controls\MapTypeControlHelper($c, $d, new \Ivory\GoogleMap\Templating\Helper\Controls\MapTypeControlStyleHelper()), new \Ivory\GoogleMap\Templating\Helper\Controls\OverviewMapControlHelper(), new \Ivory\GoogleMap\Templating\Helper\Controls\PanControlHelper($d), new \Ivory\GoogleMap\Templating\Helper\Controls\RotateControlHelper($d), new \Ivory\GoogleMap\Templating\Helper\Controls\ScaleControlHelper($d, new \Ivory\GoogleMap\Templating\Helper\Controls\ScaleControlStyleHelper()), new \Ivory\GoogleMap\Templating\Helper\Controls\StreetViewControlHelper($d), new \Ivory\GoogleMap\Templating\Helper\Controls\ZoomControlHelper($d, new \Ivory\GoogleMap\Templating\Helper\Controls\ZoomControlStyleHelper()), new \Ivory\GoogleMap\Templating\Helper\Overlays\MarkerHelper($a, new \Ivory\GoogleMap\Templating\Helper\Overlays\AnimationHelper(), $f, new \Ivory\GoogleMap\Templating\Helper\Overlays\MarkerImageHelper(new \Ivory\GoogleMap\Templating\Helper\Base\PointHelper(), $e), new \Ivory\GoogleMap\Templating\Helper\Overlays\MarkerShapeHelper()), $f, new \Ivory\GoogleMap\Templating\Helper\Overlays\PolylineHelper($a), new \Ivory\GoogleMap\Templating\Helper\Overlays\EncodedPolylineHelper(new \Ivory\GoogleMap\Templating\Helper\Geometry\EncodingHelper()), new \Ivory\GoogleMap\Templating\Helper\Overlays\PolygonHelper($a), new \Ivory\GoogleMap\Templating\Helper\Overlays\RectangleHelper($b), new \Ivory\GoogleMap\Templating\Helper\Overlays\CircleHelper($a), new \Ivory\GoogleMap\Templating\Helper\Overlays\GroundOverlayHelper($b), new \Ivory\GoogleMap\Templating\Helper\Layers\KMLLayerHelper(), new \Ivory\GoogleMap\Templating\Helper\Events\EventManagerHelper(new \Ivory\GoogleMap\Templating\Helper\Events\EventHelper()));
+        return $this->services['ivory_google_map.helper.map'] = new \Ivory\GoogleMap\Helper\MapHelper($this->get('ivory_google_map.helper.api'), $this->get('ivory_google_map.helper.coordinate'), $this->get('ivory_google_map.helper.bound'), new \Ivory\GoogleMap\Helper\Base\PointHelper(), new \Ivory\GoogleMap\Helper\Base\SizeHelper(), $a, new \Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper($a, $b, new \Ivory\GoogleMap\Helper\Controls\MapTypeControlStyleHelper()), new \Ivory\GoogleMap\Helper\Controls\OverviewMapControlHelper(), new \Ivory\GoogleMap\Helper\Controls\PanControlHelper($b), new \Ivory\GoogleMap\Helper\Controls\RotateControlHelper($b), new \Ivory\GoogleMap\Helper\Controls\ScaleControlHelper($b, new \Ivory\GoogleMap\Helper\Controls\ScaleControlStyleHelper()), new \Ivory\GoogleMap\Helper\Controls\StreetViewControlHelper($b), new \Ivory\GoogleMap\Helper\Controls\ZoomControlHelper($b, new \Ivory\GoogleMap\Helper\Controls\ZoomControlStyleHelper()), new \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper(array('default' => new \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\DefaultMarkerClusterHelper($d, $e), 'marker_cluster' => new \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\JsMarkerClusterHelper($d, $e))), new \Ivory\GoogleMap\Helper\Overlays\MarkerImageHelper(), new \Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper(), $e, new \Ivory\GoogleMap\Helper\Overlays\PolylineHelper(), new \Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper(new \Ivory\GoogleMap\Helper\Geometry\EncodingHelper()), new \Ivory\GoogleMap\Helper\Overlays\PolygonHelper(), new \Ivory\GoogleMap\Helper\Overlays\RectangleHelper(), new \Ivory\GoogleMap\Helper\Overlays\CircleHelper(), new \Ivory\GoogleMap\Helper\Overlays\GroundOverlayHelper(), new \Ivory\GoogleMap\Helper\Layers\KMLLayerHelper(), new \Ivory\GoogleMap\Helper\Events\EventManagerHelper());
     }
 
     /**
@@ -2043,7 +2097,11 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getIvoryGoogleMap_Map_BuilderService()
     {
-        return $this->services['ivory_google_map.map.builder'] = new \Ivory\GoogleMapBundle\Model\MapBuilder('Ivory\\GoogleMap\\Map', $this->get('ivory_google_map.coordinate.builder'), $this->get('ivory_google_map.bound.builder'));
+        $this->services['ivory_google_map.map.builder'] = $instance = new \Ivory\GoogleMapBundle\Model\MapBuilder('Ivory\\GoogleMap\\Map', $this->get('ivory_google_map.coordinate.builder'), $this->get('ivory_google_map.bound.builder'));
+
+        $instance->setLibraries(array());
+
+        return $instance;
     }
 
     /**
@@ -2094,6 +2152,33 @@ class appDevDebugProjectContainer extends Container
     protected function getIvoryGoogleMap_Marker_BuilderService()
     {
         $this->services['ivory_google_map.marker.builder'] = $instance = new \Ivory\GoogleMapBundle\Model\Overlays\MarkerBuilder('Ivory\\GoogleMap\\Overlays\\Marker', $this->get('ivory_google_map.coordinate.builder'));
+
+        $instance->setOptions(array());
+
+        return $instance;
+    }
+
+    /**
+     * Gets the 'ivory_google_map.marker_cluster' service.
+     *
+     * @return Ivory\GoogleMap\Overlays\MarkerCluster A Ivory\GoogleMap\Overlays\MarkerCluster instance.
+     */
+    protected function getIvoryGoogleMap_MarkerClusterService()
+    {
+        return $this->get('ivory_google_map.marker_cluster.builder')->build();
+    }
+
+    /**
+     * Gets the 'ivory_google_map.marker_cluster.builder' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Ivory\GoogleMapBundle\Model\Overlays\MarkerClusterBuilder A Ivory\GoogleMapBundle\Model\Overlays\MarkerClusterBuilder instance.
+     */
+    protected function getIvoryGoogleMap_MarkerCluster_BuilderService()
+    {
+        $this->services['ivory_google_map.marker_cluster.builder'] = $instance = new \Ivory\GoogleMapBundle\Model\Overlays\MarkerClusterBuilder('Ivory\\GoogleMap\\Overlays\\MarkerCluster');
 
         $instance->setOptions(array());
 
@@ -2195,6 +2280,25 @@ class appDevDebugProjectContainer extends Container
     protected function getIvoryGoogleMap_PanControl_BuilderService()
     {
         return $this->services['ivory_google_map.pan_control.builder'] = new \Ivory\GoogleMapBundle\Model\Controls\PanControlBuilder('Ivory\\GoogleMap\\Controls\\PanControl');
+    }
+
+    /**
+     * Gets the 'ivory_google_map.places_autocomplete.form.type' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Ivory\GoogleMapBundle\Form\Type\PlacesAutocompleteType A Ivory\GoogleMapBundle\Form\Type\PlacesAutocompleteType instance.
+     * 
+     * @throws InactiveScopeException when the 'ivory_google_map.places_autocomplete.form.type' service is requested while the 'request' scope is not active
+     */
+    protected function getIvoryGoogleMap_PlacesAutocomplete_Form_TypeService()
+    {
+        if (!isset($this->scopedServices['request'])) {
+            throw new InactiveScopeException('ivory_google_map.places_autocomplete.form.type', 'request');
+        }
+
+        return $this->services['ivory_google_map.places_autocomplete.form.type'] = $this->scopedServices['request']['ivory_google_map.places_autocomplete.form.type'] = new \Ivory\GoogleMapBundle\Form\Type\PlacesAutocompleteType($this->get('ivory_google_map.places_autocomplete.helper'), $this->get('request'));
     }
 
     /**
@@ -2394,6 +2498,19 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'ivory_google_map.template.helper' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Ivory\GoogleMapBundle\Helper\TemplateHelper A Ivory\GoogleMapBundle\Helper\TemplateHelper instance.
+     */
+    protected function getIvoryGoogleMap_Template_HelperService()
+    {
+        return $this->services['ivory_google_map.template.helper'] = new \Ivory\GoogleMapBundle\Helper\TemplateHelper($this->get('ivory_google_map.helper.map'));
+    }
+
+    /**
      * Gets the 'ivory_google_map.zoom_control' service.
      *
      * @return Ivory\GoogleMap\Controls\ZoomControl A Ivory\GoogleMap\Controls\ZoomControl instance.
@@ -2444,6 +2561,19 @@ class appDevDebugProjectContainer extends Container
         $instance->setDefaultPaginatorOptions(array('pageParameterName' => 'page', 'sortFieldParameterName' => 'sort', 'sortDirectionParameterName' => 'direction', 'filterFieldParameterName' => 'filterField', 'filterValueParameterName' => 'filterValue', 'distinct' => true));
 
         return $instance;
+    }
+
+    /**
+     * Gets the 'knp_paginator.helper.processor' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Knp\Bundle\PaginatorBundle\Helper\Processor A Knp\Bundle\PaginatorBundle\Helper\Processor instance.
+     */
+    protected function getKnpPaginator_Helper_ProcessorService()
+    {
+        return $this->services['knp_paginator.helper.processor'] = new \Knp\Bundle\PaginatorBundle\Helper\Processor($this->get('templating.helper.router'), $this->get('translator.default'));
     }
 
     /**
@@ -2499,6 +2629,19 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'knp_paginator.templating.helper.pagination' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Knp\Bundle\PaginatorBundle\Templating\PaginationHelper A Knp\Bundle\PaginatorBundle\Templating\PaginationHelper instance.
+     */
+    protected function getKnpPaginator_Templating_Helper_PaginationService()
+    {
+        return $this->services['knp_paginator.templating.helper.pagination'] = new \Knp\Bundle\PaginatorBundle\Templating\PaginationHelper($this->get('knp_paginator.helper.processor'), $this->get('debug.templating.engine.php'));
+    }
+
+    /**
      * Gets the 'knp_paginator.twig.extension.pagination' service.
      *
      * This service is shared.
@@ -2508,7 +2651,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getKnpPaginator_Twig_Extension_PaginationService()
     {
-        return $this->services['knp_paginator.twig.extension.pagination'] = new \Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension($this->get('templating.helper.router'), $this->get('translator.default'));
+        return $this->services['knp_paginator.twig.extension.pagination'] = new \Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension($this->get('knp_paginator.helper.processor'));
     }
 
     /**
@@ -2546,19 +2689,6 @@ class appDevDebugProjectContainer extends Container
         $instance->pushHandler($this->get('monolog.handler.debug'));
 
         return $instance;
-    }
-
-    /**
-     * Gets the 'mailer' service.
-     *
-     * This service is shared.
-     * This method always returns the same instance of the service.
-     *
-     * @return Swift_Mailer A Swift_Mailer instance.
-     */
-    protected function getMailerService()
-    {
-        return $this->services['mailer'] = new \Swift_Mailer($this->get('swiftmailer.transport'));
     }
 
     /**
@@ -2610,7 +2740,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getMonolog_Handler_MainService()
     {
-        return $this->services['monolog.handler.main'] = new \Monolog\Handler\StreamHandler('/Applications/MAMP/htdocs/symfony/symfony2/app/logs/dev.log', 100, true);
+        return $this->services['monolog.handler.main'] = new \Monolog\Handler\StreamHandler('C:/wamp/www/test/app/logs/dev.log', 100, true);
     }
 
     /**
@@ -2827,7 +2957,7 @@ class appDevDebugProjectContainer extends Container
         $d = new \Doctrine\Bundle\DoctrineBundle\DataCollector\DoctrineDataCollector($this->get('doctrine'));
         $d->addLogger('default', $this->get('doctrine.dbal.logger.profiling.default'));
 
-        $this->services['profiler'] = $instance = new \Symfony\Component\HttpKernel\Profiler\Profiler(new \Symfony\Component\HttpKernel\Profiler\FileProfilerStorage('file:/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/profiler', '', '', 86400), $a);
+        $this->services['profiler'] = $instance = new \Symfony\Component\HttpKernel\Profiler\Profiler(new \Symfony\Component\HttpKernel\Profiler\FileProfilerStorage('file:C:/wamp/www/test/app/cache/dev/profiler', '', '', 86400), $a);
 
         $instance->add($c);
         $instance->add($this->get('data_collector.request'));
@@ -2838,7 +2968,7 @@ class appDevDebugProjectContainer extends Container
         $instance->add(new \Symfony\Component\HttpKernel\DataCollector\MemoryDataCollector());
         $instance->add($this->get('data_collector.router'));
         $instance->add(new \Symfony\Bundle\SecurityBundle\DataCollector\SecurityDataCollector($this->get('security.context', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
-        $instance->add(new \Symfony\Bridge\Swiftmailer\DataCollector\MessageDataCollector($this, true));
+        $instance->add(new \Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector($this));
         $instance->add($d);
         $instance->add($this->get('coresphere_console.toolbar'));
 
@@ -2912,7 +3042,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getRouterService()
     {
-        return $this->services['router'] = new \Symfony\Bundle\FrameworkBundle\Routing\Router($this, '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/assetic/routing.yml', array('cache_dir' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev', 'debug' => true, 'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper', 'generator_cache_class' => 'appDevUrlGenerator', 'matcher_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_base_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper', 'matcher_cache_class' => 'appDevUrlMatcher', 'strict_requirements' => true), $this->get('router.request_context', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('monolog.logger.router', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        return $this->services['router'] = new \Symfony\Bundle\FrameworkBundle\Routing\Router($this, 'C:/wamp/www/test/app/cache/dev/assetic/routing.yml', array('cache_dir' => 'C:/wamp/www/test/app/cache/dev', 'debug' => true, 'generator_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_base_class' => 'Symfony\\Component\\Routing\\Generator\\UrlGenerator', 'generator_dumper_class' => 'Symfony\\Component\\Routing\\Generator\\Dumper\\PhpGeneratorDumper', 'generator_cache_class' => 'appDevUrlGenerator', 'matcher_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_base_class' => 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableUrlMatcher', 'matcher_dumper_class' => 'Symfony\\Component\\Routing\\Matcher\\Dumper\\PhpMatcherDumper', 'matcher_cache_class' => 'appDevUrlMatcher', 'strict_requirements' => true), $this->get('router.request_context', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('monolog.logger.router', ContainerInterface::NULL_ON_INVALID_REFERENCE));
     }
 
     /**
@@ -3058,7 +3188,7 @@ class appDevDebugProjectContainer extends Container
         $u = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($s, array('default_target_path' => '/intranet/admin/client', 'login_path' => '/intranet/login', 'always_use_default_target_path' => false, 'target_path_parameter' => '_target_path', 'use_referer' => false));
         $u->setProviderKey('main');
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($r, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_manager')), 'main', $a, $c), 2 => $t, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, $this->get('security.authentication.session_strategy'), $s, 'main', $u, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $s, array('login_path' => '/intranet/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => '/intranet/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '51d99738837a1', $a), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $r, $f, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $s, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $s, '/intranet/login', false), NULL, NULL, $a));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($r, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_manager')), 'main', $a, $c), 2 => $t, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, $this->get('security.authentication.session_strategy'), $s, 'main', $u, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $s, array('login_path' => '/intranet/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => '/intranet/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '522a4db056e92', $a), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $r, $f, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $s, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $s, '/intranet/login', false), NULL, NULL, $a));
     }
 
     /**
@@ -3084,7 +3214,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_SecureRandomService()
     {
-        return $this->services['security.secure_random'] = new \Symfony\Component\Security\Core\Util\SecureRandom('/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/secure_random.seed', $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        return $this->services['security.secure_random'] = new \Symfony\Component\Security\Core\Util\SecureRandom('C:/wamp/www/test/app/cache/dev/secure_random.seed', $this->get('monolog.logger.security', ContainerInterface::NULL_ON_INVALID_REFERENCE));
     }
 
     /**
@@ -3101,16 +3231,16 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'sensio.distribution.webconfigurator' service.
+     * Gets the 'sensio_distribution.webconfigurator' service.
      *
      * This service is shared.
      * This method always returns the same instance of the service.
      *
      * @return Sensio\Bundle\DistributionBundle\Configurator\Configurator A Sensio\Bundle\DistributionBundle\Configurator\Configurator instance.
      */
-    protected function getSensio_Distribution_WebconfiguratorService()
+    protected function getSensioDistribution_WebconfiguratorService()
     {
-        return $this->services['sensio.distribution.webconfigurator'] = new \Sensio\Bundle\DistributionBundle\Configurator\Configurator('/Applications/MAMP/htdocs/symfony/symfony2/app');
+        return $this->services['sensio_distribution.webconfigurator'] = new \Sensio\Bundle\DistributionBundle\Configurator\Configurator('C:/wamp/www/test/app');
     }
 
     /**
@@ -3258,7 +3388,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSession_HandlerService()
     {
-        return $this->services['session.handler'] = new \Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler('/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/sessions');
+        return $this->services['session.handler'] = new \Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler('C:/wamp/www/test/app/cache/dev/sessions');
     }
 
     /**
@@ -3271,7 +3401,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSession_Storage_FilesystemService()
     {
-        return $this->services['session.storage.filesystem'] = new \Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage('/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/sessions');
+        return $this->services['session.storage.filesystem'] = new \Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage('C:/wamp/www/test/app/cache/dev/sessions');
     }
 
     /**
@@ -3340,59 +3470,72 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'swiftmailer.plugin.messagelogger' service.
+     * Gets the 'swiftmailer.mailer.default' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * @return Swift_Mailer A Swift_Mailer instance.
+     */
+    protected function getSwiftmailer_Mailer_DefaultService()
+    {
+        return $this->services['swiftmailer.mailer.default'] = new \Swift_Mailer($this->get('swiftmailer.mailer.default.transport'));
+    }
+
+    /**
+     * Gets the 'swiftmailer.mailer.default.plugin.messagelogger' service.
      *
      * This service is shared.
      * This method always returns the same instance of the service.
      *
      * @return Swift_Plugins_MessageLogger A Swift_Plugins_MessageLogger instance.
      */
-    protected function getSwiftmailer_Plugin_MessageloggerService()
+    protected function getSwiftmailer_Mailer_Default_Plugin_MessageloggerService()
     {
-        return $this->services['swiftmailer.plugin.messagelogger'] = new \Swift_Plugins_MessageLogger();
+        return $this->services['swiftmailer.mailer.default.plugin.messagelogger'] = new \Swift_Plugins_MessageLogger();
     }
 
     /**
-     * Gets the 'swiftmailer.spool' service.
+     * Gets the 'swiftmailer.mailer.default.spool' service.
      *
      * This service is shared.
      * This method always returns the same instance of the service.
      *
      * @return Swift_MemorySpool A Swift_MemorySpool instance.
      */
-    protected function getSwiftmailer_SpoolService()
+    protected function getSwiftmailer_Mailer_Default_SpoolService()
     {
-        return $this->services['swiftmailer.spool'] = new \Swift_MemorySpool();
+        return $this->services['swiftmailer.mailer.default.spool'] = new \Swift_MemorySpool();
     }
 
     /**
-     * Gets the 'swiftmailer.transport' service.
+     * Gets the 'swiftmailer.mailer.default.transport' service.
      *
      * This service is shared.
      * This method always returns the same instance of the service.
      *
      * @return Swift_Transport_SpoolTransport A Swift_Transport_SpoolTransport instance.
      */
-    protected function getSwiftmailer_TransportService()
+    protected function getSwiftmailer_Mailer_Default_TransportService()
     {
-        $this->services['swiftmailer.transport'] = $instance = new \Swift_Transport_SpoolTransport($this->get('swiftmailer.transport.eventdispatcher'), $this->get('swiftmailer.spool'));
+        $this->services['swiftmailer.mailer.default.transport'] = $instance = new \Swift_Transport_SpoolTransport($this->get('swiftmailer.mailer.default.transport.eventdispatcher'), $this->get('swiftmailer.mailer.default.spool'));
 
-        $instance->registerPlugin($this->get('swiftmailer.plugin.messagelogger'));
+        $instance->registerPlugin($this->get('swiftmailer.mailer.default.plugin.messagelogger'));
 
         return $instance;
     }
 
     /**
-     * Gets the 'swiftmailer.transport.real' service.
+     * Gets the 'swiftmailer.mailer.default.transport.real' service.
      *
      * This service is shared.
      * This method always returns the same instance of the service.
      *
      * @return Swift_Transport_EsmtpTransport A Swift_Transport_EsmtpTransport instance.
      */
-    protected function getSwiftmailer_Transport_RealService()
+    protected function getSwiftmailer_Mailer_Default_Transport_RealService()
     {
-        $this->services['swiftmailer.transport.real'] = $instance = new \Swift_Transport_EsmtpTransport(new \Swift_Transport_StreamBuffer(new \Swift_StreamFilters_StringReplacementFilterFactory()), array(0 => new \Swift_Transport_Esmtp_AuthHandler(array(0 => new \Swift_Transport_Esmtp_Auth_CramMd5Authenticator(), 1 => new \Swift_Transport_Esmtp_Auth_LoginAuthenticator(), 2 => new \Swift_Transport_Esmtp_Auth_PlainAuthenticator()))), $this->get('swiftmailer.transport.eventdispatcher'));
+        $this->services['swiftmailer.mailer.default.transport.real'] = $instance = new \Swift_Transport_EsmtpTransport(new \Swift_Transport_StreamBuffer(new \Swift_StreamFilters_StringReplacementFilterFactory()), array(0 => new \Swift_Transport_Esmtp_AuthHandler(array(0 => new \Swift_Transport_Esmtp_Auth_CramMd5Authenticator(), 1 => new \Swift_Transport_Esmtp_Auth_LoginAuthenticator(), 2 => new \Swift_Transport_Esmtp_Auth_PlainAuthenticator()))), $this->get('swiftmailer.mailer.default.transport.eventdispatcher'));
 
         $instance->setHost('localhost');
         $instance->setPort(25);
@@ -3504,7 +3647,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTemplating_Helper_CodeService()
     {
-        return $this->services['templating.helper.code'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper(NULL, '/Applications/MAMP/htdocs/symfony/symfony2/app', 'UTF-8');
+        return $this->services['templating.helper.code'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper(NULL, 'C:/wamp/www/test/app', 'UTF-8');
     }
 
     /**
@@ -3983,196 +4126,198 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTranslator_DefaultService()
     {
-        $this->services['translator.default'] = $instance = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, new \Symfony\Component\Translation\MessageSelector(), array('translation.loader.php' => array(0 => 'php'), 'translation.loader.yml' => array(0 => 'yml'), 'translation.loader.xliff' => array(0 => 'xlf', 1 => 'xliff'), 'translation.loader.po' => array(0 => 'po'), 'translation.loader.mo' => array(0 => 'mo'), 'translation.loader.qt' => array(0 => 'ts'), 'translation.loader.csv' => array(0 => 'csv'), 'translation.loader.res' => array(0 => 'res'), 'translation.loader.dat' => array(0 => 'dat'), 'translation.loader.ini' => array(0 => 'ini')), array('cache_dir' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/translations', 'debug' => true));
+        $this->services['translator.default'] = $instance = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, new \Symfony\Component\Translation\MessageSelector(), array('translation.loader.php' => array(0 => 'php'), 'translation.loader.yml' => array(0 => 'yml'), 'translation.loader.xliff' => array(0 => 'xlf', 1 => 'xliff'), 'translation.loader.po' => array(0 => 'po'), 'translation.loader.mo' => array(0 => 'mo'), 'translation.loader.qt' => array(0 => 'ts'), 'translation.loader.csv' => array(0 => 'csv'), 'translation.loader.res' => array(0 => 'res'), 'translation.loader.dat' => array(0 => 'dat'), 'translation.loader.ini' => array(0 => 'ini')), array('cache_dir' => 'C:/wamp/www/test/app/cache/dev/translations', 'debug' => true));
 
         $instance->setFallbackLocales(array(0 => 'fr'));
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.af.xlf', 'af', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ar.xlf', 'ar', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.bg.xlf', 'bg', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ca.xlf', 'ca', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cs.xlf', 'cs', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.cy.xlf', 'cy', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.da.xlf', 'da', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.de.xlf', 'de', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.el.xlf', 'el', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.en.xlf', 'en', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.es.xlf', 'es', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.et.xlf', 'et', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.eu.xlf', 'eu', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fa.xlf', 'fa', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fi.xlf', 'fi', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fr.xlf', 'fr', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.gl.xlf', 'gl', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.he.xlf', 'he', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hr.xlf', 'hr', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hu.xlf', 'hu', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hy.xlf', 'hy', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.id.xlf', 'id', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.it.xlf', 'it', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ja.xlf', 'ja', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lb.xlf', 'lb', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lt.xlf', 'lt', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.mn.xlf', 'mn', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nb.xlf', 'nb', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.nl.xlf', 'nl', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.no.xlf', 'no', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pl.xlf', 'pl', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt.xlf', 'pt', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.pt_BR.xlf', 'pt_BR', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ro.xlf', 'ro', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ru.xlf', 'ru', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sk.xlf', 'sk', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sl.xlf', 'sl', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sq.xlf', 'sq', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Cyrl.xlf', 'sr_Cyrl', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Latn.xlf', 'sr_Latn', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sv.xlf', 'sv', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.tr.xlf', 'tr', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.uk.xlf', 'uk', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.zh_CN.xlf', 'zh_CN', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ar.xlf', 'ar', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.bg.xlf', 'bg', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ca.xlf', 'ca', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.cs.xlf', 'cs', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.da.xlf', 'da', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.de.xlf', 'de', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.el.xlf', 'el', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.en.xlf', 'en', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.es.xlf', 'es', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.et.xlf', 'et', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.eu.xlf', 'eu', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fa.xlf', 'fa', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fi.xlf', 'fi', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fr.xlf', 'fr', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.gl.xlf', 'gl', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.he.xlf', 'he', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hr.xlf', 'hr', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hu.xlf', 'hu', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hy.xlf', 'hy', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.id.xlf', 'id', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.it.xlf', 'it', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ja.xlf', 'ja', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lb.xlf', 'lb', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lt.xlf', 'lt', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lv.xlf', 'lv', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.mn.xlf', 'mn', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.nb.xlf', 'nb', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.nl.xlf', 'nl', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pl.xlf', 'pl', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pt.xlf', 'pt', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.pt_BR.xlf', 'pt_BR', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ro.xlf', 'ro', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ru.xlf', 'ru', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sk.xlf', 'sk', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sl.xlf', 'sl', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Cyrl.xlf', 'sr_Cyrl', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Latn.xlf', 'sr_Latn', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sv.xlf', 'sv', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ua.xlf', 'ua', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.zh_CN.xlf', 'zh_CN', 'validators');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.ar.xlf', 'ar', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.ca.xlf', 'ca', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.cs.xlf', 'cs', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.da.xlf', 'da', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.de.xlf', 'de', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.en.xlf', 'en', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.es.xlf', 'es', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.fa.xlf', 'fa', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.fr.xlf', 'fr', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.gl.xlf', 'gl', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.hu.xlf', 'hu', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.it.xlf', 'it', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.lb.xlf', 'lb', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.nl.xlf', 'nl', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.no.xlf', 'no', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.pl.xlf', 'pl', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.pt_BR.xlf', 'pt_BR', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.pt_PT.xlf', 'pt_PT', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.ro.xlf', 'ro', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.ru.xlf', 'ru', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.sk.xlf', 'sk', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.sl.xlf', 'sl', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.sr_Cyrl.xlf', 'sr_Cyrl', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.sr_Latn.xlf', 'sr_Latn', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.sv.xlf', 'sv', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.tr.xlf', 'tr', 'security');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.ua.xlf', 'ua', 'security');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Resources/translations/messages.en.yml', 'en', 'messages');
-        $instance->addResource('xliff', '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Resources/translations/messages.fr.xliff', 'fr', 'messages');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Resources/translations/messages.fr.yml', 'fr', 'messages');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Resources/translations/validators.en.yml', 'en', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Resources/translations/validators.fr.yml', 'fr', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.ar.yml', 'ar', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.bg.yml', 'bg', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.ca.yml', 'ca', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.cs.yml', 'cs', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.da.yml', 'da', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.de.yml', 'de', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.en.yml', 'en', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.es.yml', 'es', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.et.yml', 'et', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.fa.yml', 'fa', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.fi.yml', 'fi', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.fr.yml', 'fr', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.hr.yml', 'hr', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.hu.yml', 'hu', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.id.yml', 'id', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.it.yml', 'it', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.ja.yml', 'ja', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.lb.yml', 'lb', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.lt.yml', 'lt', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.lv.yml', 'lv', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.nb.yml', 'nb', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.nl.yml', 'nl', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.pl.yml', 'pl', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.pt_BR.yml', 'pt_BR', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.pt_PT.yml', 'pt_PT', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.ro.yml', 'ro', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.ru.yml', 'ru', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.sk.yml', 'sk', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.sl.yml', 'sl', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.sr_Latn.yml', 'sr_Latn', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.sv.yml', 'sv', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.tr.yml', 'tr', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.uk.yml', 'uk', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/FOSUserBundle.zh_CN.yml', 'zh_CN', 'FOSUserBundle');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.ar.yml', 'ar', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.bg.yml', 'bg', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.cs.yml', 'cs', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.da.yml', 'da', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.de.yml', 'de', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.en.yml', 'en', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.es.yml', 'es', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.fa.yml', 'fa', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.fi.yml', 'fi', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.fr.yml', 'fr', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.hr.yml', 'hr', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.hu.yml', 'hu', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.id.yml', 'id', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.it.yml', 'it', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.ja.yml', 'ja', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.lt.yml', 'lt', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.lv.yml', 'lv', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.nb.yml', 'nb', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.nl.yml', 'nl', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.pl.yml', 'pl', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.pt.yml', 'pt', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.pt_BR.yml', 'pt_BR', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.ro.yml', 'ro', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.ru.yml', 'ru', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.sk.yml', 'sk', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.sl.yml', 'sl', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.sr_Latn.yml', 'sr_Latn', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.sv.yml', 'sv', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.tr.yml', 'tr', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.uk.yml', 'uk', 'validators');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/translations/validators.zh_CN.yml', 'zh_CN', 'validators');
-        $instance->addResource('xliff', '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/UtilisateurBundle/Resources/translations/messages.fr.xliff', 'fr', 'messages');
-        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/src/FrontEnd/SuperBundle/Resources/translations/messages.fr.xlf', 'fr', 'messages');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/coresphere/console-bundle/CoreSphere/ConsoleBundle/Resources/translations/messages.de.yml', 'de', 'messages');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/coresphere/console-bundle/CoreSphere/ConsoleBundle/Resources/translations/messages.en.yml', 'en', 'messages');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/coresphere/console-bundle/CoreSphere/ConsoleBundle/Resources/translations/messages.fr.yml', 'fr', 'messages');
-        $instance->addResource('yml', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/coresphere/console-bundle/CoreSphere/ConsoleBundle/Resources/translations/messages.ru.yml', 'ru', 'messages');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.af.xlf', 'af', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.ar.xlf', 'ar', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.bg.xlf', 'bg', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.ca.xlf', 'ca', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.cs.xlf', 'cs', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.cy.xlf', 'cy', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.da.xlf', 'da', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.de.xlf', 'de', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.el.xlf', 'el', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.en.xlf', 'en', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.es.xlf', 'es', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.et.xlf', 'et', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.eu.xlf', 'eu', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.fa.xlf', 'fa', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.fi.xlf', 'fi', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.fr.xlf', 'fr', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.gl.xlf', 'gl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.he.xlf', 'he', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.hr.xlf', 'hr', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.hu.xlf', 'hu', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.hy.xlf', 'hy', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.id.xlf', 'id', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.it.xlf', 'it', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.ja.xlf', 'ja', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.lb.xlf', 'lb', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.lt.xlf', 'lt', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.mn.xlf', 'mn', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.nb.xlf', 'nb', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.nl.xlf', 'nl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.no.xlf', 'no', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.pl.xlf', 'pl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.pt.xlf', 'pt', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.pt_BR.xlf', 'pt_BR', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.ro.xlf', 'ro', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.ru.xlf', 'ru', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sk.xlf', 'sk', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sl.xlf', 'sl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sq.xlf', 'sq', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sr_Cyrl.xlf', 'sr_Cyrl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sr_Latn.xlf', 'sr_Latn', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.sv.xlf', 'sv', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.tr.xlf', 'tr', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.uk.xlf', 'uk', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Validator/Resources/translations\\validators.zh_CN.xlf', 'zh_CN', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ar.xlf', 'ar', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.bg.xlf', 'bg', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ca.xlf', 'ca', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.cs.xlf', 'cs', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.da.xlf', 'da', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.de.xlf', 'de', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.el.xlf', 'el', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.en.xlf', 'en', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.es.xlf', 'es', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.et.xlf', 'et', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.eu.xlf', 'eu', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.fa.xlf', 'fa', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.fi.xlf', 'fi', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.fr.xlf', 'fr', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.gl.xlf', 'gl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.he.xlf', 'he', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.hr.xlf', 'hr', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.hu.xlf', 'hu', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.hy.xlf', 'hy', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.id.xlf', 'id', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.it.xlf', 'it', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ja.xlf', 'ja', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.lb.xlf', 'lb', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.lt.xlf', 'lt', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.lv.xlf', 'lv', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.mn.xlf', 'mn', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.nb.xlf', 'nb', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.nl.xlf', 'nl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.pl.xlf', 'pl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.pt.xlf', 'pt', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.pt_BR.xlf', 'pt_BR', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ro.xlf', 'ro', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ru.xlf', 'ru', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.sk.xlf', 'sk', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.sl.xlf', 'sl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.sr_Cyrl.xlf', 'sr_Cyrl', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.sr_Latn.xlf', 'sr_Latn', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.sv.xlf', 'sv', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.ua.xlf', 'ua', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/translations\\validators.zh_CN.xlf', 'zh_CN', 'validators');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.ar.xlf', 'ar', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.ca.xlf', 'ca', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.cs.xlf', 'cs', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.da.xlf', 'da', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.de.xlf', 'de', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.el.xlf', 'el', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.en.xlf', 'en', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.es.xlf', 'es', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.fa.xlf', 'fa', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.fr.xlf', 'fr', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.gl.xlf', 'gl', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.hu.xlf', 'hu', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.it.xlf', 'it', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.lb.xlf', 'lb', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.nl.xlf', 'nl', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.no.xlf', 'no', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.pl.xlf', 'pl', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.pt_BR.xlf', 'pt_BR', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.pt_PT.xlf', 'pt_PT', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.ro.xlf', 'ro', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.ru.xlf', 'ru', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.sk.xlf', 'sk', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.sl.xlf', 'sl', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.sr_Cyrl.xlf', 'sr_Cyrl', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.sr_Latn.xlf', 'sr_Latn', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.sv.xlf', 'sv', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.tr.xlf', 'tr', 'security');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Security\\Core\\Exception/../../Resources/translations\\security.ua.xlf', 'ua', 'security');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\src\\MyApp\\ApBundle/Resources/translations\\messages.en.yml', 'en', 'messages');
+        $instance->addResource('xliff', 'C:\\wamp\\www\\test\\src\\MyApp\\ApBundle/Resources/translations\\messages.fr.xliff', 'fr', 'messages');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\src\\MyApp\\ApBundle/Resources/translations\\messages.fr.yml', 'fr', 'messages');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\src\\MyApp\\ApBundle/Resources/translations\\validators.en.yml', 'en', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\src\\MyApp\\ApBundle/Resources/translations\\validators.fr.yml', 'fr', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.ar.yml', 'ar', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.bg.yml', 'bg', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.ca.yml', 'ca', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.cs.yml', 'cs', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.da.yml', 'da', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.de.yml', 'de', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.en.yml', 'en', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.es.yml', 'es', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.et.yml', 'et', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.fa.yml', 'fa', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.fi.yml', 'fi', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.fr.yml', 'fr', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.hr.yml', 'hr', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.hu.yml', 'hu', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.id.yml', 'id', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.it.yml', 'it', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.ja.yml', 'ja', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.lb.yml', 'lb', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.lt.yml', 'lt', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.lv.yml', 'lv', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.nb.yml', 'nb', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.nl.yml', 'nl', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.pl.yml', 'pl', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.pt_BR.yml', 'pt_BR', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.pt_PT.yml', 'pt_PT', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.ro.yml', 'ro', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.ru.yml', 'ru', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.sk.yml', 'sk', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.sl.yml', 'sl', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.sr_Latn.yml', 'sr_Latn', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.sv.yml', 'sv', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.tr.yml', 'tr', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.uk.yml', 'uk', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\FOSUserBundle.zh_CN.yml', 'zh_CN', 'FOSUserBundle');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.ar.yml', 'ar', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.bg.yml', 'bg', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.cs.yml', 'cs', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.da.yml', 'da', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.de.yml', 'de', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.en.yml', 'en', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.es.yml', 'es', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.fa.yml', 'fa', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.fi.yml', 'fi', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.fr.yml', 'fr', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.hr.yml', 'hr', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.hu.yml', 'hu', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.id.yml', 'id', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.it.yml', 'it', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.ja.yml', 'ja', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.lt.yml', 'lt', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.lv.yml', 'lv', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.nb.yml', 'nb', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.nl.yml', 'nl', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.pl.yml', 'pl', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.pt.yml', 'pt', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.pt_BR.yml', 'pt_BR', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.ro.yml', 'ro', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.ru.yml', 'ru', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.sk.yml', 'sk', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.sl.yml', 'sl', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.sr_Latn.yml', 'sr_Latn', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.sv.yml', 'sv', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.tr.yml', 'tr', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.uk.yml', 'uk', 'validators');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/translations\\validators.zh_CN.yml', 'zh_CN', 'validators');
+        $instance->addResource('xliff', 'C:\\wamp\\www\\test\\src\\MyApp\\UtilisateurBundle/Resources/translations\\messages.fr.xliff', 'fr', 'messages');
+        $instance->addResource('xlf', 'C:\\wamp\\www\\test\\src\\FrontEnd\\SuperBundle/Resources/translations\\messages.fr.xlf', 'fr', 'messages');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\coresphere\\console-bundle\\CoreSphere\\ConsoleBundle/Resources/translations\\messages.de.yml', 'de', 'messages');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\coresphere\\console-bundle\\CoreSphere\\ConsoleBundle/Resources/translations\\messages.en.yml', 'en', 'messages');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\coresphere\\console-bundle\\CoreSphere\\ConsoleBundle/Resources/translations\\messages.fr.yml', 'fr', 'messages');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\coresphere\\console-bundle\\CoreSphere\\ConsoleBundle/Resources/translations\\messages.pl.yml', 'pl', 'messages');
+        $instance->addResource('yml', 'C:\\wamp\\www\\test\\vendor\\coresphere\\console-bundle\\CoreSphere\\ConsoleBundle/Resources/translations\\messages.ru.yml', 'ru', 'messages');
 
         return $instance;
     }
@@ -4187,22 +4332,22 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTwigService()
     {
-        $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'twig.controller.exception:showAction', 'autoescape_service' => NULL, 'autoescape_service_method' => NULL, 'cache' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/twig', 'charset' => 'UTF-8', 'paths' => array()));
+        $this->services['twig'] = $instance = new \Twig_Environment($this->get('twig.loader'), array('debug' => true, 'strict_variables' => true, 'exception_controller' => 'twig.controller.exception:showAction', 'autoescape_service' => NULL, 'autoescape_service_method' => NULL, 'cache' => 'C:/wamp/www/test/app/cache/dev/twig', 'charset' => 'UTF-8', 'paths' => array()));
 
         $instance->addExtension(new \Symfony\Bundle\SecurityBundle\Twig\Extension\LogoutUrlExtension($this->get('templating.helper.logout_url')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\SecurityExtension($this->get('security.context', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($this->get('translator.default')));
         $instance->addExtension(new \Symfony\Bundle\TwigBundle\Extension\AssetsExtension($this));
         $instance->addExtension(new \Symfony\Bundle\TwigBundle\Extension\ActionsExtension($this));
-        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\CodeExtension(NULL, '/Applications/MAMP/htdocs/symfony/symfony2/app', 'UTF-8'));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\CodeExtension(NULL, 'C:/wamp/www/test/app', 'UTF-8'));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\RoutingExtension($this->get('router')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\YamlExtension());
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\HttpKernelExtension($this->get('fragment.handler')));
-        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig')), $this->get('form.csrf_provider', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig', 1 => 'IvoryGoogleMapBundle:Form:places_autocomplete_widget.html.twig')), $this->get('form.csrf_provider', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
         $instance->addExtension(new \Twig_Extension_Debug());
         $instance->addExtension(new \Symfony\Bundle\AsseticBundle\Twig\AsseticExtension($this->get('assetic.asset_factory'), $this->get('templating.name_parser'), true, array(), array(0 => 'MyAppApBundle', 1 => 'FrontEndSuperBundle'), $this->get('assetic.value_supplier.default', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
         $instance->addExtension(new \Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension());
-        $instance->addExtension(new \Ivory\GoogleMapBundle\Twig\GoogleMapExtension($this->get('ivory_google_map.helper.map')));
+        $instance->addExtension(new \Ivory\GoogleMapBundle\Twig\GoogleMapExtension($this->get('ivory_google_map.template.helper')));
         $instance->addExtension($this->get('knp_paginator.twig.extension.pagination'));
         $instance->addGlobal('app', $this->get('templating.globals'));
 
@@ -4247,21 +4392,22 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['twig.loader'] = $instance = new \Symfony\Bundle\TwigBundle\Loader\FilesystemLoader($this->get('templating.locator'), $this->get('templating.name_parser'));
 
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views', 'Framework');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views', 'Security');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views', 'Twig');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/swiftmailer-bundle/Symfony/Bundle/SwiftmailerBundle/Resources/views', 'Swiftmailer');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views', 'Doctrine');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Resources/views', 'MyAppAp');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views', 'FOSUser');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/UtilisateurBundle/Resources/views', 'MyAppUtilisateur');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/knplabs/knp-paginator-bundle/Knp/Bundle/PaginatorBundle/Resources/views', 'KnpPaginator');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/src/FrontEnd/SuperBundle/Resources/views', 'FrontEndSuper');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views', 'WebProfiler');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/views', 'SensioDistribution');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/coresphere/console-bundle/CoreSphere/ConsoleBundle/Resources/views', 'CoreSphereConsole');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/app/Resources/views');
-        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle/Resources/views', 'Framework');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\SecurityBundle/Resources/views', 'Security');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\TwigBundle/Resources/views', 'Twig');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\symfony\\swiftmailer-bundle\\Symfony\\Bundle\\SwiftmailerBundle/Resources/views', 'Swiftmailer');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\doctrine\\doctrine-bundle\\Doctrine\\Bundle\\DoctrineBundle/Resources/views', 'Doctrine');
+        $instance->addPath('C:\\wamp\\www\\test\\src\\MyApp\\ApBundle/Resources/views', 'MyAppAp');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle/Resources/views', 'FOSUser');
+        $instance->addPath('C:\\wamp\\www\\test\\src\\MyApp\\UtilisateurBundle/Resources/views', 'MyAppUtilisateur');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\egeloen\\google-map-bundle\\Ivory\\GoogleMapBundle/Resources/views', 'IvoryGoogleMap');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\knplabs\\knp-paginator-bundle\\Knp\\Bundle\\PaginatorBundle/Resources/views', 'KnpPaginator');
+        $instance->addPath('C:\\wamp\\www\\test\\src\\FrontEnd\\SuperBundle/Resources/views', 'FrontEndSuper');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\WebProfilerBundle/Resources/views', 'WebProfiler');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\sensio\\distribution-bundle\\Sensio\\Bundle\\DistributionBundle/Resources/views', 'SensioDistribution');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\coresphere\\console-bundle\\CoreSphere\\ConsoleBundle/Resources/views', 'CoreSphereConsole');
+        $instance->addPath('C:/wamp/www/test/app/Resources/views');
+        $instance->addPath('C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Bridge\\Twig/Resources/views/Form');
 
         return $instance;
     }
@@ -4341,7 +4487,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getWebProfiler_Controller_ProfilerService()
     {
-        return $this->services['web_profiler.controller.profiler'] = new \Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController($this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('twig'), array('data_collector.config' => array(0 => 'config', 1 => '@WebProfiler/Collector/config.html.twig'), 'data_collector.request' => array(0 => 'request', 1 => '@WebProfiler/Collector/request.html.twig'), 'data_collector.exception' => array(0 => 'exception', 1 => '@WebProfiler/Collector/exception.html.twig'), 'data_collector.events' => array(0 => 'events', 1 => '@WebProfiler/Collector/events.html.twig'), 'data_collector.logger' => array(0 => 'logger', 1 => '@WebProfiler/Collector/logger.html.twig'), 'data_collector.time' => array(0 => 'time', 1 => '@WebProfiler/Collector/time.html.twig'), 'data_collector.memory' => array(0 => 'memory', 1 => '@WebProfiler/Collector/memory.html.twig'), 'data_collector.router' => array(0 => 'router', 1 => '@WebProfiler/Collector/router.html.twig'), 'data_collector.security' => array(0 => 'security', 1 => 'SecurityBundle:Collector:security'), 'swiftmailer.data_collector' => array(0 => 'swiftmailer', 1 => 'SwiftmailerBundle:Collector:swiftmailer'), 'data_collector.doctrine' => array(0 => 'db', 1 => 'DoctrineBundle:Collector:db'), 'coresphere_console.toolbar' => array(0 => 'coresphere_console', 1 => 'CoreSphereConsoleBundle:Toolbar:toolbar')), 'bottom');
+        return $this->services['web_profiler.controller.profiler'] = new \Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController($this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('profiler', ContainerInterface::NULL_ON_INVALID_REFERENCE), $this->get('twig'), array('data_collector.config' => array(0 => 'config', 1 => '@WebProfiler/Collector/config.html.twig'), 'data_collector.request' => array(0 => 'request', 1 => '@WebProfiler/Collector/request.html.twig'), 'data_collector.exception' => array(0 => 'exception', 1 => '@WebProfiler/Collector/exception.html.twig'), 'data_collector.events' => array(0 => 'events', 1 => '@WebProfiler/Collector/events.html.twig'), 'data_collector.logger' => array(0 => 'logger', 1 => '@WebProfiler/Collector/logger.html.twig'), 'data_collector.time' => array(0 => 'time', 1 => '@WebProfiler/Collector/time.html.twig'), 'data_collector.memory' => array(0 => 'memory', 1 => '@WebProfiler/Collector/memory.html.twig'), 'data_collector.router' => array(0 => 'router', 1 => '@WebProfiler/Collector/router.html.twig'), 'data_collector.security' => array(0 => 'security', 1 => 'SecurityBundle:Collector:security'), 'swiftmailer.data_collector' => array(0 => 'swiftmailer', 1 => '@Swiftmailer/Collector/swiftmailer.html.twig'), 'data_collector.doctrine' => array(0 => 'db', 1 => 'DoctrineBundle:Collector:db'), 'coresphere_console.toolbar' => array(0 => 'coresphere_console', 1 => 'CoreSphereConsoleBundle:Toolbar:toolbar')), 'bottom');
     }
 
     /**
@@ -4400,7 +4546,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAssetic_AssetFactoryService()
     {
-        $this->services['assetic.asset_factory'] = $instance = new \Symfony\Bundle\AsseticBundle\Factory\AssetFactory($this->get('kernel'), $this, $this->getParameterBag(), '/Applications/MAMP/htdocs/symfony/symfony2/app/../web', true);
+        $this->services['assetic.asset_factory'] = $instance = new \Symfony\Bundle\AsseticBundle\Factory\AssetFactory($this->get('kernel'), $this, $this->getParameterBag(), 'C:/wamp/www/test/app/../web', true);
 
         $instance->addWorker(new \Symfony\Bundle\AsseticBundle\Factory\Worker\UseControllerWorker());
 
@@ -4421,7 +4567,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getAssetic_CacheService()
     {
-        return $this->services['assetic.cache'] = new \Assetic\Cache\FilesystemCache('/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/assetic/assets');
+        return $this->services['assetic.cache'] = new \Assetic\Cache\FilesystemCache('C:/wamp/www/test/app/cache/dev/assetic/assets');
     }
 
     /**
@@ -4493,6 +4639,74 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
+     * Gets the 'ivory_google_map.helper.api' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return Ivory\GoogleMap\Helper\ApiHelper A Ivory\GoogleMap\Helper\ApiHelper instance.
+     */
+    protected function getIvoryGoogleMap_Helper_ApiService()
+    {
+        return $this->services['ivory_google_map.helper.api'] = new \Ivory\GoogleMap\Helper\ApiHelper();
+    }
+
+    /**
+     * Gets the 'ivory_google_map.helper.bound' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return Ivory\GoogleMap\Helper\Base\BoundHelper A Ivory\GoogleMap\Helper\Base\BoundHelper instance.
+     */
+    protected function getIvoryGoogleMap_Helper_BoundService()
+    {
+        return $this->services['ivory_google_map.helper.bound'] = new \Ivory\GoogleMap\Helper\Base\BoundHelper($this->get('ivory_google_map.helper.coordinate'));
+    }
+
+    /**
+     * Gets the 'ivory_google_map.helper.coordinate' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return Ivory\GoogleMap\Helper\Base\CoordinateHelper A Ivory\GoogleMap\Helper\Base\CoordinateHelper instance.
+     */
+    protected function getIvoryGoogleMap_Helper_CoordinateService()
+    {
+        return $this->services['ivory_google_map.helper.coordinate'] = new \Ivory\GoogleMap\Helper\Base\CoordinateHelper();
+    }
+
+    /**
+     * Gets the 'ivory_google_map.places_autocomplete.helper' service.
+     *
+     * This service is shared.
+     * This method always returns the same instance of the service.
+     *
+     * This service is private.
+     * If you want to be able to request this service from the container directly,
+     * make it public, otherwise you might end up with broken code.
+     *
+     * @return Ivory\GoogleMap\Helper\Places\AutocompleteHelper A Ivory\GoogleMap\Helper\Places\AutocompleteHelper instance.
+     */
+    protected function getIvoryGoogleMap_PlacesAutocomplete_HelperService()
+    {
+        return $this->services['ivory_google_map.places_autocomplete.helper'] = new \Ivory\GoogleMap\Helper\Places\AutocompleteHelper($this->get('ivory_google_map.helper.api'), $this->get('ivory_google_map.helper.coordinate'), $this->get('ivory_google_map.helper.bound'));
+    }
+
+    /**
      * Gets the 'router.request_context' service.
      *
      * This service is shared.
@@ -4540,7 +4754,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_manager'), $this->get('security.user_checker'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('51d99738837a1')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_manager'), $this->get('security.user_checker'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('522a4db056e92')), true);
 
         $instance->setEventDispatcher($this->get('event_dispatcher'));
 
@@ -4599,7 +4813,7 @@ class appDevDebugProjectContainer extends Container
     }
 
     /**
-     * Gets the 'swiftmailer.transport.eventdispatcher' service.
+     * Gets the 'swiftmailer.mailer.default.transport.eventdispatcher' service.
      *
      * This service is shared.
      * This method always returns the same instance of the service.
@@ -4610,9 +4824,9 @@ class appDevDebugProjectContainer extends Container
      *
      * @return Swift_Events_SimpleEventDispatcher A Swift_Events_SimpleEventDispatcher instance.
      */
-    protected function getSwiftmailer_Transport_EventdispatcherService()
+    protected function getSwiftmailer_Mailer_Default_Transport_EventdispatcherService()
     {
-        return $this->services['swiftmailer.transport.eventdispatcher'] = new \Swift_Events_SimpleEventDispatcher();
+        return $this->services['swiftmailer.mailer.default.transport.eventdispatcher'] = new \Swift_Events_SimpleEventDispatcher();
     }
 
     /**
@@ -4629,7 +4843,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getTemplating_LocatorService()
     {
-        return $this->services['templating.locator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator($this->get('file_locator'), '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev');
+        return $this->services['templating.locator'] = new \Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator($this->get('file_locator'), 'C:/wamp/www/test/app/cache/dev');
     }
 
     /**
@@ -4646,7 +4860,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getValidator_Mapping_ClassMetadataFactoryService()
     {
-        return $this->services['validator.mapping.class_metadata_factory'] = new \Symfony\Component\Validator\Mapping\ClassMetadataFactory(new \Symfony\Component\Validator\Mapping\Loader\LoaderChain(array(0 => new \Symfony\Component\Validator\Mapping\Loader\AnnotationLoader($this->get('annotation_reader')), 1 => new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader(), 2 => new \Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader(array(0 => '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml', 1 => '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/validation.xml', 2 => '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/validation/orm.xml')), 3 => new \Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader(array(0 => '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Resources/config/validation.yml')))), NULL);
+        return $this->services['validator.mapping.class_metadata_factory'] = new \Symfony\Component\Validator\Mapping\ClassMetadataFactory(new \Symfony\Component\Validator\Mapping\Loader\LoaderChain(array(0 => new \Symfony\Component\Validator\Mapping\Loader\AnnotationLoader($this->get('annotation_reader')), 1 => new \Symfony\Component\Validator\Mapping\Loader\StaticMethodLoader(), 2 => new \Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader(array(0 => 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml', 1 => 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle\\Resources\\config\\validation.xml', 2 => 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle\\Resources\\config\\validation\\orm.xml')), 3 => new \Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader(array(0 => 'C:\\wamp\\www\\test\\src\\MyApp\\ApBundle\\Resources\\config\\validation.yml')))), NULL);
     }
 
     /**
@@ -4700,12 +4914,12 @@ class appDevDebugProjectContainer extends Container
     protected function getDefaultParameters()
     {
         return array(
-            'kernel.root_dir' => '/Applications/MAMP/htdocs/symfony/symfony2/app',
+            'kernel.root_dir' => 'C:/wamp/www/test/app',
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
             'kernel.name' => 'app',
-            'kernel.cache_dir' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev',
-            'kernel.logs_dir' => '/Applications/MAMP/htdocs/symfony/symfony2/app/logs',
+            'kernel.cache_dir' => 'C:/wamp/www/test/app/cache/dev',
+            'kernel.logs_dir' => 'C:/wamp/www/test/app/logs',
             'kernel.bundles' => array(
                 'FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
                 'SecurityBundle' => 'Symfony\\Bundle\\SecurityBundle\\SecurityBundle',
@@ -4734,7 +4948,7 @@ class appDevDebugProjectContainer extends Container
             'database_port' => NULL,
             'database_name' => 'peint493_ap',
             'database_user' => 'root',
-            'database_password' => 'root',
+            'database_password' => NULL,
             'mailer_transport' => 'smtp',
             'mailer_host' => 'localhost',
             'mailer_user' => NULL,
@@ -4787,10 +5001,13 @@ class appDevDebugProjectContainer extends Container
             'debug.errors_logger_listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\ErrorsLoggerListener',
             'debug.event_dispatcher.class' => 'Symfony\\Component\\HttpKernel\\Debug\\TraceableEventDispatcher',
             'debug.stopwatch.class' => 'Symfony\\Component\\Stopwatch\\Stopwatch',
-            'debug.container.dump' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/appDevDebugProjectContainer.xml',
+            'debug.container.dump' => 'C:/wamp/www/test/app/cache/dev/appDevDebugProjectContainer.xml',
             'debug.controller_resolver.class' => 'Symfony\\Component\\HttpKernel\\Controller\\TraceableControllerResolver',
             'kernel.secret' => 'ThisTokenIsNotSoSecretChangeIt',
             'kernel.http_method_override' => true,
+            'kernel.trusted_hosts' => array(
+
+            ),
             'kernel.trusted_proxies' => array(
 
             ),
@@ -4806,7 +5023,7 @@ class appDevDebugProjectContainer extends Container
             'session.storage.options' => array(
 
             ),
-            'session.save_path' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/sessions',
+            'session.save_path' => 'C:/wamp/www/test/app/cache/dev/sessions',
             'form.resolved_type_factory.class' => 'Symfony\\Component\\Form\\ResolvedFormTypeFactory',
             'form.registry.class' => 'Symfony\\Component\\Form\\FormRegistry',
             'form.factory.class' => 'Symfony\\Component\\Form\\FormFactory',
@@ -4862,12 +5079,12 @@ class appDevDebugProjectContainer extends Container
             'validator.mapping.loader.yaml_files_loader.class' => 'Symfony\\Component\\Validator\\Mapping\\Loader\\YamlFilesLoader',
             'validator.validator_factory.class' => 'Symfony\\Bundle\\FrameworkBundle\\Validator\\ConstraintValidatorFactory',
             'validator.mapping.loader.xml_files_loader.mapping_files' => array(
-                0 => '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml',
-                1 => '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/validation.xml',
-                2 => '/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/config/validation/orm.xml',
+                0 => 'C:\\wamp\\www\\test\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Form/Resources/config/validation.xml',
+                1 => 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle\\Resources\\config\\validation.xml',
+                2 => 'C:\\wamp\\www\\test\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle\\Resources\\config\\validation\\orm.xml',
             ),
             'validator.mapping.loader.yaml_files_loader.mapping_files' => array(
-                0 => '/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Resources/config/validation.yml',
+                0 => 'C:\\wamp\\www\\test\\src\\MyApp\\ApBundle\\Resources\\config\\validation.yml',
             ),
             'validator.translation_domain' => 'validators',
             'fragment.listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\FragmentListener',
@@ -4883,7 +5100,7 @@ class appDevDebugProjectContainer extends Container
             'data_collector.router.class' => 'Symfony\\Bundle\\FrameworkBundle\\DataCollector\\RouterDataCollector',
             'profiler_listener.only_exceptions' => false,
             'profiler_listener.only_master_requests' => false,
-            'profiler.storage.dsn' => 'file:/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/profiler',
+            'profiler.storage.dsn' => 'file:C:/wamp/www/test/app/cache/dev/profiler',
             'profiler.storage.username' => '',
             'profiler.storage.password' => '',
             'profiler.storage.lifetime' => 86400,
@@ -4907,7 +5124,7 @@ class appDevDebugProjectContainer extends Container
             'router.request_context.host' => 'localhost',
             'router.request_context.scheme' => 'http',
             'router.request_context.base_url' => '',
-            'router.resource' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/assetic/routing.yml',
+            'router.resource' => 'C:/wamp/www/test/app/cache/dev/assetic/routing.yml',
             'router.cache_class_prefix' => 'appDev',
             'request_listener.http_port' => 80,
             'request_listener.https_port' => 443,
@@ -5009,6 +5226,7 @@ class appDevDebugProjectContainer extends Container
             'twig.exception_listener.controller' => 'twig.controller.exception:showAction',
             'twig.form.resources' => array(
                 0 => 'form_div_layout.html.twig',
+                1 => 'IvoryGoogleMapBundle:Form:places_autocomplete_widget.html.twig',
             ),
             'debug.templating.engine.twig.class' => 'Symfony\\Bundle\\TwigBundle\\Debug\\TimedTwigEngine',
             'twig.options' => array(
@@ -5017,7 +5235,7 @@ class appDevDebugProjectContainer extends Container
                 'exception_controller' => 'twig.controller.exception:showAction',
                 'autoescape_service' => NULL,
                 'autoescape_service_method' => NULL,
-                'cache' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/twig',
+                'cache' => 'C:/wamp/www/test/app/cache/dev/twig',
                 'charset' => 'UTF-8',
                 'paths' => array(
 
@@ -5056,28 +5274,32 @@ class appDevDebugProjectContainer extends Container
             'swiftmailer.plugin.impersonate.class' => 'Swift_Plugins_ImpersonatePlugin',
             'swiftmailer.plugin.messagelogger.class' => 'Swift_Plugins_MessageLogger',
             'swiftmailer.plugin.antiflood.class' => 'Swift_Plugins_AntiFloodPlugin',
-            'swiftmailer.plugin.antiflood.threshold' => 99,
-            'swiftmailer.plugin.antiflood.sleep' => 0,
-            'swiftmailer.data_collector.class' => 'Symfony\\Bridge\\Swiftmailer\\DataCollector\\MessageDataCollector',
             'swiftmailer.transport.smtp.class' => 'Swift_Transport_EsmtpTransport',
-            'swiftmailer.transport.smtp.encryption' => NULL,
-            'swiftmailer.transport.smtp.port' => 25,
-            'swiftmailer.transport.smtp.host' => 'localhost',
-            'swiftmailer.transport.smtp.username' => NULL,
-            'swiftmailer.transport.smtp.password' => NULL,
-            'swiftmailer.transport.smtp.auth_mode' => NULL,
-            'swiftmailer.transport.smtp.timeout' => 30,
-            'swiftmailer.transport.smtp.source_ip' => NULL,
             'swiftmailer.plugin.blackhole.class' => 'Swift_Plugins_BlackholePlugin',
+            'swiftmailer.spool.file.class' => 'Swift_FileSpool',
             'swiftmailer.spool.memory.class' => 'Swift_MemorySpool',
             'swiftmailer.email_sender.listener.class' => 'Symfony\\Bundle\\SwiftmailerBundle\\EventListener\\EmailSenderListener',
-            'swiftmailer.spool.memory.path' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/swiftmailer/spool',
+            'swiftmailer.data_collector.class' => 'Symfony\\Bundle\\SwiftmailerBundle\\DataCollector\\MessageDataCollector',
+            'swiftmailer.mailer.default.transport.name' => 'smtp',
+            'swiftmailer.mailer.default.delivery.enabled' => true,
+            'swiftmailer.mailer.default.transport.smtp.encryption' => NULL,
+            'swiftmailer.mailer.default.transport.smtp.port' => 25,
+            'swiftmailer.mailer.default.transport.smtp.host' => 'localhost',
+            'swiftmailer.mailer.default.transport.smtp.username' => NULL,
+            'swiftmailer.mailer.default.transport.smtp.password' => NULL,
+            'swiftmailer.mailer.default.transport.smtp.auth_mode' => NULL,
+            'swiftmailer.mailer.default.transport.smtp.timeout' => 30,
+            'swiftmailer.mailer.default.transport.smtp.source_ip' => NULL,
+            'swiftmailer.spool.default.memory.path' => 'C:/wamp/www/test/app/cache/dev/swiftmailer/spool/default',
+            'swiftmailer.mailer.default.spool.enabled' => true,
+            'swiftmailer.mailer.default.single_address' => NULL,
             'swiftmailer.spool.enabled' => true,
-            'swiftmailer.sender_address' => NULL,
+            'swiftmailer.delivery.enabled' => true,
             'swiftmailer.single_address' => NULL,
-            'swiftmailer.delivery_whitelist' => array(
-
+            'swiftmailer.mailers' => array(
+                'default' => 'swiftmailer.mailer.default',
             ),
+            'swiftmailer.default_mailer' => 'default',
             'assetic.asset_factory.class' => 'Symfony\\Bundle\\AsseticBundle\\Factory\\AssetFactory',
             'assetic.asset_manager.class' => 'Assetic\\Factory\\LazyAssetManager',
             'assetic.asset_manager_cache_warmer.class' => 'Symfony\\Bundle\\AsseticBundle\\CacheWarmer\\AssetManagerCacheWarmer',
@@ -5093,7 +5315,7 @@ class appDevDebugProjectContainer extends Container
             'assetic.node.paths' => array(
 
             ),
-            'assetic.cache_dir' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/assetic',
+            'assetic.cache_dir' => 'C:/wamp/www/test/app/cache/dev/assetic',
             'assetic.bundles' => array(
                 0 => 'MyAppApBundle',
                 1 => 'FrontEndSuperBundle',
@@ -5106,14 +5328,14 @@ class appDevDebugProjectContainer extends Container
             'assetic.debug' => true,
             'assetic.use_controller' => true,
             'assetic.enable_profiler' => false,
-            'assetic.read_from' => '/Applications/MAMP/htdocs/symfony/symfony2/app/../web',
-            'assetic.write_to' => '/Applications/MAMP/htdocs/symfony/symfony2/app/../web',
+            'assetic.read_from' => 'C:/wamp/www/test/app/../web',
+            'assetic.write_to' => 'C:/wamp/www/test/app/../web',
             'assetic.variables' => array(
 
             ),
-            'assetic.java.bin' => '/usr/bin/java',
+            'assetic.java.bin' => 'C:\\Program Files (x86)\\Java\\jdk1.7.0_02\\bin\\java.EXE',
             'assetic.node.bin' => '/usr/bin/node',
-            'assetic.ruby.bin' => '/usr/bin/ruby',
+            'assetic.ruby.bin' => 'C:\\Ruby200\\bin\\ruby.EXE',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
             'assetic.twig_extension.functions' => array(
@@ -5180,7 +5402,7 @@ class appDevDebugProjectContainer extends Container
             'doctrine.orm.naming_strategy.default.class' => 'Doctrine\\ORM\\Mapping\\DefaultNamingStrategy',
             'doctrine.orm.naming_strategy.underscore.class' => 'Doctrine\\ORM\\Mapping\\UnderscoreNamingStrategy',
             'doctrine.orm.auto_generate_proxy_classes' => true,
-            'doctrine.orm.proxy_dir' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/dev/doctrine/orm/Proxies',
+            'doctrine.orm.proxy_dir' => 'C:/wamp/www/test/app/cache/dev/doctrine/orm/Proxies',
             'doctrine.orm.proxy_namespace' => 'Proxies',
             'sensio_framework_extra.view.guesser.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\Templating\\TemplateGuesser',
             'sensio_framework_extra.controller.listener.class' => 'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\ControllerListener',
@@ -5244,84 +5466,92 @@ class appDevDebugProjectContainer extends Container
                 0 => 'Registration',
                 1 => 'Default',
             ),
+            'ivory_google_map.helper.api.class' => 'Ivory\\GoogleMap\\Helper\\ApiHelper',
             'ivory_google_map.coordinate.class' => 'Ivory\\GoogleMap\\Base\\Coordinate',
             'ivory_google_map.coordinate.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Base\\CoordinateBuilder',
-            'ivory_google_map.coordinate.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Base\\CoordinateHelper',
+            'ivory_google_map.coordinate.helper.class' => 'Ivory\\GoogleMap\\Helper\\Base\\CoordinateHelper',
             'ivory_google_map.bound.class' => 'Ivory\\GoogleMap\\Base\\Bound',
             'ivory_google_map.bound.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Base\\BoundBuilder',
-            'ivory_google_map.bound.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Base\\BoundHelper',
+            'ivory_google_map.bound.helper.class' => 'Ivory\\GoogleMap\\Helper\\Base\\BoundHelper',
             'ivory_google_map.point.class' => 'Ivory\\GoogleMap\\Base\\Point',
             'ivory_google_map.point.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Base\\PointBuilder',
-            'ivory_google_map.point.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Base\\PointHelper',
+            'ivory_google_map.point.helper.class' => 'Ivory\\GoogleMap\\Helper\\Base\\PointHelper',
             'ivory_google_map.size.class' => 'Ivory\\GoogleMap\\Base\\Size',
             'ivory_google_map.size.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Base\\SizeBuilder',
-            'ivory_google_map.size.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Base\\SizeHelper',
+            'ivory_google_map.size.helper.class' => 'Ivory\\GoogleMap\\Helper\\Base\\SizeHelper',
             'ivory_google_map.map_type_control.class' => 'Ivory\\GoogleMap\\Controls\\MapTypeControl',
             'ivory_google_map.map_type_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\MapTypeControlBuilder',
-            'ivory_google_map.map_type_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\MapTypeControlHelper',
+            'ivory_google_map.map_type_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\MapTypeControlHelper',
             'ivory_google_map.overview_map_control.class' => 'Ivory\\GoogleMap\\Controls\\OverviewMapControl',
             'ivory_google_map.overview_map_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\OverviewMapControlBuilder',
-            'ivory_google_map.overview_map_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\OverviewMapControlHelper',
+            'ivory_google_map.overview_map_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\OverviewMapControlHelper',
             'ivory_google_map.pan_control.class' => 'Ivory\\GoogleMap\\Controls\\PanControl',
             'ivory_google_map.pan_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\PanControlBuilder',
-            'ivory_google_map.pan_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\PanControlHelper',
+            'ivory_google_map.pan_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\PanControlHelper',
             'ivory_google_map.rotate_control.class' => 'Ivory\\GoogleMap\\Controls\\RotateControl',
             'ivory_google_map.rotate_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\RotateControlBuilder',
-            'ivory_google_map.rotate_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\RotateControlHelper',
+            'ivory_google_map.rotate_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\RotateControlHelper',
             'ivory_google_map.scale_control.class' => 'Ivory\\GoogleMap\\Controls\\ScaleControl',
             'ivory_google_map.scale_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\ScaleControlBuilder',
-            'ivory_google_map.scale_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\ScaleControlHelper',
+            'ivory_google_map.scale_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\ScaleControlHelper',
             'ivory_google_map.street_view_control.class' => 'Ivory\\GoogleMap\\Controls\\StreetViewControl',
             'ivory_google_map.street_view_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\StreetViewControlBuilder',
-            'ivory_google_map.street_view_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\StreetViewControlHelper',
+            'ivory_google_map.street_view_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\StreetViewControlHelper',
             'ivory_google_map.zoom_control.class' => 'Ivory\\GoogleMap\\Controls\\ZoomControl',
             'ivory_google_map.zoom_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\ZoomControlBuilder',
-            'ivory_google_map.zoom_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\ZoomControlHelper',
-            'ivory_google_map.control_position.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\ControlPositionHelper',
-            'ivory_google_map.map_type_control_style.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\MapTypeControlStyleHelper',
-            'ivory_google_map.scale_control_style.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\ScaleControlStyleHelper',
-            'ivory_google_map.zoom_control_style.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\ZoomControlStyleHelper',
+            'ivory_google_map.zoom_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\ZoomControlHelper',
+            'ivory_google_map.control_position.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\ControlPositionHelper',
+            'ivory_google_map.map_type_control_style.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\MapTypeControlStyleHelper',
+            'ivory_google_map.scale_control_style.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\ScaleControlStyleHelper',
+            'ivory_google_map.zoom_control_style.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\ZoomControlStyleHelper',
             'ivory_google_map.event_manager.class' => 'Ivory\\GoogleMap\\Events\\EventManager',
             'ivory_google_map.event_manager.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Events\\EventManagerBuilder',
-            'ivory_google_map.event_manager.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Events\\EventManagerHelper',
+            'ivory_google_map.event_manager.helper.class' => 'Ivory\\GoogleMap\\Helper\\Events\\EventManagerHelper',
             'ivory_google_map.event.class' => 'Ivory\\GoogleMap\\Events\\Event',
             'ivory_google_map.event.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Events\\EventBuilder',
-            'ivory_google_map.event.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Events\\EventHelper',
             'ivory_google_map.kml_layer.class' => 'Ivory\\GoogleMap\\Layers\\KMLLayer',
             'ivory_google_map.kml_layer.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Layers\\KMLLayerBuilder',
-            'ivory_google_map.kml_layer.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Layers\\KMLLayerHelper',
-            'ivory_google_map.animation.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\AnimationHelper',
+            'ivory_google_map.kml_layer.helper.class' => 'Ivory\\GoogleMap\\Helper\\Layers\\KMLLayerHelper',
+            'ivory_google_map.animation.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\AnimationHelper',
             'ivory_google_map.circle.class' => 'Ivory\\GoogleMap\\Overlays\\Circle',
             'ivory_google_map.circle.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\CircleBuilder',
-            'ivory_google_map.circle.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\CircleHelper',
+            'ivory_google_map.circle.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\CircleHelper',
             'ivory_google_map.encoded_polyline.class' => 'Ivory\\GoogleMap\\Overlays\\EncodedPolyline',
             'ivory_google_map.encoded_polyline.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\EncodedPolylineBuilder',
-            'ivory_google_map.encoded_polyline.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\EncodedPolylineHelper',
-            'ivory_google_map.encoding.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Geometry\\EncodingHelper',
+            'ivory_google_map.encoded_polyline.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\EncodedPolylineHelper',
+            'ivory_google_map.encoding.helper.class' => 'Ivory\\GoogleMap\\Helper\\Geometry\\EncodingHelper',
             'ivory_google_map.ground_overlay.class' => 'Ivory\\GoogleMap\\Overlays\\GroundOverlay',
             'ivory_google_map.ground_overlay.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\GroundOverlayBuilder',
-            'ivory_google_map.ground_overlay.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\GroundOverlayHelper',
+            'ivory_google_map.ground_overlay.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\GroundOverlayHelper',
             'ivory_google_map.info_window.class' => 'Ivory\\GoogleMap\\Overlays\\InfoWindow',
             'ivory_google_map.info_window.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\InfoWindowBuilder',
-            'ivory_google_map.info_window.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\InfoWindowHelper',
+            'ivory_google_map.info_window.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\InfoWindowHelper',
+            'ivory_google_map.marker_cluster.class' => 'Ivory\\GoogleMap\\Overlays\\MarkerCluster',
+            'ivory_google_map.marker_cluster.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\MarkerClusterBuilder',
+            'ivory_google_map.marker_cluster.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerCluster\\MarkerClusterHelper',
+            'ivory_google_map.marker_cluster.helper.abstract.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerCluster\\AbstractMarkerClusterHelper',
+            'ivory_google_map.marker_cluster.helper.default.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerCluster\\DefaultMarkerClusterHelper',
+            'ivory_google_map.marker_cluster.helper.js.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerCluster\\JsMarkerClusterHelper',
             'ivory_google_map.marker.class' => 'Ivory\\GoogleMap\\Overlays\\Marker',
             'ivory_google_map.marker.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\MarkerBuilder',
-            'ivory_google_map.marker.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\MarkerHelper',
+            'ivory_google_map.marker.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerHelper',
             'ivory_google_map.marker_image.class' => 'Ivory\\GoogleMap\\Overlays\\MarkerImage',
             'ivory_google_map.marker_image.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\MarkerImageBuilder',
-            'ivory_google_map.marker_image.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\MarkerImageHelper',
+            'ivory_google_map.marker_image.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerImageHelper',
             'ivory_google_map.marker_shape.class' => 'Ivory\\GoogleMap\\Overlays\\MarkerShape',
             'ivory_google_map.marker_shape.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\MarkerShapeBuilder',
-            'ivory_google_map.marker_shape.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\MarkerShapeHelper',
+            'ivory_google_map.marker_shape.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerShapeHelper',
             'ivory_google_map.polygon.class' => 'Ivory\\GoogleMap\\Overlays\\Polygon',
             'ivory_google_map.polygon.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\PolygonBuilder',
-            'ivory_google_map.polygon.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\PolygonHelper',
+            'ivory_google_map.polygon.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\PolygonHelper',
             'ivory_google_map.polyline.class' => 'Ivory\\GoogleMap\\Overlays\\Polyline',
             'ivory_google_map.polyline.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\PolylineBuilder',
-            'ivory_google_map.polyline.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\PolylineHelper',
+            'ivory_google_map.polyline.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\PolylineHelper',
             'ivory_google_map.rectangle.class' => 'Ivory\\GoogleMap\\Overlays\\Rectangle',
             'ivory_google_map.rectangle.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\RectangleBuilder',
-            'ivory_google_map.rectangle.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\RectangleHelper',
+            'ivory_google_map.rectangle.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\RectangleHelper',
+            'ivory_google_map.places_autocomplete.form.type.class' => 'Ivory\\GoogleMapBundle\\Form\\Type\\PlacesAutocompleteType',
+            'ivory_google_map.places_autocomplete.helper.class' => 'Ivory\\GoogleMap\\Helper\\Places\\AutocompleteHelper',
             'ivory_google_map.geocoder.class' => 'Ivory\\GoogleMap\\Services\\Geocoding\\Geocoder',
             'ivory_google_map.geocoder.provider.class' => 'Ivory\\GoogleMap\\Services\\Geocoding\\GeocoderProvider',
             'ivory_google_map.geocoder.adapter.class' => 'Geocoder\\HttpAdapter\\CurlHttpAdapter',
@@ -5330,12 +5560,18 @@ class appDevDebugProjectContainer extends Container
             'ivory_google_map.directions.class' => 'Ivory\\GoogleMap\\Services\\Directions\\Directions',
             'ivory_google_map.directions_request.class' => 'Ivory\\GoogleMap\\Services\\Directions\\DirectionsRequest',
             'ivory_google_map.directions_request.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Services\\Directions\\DirectionsRequestBuilder',
+            'ivory_google_map.distance_matrix.class' => 'Ivory\\GoogleMap\\Services\\DistanceMatrix\\DistanceMatrix',
+            'ivory_google_map.distance_matrix_request.class' => 'Ivory\\GoogleMap\\Services\\DistanceMatrix\\DistanceMatrixRequest',
+            'ivory_google_map.distance_matrix_request.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Services\\DistanceMatrix\\DistanceMatrixRequestBuilder',
             'ivory_google_map.map.class' => 'Ivory\\GoogleMap\\Map',
             'ivory_google_map.map.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\MapBuilder',
-            'ivory_google_map.map.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\MapHelper',
-            'ivory_google_map.map_type_id.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\MapTypeIdHelper',
+            'ivory_google_map.map.helper.class' => 'Ivory\\GoogleMap\\Helper\\MapHelper',
+            'ivory_google_map.map_type_id.helper.class' => 'Ivory\\GoogleMap\\Helper\\MapTypeIdHelper',
             'ivory_google_map.twig.extension.class' => 'Ivory\\GoogleMapBundle\\Twig\\GoogleMapExtension',
+            'ivory_google_map.template.helper.class' => 'Ivory\\GoogleMapBundle\\Helper\\TemplateHelper',
             'knp_paginator.class' => 'Knp\\Component\\Pager\\Paginator',
+            'knp_paginator.templating.helper.pagination.class' => 'Knp\\Bundle\\PaginatorBundle\\Templating\\PaginationHelper',
+            'knp_paginator.helper.processor.class' => 'Knp\\Bundle\\PaginatorBundle\\Helper\\Processor',
             'knp_paginator.template.pagination' => 'KnpPaginatorBundle:Pagination:sliding.html.twig',
             'knp_paginator.template.filtration' => 'KnpPaginatorBundle:Pagination:filtration.html.twig',
             'knp_paginator.template.sortable' => 'KnpPaginatorBundle:Pagination:sortable_link.html.twig',
@@ -5348,7 +5584,7 @@ class appDevDebugProjectContainer extends Container
             'web_profiler.debug_toolbar.intercept_redirects' => false,
             'web_profiler.debug_toolbar.mode' => 2,
             'web_profiler.debug_toolbar.position' => 'bottom',
-            'sensio.distribution.webconfigurator.class' => 'Sensio\\Bundle\\DistributionBundle\\Configurator\\Configurator',
+            'sensio_distribution.webconfigurator.class' => 'Sensio\\Bundle\\DistributionBundle\\Configurator\\Configurator',
             'data_collector.templates' => array(
                 'data_collector.config' => array(
                     0 => 'config',
@@ -5388,7 +5624,7 @@ class appDevDebugProjectContainer extends Container
                 ),
                 'swiftmailer.data_collector' => array(
                     0 => 'swiftmailer',
-                    1 => 'SwiftmailerBundle:Collector:swiftmailer',
+                    1 => '@Swiftmailer/Collector/swiftmailer.html.twig',
                 ),
                 'data_collector.doctrine' => array(
                     0 => 'db',

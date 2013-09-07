@@ -3,8 +3,8 @@
 ## Build your map
 
 ``` php
-use Ivory\GoogleMap\Map,
-    Ivory\GoogleMap\MapTypeId;
+use Ivory\GoogleMap\Map;
+use Ivory\GoogleMap\MapTypeId;
 
 $map = new Map();
 
@@ -110,8 +110,8 @@ For configurating the map type, the better way is to follow the oriented object 
 want to use this class, you can directly use the constant value.
 
 ``` php
-use Ivory\GoogleMap\Map,
-    Ivory\GoogleMap\MapTypeId;
+use Ivory\GoogleMap\Map;
+use Ivory\GoogleMap\MapTypeId;
 
 $map = new Map();
 
@@ -167,6 +167,7 @@ Overlays reflect objects that you "add" to the map to designate points, lines, a
  6. [Rectangle](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/rectangle.md)
  7. [Circle](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/circle.md)
  8. [Ground overlay](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/ground_overlay.md)
+ 9. [Marker cluster](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/marker_cluster.md)
 
 ## Configure map control options
 

@@ -19,7 +19,6 @@ class Titles
     /**
      * @ORM\Column(type="string",length=255)
      * @Assert\NotBlank()
-     * @Assert\MinLength(2)
      */    
     private $type;
 

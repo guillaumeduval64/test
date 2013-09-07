@@ -27,8 +27,33 @@ class EstimationController extends ContainerAware
     { 
       $em = $this->container->get('doctrine')->getEntityManager();
       $client = $em->find('MyAppApBundle:Client', $id);
-      $formClient = $this->container->get('form.factory')->create(new ClientForm(), $client);
-      
+      $form = $this->container->get('form.factory')->create(new ClientForm(), $client);
+         $request = $this->container->get('request');
+
+            if ($request->getMethod() == 'POST') 
+            {
+                        $form->bind($request);
+
+                if ($form->isValid()) 
+                {
+                            $this->container->get('session')->getFlashBag()->add('notice', 'Your changes were saved!');
+
+                        $date = new DateTable();
+                        $client->setDateTable($date);
+                        $date ->setDate(new \DateTime());
+                        $em->persist($client);
+                        $em->flush();
+                        if (isset($id)) 
+                            {
+                            $message='Client modifié avec succès !';
+                            }
+                        else 
+                            {
+                            $message='Client ajouté avec succès !';
+                            }
+                }
+              }
+
              $query = $em->createQuery('SELECT a.city FROM MyAppApBundle:Client c JOIN c.city a 
      WHERE c.id = :id')->setParameter('id', $id);
         $city = $query->getResult();
@@ -113,7 +138,7 @@ $clientservicestest->execute();
     'client' => $client,
     'notes' => $notes,
     'message' => $message,
-    'formClient' => $formClient->createView(),
+    'form' => $form->createView(),
     'clientServices' => $clientServices,
     'formNote' => $formNote->createView(),
     'response' => $response,

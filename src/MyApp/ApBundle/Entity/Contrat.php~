@@ -30,6 +30,7 @@ class Contrat
     
      /**
      * @ORM\ManyToMany(targetEntity="ClientService", cascade={"persist","remove"})
+     * @Assert\NotBlank()
      */    
     public $clientService;
 

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+### 1.1.0 (2013-08-22)
+
+ * bdc9014 - [Helper] Add json builder utility class
+ * ca6060c - [Doc] Add a section about geocoder provider registration
+ * 7c485c3 - [Overlays] Add marker cluster support
+ * 2578a5d - [Helper] Fix map language with google loader
+
 ### 1.0.0 (2013-06-07)
 
  * 0845763 - Add Distance Matrix support

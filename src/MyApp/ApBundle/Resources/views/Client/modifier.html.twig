@@ -15,6 +15,9 @@
             <td>{{ form_errors(form) }}</td>
         </tr>
         <tr>
+                       <td>
+            {{ form_label(form.flag) }}{{ form_widget(form.flag) }}
+            </td>
             <td>{{ form_widget(form.titles) }}</td>
             <td>{{ form_widget(form.etat, { 'attr': {'class':'input-medium'} }) }}</td>
              <td>{{ form_widget(form.ancien, { 'attr': {'class':'input-small'} }) }}</td>
@@ -33,8 +36,6 @@
             <td>{{ form_widget(form.prenom, { 'attr': {'placeholder': 'prenom', 'class':'input-small'} }) }}</td>
         </tr>
         <tr>
-            <td>{{ form_widget(form.phoneNumber, { 'attr': {'placeholder': 'Tél','autocomplete':'off', 'class':'input-small phone'} }) }}</td>
-            <td>{{ form_widget(form.phoneNumberCell, { 'attr': {'placeholder': 'Cell','autocomplete':'off', 'class':'input-small phone'} }) }}</td>
             <td>{{ form_widget(form.email, { 'attr': {'placeholder': 'Email', 'class':'input-medium'} }) }}</td>
         </tr>
     </table>
@@ -57,8 +58,30 @@
             <td><input type="image" src="{{ asset('bundles/myappap/images/add.png') }}" title="Ajouter"/></td>
             </tr>
    </table>
+
+    <h3>Phones:</h3>
+    <ul class="phones" data-prototype="{{ form_widget(form.phones.vars.prototype)|e }}">
+        {# iterate over each existing tag and render its only field: name #}
+        {% for phone in form.phones %}
+
+            <li>{{ form_row(phone.phoneType) }}
+            {{ form_row(phone.phone) }}</li>
+            ----------------------------------------------------------
+        {% endfor %}
+    </ul>
+
    
     {{ form_rest(form) }}
         <br>
 </form>
+
+
+{% javascripts
+
+    '@MyAppApBundle/Resources/public/js/phone.js' %}
+    <script src="{{ asset_url }}"></script>
+      
+{% endjavascripts %}
+
+
 {% endblock %}

@@ -375,10 +375,28 @@ class Client extends \MyApp\ApBundle\Entity\Client implements \Doctrine\ORM\Prox
         return parent::removeTitle($titles);
     }
 
+    public function addPhone(\MyApp\ApBundle\Entity\Phone $phones)
+    {
+        $this->__load();
+        return parent::addPhone($phones);
+    }
+
+    public function removePhone(\MyApp\ApBundle\Entity\Phone $phones)
+    {
+        $this->__load();
+        return parent::removePhone($phones);
+    }
+
+    public function getPhones()
+    {
+        $this->__load();
+        return parent::getPhones();
+    }
+
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'user', 'ancien', 'nom', 'prenom', 'number', 'street', 'pc', 'lat', 'lng', 'phoneNumber', 'phoneNumberCell', 'etat', 'flag', 'email', 'date', 'heure', 'created', 'updated', 'city', 'service', 'note', 'dateTable', 'contrat', 'titles');
+        return array('__isInitialized__', 'id', 'user', 'ancien', 'nom', 'prenom', 'number', 'street', 'pc', 'lat', 'lng', 'phoneNumber', 'phoneNumberCell', 'etat', 'flag', 'email', 'date', 'heure', 'created', 'updated', 'city', 'phones', 'service', 'note', 'dateTable', 'contrat', 'titles');
     }
 
     public function __clone()

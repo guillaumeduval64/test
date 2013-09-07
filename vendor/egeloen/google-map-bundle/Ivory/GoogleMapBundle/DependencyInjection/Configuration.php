@@ -11,9 +11,9 @@
 
 namespace Ivory\GoogleMapBundle\DependencyInjection;
 
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition,
-    Symfony\Component\Config\Definition\Builder\TreeBuilder,
-    Symfony\Component\Config\Definition\ConfigurationInterface;
+use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\Config\Definition\Builder\TreeBuilder;
+use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
  * Ivory google map configuration.
@@ -29,6 +29,9 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('ivory_google_map');
+
+        // Api section
+        $this->addApiSection($rootNode);
 
         // Map sections
         $this->addMapSection($rootNode);
@@ -55,6 +58,7 @@ class Configuration implements ConfigurationInterface
 
         // Overlay sections
         $this->addAnimationSection($rootNode);
+        $this->addMarkerClusterSection($rootNode);
         $this->addMarkerSection($rootNode);
         $this->addMarkerImageSection($rootNode);
         $this->addMarkerShapeSection($rootNode);
@@ -81,8 +85,30 @@ class Configuration implements ConfigurationInterface
         $this->addGeocoderRequestSection($rootNode);
         $this->addDirectionsSection($rootNode);
         $this->addDirectionsRequestSection($rootNode);
+        $this->addDistanceMatrixSection($rootNode);
+        $this->addDistanceMatrixRequestSection($rootNode);
 
         return $treeBuilder;
+    }
+
+    /**
+     * Adds the API section.
+     *
+     * @param \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition $node The root node.
+     */
+    protected function addApiSection(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('api')->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('helper_class')->end()
+                        ->arrayNode('libraries')
+                            ->prototype('scalar')->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
     }
 
     /**
@@ -175,6 +201,7 @@ class Configuration implements ConfigurationInterface
                     ->children()
                         ->scalarNode('class')->end()
                         ->scalarNode('helper_class')->end()
+                        ->scalarNode('prefix_javascript_variable')->end()
                         ->scalarNode('latitude')->end()
                         ->scalarNode('longitude')->end()
                         ->scalarNode('no_wrap')->end()
@@ -229,6 +256,7 @@ class Configuration implements ConfigurationInterface
                     ->children()
                         ->scalarNode('class')->end()
                         ->scalarNode('helper_class')->end()
+                        ->scalarNode('prefix_javascript_variable')->end()
                         ->scalarNode('x')->end()
                         ->scalarNode('y')->end()
                     ->end()
@@ -249,6 +277,7 @@ class Configuration implements ConfigurationInterface
                     ->children()
                         ->scalarNode('class')->end()
                         ->scalarNode('helper_class')->end()
+                        ->scalarNode('prefix_javascript_variable')->end()
                         ->scalarNode('width')->end()
                         ->scalarNode('height')->end()
                         ->scalarNode('width_unit')->end()
@@ -483,6 +512,30 @@ class Configuration implements ConfigurationInterface
     }
 
     /**
+     * Adds the marker cluster section.
+     *
+     * @param \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition $node The root node.
+     */
+    protected function addMarkerClusterSection(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('marker_cluster')->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('class')->end()
+                        ->scalarNode('helper_class')->end()
+                        ->scalarNode('prefix_javascript_variable')->end()
+                        ->scalarNode('type')->end()
+                        ->arrayNode('options')
+                            ->useAttributeAsKey('options')
+                            ->prototype('scalar')->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end();
+    }
+
+    /**
      * Adds the marker section.
      *
      * @param \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition $node The root node.
@@ -505,7 +558,7 @@ class Configuration implements ConfigurationInterface
                         ->end()
                         ->scalarNode('animation')->end()
                         ->arrayNode('options')
-                            ->useAttributeAsKey('map_options')
+                            ->useAttributeAsKey('options')
                             ->prototype('scalar')->end()
                         ->end()
                     ->end()
@@ -864,7 +917,6 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('event')->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('class')->end()
-                        ->scalarNode('helper_class')->end()
                         ->scalarNode('prefix_javascript_variable')->end()
                     ->end()
                 ->end()
@@ -996,6 +1048,50 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('avoid_tolls')->end()
                         ->scalarNode('optimize_waypoints')->end()
                         ->scalarNode('provide_route_alternatives')->end()
+                        ->scalarNode('region')->end()
+                        ->scalarNode('language')->end()
+                        ->scalarNode('travel_mode')->end()
+                        ->scalarNode('unit_system')->end()
+                        ->booleanNode('sensor')->end()
+                    ->end()
+                ->end()
+            ->end();
+    }
+
+    /**
+     * Adds the distance matrix section.
+     *
+     * @param \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition $node The root node.
+     */
+    protected function addDistanceMatrixSection(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('distance_matrix')->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('class')->end()
+                        ->scalarNode('url')->end()
+                        ->booleanNode('https')->end()
+                        ->scalarNode('format')->end()
+                    ->end()
+                ->end()
+            ->end();
+    }
+
+    /**
+     * Adds the distance matrix request section.
+     *
+     * @param \Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition $node The root node.
+     */
+    protected function addDistanceMatrixRequestSection(ArrayNodeDefinition $node)
+    {
+        $node
+            ->children()
+                ->arrayNode('distance_matrix_request')->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('class')->end()
+                        ->scalarNode('avoid_highways')->end()
+                        ->scalarNode('avoid_tolls')->end()
                         ->scalarNode('region')->end()
                         ->scalarNode('language')->end()
                         ->scalarNode('travel_mode')->end()

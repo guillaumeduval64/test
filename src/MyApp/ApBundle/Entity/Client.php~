@@ -69,6 +69,11 @@ class Client
     private $lng;
    
      /**
+     * @ORM\ManyToMany(targetEntity="Phone", cascade={"persist"})
+     */    
+    public $phones;
+   
+     /**
      * @ORM\Column(type="string",length=255, nullable=true)
      */    
     private $phoneNumber;
@@ -84,7 +89,7 @@ class Client
     private $etat;
     
      /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", nullable=true)
      */ 
     private $flag;
     

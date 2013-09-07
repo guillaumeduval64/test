@@ -3,9 +3,9 @@
 ## Build a directions request
 
 ``` php
-use Ivory\GoogleMap\Services\Directions\DirectionsRequest,
-    Ivory\GoogleMap\Services\Directions\TravelMode,
-    Ivory\GoogleMap\Services\Directions\UnitSystem;
+use Ivory\GoogleMap\Services\Directions\DirectionsRequest;
+use Ivory\GoogleMap\Services\Base\TravelMode;
+use Ivory\GoogleMap\Services\Base\UnitSystem;
 
 $request = new DirectionsRequest();
 
@@ -29,6 +29,7 @@ $request->setAvoidTolls(true);
 $request->setProvideRouteAlternatives(true);
 
 $request->setRegion('us');
+$request->setLanguage('en');
 $request->setTravelMode(TravelMode::DRIVING);
 $request->setUnitSystem(UnitSystem::METRIC);
 $request->setSensor(false);

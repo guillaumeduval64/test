@@ -69,6 +69,11 @@ class Client
     private $lng;
    
      /**
+     * @ORM\ManyToMany(targetEntity="Phone", cascade={"persist"})
+     */    
+    public $phones;
+   
+     /**
      * @ORM\Column(type="string",length=255, nullable=true)
      */    
     private $phoneNumber;
@@ -700,5 +705,38 @@ class Client
     public function removeTitle(\MyApp\ApBundle\Entity\Titles $titles)
     {
         $this->titles->removeElement($titles);
+    }
+
+    /**
+     * Add phones
+     *
+     * @param \MyApp\ApBundle\Entity\Phone $phones
+     * @return Client
+     */
+    public function addPhone(\MyApp\ApBundle\Entity\Phone $phones)
+    {
+        $this->phones[] = $phones;
+    
+        return $this;
+    }
+
+    /**
+     * Remove phones
+     *
+     * @param \MyApp\ApBundle\Entity\Phone $phones
+     */
+    public function removePhone(\MyApp\ApBundle\Entity\Phone $phones)
+    {
+        $this->phones->removeElement($phones);
+    }
+
+    /**
+     * Get phones
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPhones()
+    {
+        return $this->phones;
     }
 }

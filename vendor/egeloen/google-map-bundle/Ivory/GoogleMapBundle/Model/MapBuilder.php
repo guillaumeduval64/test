@@ -11,8 +11,8 @@
 
 namespace Ivory\GoogleMapBundle\Model;
 
-use Ivory\GoogleMapBundle\Model\Base\CoordinateBuilder,
-    Ivory\GoogleMapBundle\Model\Base\BoundBuilder;
+use Ivory\GoogleMapBundle\Model\Base\CoordinateBuilder;
+use Ivory\GoogleMapBundle\Model\Base\BoundBuilder;
 
 /**
  * Map builder.
@@ -38,6 +38,9 @@ class MapBuilder extends AbstractBuilder
 
     /** @var boolean */
     protected $autoZoom;
+
+    /** @var array */
+    protected $libraries;
 
     /** @var string */
     protected $language;
@@ -215,6 +218,30 @@ class MapBuilder extends AbstractBuilder
     }
 
     /**
+     * Gets the libraries.
+     *
+     * @return array The libraries.
+     */
+    public function getLibraries()
+    {
+        return $this->libraries;
+    }
+
+    /**
+     * Sets the libraries.
+     *
+     * @param array $libraries The libraries.
+     *
+     * @return \Ivory\GoogleMapBundle\Model\MapBuilder The builder.
+     */
+    public function setLibraries(array $libraries)
+    {
+        $this->libraries = $libraries;
+
+        return $this;
+    }
+
+    /**
      * Gets the language.
      *
      * @return string The language.
@@ -293,8 +320,7 @@ class MapBuilder extends AbstractBuilder
         $northEastLongitude,
         $southWestNoWrap = true,
         $northEastNoWrap = true
-    )
-    {
+    ) {
         $this->bound = array(
             $southWestLatitude,
             $southWestLongitude,
@@ -364,6 +390,7 @@ class MapBuilder extends AbstractBuilder
         $this->htmlContainerId = null;
         $this->async = null;
         $this->autoZoom = null;
+        $this->libraries = array();
         $this->language = null;
         $this->center = array();
         $this->bound = array();
@@ -396,6 +423,10 @@ class MapBuilder extends AbstractBuilder
 
         if ($this->autoZoom !== null) {
             $map->setAutoZoom($this->autoZoom);
+        }
+
+        if (!empty($this->libraries)) {
+            $map->setLibraries($this->libraries);
         }
 
         if ($this->language !== null) {

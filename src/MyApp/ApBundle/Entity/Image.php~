@@ -6,7 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
- * @ORM\HasLifecycleCallbacks
+ * @ORM\HasLifecycleCallbacks ()
  */
 class Image
 {
@@ -171,6 +171,11 @@ public function setFile( $file) {
   {
     // On retourne le chemin relatif vers l'image pour notre code PHP
     return __DIR__.'/../../../../web/'.$this->getUploadDir();
+  }
+  
+    public function getWebPath()
+  {
+    return $this->getUploadDir().'/'.$this->getId().'.'.$this->getUrl();
   }
     
 }

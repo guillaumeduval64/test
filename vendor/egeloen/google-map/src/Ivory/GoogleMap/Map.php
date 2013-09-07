@@ -11,27 +11,28 @@
 
 namespace Ivory\GoogleMap;
 
-use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset,
-    Ivory\GoogleMap\Base\Coordinate,
-    Ivory\GoogleMap\Base\Bound,
-    Ivory\GoogleMap\Controls\MapTypeControl,
-    Ivory\GoogleMap\Controls\OverviewMapControl,
-    Ivory\GoogleMap\Controls\PanControl,
-    Ivory\GoogleMap\Controls\RotateControl,
-    Ivory\GoogleMap\Controls\ScaleControl,
-    Ivory\GoogleMap\Controls\StreetViewControl,
-    Ivory\GoogleMap\Controls\ZoomControl,
-    Ivory\GoogleMap\Events\EventManager,
-    Ivory\GoogleMap\Exception\MapException,
-    Ivory\GoogleMap\Layers\KMLLayer,
-    Ivory\GoogleMap\Overlays\Circle,
-    Ivory\GoogleMap\Overlays\EncodedPolyline,
-    Ivory\GoogleMap\Overlays\GroundOverlay,
-    Ivory\GoogleMap\Overlays\InfoWindow,
-    Ivory\GoogleMap\Overlays\Marker,
-    Ivory\GoogleMap\Overlays\Polygon,
-    Ivory\GoogleMap\Overlays\Polyline,
-    Ivory\GoogleMap\Overlays\Rectangle;
+use Ivory\GoogleMap\Assets\AbstractJavascriptVariableAsset;
+use Ivory\GoogleMap\Base\Coordinate;
+use Ivory\GoogleMap\Base\Bound;
+use Ivory\GoogleMap\Controls\MapTypeControl;
+use Ivory\GoogleMap\Controls\OverviewMapControl;
+use Ivory\GoogleMap\Controls\PanControl;
+use Ivory\GoogleMap\Controls\RotateControl;
+use Ivory\GoogleMap\Controls\ScaleControl;
+use Ivory\GoogleMap\Controls\StreetViewControl;
+use Ivory\GoogleMap\Controls\ZoomControl;
+use Ivory\GoogleMap\Events\EventManager;
+use Ivory\GoogleMap\Exception\MapException;
+use Ivory\GoogleMap\Layers\KMLLayer;
+use Ivory\GoogleMap\Overlays\Circle;
+use Ivory\GoogleMap\Overlays\EncodedPolyline;
+use Ivory\GoogleMap\Overlays\GroundOverlay;
+use Ivory\GoogleMap\Overlays\InfoWindow;
+use Ivory\GoogleMap\Overlays\Marker;
+use Ivory\GoogleMap\Overlays\MarkerCluster;
+use Ivory\GoogleMap\Overlays\Polygon;
+use Ivory\GoogleMap\Overlays\Polyline;
+use Ivory\GoogleMap\Overlays\Rectangle;
 
 /**
  * Map wich describes a google map.
@@ -86,8 +87,8 @@ class Map extends AbstractJavascriptVariableAsset
     /** @var \Ivory\GoogleMap\Events\EventManager */
     protected $eventManager;
 
-    /** @var array */
-    protected $markers;
+    /** @var \Ivory\GoogleMap\Overlays\MarkerCluster */
+    protected $markerCluster;
 
     /** @var array */
     protected $infoWindows;
@@ -113,6 +114,9 @@ class Map extends AbstractJavascriptVariableAsset
     /** @var array */
     protected $kmlLayers;
 
+    /** @var array */
+    protected $libraries;
+
     /** @var string */
     protected $language;
 
@@ -126,7 +130,6 @@ class Map extends AbstractJavascriptVariableAsset
         $this->htmlContainerId = 'map_canvas';
         $this->async = false;
         $this->autoZoom = false;
-        $this->language = 'en';
 
         $this->center = new Coordinate();
         $this->bound = new Bound();
@@ -142,7 +145,8 @@ class Map extends AbstractJavascriptVariableAsset
             'height' => '300px',
         );
 
-        $this->markers = array();
+        $this->markerCluster = new MarkerCluster();
+
         $this->infoWindows = array();
         $this->polylines = array();
         $this->encodedPolylines = array();
@@ -151,6 +155,9 @@ class Map extends AbstractJavascriptVariableAsset
         $this->circles = array();
         $this->groundOverlays = array();
         $this->kmlLayers = array();
+
+        $this->libraries = array();
+        $this->language = 'en';
     }
 
     /**
@@ -234,7 +241,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map center.
      *
-     * @return Ivroy\GoogleMap\Base\Coordinate The map center.
+     * @return \Ivory\GoogleMap\Base\Coordinate The map center.
      */
     public function getCenter()
     {
@@ -256,11 +263,7 @@ class Map extends AbstractJavascriptVariableAsset
 
         if (isset($args[0]) && ($args[0] instanceof Coordinate)) {
             $this->center = $args[0];
-        } else if (
-            (isset($args[0]) && is_numeric($args[0]))
-            &&
-            (isset($args[1]) && is_numeric($args[1]))
-        ) {
+        } elseif ((isset($args[0]) && is_numeric($args[0])) && (isset($args[1]) && is_numeric($args[1]))) {
             $this->center->setLatitude($args[0]);
             $this->center->setLongitude($args[1]);
 
@@ -275,7 +278,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map bound.
      *
-     * @return Ivory\GoogleMap\Base\Bound The map bound.
+     * @return \Ivory\GoogleMap\Base\Bound The map bound.
      */
     public function getBound()
     {
@@ -305,21 +308,15 @@ class Map extends AbstractJavascriptVariableAsset
 
         if (isset($args[0]) && ($args[0] instanceof Bound)) {
             $this->bound = $args[0];
-        } else if (
-            (isset($args[0]) && ($args[0] instanceof Coordinate))
-            &&
-            (isset($args[1]) && ($args[1] instanceof Coordinate))
+        } elseif ((isset($args[0]) && ($args[0] instanceof Coordinate))
+            && (isset($args[1]) && ($args[1] instanceof Coordinate))
         ) {
             $this->bound->setSouthWest($args[0]);
             $this->bound->setNorthEast($args[1]);
-        } else if (
-            (isset($args[0]) && is_numeric($args[0]))
-            &&
-            (isset($args[1]) && is_numeric($args[1]))
-            &&
-            (isset($args[2]) && is_numeric($args[2]))
-            &&
-            (isset($args[3]) && is_numeric($args[3]))
+        } elseif ((isset($args[0]) && is_numeric($args[0]))
+            && (isset($args[1]) && is_numeric($args[1]))
+            && (isset($args[2]) && is_numeric($args[2]))
+            && (isset($args[3]) && is_numeric($args[3]))
         ) {
             $this->bound->setSouthWest(new Coordinate($args[0], $args[1]));
             $this->bound->setNorthEast(new Coordinate($args[2], $args[3]));
@@ -331,7 +328,7 @@ class Map extends AbstractJavascriptVariableAsset
             if (isset($args[5]) && is_bool($args[5])) {
                 $this->bound->getNorthEast()->setNoWrap($args[5]);
             }
-        } else if (!isset($args[0])) {
+        } elseif (!isset($args[0])) {
             $this->bound->setSouthWest(null);
             $this->bound->setNorthEast(null);
         } else {
@@ -534,7 +531,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map type control.
      *
-     * @return Ivory\GoogleMap\Controls\MapTypeControl The map type control.
+     * @return \Ivory\GoogleMap\Controls\MapTypeControl The map type control.
      */
     public function getMapTypeControl()
     {
@@ -557,12 +554,9 @@ class Map extends AbstractJavascriptVariableAsset
         if (isset($args[0]) && ($args[0] instanceof MapTypeControl)) {
             $this->mapTypeControl = $args[0];
             $this->mapOptions['mapTypeControl'] = true;
-        } else if (
-            (isset($args[0]) && is_array($args[0]))
-            &&
-            (isset($args[1]) && is_string($args[1]))
-            &&
-            (isset($args[2]) && is_string($args[2]))
+        } elseif ((isset($args[0]) && is_array($args[0]))
+            && (isset($args[1]) && is_string($args[1]))
+            && (isset($args[2]) && is_string($args[2]))
         ) {
             if ($this->mapTypeControl === null) {
                 $this->mapTypeControl = new MapTypeControl();
@@ -573,7 +567,7 @@ class Map extends AbstractJavascriptVariableAsset
             $this->mapTypeControl->setMapTypeControlStyle($args[2]);
 
             $this->mapOptions['mapTypeControl'] = true;
-        } else if (!isset($args[0])) {
+        } elseif (!isset($args[0])) {
             $this->mapTypeControl = null;
 
             if (isset($this->mapOptions['mapTypeControl'])) {
@@ -597,7 +591,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the overview map control.
      *
-     * @return Ivory\GoogleMap\Controls\OverviewMapControl The overview map control.
+     * @return \Ivory\GoogleMap\Controls\OverviewMapControl The overview map control.
      */
     public function getOverviewMapControl()
     {
@@ -620,14 +614,14 @@ class Map extends AbstractJavascriptVariableAsset
         if (isset($args[0]) && ($args[0]) instanceof OverviewMapControl) {
             $this->overviewMapControl = $args[0];
             $this->mapOptions['overviewMapControl'] = true;
-        } else if (isset($args[0]) && is_bool($args[0])) {
+        } elseif (isset($args[0]) && is_bool($args[0])) {
             if ($this->overviewMapControl === null) {
                 $this->overviewMapControl = new OverviewMapControl();
             }
 
             $this->overviewMapControl->setOpened($args[0]);
             $this->mapOptions['overviewMapControl'] = true;
-        } else if (!isset($args[0])) {
+        } elseif (!isset($args[0])) {
             $this->overviewMapControl = null;
 
             if (isset($this->mapOptions['overviewMapControl'])) {
@@ -651,7 +645,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map pan control.
      *
-     * @return Ivory\GoogleMap\Controls\PanControl The map pan control.
+     * @return \Ivory\GoogleMap\Controls\PanControl The map pan control.
      */
     public function getPanControl()
     {
@@ -674,14 +668,14 @@ class Map extends AbstractJavascriptVariableAsset
         if (isset($args[0]) && ($args[0] instanceof PanControl)) {
             $this->panControl = $args[0];
             $this->mapOptions['panControl'] = true;
-        } else if (isset($args[0]) && is_string($args[0])) {
+        } elseif (isset($args[0]) && is_string($args[0])) {
             if ($this->panControl === null) {
                 $this->panControl = new PanControl();
             }
 
             $this->panControl->setControlPosition($args[0]);
             $this->mapOptions['panControl'] = true;
-        } else if (!isset($args[0])) {
+        } elseif (!isset($args[0])) {
             $this->panControl = null;
 
             if (isset($this->mapOptions['panControl'])) {
@@ -705,7 +699,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map rotate control.
      *
-     * @return Ivory\GoogleMap\Controls\RotateControl The map rotate control.
+     * @return \Ivory\GoogleMap\Controls\RotateControl The map rotate control.
      */
     public function getRotateControl()
     {
@@ -728,14 +722,14 @@ class Map extends AbstractJavascriptVariableAsset
         if (isset($args[0]) && ($args[0] instanceof RotateControl)) {
             $this->rotateControl = $args[0];
             $this->mapOptions['rotateControl'] = true;
-        } else if (isset($args[0]) && is_string($args[0])) {
+        } elseif (isset($args[0]) && is_string($args[0])) {
             if ($this->rotateControl === null) {
                 $this->rotateControl = new RotateControl();
             }
 
             $this->rotateControl->setControlPosition($args[0]);
             $this->mapOptions['rotateControl'] = true;
-        } else if (!isset($args[0])) {
+        } elseif (!isset($args[0])) {
             $this->rotateControl = null;
 
             if (isset($this->mapOptions['rotateControl'])) {
@@ -759,7 +753,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map scale control.
      *
-     * @return Ivory\GoogleMap\Controls\ScaleControl The map scale control.
+     * @return \Ivory\GoogleMap\Controls\ScaleControl The map scale control.
      */
     public function getScaleControl()
     {
@@ -782,11 +776,7 @@ class Map extends AbstractJavascriptVariableAsset
         if (isset($args[0]) && ($args[0] instanceof ScaleControl)) {
             $this->scaleControl = $args[0];
             $this->mapOptions['scaleControl'] = true;
-        } else if(
-            (isset($args[0]) && is_string($args[0]))
-            &&
-            (isset($args[1]) && is_string($args[1]))
-        ) {
+        } elseif ((isset($args[0]) && is_string($args[0])) && (isset($args[1]) && is_string($args[1]))) {
             if ($this->scaleControl === null) {
                 $this->scaleControl = new ScaleControl();
             }
@@ -795,7 +785,7 @@ class Map extends AbstractJavascriptVariableAsset
             $this->scaleControl->setScaleControlStyle($args[1]);
 
             $this->mapOptions['scaleControl'] = true;
-        } else if (!isset($args[0])) {
+        } elseif (!isset($args[0])) {
             $this->scaleControl = null;
 
             if (isset($this->mapOptions['scaleControl'])) {
@@ -819,7 +809,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map street view control.
      *
-     * @return Ivory\GoogleMap\Controls\StreetViewControl The map street view control.
+     * @return \Ivory\GoogleMap\Controls\StreetViewControl The map street view control.
      */
     public function getStreetViewControl()
     {
@@ -842,14 +832,14 @@ class Map extends AbstractJavascriptVariableAsset
         if (isset($args[0]) && ($args[0] instanceof StreetViewControl)) {
             $this->streetViewControl = $args[0];
             $this->mapOptions['streetViewControl'] = true;
-        } else if (isset($args[0]) && is_string($args[0])) {
+        } elseif (isset($args[0]) && is_string($args[0])) {
             if ($this->streetViewControl === null) {
                 $this->streetViewControl = new StreetViewControl();
             }
 
             $this->streetViewControl->setControlPosition($args[0]);
             $this->mapOptions['streetViewControl'] = true;
-        } else if (!isset($args[0])) {
+        } elseif (!isset($args[0])) {
             $this->streetViewControl = null;
 
             if (isset($this->mapOptions['streetViewControl'])) {
@@ -873,7 +863,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map zoom control.
      *
-     * @return Ivory\GoogleMap\Controls\ZoomControl The map zoom control.
+     * @return \Ivory\GoogleMap\Controls\ZoomControl The map zoom control.
      */
     public function getZoomControl()
     {
@@ -896,11 +886,7 @@ class Map extends AbstractJavascriptVariableAsset
         if (isset($args[0]) && ($args[0] instanceof ZoomControl)) {
             $this->zoomControl = $args[0];
             $this->mapOptions['zoomControl'] = true;
-        } else if (
-            (isset($args[0]) && is_string($args[0]))
-            &&
-            (isset($args[1]) && is_string($args[1]))
-        ) {
+        } elseif ((isset($args[0]) && is_string($args[0])) && (isset($args[1]) && is_string($args[1]))) {
             if ($this->zoomControl === null) {
                 $this->zoomControl = new ZoomControl();
             }
@@ -909,7 +895,7 @@ class Map extends AbstractJavascriptVariableAsset
             $this->zoomControl->setZoomControlStyle($args[1]);
 
             $this->mapOptions['zoomControl'] = true;
-        } else if (!isset($args[0])) {
+        } elseif (!isset($args[0])) {
             $this->zoomControl = null;
 
             if (isset($this->mapOptions['zoomControl'])) {
@@ -923,7 +909,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map event manager.
      *
-     * @return Ivory\GoogleMap\Events\EventManager The map event manager.
+     * @return \Ivory\GoogleMap\Events\EventManager The map event manager.
      */
     public function getEventManager()
     {
@@ -933,11 +919,31 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Sets the map event manager.
      *
-     * @param Ivory\GoogleMap\Events\EventManager $eventManager The map event manager.
+     * @param \Ivory\GoogleMap\Events\EventManager $eventManager The map event manager.
      */
     public function setEventManager(EventManager $eventManager)
     {
         $this->eventManager = $eventManager;
+    }
+
+    /**
+     * Gets the marker cluster.
+     *
+     * @return \Ivory\GoogleMap\Overlays\MarkerCluster The marker cluster.
+     */
+    public function getMarkerCluster()
+    {
+        return $this->markerCluster;
+    }
+
+    /**
+     * Sets the marker cluster.
+     *
+     * @param \Ivory\GoogleMap\Overlays\MarkerCluster $markerCluster The marker cluster.
+     */
+    public function setMarkerCluster(MarkerCluster $markerCluster)
+    {
+        $this->markerCluster = $markerCluster;
     }
 
     /**
@@ -947,17 +953,17 @@ class Map extends AbstractJavascriptVariableAsset
      */
     public function getMarkers()
     {
-        return $this->markers;
+        return $this->markerCluster->getMarkers();
     }
 
     /**
      * Add a map marker.
      *
-     * @param Ivory\GoogleMap\Overlays\Marker $marker The marker to add.
+     * @param \Ivory\GoogleMap\Overlays\Marker $marker The marker to add.
      */
     public function addMarker(Marker $marker)
     {
-        $this->markers[] = $marker;
+        $this->markerCluster->addMarker($marker);
 
         if ($this->autoZoom) {
             $this->bound->extend($marker);
@@ -977,7 +983,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a map info window.
      *
-     * @param Ivory\GoogleMap\Overlays\InfoWindow $infoWindow The info window to add.
+     * @param \Ivory\GoogleMap\Overlays\InfoWindow $infoWindow The info window to add.
      */
     public function addInfoWindow(InfoWindow $infoWindow)
     {
@@ -991,7 +997,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Gets the map polylines.
      *
-     * @return Ivory\GoogleMap\Overlays\Polyline The map polylines.
+     * @return array The map polylines.
      */
     public function getPolylines()
     {
@@ -1001,7 +1007,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a map polyline.
      *
-     * @param Ivory\GoogleMap\Overlays\Polyline The polyline to add.
+     * @param \Ivory\GoogleMap\Overlays\Polyline The polyline to add.
      */
     public function addPolyline(Polyline $polyline)
     {
@@ -1025,7 +1031,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Adds an encoded polyline to the map.
      *
-     * @param Ivory\GoogleMap\Overlays\EncodedPolyline $encodedPolyline The encoded polyline to add.
+     * @param \Ivory\GoogleMap\Overlays\EncodedPolyline $encodedPolyline The encoded polyline to add.
      */
     public function addEncodedPolyline(EncodedPolyline $encodedPolyline)
     {
@@ -1049,7 +1055,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a map polygon.
      *
-     * @param Ivory\GoogleMap\Overlays\Polygon $polygon The polygon to add.
+     * @param \Ivory\GoogleMap\Overlays\Polygon $polygon The polygon to add.
      */
     public function addPolygon(Polygon $polygon)
     {
@@ -1073,7 +1079,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a map rectangle to the map.
      *
-     * @param Ivory\GoogleMap\Overlays\Rectangle $rectangle The rectangle to add.
+     * @param \Ivory\GoogleMap\Overlays\Rectangle $rectangle The rectangle to add.
      */
     public function addRectangle(Rectangle $rectangle)
     {
@@ -1097,7 +1103,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a circle to the map.
      *
-     * @param Ivory\GoogleMap\Overlays\Circle $circle The circle to add.
+     * @param \Ivory\GoogleMap\Overlays\Circle $circle The circle to add.
      */
     public function addCircle(Circle $circle)
     {
@@ -1121,7 +1127,7 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Add a ground overlay to the map.
      *
-     * @param Ivory\GoogleMapBundle\Model\Overlays\GroupOverlay $groundOverlay The ground overlay to add.
+     * @param \Ivory\GoogleMapBundle\Model\Overlays\GroupOverlay $groundOverlay The ground overlay to add.
      */
     public function addGroundOverlay(GroundOverlay $groundOverlay)
     {
@@ -1145,11 +1151,41 @@ class Map extends AbstractJavascriptVariableAsset
     /**
      * Adds a KML Layer to the map.
      *
-     * @param Ivory\GoogleMap\Layers\KMLLayer $kmlLayer The KML Layer to add.
+     * @param \Ivory\GoogleMap\Layers\KMLLayer $kmlLayer The KML Layer to add.
      */
     public function addKMLLayer(KMLLayer $kmlLayer)
     {
         $this->kmlLayers[] = $kmlLayer;
+    }
+
+    /**
+     * Checks if the map has libraries.
+     *
+     * @return boolean TRUE if the map has libraries else FALSE.
+     */
+    public function hasLibraries()
+    {
+        return !empty($this->libraries);
+    }
+
+    /**
+     * Gets the map libraries.
+     *
+     * @return array The map libraries.
+     */
+    public function getLibraries()
+    {
+        return $this->libraries;
+    }
+
+    /**
+     * Sets the map libraries.
+     *
+     * @param array $libraries The map libraries.
+     */
+    public function setLibraries(array $libraries)
+    {
+        $this->libraries = $libraries;
     }
 
     /**

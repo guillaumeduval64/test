@@ -1,8 +1,14 @@
 # CHANGELOG
 
+### 2.0.1 - 2.1.1 (2013-08-22)
+
+ * 034e312 - [Overlays] Add marker cluster support
+ * fe226ae - Add Places autocomplete support
+ * a619815 - Fix PHP template service by making it public
+
 ### 2.0.0 (2013-06-07)
 
- * db9c9c2 - Add Distance Matrix support
+ * db9c9c2 - Add Distance Matrix supporta619815 Fix PHP template service by making it public
  * b151380 - Add PHP template support
  * d22d5d3 - [Travis] Use --prefer-source to avoid random build fail
  * 83d85e3 - [DI] Use Extension processConfiguration method

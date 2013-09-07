@@ -37,6 +37,7 @@ objects.
  6. [Rectangle](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/rectangle.md)
  7. [Circle](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/circle.md)
  8. [Ground overlay](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/ground_overlay.md)
+ 9. [Marker cluster](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/overlays/marker_cluster.md)
 
 ### Configure controls
 
@@ -57,14 +58,25 @@ can do nothing and let the Google Maps API handle all control behavior.
 The complete events configuration is available
 [here](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/events.md).
 
+### Configure additional libraries
+
+Sometimes, you want to use the map & other Google Map related libraries. The bundle provides many integrations but not
+all of them. If you need a custom libraries, you can use the following API on your map:
+
+```
+$map->setLibraries(array('places', 'geometry'));
+$libraries = $map->getLibraries();
+$hasLibraries = $map->hasLibraries();
+```
+
 ## Render your map
 
 Now, you have builded & configured your map, you can render it. For this purpose, you will need the
-`Ivory\GoogleMap\Templating\Helper\MapHelper` which allows to render the map html container & some javascript for being
+`Ivory\GoogleMap\Helper\MapHelper` which allows to render the map html container & some javascript for being
 able to render it.
 
 ```
-use Ivory\GoogleMap\Templating\Helper\MapHelper;
+use Ivory\GoogleMap\Helper\MapHelper;
 
 $mapHelper = new MapHelper();
 ```
@@ -72,7 +84,7 @@ $mapHelper = new MapHelper();
 ### Render the HTML container
 
 ```
-echo $mapHelper->renderContainer($map);
+echo $mapHelper->renderHtmlContainer($map);
 ```
 
 This function renders an html div block with the HTML container ID, the width & the height configured:
@@ -95,6 +107,9 @@ This function renders an html javascript block with all code needed for displayi
 </script>
 ```
 
+The generated code is organized to be reusable in the client side. If you want to learn more, you can read this
+[dedicated documentation](http://github.com/egeloen/ivory-google-map/blob/master/doc/usage/helper/container.md).
+
 ### Render the CSS (Optional)
 
 Additionally, you can configure some CSS directly on the map.
@@ -110,3 +125,21 @@ This function renders an html style block with the CSS configured.
     /* CSS configured */
 </style>
 ```
+
+If you want to render all of them, you can use:
+
+```
+echo $mapHelper->render($map);
+```
+
+``` html
+<style type="text/css">
+    /* CSS configured */
+</style>
+<div id="map_canvas" style="width:300px;height:300px"></div>
+<script type="text/javascript">
+    // Code needed for displaying your map
+</script>
+```
+
+There is many other methods you can use if you only render specific "parts" of the map. I let you read the class :)

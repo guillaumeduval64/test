@@ -11,11 +11,13 @@
 
 namespace Ivory\GoogleMap\Services\Directions;
 
-use Ivory\GoogleMap\Base\Bound,
-    Ivory\GoogleMap\Base\Coordinate,
-    Ivory\GoogleMap\Exception\DirectionsException,
-    Ivory\GoogleMap\Overlays\EncodedPolyline,
-    Ivory\GoogleMap\Services\AbstractService;
+use Ivory\GoogleMap\Base\Bound;
+use Ivory\GoogleMap\Base\Coordinate;
+use Ivory\GoogleMap\Exception\DirectionsException;
+use Ivory\GoogleMap\Overlays\EncodedPolyline;
+use Ivory\GoogleMap\Services\AbstractService;
+use Ivory\GoogleMap\Services\Base\Distance;
+use Ivory\GoogleMap\Services\Base\Duration;
 
 /**
  * Directions service.
@@ -47,11 +49,7 @@ class Directions extends AbstractService
 
         if (isset($args[0]) && ($args[0] instanceof DirectionsRequest)) {
             $directionsRequest = $args[0];
-        } else if (
-            (isset($args[0]) && is_string($args[0]))
-            &&
-            (isset($args[1]) && is_string($args[1]))
-        ) {
+        } elseif ((isset($args[0]) && is_string($args[0])) && (isset($args[1]) && is_string($args[1]))) {
             $directionsRequest = new DirectionsRequest();
 
             $directionsRequest->setOrigin($args[0]);
@@ -85,7 +83,8 @@ class Directions extends AbstractService
         if (is_string($directionsRequest->getOrigin())) {
             $httpQuery['origin'] = $directionsRequest->getOrigin();
         } else {
-            $httpQuery['origin'] = sprintf('%s,%s',
+            $httpQuery['origin'] = sprintf(
+                '%s,%s',
                 $directionsRequest->getOrigin()->getLatitude(),
                 $directionsRequest->getOrigin()->getLongitude()
             );
@@ -94,7 +93,8 @@ class Directions extends AbstractService
         if (is_string($directionsRequest->getDestination())) {
             $httpQuery['destination'] = $directionsRequest->getDestination();
         } else {
-            $httpQuery['destination'] = sprintf('%s,%s',
+            $httpQuery['destination'] = sprintf(
+                '%s,%s',
                 $directionsRequest->getDestination()->getLatitude(),
                 $directionsRequest->getDestination()->getLongitude()
             );
@@ -111,7 +111,8 @@ class Directions extends AbstractService
                 if (is_string($waypoint->getLocation())) {
                     $waypoints[] = $waypoint->getLocation();
                 } else {
-                    $waypoints[] = sprintf('%s,%s',
+                    $waypoints[] = sprintf(
+                        '%s,%s',
                         $waypoint->getLocation()->getLatitude(),
                         $waypoint->getLocation()->getLongitude()
                     );
@@ -131,7 +132,7 @@ class Directions extends AbstractService
 
         if ($directionsRequest->hasAvoidTolls() && $directionsRequest->getAvoidTolls()) {
             $httpQuery['avoid'] = 'tolls';
-        } else if ($directionsRequest->hasAvoidHighways() && $directionsRequest->getAvoidHighways()) {
+        } elseif ($directionsRequest->hasAvoidHighways() && $directionsRequest->getAvoidHighways()) {
             $httpQuery['avoid'] = 'highways';
         }
 
@@ -145,6 +146,14 @@ class Directions extends AbstractService
 
         if ($directionsRequest->hasLanguage()) {
             $httpQuery['language'] = $directionsRequest->getLanguage();
+        }
+
+        if ($directionsRequest->hasDepartureTime()) {
+            $httpQuery['departure_time'] = $directionsRequest->getDepartureTime()->getTimestamp();
+        }
+
+        if ($directionsRequest->hasArrivalTime()) {
+            $httpQuery['arrival_time'] = $directionsRequest->getArrivalTime()->getTimestamp();
         }
 
         $httpQuery['sensor'] = $directionsRequest->hasSensor() ? 'true' : 'false';
@@ -240,10 +249,22 @@ class Directions extends AbstractService
             new Coordinate($directionsRoute->bounds->northeast->lat, $directionsRoute->bounds->northeast->lng)
         );
 
+        // @see https://github.com/egeloen/IvoryGoogleMapBundle/issues/72
+        // @codeCoverageIgnoreStart
+        if (!isset($directionsRoute->copyrights)) {
+            $directionsRoute->copyrights = '';
+        }
+
+        if (!isset($directionsRoute->summary)) {
+            $directionsRoute->summary = '';
+        }
+        // @codeCoverageIgnoreEnd
+
+        $summary = $directionsRoute->summary;
         $copyrights = $directionsRoute->copyrights;
+
         $directionsLegs = $this->buildDirectionsLegs($directionsRoute->legs);
         $overviewPolyline = new EncodedPolyline($directionsRoute->overview_polyline->points);
-        $summary = $directionsRoute->summary;
         $warnings = $directionsRoute->warnings;
         $waypointOrder = $directionsRoute->waypoint_order;
 

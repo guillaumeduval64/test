@@ -4,7 +4,7 @@
 {% block recherche %}
 <form id="form_recherche" data-provide="typeahead" action="{{ path('myapp_client_rechercher') }}" method="post" >
 
-                            {{ form_widget(form.motcle, { 'attr': {'tabindex': '1','autocomplete':'off', 'class': 'form_recherche search-query' } }) }}
+                            {{ form_widget(formRecherche.motcle, { 'attr': {'tabindex': '1','autocomplete':'off', 'class': 'form_recherche search-query' } }) }}
 
                 <input type="image" src="{{ asset('bundles/myappap/images/search.png') }}" alt="Search" />
                 <a href="#myModal" role="button" class="btn" data-toggle="modal">Ajouter client</a>
