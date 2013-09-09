@@ -55,7 +55,6 @@ class __TwigTemplate_8ada5909d64979c3260f576e885a7f6e extends Twig_Template
                     <form action=\"\" method=\"post\" ";
             // line 24
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
-;
             echo ">
                     <div class=\"error\">
                         ";
@@ -116,7 +115,6 @@ class __TwigTemplate_8ada5909d64979c3260f576e885a7f6e extends Twig_Template
                     <form action=\"\" method=\"post\" ";
             // line 57
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
-;
             echo ">
                     <div class=\"error\">
                         ";
@@ -201,6 +199,6 @@ class __TwigTemplate_8ada5909d64979c3260f576e885a7f6e extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  187 => 4,  177 => 88,  171 => 84,  161 => 80,  159 => 79,  146 => 69,  140 => 66,  136 => 65,  131 => 63,  124 => 59,  118 => 57,  111 => 52,  100 => 47,  98 => 46,  85 => 36,  79 => 33,  75 => 32,  70 => 30,  63 => 26,  57 => 24,  52 => 21,  50 => 20,  38 => 11,  30 => 6,  25 => 4,  20 => 1,);
+        return array (  185 => 4,  175 => 88,  169 => 84,  159 => 80,  157 => 79,  144 => 69,  138 => 66,  134 => 65,  129 => 63,  122 => 59,  117 => 57,  110 => 52,  99 => 47,  97 => 46,  84 => 36,  78 => 33,  74 => 32,  69 => 30,  62 => 26,  57 => 24,  52 => 21,  50 => 20,  38 => 11,  30 => 6,  25 => 4,  20 => 1,);
     }
 }

@@ -170,7 +170,13 @@ $testt = array(array('semaine', 'P', 'prod id'));
                     $em->persist($client);
                     $em->persist($date);
                     $em->flush();
-$PhoneTypeExist = $client -> getPhones();
+
+
+$PhoneTypeExistss = $request->request->get('form')['phones'];
+$PhoneTypeExist = $form ->get('phones') -> getData();
+$PhoneTypeExists = array_keys($PhoneTypeExist);
+var_dump($PhoneTypeExistss);
+exit();
 if (isset($PhoneTypeExist)) {
     $twilio = $this->container->get('twilio.api');
                             $message = $twilio->account->sms_messages->create(
@@ -324,7 +330,19 @@ if (isset($PhoneTypeExist)) {
                         $em->persist($client);
                         $em->flush();
 
-$PhoneTypeExist = $client -> getPhones();
+
+$PhoneTypeExist = $form ->get('phones') -> getData();
+foreach ($PhoneTypeExist as $key => $value) {
+    //var_dump($PhoneTypeExist);
+    $test=$PhoneTypeExist[0];
+    var_dump($test);
+    if ($key="514-991-6552") {
+        echo "test";
+    }
+
+}
+
+exit();
 if (isset($PhoneTypeExist)) {
     $twilio = $this->container->get('twilio.api');
                             $message = $twilio->account->sms_messages->create(
