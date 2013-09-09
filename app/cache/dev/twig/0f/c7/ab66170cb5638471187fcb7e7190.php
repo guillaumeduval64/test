@@ -121,7 +121,6 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
         // line 25
         echo "            <script type=\"text/javascript\" src=\"https://www.google.com/jsapi\"></script>
 
-
 <script>
     //bootstrap typeahead not working on search, je ne sais pas pk
 \$(document).ready(function() {
@@ -143,7 +142,7 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
     //    ]); 
       
       var test = ";
-        // line 48
+        // line 47
         if (array_key_exists("test", $context)) {
             echo " ";
             echo twig_jsonencode_filter((isset($context["test"]) ? $context["test"] : $this->getContext($context, "test")));
@@ -169,7 +168,8 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
 </script>
 
     </head>
-    <body>
+    <body class=\"homepage\">
+        <div id=\"header-wrapper\">
         <div id=\"test\">
                     <div id=\"recherche\">
                         ";
@@ -344,6 +344,7 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
                 </div>
             </div>
         </div>
+        </div>
     </body>
 </html>";
     }
@@ -431,6 +432,6 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  419 => 145,  416 => 144,  412 => 143,  409 => 142,  404 => 139,  400 => 136,  397 => 135,  393 => 131,  390 => 130,  385 => 127,  382 => 126,  378 => 124,  375 => 123,  368 => 118,  365 => 117,  361 => 72,  358 => 71,  352 => 4,  341 => 152,  337 => 151,  331 => 149,  329 => 148,  325 => 146,  322 => 144,  320 => 142,  314 => 139,  310 => 137,  308 => 135,  303 => 132,  301 => 130,  298 => 129,  296 => 126,  293 => 125,  291 => 123,  288 => 122,  286 => 117,  279 => 112,  270 => 109,  266 => 107,  262 => 106,  255 => 102,  242 => 94,  235 => 92,  228 => 90,  222 => 89,  215 => 87,  208 => 85,  201 => 83,  194 => 81,  187 => 79,  179 => 73,  177 => 71,  147 => 48,  122 => 25,  65 => 18,  61 => 13,  55 => 10,  51 => 9,  47 => 8,  43 => 7,  38 => 5,  34 => 4,  29 => 1,);
+        return array (  420 => 145,  417 => 144,  413 => 143,  410 => 142,  405 => 139,  401 => 136,  398 => 135,  394 => 131,  391 => 130,  386 => 127,  383 => 126,  379 => 124,  376 => 123,  369 => 118,  366 => 117,  362 => 72,  359 => 71,  353 => 4,  341 => 152,  337 => 151,  331 => 149,  329 => 148,  325 => 146,  322 => 144,  320 => 142,  314 => 139,  310 => 137,  308 => 135,  303 => 132,  301 => 130,  298 => 129,  296 => 126,  293 => 125,  291 => 123,  288 => 122,  286 => 117,  279 => 112,  270 => 109,  266 => 107,  262 => 106,  255 => 102,  242 => 94,  235 => 92,  228 => 90,  222 => 89,  215 => 87,  208 => 85,  201 => 83,  194 => 81,  187 => 79,  179 => 73,  177 => 71,  146 => 47,  122 => 25,  65 => 18,  61 => 13,  55 => 10,  51 => 9,  47 => 8,  43 => 7,  38 => 5,  34 => 4,  29 => 1,);
     }
 }

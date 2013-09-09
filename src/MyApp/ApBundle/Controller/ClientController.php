@@ -170,7 +170,8 @@ $testt = array(array('semaine', 'P', 'prod id'));
                     $em->persist($client);
                     $em->persist($date);
                     $em->flush();
-$PhoneTypeExist = $client -> getPhones();
+
+
 if (isset($PhoneTypeExist)) {
     $twilio = $this->container->get('twilio.api');
                             $message = $twilio->account->sms_messages->create(
@@ -316,7 +317,7 @@ if (isset($PhoneTypeExist)) {
 
                 if ($form->isValid()) 
                 {
-                            $this->container->get('session')->getFlashBag()->add('notice', 'Your changes were saved!');
+                            
 
                         $date = new DateTable();
                         $client->setDateTable($date);
@@ -324,16 +325,26 @@ if (isset($PhoneTypeExist)) {
                         $em->persist($client);
                         $em->flush();
 
-$PhoneTypeExist = $client -> getPhones();
-if (isset($PhoneTypeExist)) {
-    $twilio = $this->container->get('twilio.api');
-                            $message = $twilio->account->sms_messages->create(
-            '15146120598', // From a valid Twilio number
-            '15149916552', // Text this number
-            "Merci de nous faire confiance! 
-        Peinture et Lavage de vitres Guillaume DUVAL"
-        );
+$PhoneTypeExist = $form ->get('phones') -> getData();
+foreach ($PhoneTypeExist as $phone) {
+    $phoneNumber=$phone->getPhone();
+    $phoneType = $phone->getPhoneType();
+    $phoneTypeBoom = $phoneType->getphoneType();
+//var_dump($phoneTypeBoom);
+//exit();
+
+    if ($phoneTypeBoom=="cellulaire") {
+        $twilio = $this->container->get('twilio.api');
+                                $message = $twilio->account->sms_messages->create(
+                '15146120598', // From a valid Twilio number
+                $phoneNumber, // Text this number
+                "Merci de nous faire confiance! 
+            Peinture et Lavage de vitres Guillaume DUVAL"
+            );
+            $this->container->get('session')->getFlashBag()->add('notice', 'Text sent to: '.$phoneNumber);
+    }
 }
+
 
                         if (isset($id)) 
                             {

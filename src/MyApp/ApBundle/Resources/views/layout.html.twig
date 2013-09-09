@@ -64,7 +64,8 @@ $('input.form_recherche').typeahead({
 </script>
 
     </head>
-    <body>
+    <body class="homepage">
+        <div id="header-wrapper">
         <div id="test">
                     <div id="recherche">
                         {% block recherche %}
@@ -97,17 +98,19 @@ $('input.form_recherche').typeahead({
                         </ul>
             </div>
             <div id="page">
+ {% for flashMessage in app.session.flashbag.get('notice') %}
+                        <div class="alert">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong><img src="{{ asset('bundles/myappap/images/valid.png') }}" title="Client"/>{{ flashMessage }}</strong>
+  </div>
+{% endfor %}
+
                  <div id="logo">
         <!--<img src="{{ asset('bundles/myappap/images/logo.png') }}" title="Client"/>-->
                 </div>
 
                 <div id="header">
-                        {% for flashMessage in app.session.flashbag.get('notice') %}
-                        <div class="alert">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong><img src="{{ asset('bundles/myappap/images/valid.png') }}" title="Client"/></strong>
-  </div>
-{% endfor %}
+                       
              
                    
 
@@ -120,6 +123,11 @@ $('input.form_recherche').typeahead({
                     {% endblock %}
                 </div>
                     {% block content %}
+                    {% for flashMessage in app.session.flashbag.get('notice') %}
+    <div class="flash notice">
+        {{ flashMessage }}
+    </div>
+{% endfor %}
                     {% endblock %}
                     
                         {% block principalNote %}
@@ -152,6 +160,7 @@ $('input.form_recherche').typeahead({
                 </div>
                 </div>
             </div>
+        </div>
         </div>
     </body>
 </html>

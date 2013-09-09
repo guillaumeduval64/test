@@ -250,7 +250,12 @@
 			.icon64-10	{ background-position:	-576px 0px;		}
 
 	/* Image */
-
+		.logo img
+		{
+			max-width: 600px;
+			float: center;
+			margin-bottom: 20px;
+		}
 		.image
 		{
 			display: inline-block;

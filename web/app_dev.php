@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set ('America/New_York');
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Debug\Debug;
 

@@ -43,6 +43,9 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"></script>
 <script type=\"text/javascript\"> </script>
+Ipsum feugiat et dolor
+
+
 ";
             // asset "5584ba6_1"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_5584ba6_1") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/5584ba6_skel.min_2.js");
@@ -50,6 +53,9 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"></script>
 <script type=\"text/javascript\"> </script>
+Ipsum feugiat et dolor
+
+
 ";
             // asset "5584ba6_2"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_5584ba6_2") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/5584ba6_jquery.dropotron_3.js");
@@ -57,6 +63,9 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"></script>
 <script type=\"text/javascript\"> </script>
+Ipsum feugiat et dolor
+
+
 ";
             // asset "5584ba6_3"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_5584ba6_3") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/5584ba6_config_4.js");
@@ -64,6 +73,9 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"></script>
 <script type=\"text/javascript\"> </script>
+Ipsum feugiat et dolor
+
+
 ";
             // asset "5584ba6_4"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_5584ba6_4") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/5584ba6_skel-panels.min_5.js");
@@ -71,6 +83,9 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"></script>
 <script type=\"text/javascript\"> </script>
+Ipsum feugiat et dolor
+
+
 ";
             // asset "5584ba6_5"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_5584ba6_5") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/5584ba6_html5shiv_6.js");
@@ -78,6 +93,9 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"></script>
 <script type=\"text/javascript\"> </script>
+Ipsum feugiat et dolor
+
+
 ";
         } else {
             // asset "5584ba6"
@@ -86,10 +104,13 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
             echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
             echo "\"></script>
 <script type=\"text/javascript\"> </script>
+Ipsum feugiat et dolor
+
+
 ";
         }
         unset($context["asset_url"]);
-        // line 26
+        // line 29
         echo "
 \t\t<title>Lavage de vitres</title>
 \t\t<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />
@@ -110,12 +131,15 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
 \t\t\t\t\t\t\t\t<section id=\"header\">
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<!-- Logo -->
-\t\t\t\t\t\t\t\t\t\t<h1><a href=\"#\">Dopetrope</a></h1>
+\t\t\t\t\t\t\t\t\t\t<span class=\"logo\"><img src=\"";
+        // line 49
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/logo-lavage-de-vitres.png"), "html", null, true);
+        echo "\" alt=\"\" /></span>
 \t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<!-- Nav -->
 \t\t\t\t\t\t\t\t\t\t<nav id=\"nav\">
 \t\t\t\t\t\t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"current_page_item\"><a href=\"index.html\">Home</a></li>
+\t\t\t\t\t\t\t\t\t\t\t\t<li class=\"current_page_item\"><a href=\"valeurs\">Valeurs</a></li>
 \t\t\t\t\t\t\t\t\t\t\t\t<li>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"\">Dropdown</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<ul>
@@ -150,7 +174,7 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
 \t\t\t\t\t\t\t\t<section id=\"banner\">
 \t\t\t\t\t\t\t\t\t<a href=\"http://facebook.com/DreametryDoodle\">
 \t\t\t\t\t\t\t\t\t\t<span class=\"image image-full\"><img src=\"";
-        // line 85
+        // line 88
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/pic01.jpg"), "html", null, true);
         echo "\" alt=\"\" /></span>
 \t\t\t\t\t\t\t\t\t\t<header>
@@ -172,18 +196,19 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
 \t\t\t\t\t\t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"4u\">
 \t\t\t\t\t\t\t\t\t\t\t\t<section class=\"first\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<a id=\"valeurs\">Useful Tips Section</a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"pennant\"><span class=\"icon64 icon64-1\"></span></span>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2>Ipsum consequat</h2>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2>Qualité</h2>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.</p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Le premier de nos but est que vous soyez satisfait du service et que vous repreniez notre offre pour les années suivantes.</p>
 \t\t\t\t\t\t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"4u\">
 \t\t\t\t\t\t\t\t\t\t\t\t<section class=\"middle\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"pennant pennant-alt\"><span class=\"icon64 icon64-2\"></span></span>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2>Magna etiam dolor</h2>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2>Intégrité</h2>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<p>Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.</p>
 \t\t\t\t\t\t\t\t\t\t\t\t</section>
@@ -192,9 +217,9 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
 \t\t\t\t\t\t\t\t\t\t\t\t<section class=\"last\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"pennant pennant-alt2\"><span class=\"icon64 icon64-3\"></span></span>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2>Tempus adipiscing</h2>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h2>Performance</h2>
 \t\t\t\t\t\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Nisl amet dolor sit ipsum veroeros sed blandit consequat veroeros et magna tempus.</p>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Nous avons pour but de fournir la meilleur prestation sur le marché. Et si vous êtes insatisfait nous revenons pour être certain que notre service réponde à vos attentes.</p>
 \t\t\t\t\t\t\t\t\t\t\t\t</section>
 \t\t\t\t\t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t\t\t\t\t</div>
@@ -217,114 +242,6 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
 \t\t\t\t<div class=\"container\">
 \t\t\t\t\t<div class=\"row\">
 \t\t\t\t\t\t<div class=\"12u\">
-\t\t\t\t\t\t\t
-\t\t\t\t\t\t\t<!-- Portfolio -->
-\t\t\t\t\t\t\t\t<section>
-\t\t\t\t\t\t\t\t\t<header class=\"major\">
-\t\t\t\t\t\t\t\t\t\t<h2>My Portfolio</h2>
-\t\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t\t<div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"4u\">
-\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"http://facebook.com/DreametryDoodle\" class=\"image image-full\"><img src=\"";
-        // line 160
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/pic02.jpg"), "html", null, true);
-        echo "\" alt=\"\" /></a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3>Ipsum feugiat et dolor</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<footer>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button button-alt\">Find out more</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</footer>
-\t\t\t\t\t\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"4u\">
-\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"http://facebook.com/DreametryDoodle\" class=\"image image-full\"><img src=\"";
-        // line 172
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/pic03.jpg"), "html", null, true);
-        echo "\" alt=\"\" /></a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3>Sed etiam lorem nulla</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<footer>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button button-alt\">Find out more</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</footer>
-\t\t\t\t\t\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"4u\">
-\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"http://facebook.com/DreametryDoodle\" class=\"image image-full\"><img src=\"";
-        // line 184
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/pic04.jpg"), "html", null, true);
-        echo "\" alt=\"\" /></a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3>Consequat et tempus</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<footer>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button button-alt\">Find out more</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</footer>
-\t\t\t\t\t\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"4u\">
-\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"http://facebook.com/DreametryDoodle\" class=\"image image-full\"><img src=\"";
-        // line 198
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/pic05.jpg"), "html", null, true);
-        echo "\" alt=\"\" /></a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3>Blandit sed adipiscing</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<footer>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button button-alt\">Find out more</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</footer>
-\t\t\t\t\t\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"4u\">
-\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"http://facebook.com/DreametryDoodle\" class=\"image image-full\"><img src=\"";
-        // line 210
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/pic06.jpg"), "html", null, true);
-        echo "\" alt=\"\" /></a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3>Etiam nisl consequat</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<footer>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button button-alt\">Find out more</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</footer>
-\t\t\t\t\t\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t\t<div class=\"4u\">
-\t\t\t\t\t\t\t\t\t\t\t\t<section class=\"box\">
-\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"http://facebook.com/DreametryDoodle\" class=\"image image-full\"><img src=\"";
-        // line 222
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/pic07.jpg"), "html", null, true);
-        echo "\" alt=\"\" /></a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<h3>Dolore nisl feugiat</h3>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</header>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
-\t\t\t\t\t\t\t\t\t\t\t\t\t<footer>
-\t\t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\" class=\"button button-alt\">Find out more</a>
-\t\t\t\t\t\t\t\t\t\t\t\t\t</footer>
-\t\t\t\t\t\t\t\t\t\t\t\t</section>
-\t\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t\t</div>
-\t\t\t\t\t\t\t\t</section>
-
-\t\t\t\t\t\t</div>
-\t\t\t\t\t</div>
-\t\t\t\t\t<div class=\"row\">
-\t\t\t\t\t\t<div class=\"12u\">
 
 \t\t\t\t\t\t\t<!-- Blog -->
 \t\t\t\t\t\t\t\t<section>
@@ -336,7 +253,7 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"6u\">
 \t\t\t\t\t\t\t\t\t\t\t\t<section class=\"box\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"http://facebook.com/DreametryDoodle\" class=\"image image-full\"><img src=\"";
-        // line 250
+        // line 164
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/pic08.jpg"), "html", null, true);
         echo "\" alt=\"\" /></a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<header>
@@ -353,7 +270,7 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
 \t\t\t\t\t\t\t\t\t\t\t<div class=\"6u\">
 \t\t\t\t\t\t\t\t\t\t\t\t<section class=\"box\">
 \t\t\t\t\t\t\t\t\t\t\t\t\t<a href=\"http://facebook.com/DreametryDoodle\" class=\"image image-full\"><img src=\"";
-        // line 264
+        // line 178
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/pic09.jpg"), "html", null, true);
         echo "\" alt=\"\" /></a>
 \t\t\t\t\t\t\t\t\t\t\t\t\t<header>
@@ -425,7 +342,7 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
 \t\t\t\t\t\t\t\t\t\t<h2>What's this all about?</h2>
 \t\t\t\t\t\t\t\t\t</header>
 \t\t\t\t\t\t\t\t\t<a href=\"http://facebook.com/DreametryDoodle\" class=\"image image-full\"><img src=\"";
-        // line 333
+        // line 247
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/frontendsuper/images/pic10.jpg"), "html", null, true);
         echo "\" alt=\"\" /></a>
 \t\t\t\t\t\t\t\t\t<p>
@@ -545,6 +462,6 @@ class __TwigTemplate_ffde33bdd1cc3f26c5a1e41adef1c76e extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  429 => 333,  357 => 264,  340 => 250,  309 => 222,  294 => 210,  279 => 198,  262 => 184,  247 => 172,  232 => 160,  154 => 85,  93 => 26,  42 => 23,  38 => 12,  34 => 11,  29 => 9,  19 => 1,);
+        return array (  346 => 247,  274 => 178,  257 => 164,  178 => 88,  136 => 49,  114 => 29,  42 => 23,  38 => 12,  34 => 11,  29 => 9,  19 => 1,);
     }
 }

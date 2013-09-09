@@ -28,45 +28,45 @@ class __TwigTemplate_9a6df7f244c42e29e296ab53b5eb9602 extends Twig_Template
         <tr>
             <td>";
         // line 11
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), 'errors');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
         echo "</td>
         </tr>
         <tr>
             <td>
             ";
         // line 15
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "flag"), 'label');
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "flag"), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "flag"), 'label');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "flag"), 'widget');
         echo "
             </td>
         </tr>
         <tr>
             <td>";
         // line 19
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "titles"), 'widget');
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "titles"), 'widget');
         echo "</td>
             <td>";
         // line 20
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "etat"), 'widget', array("attr" => array("class" => "input-medium")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "etat"), 'widget', array("attr" => array("class" => "input-medium")));
         echo "</td>
              <td>";
         // line 21
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "ancien"), 'widget', array("attr" => array("class" => "input-small")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "ancien"), 'widget', array("attr" => array("class" => "input-small")));
         echo "</td>
              <td>";
         // line 22
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "service"), 'widget', array("attr" => array("class" => "input-small")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "service"), 'widget', array("attr" => array("class" => "input-small")));
         echo "</td>
 
         </tr>
             <tr>
             <td>";
         // line 26
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "heure"), 'widget', array("attr" => array("class" => "input-small timepicker")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "heure"), 'widget', array("attr" => array("class" => "input-small timepicker")));
         echo "</td>
             <td>";
         // line 27
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "heure"), 'errors', array("attr" => array("class" => "input-small")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "heure"), 'errors', array("attr" => array("class" => "input-small")));
         echo "</td>
         </tr>
    </table>
@@ -75,25 +75,17 @@ class __TwigTemplate_9a6df7f244c42e29e296ab53b5eb9602 extends Twig_Template
         <tr>
             <td>";
         // line 33
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "nom"), 'widget', array("attr" => array("placeholder" => "nom", "class" => "input-small")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nom"), 'widget', array("attr" => array("placeholder" => "nom", "class" => "input-small")));
         echo "</td>
             <td>";
         // line 34
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "prenom"), 'widget', array("attr" => array("placeholder" => "prenom", "class" => "input-small")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "prenom"), 'widget', array("attr" => array("placeholder" => "prenom", "class" => "input-small")));
         echo "</td>
         </tr>
         <tr>
             <td>";
         // line 37
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "phoneNumber"), 'widget', array("attr" => array("placeholder" => "Tél", "autocomplete" => "off", "class" => "input-small phone")));
-        echo "</td>
-            <td>";
-        // line 38
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "phoneNumberCell"), 'widget', array("attr" => array("placeholder" => "Cell", "autocomplete" => "off", "class" => "input-small phone")));
-        echo "</td>
-            <td>";
-        // line 39
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "email"), 'widget', array("attr" => array("placeholder" => "Email", "class" => "input-medium")));
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "email"), 'widget', array("attr" => array("placeholder" => "Email", "class" => "input-medium")));
         echo "</td>
         </tr>
     </table>
@@ -101,23 +93,23 @@ class __TwigTemplate_9a6df7f244c42e29e296ab53b5eb9602 extends Twig_Template
    <table>
         <tr>
             <td>";
-        // line 45
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "number"), 'widget', array("attr" => array("placeholder" => "num", "class" => "input-mini")));
+        // line 43
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "number"), 'widget', array("attr" => array("placeholder" => "num", "class" => "input-mini")));
         echo "</td>
             <td>";
-        // line 46
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "street"), 'widget', array("attr" => array("placeholder" => "rue", "class" => "input-medium")));
+        // line 44
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "street"), 'widget', array("attr" => array("placeholder" => "rue", "class" => "input-medium")));
         echo "</td>
                <td>
             ";
-        // line 48
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "city"), 'widget', array("attr" => array("class" => "input-medium")));
+        // line 46
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "city"), 'widget', array("attr" => array("class" => "input-medium")));
         echo "
             </td>
             <td>
             ";
-        // line 51
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "pc"), 'widget', array("attr" => array("placeholder" => "CP", "class" => "input-small")));
+        // line 49
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "pc"), 'widget', array("attr" => array("placeholder" => "CP", "class" => "input-small")));
         echo "
             </td>
             </tr>
@@ -125,23 +117,46 @@ class __TwigTemplate_9a6df7f244c42e29e296ab53b5eb9602 extends Twig_Template
    <table>
                         <tr>
             <td>";
-        // line 57
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), "date"), 'widget', array("attr" => array("placeholder" => "Date", "class" => "input-medium date")));
+        // line 55
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "date"), 'widget', array("attr" => array("placeholder" => "Date", "class" => "input-medium date")));
         echo "</td>
             <td></td>
             </tr>
    </table>
    
-    ";
-        // line 62
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), 'rest');
-        echo "
-        <br>
-           
+    <h3>Phones:</h3>
+    <ul class=\"phones\" data-prototype=\"";
+        // line 61
+        echo twig_escape_filter($this->env, $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "phones"), "vars"), "prototype"), 'widget'));
+        echo "\">
+        ";
+        // line 63
+        echo "        ";
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "phones"));
+        foreach ($context['_seq'] as $context["_key"] => $context["phone"]) {
+            // line 64
+            echo "
+            <li>";
+            // line 65
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["phone"]) ? $context["phone"] : $this->getContext($context, "phone")), "phoneType"), 'row');
+            echo "
+            ";
+            // line 66
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["phone"]) ? $context["phone"] : $this->getContext($context, "phone")), "phone"), 'row');
+            echo "</li>
+            ----------------------------------------------------------
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['phone'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 69
+        echo "    </ul>
 
     ";
-        // line 66
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["formClient"]) ? $context["formClient"] : $this->getContext($context, "formClient")), 'rest');
+        // line 71
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
         <br>
     
@@ -151,7 +166,29 @@ class __TwigTemplate_9a6df7f244c42e29e296ab53b5eb9602 extends Twig_Template
     <input type=\"submit\" class=\"btn btn-primary\" value=\"Ajouter\" title=\"Ajouter\">
   </div>
      </form>   
-</div>";
+</div>
+
+";
+        // line 82
+        if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
+            // asset "99471e3_0"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_99471e3_0") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/99471e3_phone_1.js");
+            // line 85
+            echo "    <script src=\"";
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
+            echo "\"></script>
+      
+";
+        } else {
+            // asset "99471e3"
+            $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_99471e3") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/99471e3.js");
+            echo "    <script src=\"";
+            echo twig_escape_filter($this->env, (isset($context["asset_url"]) ? $context["asset_url"] : $this->getContext($context, "asset_url")), "html", null, true);
+            echo "\"></script>
+      
+";
+        }
+        unset($context["asset_url"]);
     }
 
     public function getTemplateName()
@@ -166,6 +203,6 @@ class __TwigTemplate_9a6df7f244c42e29e296ab53b5eb9602 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  137 => 62,  120 => 51,  105 => 45,  92 => 38,  88 => 37,  82 => 34,  78 => 33,  54 => 21,  46 => 19,  38 => 15,  31 => 11,  19 => 1,  1357 => 388,  1348 => 387,  1346 => 386,  1343 => 385,  1327 => 381,  1320 => 380,  1318 => 379,  1315 => 378,  1292 => 374,  1267 => 373,  1265 => 372,  1262 => 371,  1250 => 366,  1245 => 365,  1243 => 364,  1240 => 363,  1231 => 357,  1225 => 355,  1222 => 354,  1217 => 353,  1215 => 352,  1212 => 351,  1205 => 346,  1196 => 344,  1192 => 343,  1189 => 342,  1186 => 341,  1184 => 340,  1181 => 339,  1173 => 335,  1171 => 334,  1168 => 333,  1162 => 329,  1156 => 327,  1153 => 326,  1151 => 325,  1148 => 324,  1139 => 319,  1137 => 318,  1114 => 317,  1111 => 316,  1108 => 315,  1105 => 314,  1102 => 313,  1099 => 312,  1096 => 311,  1094 => 310,  1091 => 309,  1084 => 305,  1080 => 304,  1075 => 303,  1073 => 302,  1070 => 301,  1063 => 296,  1060 => 295,  1052 => 290,  1049 => 289,  1047 => 288,  1044 => 287,  1036 => 282,  1032 => 281,  1028 => 280,  1025 => 279,  1023 => 278,  1020 => 277,  1012 => 273,  1010 => 269,  1008 => 268,  1005 => 267,  1000 => 263,  978 => 258,  975 => 257,  972 => 256,  969 => 255,  966 => 254,  963 => 253,  960 => 252,  957 => 251,  954 => 250,  951 => 249,  948 => 248,  946 => 247,  943 => 246,  935 => 240,  932 => 239,  930 => 238,  927 => 237,  919 => 233,  916 => 232,  914 => 231,  911 => 230,  899 => 226,  896 => 225,  893 => 224,  890 => 223,  888 => 222,  885 => 221,  877 => 217,  874 => 216,  872 => 215,  869 => 214,  861 => 210,  858 => 209,  856 => 208,  853 => 207,  845 => 203,  842 => 202,  840 => 201,  837 => 200,  829 => 196,  826 => 195,  824 => 194,  821 => 193,  813 => 189,  810 => 188,  808 => 187,  805 => 186,  797 => 182,  794 => 181,  792 => 180,  789 => 179,  781 => 175,  779 => 174,  776 => 173,  768 => 169,  765 => 168,  763 => 167,  760 => 166,  752 => 162,  749 => 161,  747 => 160,  745 => 159,  742 => 158,  735 => 153,  725 => 152,  720 => 151,  717 => 150,  711 => 148,  708 => 147,  706 => 146,  703 => 145,  695 => 139,  693 => 138,  692 => 137,  691 => 136,  690 => 135,  685 => 134,  679 => 132,  676 => 131,  674 => 130,  671 => 129,  662 => 123,  658 => 122,  654 => 121,  650 => 120,  645 => 119,  639 => 117,  636 => 116,  634 => 115,  631 => 114,  615 => 110,  613 => 109,  610 => 108,  594 => 104,  592 => 103,  589 => 102,  572 => 98,  560 => 96,  553 => 93,  551 => 92,  546 => 91,  543 => 90,  525 => 89,  523 => 88,  520 => 87,  511 => 82,  508 => 81,  505 => 80,  499 => 78,  497 => 77,  492 => 76,  489 => 75,  486 => 74,  471 => 72,  469 => 71,  461 => 70,  459 => 69,  456 => 68,  450 => 64,  442 => 62,  437 => 61,  433 => 60,  428 => 59,  426 => 58,  423 => 57,  414 => 52,  408 => 50,  405 => 49,  403 => 48,  400 => 47,  390 => 43,  388 => 42,  385 => 41,  377 => 37,  374 => 36,  371 => 35,  368 => 34,  366 => 33,  363 => 32,  355 => 27,  350 => 26,  344 => 24,  342 => 23,  337 => 22,  335 => 21,  332 => 20,  316 => 16,  313 => 15,  311 => 14,  308 => 13,  299 => 8,  293 => 6,  290 => 5,  288 => 4,  285 => 3,  281 => 385,  278 => 384,  276 => 378,  273 => 377,  271 => 371,  268 => 370,  266 => 363,  263 => 362,  260 => 360,  258 => 351,  255 => 350,  253 => 339,  250 => 338,  248 => 333,  245 => 332,  243 => 324,  240 => 323,  238 => 309,  235 => 308,  233 => 301,  230 => 300,  227 => 298,  225 => 295,  222 => 294,  220 => 287,  217 => 286,  215 => 277,  212 => 276,  210 => 267,  207 => 266,  204 => 264,  202 => 263,  199 => 262,  197 => 246,  194 => 245,  191 => 243,  189 => 237,  186 => 236,  184 => 230,  181 => 229,  179 => 221,  176 => 220,  174 => 214,  171 => 213,  169 => 207,  166 => 206,  164 => 200,  161 => 199,  159 => 193,  156 => 192,  154 => 186,  151 => 185,  149 => 179,  146 => 178,  144 => 66,  141 => 172,  139 => 166,  136 => 165,  134 => 158,  131 => 157,  129 => 57,  126 => 144,  124 => 129,  121 => 128,  119 => 114,  116 => 113,  114 => 48,  111 => 107,  109 => 46,  106 => 101,  104 => 87,  101 => 86,  99 => 68,  96 => 39,  94 => 57,  91 => 56,  89 => 47,  86 => 46,  84 => 41,  81 => 40,  79 => 32,  76 => 31,  74 => 20,  71 => 19,  69 => 27,  66 => 12,  64 => 3,  87 => 45,  75 => 35,  73 => 34,  67 => 30,  65 => 26,  61 => 2,  58 => 22,  50 => 20,  45 => 7,  39 => 5,  36 => 4,  30 => 2,);
+        return array (  177 => 85,  173 => 82,  155 => 69,  142 => 65,  130 => 61,  112 => 49,  97 => 43,  88 => 37,  82 => 34,  78 => 33,  54 => 21,  46 => 19,  38 => 15,  19 => 1,  1352 => 388,  1343 => 387,  1341 => 386,  1338 => 385,  1322 => 381,  1315 => 380,  1313 => 379,  1310 => 378,  1287 => 374,  1262 => 373,  1260 => 372,  1257 => 371,  1245 => 366,  1240 => 365,  1238 => 364,  1235 => 363,  1226 => 357,  1220 => 355,  1217 => 354,  1212 => 353,  1210 => 352,  1207 => 351,  1200 => 346,  1191 => 344,  1187 => 343,  1184 => 342,  1181 => 341,  1179 => 340,  1176 => 339,  1168 => 335,  1166 => 334,  1163 => 333,  1157 => 329,  1151 => 327,  1148 => 326,  1146 => 325,  1143 => 324,  1134 => 319,  1132 => 318,  1109 => 317,  1106 => 316,  1103 => 315,  1100 => 314,  1097 => 313,  1094 => 312,  1091 => 311,  1089 => 310,  1086 => 309,  1079 => 305,  1075 => 304,  1070 => 303,  1068 => 302,  1065 => 301,  1058 => 296,  1055 => 295,  1047 => 290,  1044 => 289,  1042 => 288,  1039 => 287,  1031 => 282,  1027 => 281,  1023 => 280,  1020 => 279,  1018 => 278,  1015 => 277,  1007 => 273,  1005 => 269,  1003 => 268,  1000 => 267,  995 => 263,  973 => 258,  970 => 257,  967 => 256,  964 => 255,  961 => 254,  958 => 253,  955 => 252,  952 => 251,  949 => 250,  946 => 249,  943 => 248,  941 => 247,  938 => 246,  930 => 240,  927 => 239,  925 => 238,  922 => 237,  914 => 233,  911 => 232,  909 => 231,  906 => 230,  894 => 226,  891 => 225,  888 => 224,  885 => 223,  883 => 222,  880 => 221,  872 => 217,  869 => 216,  867 => 215,  864 => 214,  856 => 210,  853 => 209,  851 => 208,  848 => 207,  840 => 203,  837 => 202,  835 => 201,  832 => 200,  824 => 196,  821 => 195,  819 => 194,  816 => 193,  808 => 189,  805 => 188,  803 => 187,  800 => 186,  792 => 182,  789 => 181,  787 => 180,  784 => 179,  776 => 175,  774 => 174,  771 => 173,  763 => 169,  760 => 168,  758 => 167,  755 => 166,  747 => 162,  744 => 161,  742 => 160,  740 => 159,  737 => 158,  730 => 153,  720 => 152,  715 => 151,  712 => 150,  706 => 148,  703 => 147,  701 => 146,  698 => 145,  690 => 139,  688 => 138,  687 => 137,  686 => 136,  685 => 135,  680 => 134,  674 => 132,  671 => 131,  669 => 130,  666 => 129,  657 => 123,  653 => 122,  649 => 121,  645 => 120,  640 => 119,  634 => 117,  631 => 116,  629 => 115,  626 => 114,  610 => 110,  608 => 109,  605 => 108,  589 => 104,  587 => 103,  584 => 102,  567 => 98,  555 => 96,  548 => 93,  546 => 92,  541 => 91,  538 => 90,  520 => 89,  518 => 88,  515 => 87,  506 => 82,  503 => 81,  500 => 80,  494 => 78,  492 => 77,  487 => 76,  484 => 75,  481 => 74,  471 => 72,  469 => 71,  461 => 70,  459 => 69,  456 => 68,  450 => 64,  442 => 62,  437 => 61,  433 => 60,  428 => 59,  426 => 58,  423 => 57,  414 => 52,  408 => 50,  405 => 49,  403 => 48,  400 => 47,  390 => 43,  388 => 42,  385 => 41,  377 => 37,  374 => 36,  371 => 35,  368 => 34,  366 => 33,  363 => 32,  355 => 27,  350 => 26,  344 => 24,  342 => 23,  337 => 22,  335 => 21,  332 => 20,  316 => 16,  313 => 15,  311 => 14,  308 => 13,  299 => 8,  293 => 6,  290 => 5,  288 => 4,  285 => 3,  281 => 385,  278 => 384,  276 => 378,  273 => 377,  271 => 371,  268 => 370,  266 => 363,  263 => 362,  260 => 360,  258 => 351,  255 => 350,  253 => 339,  250 => 338,  248 => 333,  245 => 332,  243 => 324,  240 => 323,  238 => 309,  235 => 308,  233 => 301,  230 => 300,  227 => 298,  225 => 295,  222 => 294,  220 => 287,  217 => 286,  215 => 277,  212 => 276,  210 => 267,  207 => 266,  204 => 264,  202 => 263,  199 => 262,  197 => 246,  194 => 245,  191 => 243,  189 => 237,  186 => 236,  184 => 230,  181 => 229,  179 => 221,  176 => 220,  174 => 214,  171 => 213,  169 => 207,  166 => 206,  164 => 200,  161 => 199,  159 => 71,  156 => 192,  154 => 186,  151 => 185,  149 => 179,  146 => 66,  144 => 173,  141 => 172,  139 => 64,  136 => 165,  134 => 63,  131 => 157,  129 => 145,  126 => 144,  124 => 129,  121 => 55,  119 => 114,  116 => 113,  114 => 108,  111 => 107,  109 => 102,  106 => 46,  104 => 87,  101 => 44,  99 => 68,  96 => 67,  94 => 57,  91 => 56,  89 => 47,  86 => 46,  84 => 41,  81 => 40,  79 => 32,  76 => 31,  74 => 20,  71 => 19,  69 => 27,  66 => 12,  64 => 3,  31 => 11,  26 => 2,  20 => 1,  87 => 45,  75 => 35,  73 => 34,  67 => 30,  65 => 26,  61 => 2,  58 => 22,  50 => 20,  45 => 7,  39 => 5,  36 => 4,  30 => 2,);
     }
 }
