@@ -19,3 +19,17 @@ cfc6ca,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_f
 c0ff8d,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbClient,1378936249,db6ac2
 c9c7a0,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbEstimation,1378936249,db6ac2
 00ca01,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AproduitUtilisateur,1378936249,db6ac2
+3f2ffd,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbClient,1378936695,
+d5efd6,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/intranet/admin/client/,1378936696,
+d1385c,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/intranet/admin/client/,1378936696,
+e82aff,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbClient,1378936725,
+0ef3fd,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/intranet/admin/client/,1378936727,
+b29529,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/intranet/admin/client/,1378936727,
+c4826f,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/intranet/admin/client/,1378936739,
+41fc44,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbClient,1378936738,c4826f
+749a78,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbEstimation,1378936738,c4826f
+be1f60,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AproduitUtilisateurSemaine,1378936739,c4826f
+1d6fa1,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbContrat,1378936739,c4826f
+9a81b5,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbClient,1378936739,c4826f
+4f781f,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbEstimation,1378936739,c4826f
+e044a7,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AproduitUtilisateur,1378936739,c4826f

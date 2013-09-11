@@ -18,7 +18,7 @@ public function nbEstimationAction()
 {   
                 $user = $this->container->get('security.context')->getToken()->getUsername();
   $nbEstimation = $this->container->get('doctrine.orm.entity_manager')
-                         ->getRepository('MyAppApBundle:ClientService')
+                         ->getRepository('MyAppApBundle:Contrat')
                          ->getAllEstimationsFranchiseCount($user);
 
         return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbEstimation.html.twig', 
