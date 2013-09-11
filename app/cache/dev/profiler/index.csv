@@ -338,3 +338,4 @@ e396c9,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/intranet/en/admin/
 8686bc,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/intranet/en/admin/client/39/modifier,1378735718,
 856841,127.0.0.1,POST,http://localhost:81/test/web/app_dev.php/intranet/en/admin/client/39/modifier,1378735722,
 1c4577,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/intranet/en/admin/39/estimation?message=Service%20supprim%C3%A9%20avec%20succ%C3%A8s%20%21,1378735723,
+dd4d67,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/intranet/login,1378904392,
