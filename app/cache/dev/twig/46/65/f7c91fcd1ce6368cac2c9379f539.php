@@ -54,24 +54,24 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
 ";
     }
 
-    // line 26
+    // line 14
     public function block_content($context, array $blocks = array())
     {
-        // line 27
+        // line 15
         echo " <!-- Modal -->
 
      ";
-        // line 29
+        // line 17
         $this->env->loadTemplate("MyAppApBundle:Client:ajouter.html.twig")->display($context);
-        // line 30
+        // line 18
         echo "
  
 <div class=\"loading\"></div>
 <div id=\"resultatsRecherche\"> 
     ";
-        // line 34
+        // line 22
         $this->env->loadTemplate("MyAppApBundle:Client:liste.html.twig")->display($context);
-        // line 35
+        // line 23
         echo "</div>
 <script>
    
@@ -83,7 +83,7 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
             \$.ajax({
                 type: \"POST\",
                 url: \"";
-        // line 45
+        // line 33
         echo $this->env->getExtension('routing')->getPath("myapp_client_rechercher");
         echo "\",
                 data: DATA,
@@ -132,6 +132,6 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  87 => 45,  75 => 35,  73 => 34,  67 => 30,  65 => 29,  61 => 27,  58 => 26,  50 => 9,  45 => 7,  39 => 5,  36 => 4,  30 => 2,);
+        return array (  87 => 33,  75 => 23,  73 => 22,  67 => 18,  65 => 17,  61 => 15,  58 => 14,  50 => 9,  45 => 7,  39 => 5,  36 => 4,  30 => 2,);
     }
 }

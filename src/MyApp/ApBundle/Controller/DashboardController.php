@@ -14,31 +14,21 @@ class DashboardController extends ContainerAware
         return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:lister.html.twig');
      }
         
-    public function nbEstimationAction()
-     {
-        $em = $this->container->get('doctrine')->getEntityManager();
-        $username = $this->container->get('security.context')->getToken()->getUsername();
-        
-        //Query nombre de client par user
+public function nbEstimationAction()
+{   
+                $user = $this->container->get('security.context')->getToken()->getUsername();
+  $nbEstimation = $this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:ClientService')
+                         ->getAllEstimationsFranchiseCount($user);
 
-        
-        //Query nombre d'estimations par user par an
-                $qb = $em->createQueryBuilder();
-                $qb ->select('count (a)')
-                  ->from('MyAppApBundle:Client', 'a')
-                  ->join('a.contrat', 'c')
-                  ->where("a.user LIKE :username ")
-                  ->setParameter('username', $username);
-        $query = $qb->getQuery();               
-        $nbEstimation = $query->getResult();
-        
         return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbEstimation.html.twig', 
-	array(
+  array(
                 'nbEstimation' => $nbEstimation,
-                            'username' => $username,
+                'user' => $user,
+  ));
+}  
+         
 
- 	));
-         }
     public function nbContratAction()
      {
         $em = $this->container->get('doctrine')->getEntityManager();
@@ -64,25 +54,30 @@ class DashboardController extends ContainerAware
 
  	));
          }
-     public function nbClientAction()
+public function nbClientAction()
      {   
-          $em = $this->container->get('doctrine')->getEntityManager();
-                $username = $this->container->get('security.context')->getToken()->getUsername();
-                        $qb = $em->createQueryBuilder();
-        $qb ->select('count (a)')
-                  ->from('MyAppApBundle:Client', 'a')
-                  ->where("a.user LIKE :username ")
-                  ->setParameter('username', $username);
-        $query = $qb->getQuery();               
-        $nbClient = $query->getResult();
-        
+                $user = $this->container->get('security.context')->getToken()->getUsername();
+  $nbClient = $this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:Client')
+                         ->getAllClientsByFranchiseCount($user);
+
+$nbClientWeek = $this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:Client')
+                         ->getAllClientsByFranchiseCountWeek($user);
+
+$nbClientMonth = $this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:Client')
+                         ->getAllClientsByFranchiseCountMonth($user);
         return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbClient.html.twig', 
 	array(
                 'nbClient' => $nbClient,
-                'username' => $username,
+                'nbClientWeek' => $nbClientWeek,
+                'nbClientMonth' => $nbClientMonth,
+                'user' => $user,
  	));
-    }   
-      public function produitUtilisateurAction()
+}   
+
+public function produitUtilisateurAction()
      {   
           $em = $this->container->get('doctrine')->getEntityManager();
                 $username = $this->container->get('security.context')->getToken()->getUsername();

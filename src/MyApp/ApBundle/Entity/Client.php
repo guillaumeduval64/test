@@ -642,29 +642,6 @@ class Client
     }
 
     /**
-     * Set flag
-     *
-     * @param boolean $flag
-     * @return Client
-     */
-    public function setFlag($flag)
-    {
-        $this->flag = $flag;
-    
-        return $this;
-    }
-
-    /**
-     * Get flag
-     *
-     * @return boolean 
-     */
-    public function getFlag()
-    {
-        return $this->flag;
-    }
-
-    /**
      * Remove note
      *
      * @param \MyApp\ApBundle\Entity\Note $note
@@ -738,5 +715,28 @@ class Client
     public function getPhones()
     {
         return $this->phones;
+    }
+
+    /**
+     * Set flag
+     *
+     * @param boolean $flag
+     * @return Client
+     */
+    public function setFlag($flag)
+    {
+        $this->flag = $flag;
+    
+        return $this;
+    }
+
+    /**
+     * Get flag
+     *
+     * @return boolean 
+     */
+    public function getFlag()
+    {
+        return $this->flag;
     }
 }

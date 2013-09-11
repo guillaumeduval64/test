@@ -97,52 +97,20 @@ class ClientController extends ContainerAware
     {
       
         $em = $this->container->get('doctrine')->getEntityManager();
-        $username = $this->container->get('security.context')->getToken()->getUsername();
-
-  $qb = $em->createQueryBuilder();
-                $qb ->select(' SUM(p.id), SUM(a.prix)')
-                  ->from('MyAppApBundle:ClientService', 'a')
-                  ->join('a.client', 's')
-                  ->join('s.contrat', 'c')
-                  ->join('c.production', 'p')
-                  ->where("s.user LIKE :username ")
-                  ->andWhere("c.contratEstimation LIKE :Contrat")
-                  ->setParameters(array('username' => $username,'Contrat' => 'Contrat'));
-        $query = $qb->getQuery();               
-        $test = $query->getResult();
-$testtt =array();
-$i=1;
-$testt = array(array('semaine', 'P', 'prod id'));
-        foreach ($test as $t){
-                    foreach ($t as $tt){
-                        if ($tt[0]){
-                            $testtt [0] = 'Semaine 0'; 
-                        }
-                        
-            $testtt [$i] = intval($tt); 
-            $i++;
-            
-                    }
-                       
-        }
- $testt []= $testtt ;
- echo json_encode($testt);           
-
+        $user = $this->container->get('security.context')->getToken()->getUsername();
        
         
         $formRecherche = $this->container->get('form.factory')->create(new ClientRechercheForm());
          $client = new Client();
         
-         $form = $this->container->get('form.factory')->create(new ClientForm(), $client);
+        $form = $this->container->get('form.factory')->create(new ClientForm(), $client);
         $request = $this->container->get('request');
         if ($request->getMethod() == 'POST') 
         {
             $form->bind($request);
                     
             if ($form->isValid()) 
-                {      
-                    $user = $this->container->get('security.context')->getToken()->getUser();
-                    
+                {                          
                     $number = $form['number']->getData();
 
                     $street = $form['street']->getData();
@@ -170,31 +138,14 @@ $testt = array(array('semaine', 'P', 'prod id'));
                     $em->persist($client);
                     $em->persist($date);
                     $em->flush();
-
-
-if (isset($PhoneTypeExist)) {
-    $twilio = $this->container->get('twilio.api');
-                            $message = $twilio->account->sms_messages->create(
-            '15146120598', // From a valid Twilio number
-            '15149916552', // Text this number
-            "Merci de nous faire confiance! 
-        Peinture et Lavage de vitres Guillaume DUVAL"
-        );
-}
-
                     
                 }
-                
-
-
          }
-        $user = $this->container->get('security.context')->getToken()->getUsername();
-
-        
+   
         $query = $this->container->get('doctrine')
                         ->getManager()
                         ->getRepository('MyAppApBundle:Client')
-                        ->getAllClientsByFranchise($user);
+                        ->findByUser($user);
 
         $paginator = $this->container->get('knp_paginator');
         $pagination = $paginator->paginate(
@@ -223,8 +174,6 @@ if (isset($PhoneTypeExist)) {
         'message' => '',
         'formRecherche' => $formRecherche->createView(),
         'form' => $form->createView(),
-        'test' => $testt,
-
  	));
          }
               
@@ -330,8 +279,7 @@ foreach ($PhoneTypeExist as $phone) {
     $phoneNumber=$phone->getPhone();
     $phoneType = $phone->getPhoneType();
     $phoneTypeBoom = $phoneType->getphoneType();
-//var_dump($phoneTypeBoom);
-//exit();
+
 
     if ($phoneTypeBoom=="cellulaire") {
         $twilio = $this->container->get('twilio.api');

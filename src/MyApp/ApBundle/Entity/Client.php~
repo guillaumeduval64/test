@@ -642,29 +642,6 @@ class Client
     }
 
     /**
-     * Set flag
-     *
-     * @param boolean $flag
-     * @return Client
-     */
-    public function setFlag($flag)
-    {
-        $this->flag = $flag;
-    
-        return $this;
-    }
-
-    /**
-     * Get flag
-     *
-     * @return boolean 
-     */
-    public function getFlag()
-    {
-        return $this->flag;
-    }
-
-    /**
      * Remove note
      *
      * @param \MyApp\ApBundle\Entity\Note $note
@@ -705,5 +682,61 @@ class Client
     public function removeTitle(\MyApp\ApBundle\Entity\Titles $titles)
     {
         $this->titles->removeElement($titles);
+    }
+
+    /**
+     * Add phones
+     *
+     * @param \MyApp\ApBundle\Entity\Phone $phones
+     * @return Client
+     */
+    public function addPhone(\MyApp\ApBundle\Entity\Phone $phones)
+    {
+        $this->phones[] = $phones;
+    
+        return $this;
+    }
+
+    /**
+     * Remove phones
+     *
+     * @param \MyApp\ApBundle\Entity\Phone $phones
+     */
+    public function removePhone(\MyApp\ApBundle\Entity\Phone $phones)
+    {
+        $this->phones->removeElement($phones);
+    }
+
+    /**
+     * Get phones
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPhones()
+    {
+        return $this->phones;
+    }
+
+    /**
+     * Set flag
+     *
+     * @param boolean $flag
+     * @return Client
+     */
+    public function setFlag($flag)
+    {
+        $this->flag = $flag;
+    
+        return $this;
+    }
+
+    /**
+     * Get flag
+     *
+     * @return boolean 
+     */
+    public function getFlag()
+    {
+        return $this->flag;
     }
 }

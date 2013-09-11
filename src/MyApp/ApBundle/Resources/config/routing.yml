@@ -246,4 +246,3 @@ myapp_clientContrat_voir:
 myapp_dashboard_principal:
     pattern: /{_locale}/admin/dashboard
     defaults: { _controller: MyAppApBundle:Dashboard:voir}
- 

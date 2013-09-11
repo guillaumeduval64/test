@@ -13,19 +13,81 @@ use Doctrine\ORM\EntityRepository;
 class ClientRepository extends EntityRepository
 {
     
-  public function getAllClientsByFranchise($user)
+public function getAllClientsByFranchiseCount($user)
   {
  
 $qb = $this->createQueryBuilder('a')
+                  ->select('COUNT(a.id)')
                   ->join('a.city', 'c')           
                   ->where("a.user LIKE :user ")
                   ->setParameter('user', $user)    
                   ->orderBy('a.id', 'DESC');
+
+    $qb = $this->whereCurrentYear($qb);
+
     return $qb->getQuery()
               ->getResult();
   }
 
-      public function myFindNextClient()
+public function getAllClientsByFranchiseCountWeek($user)
+  {
+ 
+$qb = $this->createQueryBuilder('a')
+                  ->select('COUNT(a.id)')
+                  ->join('a.city', 'c')           
+                  ->where("a.user LIKE :user ")
+                  ->setParameter('user', $user)    
+                  ->orderBy('a.id', 'DESC');
+
+    $qb = $this->whereCurrentWeek($qb);
+
+    return $qb->getQuery()
+              ->getResult();
+  }
+
+public function getAllClientsByFranchiseCountMonth($user)
+  {
+    $qb = $this->createQueryBuilder('a')
+                      ->select('COUNT(a.id)')
+                      ->join('a.city', 'c')           
+                      ->where("a.user LIKE :user ")
+                      ->setParameter('user', $user)    
+                      ->orderBy('a.id', 'DESC');
+
+        $qb = $this->whereCurrentMonth($qb);
+
+        return $qb->getQuery()
+                  ->getResult();
+  }
+
+public function whereCurrentYear(\Doctrine\ORM\QueryBuilder $qb)
+{
+  $qb->andWhere('a.created BETWEEN :debut AND :fin')
+      ->setParameter('debut', new \Datetime(date('Y').'-01-01'))  
+      ->setParameter('fin',   new \Datetime(date('Y').'-12-31')); 
+ 
+    return $qb;
+}
+
+public function whereCurrentWeek(\Doctrine\ORM\QueryBuilder $qb)
+{
+  $qb->andWhere('a.created BETWEEN :debut AND :fin')
+      ->setParameter('debut', new \Datetime(date('Y-m-d', strtotime("-7 days"))))
+      ->setParameter('fin',   new \Datetime(date('Y').'-12-31'));
+ 
+    return $qb;
+}
+
+public function whereCurrentMonth(\Doctrine\ORM\QueryBuilder $qb)
+{
+  $qb->andWhere('a.created BETWEEN :debut AND :fin')
+      ->setParameter('debut', new \Datetime(date('Y-m-d', strtotime("-30 days")))) 
+      ->setParameter('fin',   new \Datetime(date('Y').'-12-31')); 
+ 
+    return $qb;
+}
+
+  public function myFindNextClient()
     {
 $qb = $this ->_em->createQueryBuilder();
     $qb->select('a')
