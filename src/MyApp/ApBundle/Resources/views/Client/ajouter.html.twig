@@ -12,11 +12,13 @@
         </tr>
         <tr>
             <td>
-            {{ form_label(form.flag) }}{{ form_widget(form.flag) }}
+            {{ form_widget(form.flag) }}
             </td>
         </tr>
         <tr>
             <td>{{ form_widget(form.titles) }}</td>
+            </tr>
+            <tr>
             <td>{{ form_widget(form.etat, { 'attr': {'class':'input-medium'} }) }}</td>
              <td>{{ form_widget(form.ancien, { 'attr': {'class':'input-small'} }) }}</td>
              <td>{{ form_widget(form.service, { 'attr': {'class':'input-small'} }) }}</td>
@@ -67,15 +69,13 @@
             ----------------------------------------------------------
         {% endfor %}
     </ul>
-
-    {{ form_rest(form) }}
         <br>
-    
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
     <input type="submit" class="btn btn-primary" value="Ajouter" title="Ajouter">
   </div>
+  {{ form_rest(form) }}
      </form>   
 </div>
 

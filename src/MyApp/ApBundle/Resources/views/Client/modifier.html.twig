@@ -16,12 +16,16 @@
         </tr>
         <tr>
                        <td>
-            {{ form_label(form.flag) }}{{ form_widget(form.flag) }}
+            {{ form_widget(form.flag) }}
             </td>
-            <td>{{ form_widget(form.titles) }}</td>
-            <td>{{ form_widget(form.etat, { 'attr': {'class':'input-medium'} }) }}</td>
-             <td>{{ form_widget(form.ancien, { 'attr': {'class':'input-small'} }) }}</td>
-             <td>{{ form_widget(form.service, { 'attr': {'class':'input-small'} }) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_widget(form.titles) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_widget(form.etat, { 'attr': {'class':'input-medium'} }) }}</td>
+                 <td>{{ form_widget(form.ancien, { 'attr': {'class':'input-small'} }) }}</td>
+                 <td>{{ form_widget(form.service, { 'attr': {'class':'input-small'} }) }}</td>
 
         </tr>
             <tr>
@@ -68,11 +72,9 @@
             {{ form_row(phone.phone) }}</li>
             ----------------------------------------------------------
         {% endfor %}
-    </ul>
-
-   
-    {{ form_rest(form) }}
+    </ul>   
         <br>
+{{ form_rest(form) }}
 </form>
 
 
