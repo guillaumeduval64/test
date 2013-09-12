@@ -26,6 +26,10 @@ body {
 
 }
 
+#currentMatch{
+    color: blue;
+}
+
 .icone img{
     height:50px;
     width:50px;
@@ -38,7 +42,7 @@ body {
 #test {
     color: #000;
     font: normal 90% Tahoma, Verdana, Helvetica, Sans-Serif;
-    width:950px;
+    width:948px;
     min-height: 400px;
     margin: 0 auto;
      
@@ -207,20 +211,12 @@ a:hover {
     padding-bottom: 30px;
 }
 
-#stat{
-    float: right;
-    width:300px;
-    margin-top: 15px;
-}
-
-
-
 #recherche {    
     float: left;
     margin-bottom: 0px;
     padding: 10px 0px 0px 10px;
     background-color: white;
-    width: 950px;
+    width: 948px;
     border-left:solid;
     border-right:solid;
    } 

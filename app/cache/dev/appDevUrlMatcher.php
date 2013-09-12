@@ -39,6 +39,42 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/js/81c589a')) {
+                // _assetic_81c589a
+                if ($pathinfo === '/js/81c589a.js') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '81c589a',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_81c589a',);
+                }
+
+                if (0 === strpos($pathinfo, '/js/81c589a_')) {
+                    // _assetic_81c589a_0
+                    if ($pathinfo === '/js/81c589a_jquery-ui-1.10.1_1.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '81c589a',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_81c589a_0',);
+                    }
+
+                    // _assetic_81c589a_1
+                    if ($pathinfo === '/js/81c589a_bootstrap_2.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '81c589a',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_81c589a_1',);
+                    }
+
+                    // _assetic_81c589a_2
+                    if ($pathinfo === '/js/81c589a_jquery.maskedinput_3.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '81c589a',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_81c589a_2',);
+                    }
+
+                    // _assetic_81c589a_3
+                    if ($pathinfo === '/js/81c589a_couleurs-stats_4.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '81c589a',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_81c589a_3',);
+                    }
+
+                    // _assetic_81c589a_4
+                    if ($pathinfo === '/js/81c589a_date_5.js') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '81c589a',  'pos' => 4,  '_format' => 'js',  '_route' => '_assetic_81c589a_4',);
+                    }
+
+                }
+
+            }
+
             if (0 === strpos($pathinfo, '/js/5a75dc3')) {
                 // _assetic_5a75dc3
                 if ($pathinfo === '/js/5a75dc3.js') {

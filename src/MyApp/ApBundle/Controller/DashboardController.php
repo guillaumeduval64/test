@@ -12,48 +12,32 @@ class DashboardController extends ContainerAware
     public function voirAction() 
      {   
         return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:lister.html.twig');
-     }
-        
-public function nbEstimationAction()
-{   
-                $user = $this->container->get('security.context')->getToken()->getUsername();
-  $nbEstimation = $this->container->get('doctrine.orm.entity_manager')
-                         ->getRepository('MyAppApBundle:Contrat')
-                         ->getAllEstimationsFranchiseCount($user);
+     }  
 
-        return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbEstimation.html.twig', 
+public function nbProductionAction()
+     {   
+                $user = $this->container->get('security.context')->getToken()->getUsername();
+  $nbProduction = $this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:Contrat')
+                         ->getAllProductionsFranchiseCount($user);
+
+$nbProductionMonth = $this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:Contrat')
+                         ->getAllProductionsFranchiseCountMonth($user);
+
+$nbProductionWeek = $this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:Contrat')
+                         ->getAllProductionsFranchiseCountWeek($user);
+
+        return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbProduction.html.twig', 
   array(
-                'nbEstimation' => $nbEstimation,
+                'nbProduction' => $nbProduction,
+                'nbProductionMonth' => $nbProductionMonth,
+                'nbProductionWeek' => $nbProductionWeek,
                 'user' => $user,
   ));
 }  
-         
 
-    public function nbContratAction()
-     {
-        $em = $this->container->get('doctrine')->getEntityManager();
-        $username = $this->container->get('security.context')->getToken()->getUsername();
-        
-       //Query nombre de $ signés par user par an
-                $qb = $em->createQueryBuilder();
-                $qb ->select('COUNT(a.prix)')
-                  ->from('MyAppApBundle:ClientService', 'a')
-                  ->join('a.client', 's')
-                  ->join('s.contrat', 'c')
-                  ->where("s.user LIKE :username ")
-                  ->andWhere("c.contratEstimation LIKE :Contrat")
-                  ->setParameters(array('username' => $username,'Contrat' => 'Contrat'));
-        $query = $qb->getQuery();               
-        $nbDollarContrats = $query->getResult();
-
-        
-        return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbContrat.html.twig', 
-	array(
-                'nbDollarContrats' => $nbDollarContrats,
-                            'username' => $username,
-
- 	));
-         }
 public function nbClientAction()
      {   
                 $user = $this->container->get('security.context')->getToken()->getUsername();
@@ -69,13 +53,62 @@ $nbClientMonth = $this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Client')
                          ->getAllClientsByFranchiseCountMonth($user);
         return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbClient.html.twig', 
-	array(
+  array(
                 'nbClient' => $nbClient,
                 'nbClientWeek' => $nbClientWeek,
                 'nbClientMonth' => $nbClientMonth,
                 'user' => $user,
- 	));
+  ));
 }   
+
+public function nbEstimationAction()
+{   
+  $user = $this->container->get('security.context')->getToken()->getUsername();
+  $nbEstimation = $this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:Contrat')
+                         ->getAllEstimationsFranchiseCount($user);
+
+$nbEstimationMonth = $this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:Contrat')
+                         ->getAllEstimationsFranchiseCountMonth($user);
+
+$nbEstimationWeek = $this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:Contrat')
+                         ->getAllEstimationsFranchiseCountWeek($user);
+
+        return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbEstimation.html.twig', 
+  array(
+                'nbEstimation' => $nbEstimation,
+                'nbEstimationWeek' => $nbEstimationWeek,
+                'nbEstimationMonth' => $nbEstimationMonth,
+                'user' => $user,
+  ));
+}  
+
+public function nbContratAction()
+{   
+  $user = $this->container->get('security.context')->getToken()->getUsername();
+
+  $nbContrat = $this->container->get('doctrine.orm.entity_manager')
+                           ->getRepository('MyAppApBundle:Contrat')
+                           ->getAllContratsFranchiseCount($user);
+
+  $nbContratMonth = $this->container->get('doctrine.orm.entity_manager')
+                           ->getRepository('MyAppApBundle:Contrat')
+                           ->getAllContratsFranchiseCountMonth($user);
+
+  $nbContratWeek = $this->container->get('doctrine.orm.entity_manager')
+                           ->getRepository('MyAppApBundle:Contrat')
+                           ->getAllContratsFranchiseCountWeek($user);
+
+        return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbContrat.html.twig', 
+  array(
+                'nbContrat' => $nbContrat,
+                'nbContratWeek' => $nbContratWeek,
+                'nbContratMonth' => $nbContratMonth,
+                'user' => $user,
+  ));
+}  
 
 public function produitUtilisateurAction()
      {   

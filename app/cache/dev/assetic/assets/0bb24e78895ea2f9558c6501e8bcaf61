@@ -1,0 +1,12 @@
+$(document).ready(function() {
+
+     var div = document.getElementById('currentMatch');
+
+if (div.innerHtml > 33) {
+    newColor = "green";
+} else {
+    newColor = "red";
+}
+var test = div.innerHtml.append('<style="background-color:yellow;" />');
+alert (test);
+});

@@ -1,0 +1,23 @@
+$(document).ready(function() {
+
+     var div = document.getElementById('currentMatch');
+    alert(div);
+if (div.innerText > 32) {
+    newColor = "green";
+} else {
+    newColor = "red";
+}
+
+var length = div.length,
+    element = null;
+for (var i = 0; i < length; i++) {
+  element = div[i];
+  element.style.color = newColor;
+}
+  
+
+
+});
+
+
+

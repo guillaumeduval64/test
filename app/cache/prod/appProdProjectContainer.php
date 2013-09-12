@@ -118,6 +118,9 @@ class appProdProjectContainer extends Container
             'ivory_google_map.directions' => 'getIvoryGoogleMap_DirectionsService',
             'ivory_google_map.directions_request' => 'getIvoryGoogleMap_DirectionsRequestService',
             'ivory_google_map.directions_request.builder' => 'getIvoryGoogleMap_DirectionsRequest_BuilderService',
+            'ivory_google_map.distance_matrix' => 'getIvoryGoogleMap_DistanceMatrixService',
+            'ivory_google_map.distance_matrix_request' => 'getIvoryGoogleMap_DistanceMatrixRequestService',
+            'ivory_google_map.distance_matrix_request.builder' => 'getIvoryGoogleMap_DistanceMatrixRequest_BuilderService',
             'ivory_google_map.encoded_polyline' => 'getIvoryGoogleMap_EncodedPolylineService',
             'ivory_google_map.encoded_polyline.builder' => 'getIvoryGoogleMap_EncodedPolyline_BuilderService',
             'ivory_google_map.event' => 'getIvoryGoogleMap_EventService',
@@ -129,6 +132,9 @@ class appProdProjectContainer extends Container
             'ivory_google_map.geocoder_request.builder' => 'getIvoryGoogleMap_GeocoderRequest_BuilderService',
             'ivory_google_map.ground_overlay' => 'getIvoryGoogleMap_GroundOverlayService',
             'ivory_google_map.ground_overlay.builder' => 'getIvoryGoogleMap_GroundOverlay_BuilderService',
+            'ivory_google_map.helper.api' => 'getIvoryGoogleMap_Helper_ApiService',
+            'ivory_google_map.helper.bound' => 'getIvoryGoogleMap_Helper_BoundService',
+            'ivory_google_map.helper.coordinate' => 'getIvoryGoogleMap_Helper_CoordinateService',
             'ivory_google_map.helper.map' => 'getIvoryGoogleMap_Helper_MapService',
             'ivory_google_map.info_window' => 'getIvoryGoogleMap_InfoWindowService',
             'ivory_google_map.info_window.builder' => 'getIvoryGoogleMap_InfoWindow_BuilderService',
@@ -140,6 +146,8 @@ class appProdProjectContainer extends Container
             'ivory_google_map.map_type_control.builder' => 'getIvoryGoogleMap_MapTypeControl_BuilderService',
             'ivory_google_map.marker' => 'getIvoryGoogleMap_MarkerService',
             'ivory_google_map.marker.builder' => 'getIvoryGoogleMap_Marker_BuilderService',
+            'ivory_google_map.marker_cluster' => 'getIvoryGoogleMap_MarkerClusterService',
+            'ivory_google_map.marker_cluster.builder' => 'getIvoryGoogleMap_MarkerCluster_BuilderService',
             'ivory_google_map.marker_image' => 'getIvoryGoogleMap_MarkerImageService',
             'ivory_google_map.marker_image.builder' => 'getIvoryGoogleMap_MarkerImage_BuilderService',
             'ivory_google_map.marker_shape' => 'getIvoryGoogleMap_MarkerShapeService',
@@ -148,6 +156,8 @@ class appProdProjectContainer extends Container
             'ivory_google_map.overview_map_control.builder' => 'getIvoryGoogleMap_OverviewMapControl_BuilderService',
             'ivory_google_map.pan_control' => 'getIvoryGoogleMap_PanControlService',
             'ivory_google_map.pan_control.builder' => 'getIvoryGoogleMap_PanControl_BuilderService',
+            'ivory_google_map.places_autocomplete.form.type' => 'getIvoryGoogleMap_PlacesAutocomplete_Form_TypeService',
+            'ivory_google_map.places_autocomplete.helper' => 'getIvoryGoogleMap_PlacesAutocomplete_HelperService',
             'ivory_google_map.point' => 'getIvoryGoogleMap_PointService',
             'ivory_google_map.point.builder' => 'getIvoryGoogleMap_Point_BuilderService',
             'ivory_google_map.polygon' => 'getIvoryGoogleMap_PolygonService',
@@ -164,18 +174,20 @@ class appProdProjectContainer extends Container
             'ivory_google_map.size.builder' => 'getIvoryGoogleMap_Size_BuilderService',
             'ivory_google_map.street_view_control' => 'getIvoryGoogleMap_StreetViewControlService',
             'ivory_google_map.street_view_control.builder' => 'getIvoryGoogleMap_StreetViewControl_BuilderService',
+            'ivory_google_map.template.helper' => 'getIvoryGoogleMap_Template_HelperService',
             'ivory_google_map.zoom_control' => 'getIvoryGoogleMap_ZoomControlService',
             'ivory_google_map.zoom_control.builder' => 'getIvoryGoogleMap_ZoomControl_BuilderService',
             'kernel' => 'getKernelService',
             'knp_paginator' => 'getKnpPaginatorService',
+            'knp_paginator.helper.processor' => 'getKnpPaginator_Helper_ProcessorService',
             'knp_paginator.subscriber.filtration' => 'getKnpPaginator_Subscriber_FiltrationService',
             'knp_paginator.subscriber.paginate' => 'getKnpPaginator_Subscriber_PaginateService',
             'knp_paginator.subscriber.sliding_pagination' => 'getKnpPaginator_Subscriber_SlidingPaginationService',
             'knp_paginator.subscriber.sortable' => 'getKnpPaginator_Subscriber_SortableService',
+            'knp_paginator.templating.helper.pagination' => 'getKnpPaginator_Templating_Helper_PaginationService',
             'knp_paginator.twig.extension.pagination' => 'getKnpPaginator_Twig_Extension_PaginationService',
             'locale_listener' => 'getLocaleListenerService',
             'logger' => 'getLoggerService',
-            'mailer' => 'getMailerService',
             'monolog.handler.main' => 'getMonolog_Handler_MainService',
             'monolog.handler.nested' => 'getMonolog_Handler_NestedService',
             'monolog.logger.doctrine' => 'getMonolog_Logger_DoctrineService',
@@ -220,13 +232,14 @@ class appProdProjectContainer extends Container
             'session_listener' => 'getSessionListenerService',
             'streamed_response_listener' => 'getStreamedResponseListenerService',
             'swiftmailer.email_sender.listener' => 'getSwiftmailer_EmailSender_ListenerService',
-            'swiftmailer.plugin.messagelogger' => 'getSwiftmailer_Plugin_MessageloggerService',
-            'swiftmailer.spool' => 'getSwiftmailer_SpoolService',
-            'swiftmailer.transport' => 'getSwiftmailer_TransportService',
-            'swiftmailer.transport.eventdispatcher' => 'getSwiftmailer_Transport_EventdispatcherService',
-            'swiftmailer.transport.real' => 'getSwiftmailer_Transport_RealService',
+            'swiftmailer.mailer.default' => 'getSwiftmailer_Mailer_DefaultService',
+            'swiftmailer.mailer.default.spool' => 'getSwiftmailer_Mailer_Default_SpoolService',
+            'swiftmailer.mailer.default.transport' => 'getSwiftmailer_Mailer_Default_TransportService',
+            'swiftmailer.mailer.default.transport.eventdispatcher' => 'getSwiftmailer_Mailer_Default_Transport_EventdispatcherService',
+            'swiftmailer.mailer.default.transport.real' => 'getSwiftmailer_Mailer_Default_Transport_RealService',
             'templating' => 'getTemplatingService',
             'templating.asset.package_factory' => 'getTemplating_Asset_PackageFactoryService',
+            'templating.engine.php' => 'getTemplating_Engine_PhpService',
             'templating.filename_parser' => 'getTemplating_FilenameParserService',
             'templating.globals' => 'getTemplating_GlobalsService',
             'templating.helper.actions' => 'getTemplating_Helper_ActionsService',
@@ -281,7 +294,12 @@ class appProdProjectContainer extends Container
             'database_connection' => 'doctrine.dbal.default_connection',
             'doctrine.orm.entity_manager' => 'doctrine.orm.default_entity_manager',
             'fos_user.util.username_canonicalizer' => 'fos_user.util.email_canonicalizer',
+            'mailer' => 'swiftmailer.mailer.default',
             'session.storage' => 'session.storage.native',
+            'swiftmailer.mailer' => 'swiftmailer.mailer.default',
+            'swiftmailer.spool' => 'swiftmailer.mailer.default.spool',
+            'swiftmailer.transport' => 'swiftmailer.mailer.default.transport',
+            'swiftmailer.transport.real' => 'swiftmailer.mailer.default.transport.real',
             'translator' => 'translator.default',
         );
     }
@@ -427,7 +445,7 @@ class appProdProjectContainer extends Container
     }
     protected function getForm_RegistryService()
     {
-        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension($this, array('form' => 'form.type.form', 'birthday' => 'form.type.birthday', 'checkbox' => 'form.type.checkbox', 'choice' => 'form.type.choice', 'collection' => 'form.type.collection', 'country' => 'form.type.country', 'date' => 'form.type.date', 'datetime' => 'form.type.datetime', 'email' => 'form.type.email', 'file' => 'form.type.file', 'hidden' => 'form.type.hidden', 'integer' => 'form.type.integer', 'language' => 'form.type.language', 'locale' => 'form.type.locale', 'money' => 'form.type.money', 'number' => 'form.type.number', 'password' => 'form.type.password', 'percent' => 'form.type.percent', 'radio' => 'form.type.radio', 'repeated' => 'form.type.repeated', 'search' => 'form.type.search', 'textarea' => 'form.type.textarea', 'text' => 'form.type.text', 'time' => 'form.type.time', 'timezone' => 'form.type.timezone', 'url' => 'form.type.url', 'button' => 'form.type.button', 'submit' => 'form.type.submit', 'reset' => 'form.type.reset', 'currency' => 'form.type.currency', 'entity' => 'form.type.entity', 'fos_user_username' => 'fos_user.username_form_type', 'fos_user_profile' => 'fos_user.profile.form.type', 'fos_user_registration' => 'fos_user.registration.form.type', 'fos_user_change_password' => 'fos_user.change_password.form.type', 'fos_user_resetting' => 'fos_user.resetting.form.type', 'fos_user_group' => 'fos_user.group.form.type', 'myapp_utilisateur_registration' => 'myapp_utilisateur_registration.form.type'), array('form' => array(0 => 'form.type_extension.form.http_foundation', 1 => 'form.type_extension.form.validator', 2 => 'form.type_extension.csrf'), 'repeated' => array(0 => 'form.type_extension.repeated.validator'), 'submit' => array(0 => 'form.type_extension.submit.validator')), array(0 => 'form.type_guesser.validator', 1 => 'form.type_guesser.doctrine'))), $this->get('form.resolved_type_factory'));
+        return $this->services['form.registry'] = new \Symfony\Component\Form\FormRegistry(array(0 => new \Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension($this, array('form' => 'form.type.form', 'birthday' => 'form.type.birthday', 'checkbox' => 'form.type.checkbox', 'choice' => 'form.type.choice', 'collection' => 'form.type.collection', 'country' => 'form.type.country', 'date' => 'form.type.date', 'datetime' => 'form.type.datetime', 'email' => 'form.type.email', 'file' => 'form.type.file', 'hidden' => 'form.type.hidden', 'integer' => 'form.type.integer', 'language' => 'form.type.language', 'locale' => 'form.type.locale', 'money' => 'form.type.money', 'number' => 'form.type.number', 'password' => 'form.type.password', 'percent' => 'form.type.percent', 'radio' => 'form.type.radio', 'repeated' => 'form.type.repeated', 'search' => 'form.type.search', 'textarea' => 'form.type.textarea', 'text' => 'form.type.text', 'time' => 'form.type.time', 'timezone' => 'form.type.timezone', 'url' => 'form.type.url', 'button' => 'form.type.button', 'submit' => 'form.type.submit', 'reset' => 'form.type.reset', 'currency' => 'form.type.currency', 'entity' => 'form.type.entity', 'fos_user_username' => 'fos_user.username_form_type', 'fos_user_profile' => 'fos_user.profile.form.type', 'fos_user_registration' => 'fos_user.registration.form.type', 'fos_user_change_password' => 'fos_user.change_password.form.type', 'fos_user_resetting' => 'fos_user.resetting.form.type', 'fos_user_group' => 'fos_user.group.form.type', 'myapp_utilisateur_registration' => 'myapp_utilisateur_registration.form.type', 'places_autocomplete' => 'ivory_google_map.places_autocomplete.form.type'), array('form' => array(0 => 'form.type_extension.form.http_foundation', 1 => 'form.type_extension.form.validator', 2 => 'form.type_extension.csrf'), 'repeated' => array(0 => 'form.type_extension.repeated.validator'), 'submit' => array(0 => 'form.type_extension.submit.validator')), array(0 => 'form.type_guesser.validator', 1 => 'form.type_guesser.doctrine'))), $this->get('form.resolved_type_factory'));
     }
     protected function getForm_ResolvedTypeFactoryService()
     {
@@ -619,7 +637,7 @@ class appProdProjectContainer extends Container
     }
     protected function getFosUser_MailerService()
     {
-        return $this->services['fos_user.mailer'] = new \FOS\UserBundle\Mailer\Mailer($this->get('mailer'), $this->get('router'), $this->get('templating'), array('confirmation.template' => 'FOSUserBundle:Registration:email.txt.twig', 'resetting.template' => 'FOSUserBundle:Resetting:email.txt.twig', 'from_email' => array('confirmation' => array('webmaster@example.com' => 'webmaster'), 'resetting' => array('webmaster@example.com' => 'webmaster'))));
+        return $this->services['fos_user.mailer'] = new \FOS\UserBundle\Mailer\Mailer($this->get('swiftmailer.mailer.default'), $this->get('router'), $this->get('templating'), array('confirmation.template' => 'FOSUserBundle:Registration:email.txt.twig', 'resetting.template' => 'FOSUserBundle:Resetting:email.txt.twig', 'from_email' => array('confirmation' => array('webmaster@example.com' => 'webmaster'), 'resetting' => array('webmaster@example.com' => 'webmaster'))));
     }
     protected function getFosUser_Profile_Form_FactoryService()
     {
@@ -740,6 +758,18 @@ class appProdProjectContainer extends Container
     {
         return $this->services['ivory_google_map.directions_request.builder'] = new \Ivory\GoogleMapBundle\Model\Services\Directions\DirectionsRequestBuilder('Ivory\\GoogleMap\\Services\\Directions\\DirectionsRequest');
     }
+    protected function getIvoryGoogleMap_DistanceMatrixService()
+    {
+        return $this->services['ivory_google_map.distance_matrix'] = new \Ivory\GoogleMap\Services\DistanceMatrix\DistanceMatrix();
+    }
+    protected function getIvoryGoogleMap_DistanceMatrixRequestService()
+    {
+        return $this->get('ivory_google_map.distance_matrix_request.builder')->build();
+    }
+    protected function getIvoryGoogleMap_DistanceMatrixRequest_BuilderService()
+    {
+        return $this->services['ivory_google_map.distance_matrix_request.builder'] = new \Ivory\GoogleMapBundle\Model\Services\DistanceMatrix\DistanceMatrixRequestBuilder('Ivory\\GoogleMap\\Services\\DistanceMatrix\\DistanceMatrixRequest');
+    }
     protected function getIvoryGoogleMap_EncodedPolylineService()
     {
         return $this->get('ivory_google_map.encoded_polyline.builder')->build();
@@ -791,13 +821,12 @@ class appProdProjectContainer extends Container
     }
     protected function getIvoryGoogleMap_Helper_MapService()
     {
-        $a = new \Ivory\GoogleMap\Templating\Helper\Base\CoordinateHelper();
-        $b = new \Ivory\GoogleMap\Templating\Helper\Base\BoundHelper($a);
-        $c = new \Ivory\GoogleMap\Templating\Helper\MapTypeIdHelper();
-        $d = new \Ivory\GoogleMap\Templating\Helper\Controls\ControlPositionHelper();
-        $e = new \Ivory\GoogleMap\Templating\Helper\Base\SizeHelper();
-        $f = new \Ivory\GoogleMap\Templating\Helper\Overlays\InfoWindowHelper($a, $e);
-        return $this->services['ivory_google_map.helper.map'] = new \Ivory\GoogleMap\Templating\Helper\MapHelper($a, $b, $c, new \Ivory\GoogleMap\Templating\Helper\Controls\MapTypeControlHelper($c, $d, new \Ivory\GoogleMap\Templating\Helper\Controls\MapTypeControlStyleHelper()), new \Ivory\GoogleMap\Templating\Helper\Controls\OverviewMapControlHelper(), new \Ivory\GoogleMap\Templating\Helper\Controls\PanControlHelper($d), new \Ivory\GoogleMap\Templating\Helper\Controls\RotateControlHelper($d), new \Ivory\GoogleMap\Templating\Helper\Controls\ScaleControlHelper($d, new \Ivory\GoogleMap\Templating\Helper\Controls\ScaleControlStyleHelper()), new \Ivory\GoogleMap\Templating\Helper\Controls\StreetViewControlHelper($d), new \Ivory\GoogleMap\Templating\Helper\Controls\ZoomControlHelper($d, new \Ivory\GoogleMap\Templating\Helper\Controls\ZoomControlStyleHelper()), new \Ivory\GoogleMap\Templating\Helper\Overlays\MarkerHelper($a, new \Ivory\GoogleMap\Templating\Helper\Overlays\AnimationHelper(), $f, new \Ivory\GoogleMap\Templating\Helper\Overlays\MarkerImageHelper(new \Ivory\GoogleMap\Templating\Helper\Base\PointHelper(), $e), new \Ivory\GoogleMap\Templating\Helper\Overlays\MarkerShapeHelper()), $f, new \Ivory\GoogleMap\Templating\Helper\Overlays\PolylineHelper($a), new \Ivory\GoogleMap\Templating\Helper\Overlays\EncodedPolylineHelper(new \Ivory\GoogleMap\Templating\Helper\Geometry\EncodingHelper()), new \Ivory\GoogleMap\Templating\Helper\Overlays\PolygonHelper($a), new \Ivory\GoogleMap\Templating\Helper\Overlays\RectangleHelper($b), new \Ivory\GoogleMap\Templating\Helper\Overlays\CircleHelper($a), new \Ivory\GoogleMap\Templating\Helper\Overlays\GroundOverlayHelper($b), new \Ivory\GoogleMap\Templating\Helper\Layers\KMLLayerHelper(), new \Ivory\GoogleMap\Templating\Helper\Events\EventManagerHelper(new \Ivory\GoogleMap\Templating\Helper\Events\EventHelper()));
+        $a = new \Ivory\GoogleMap\Helper\MapTypeIdHelper();
+        $b = new \Ivory\GoogleMap\Helper\Controls\ControlPositionHelper();
+        $c = new \Ivory\GoogleMap\Helper\Overlays\AnimationHelper();
+        $d = new \Ivory\GoogleMap\Helper\Overlays\MarkerHelper($c);
+        $e = new \Ivory\GoogleMap\Helper\Overlays\InfoWindowHelper();
+        return $this->services['ivory_google_map.helper.map'] = new \Ivory\GoogleMap\Helper\MapHelper($this->get('ivory_google_map.helper.api'), $this->get('ivory_google_map.helper.coordinate'), $this->get('ivory_google_map.helper.bound'), new \Ivory\GoogleMap\Helper\Base\PointHelper(), new \Ivory\GoogleMap\Helper\Base\SizeHelper(), $a, new \Ivory\GoogleMap\Helper\Controls\MapTypeControlHelper($a, $b, new \Ivory\GoogleMap\Helper\Controls\MapTypeControlStyleHelper()), new \Ivory\GoogleMap\Helper\Controls\OverviewMapControlHelper(), new \Ivory\GoogleMap\Helper\Controls\PanControlHelper($b), new \Ivory\GoogleMap\Helper\Controls\RotateControlHelper($b), new \Ivory\GoogleMap\Helper\Controls\ScaleControlHelper($b, new \Ivory\GoogleMap\Helper\Controls\ScaleControlStyleHelper()), new \Ivory\GoogleMap\Helper\Controls\StreetViewControlHelper($b), new \Ivory\GoogleMap\Helper\Controls\ZoomControlHelper($b, new \Ivory\GoogleMap\Helper\Controls\ZoomControlStyleHelper()), new \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\MarkerClusterHelper(array('default' => new \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\DefaultMarkerClusterHelper($d, $e), 'marker_cluster' => new \Ivory\GoogleMap\Helper\Overlays\MarkerCluster\JsMarkerClusterHelper($d, $e))), new \Ivory\GoogleMap\Helper\Overlays\MarkerImageHelper(), new \Ivory\GoogleMap\Helper\Overlays\MarkerShapeHelper(), $e, new \Ivory\GoogleMap\Helper\Overlays\PolylineHelper(), new \Ivory\GoogleMap\Helper\Overlays\EncodedPolylineHelper(new \Ivory\GoogleMap\Helper\Geometry\EncodingHelper()), new \Ivory\GoogleMap\Helper\Overlays\PolygonHelper(), new \Ivory\GoogleMap\Helper\Overlays\RectangleHelper(), new \Ivory\GoogleMap\Helper\Overlays\CircleHelper(), new \Ivory\GoogleMap\Helper\Overlays\GroundOverlayHelper(), new \Ivory\GoogleMap\Helper\Layers\KMLLayerHelper(), new \Ivory\GoogleMap\Helper\Events\EventManagerHelper());
     }
     protected function getIvoryGoogleMap_InfoWindowService()
     {
@@ -825,7 +854,9 @@ class appProdProjectContainer extends Container
     }
     protected function getIvoryGoogleMap_Map_BuilderService()
     {
-        return $this->services['ivory_google_map.map.builder'] = new \Ivory\GoogleMapBundle\Model\MapBuilder('Ivory\\GoogleMap\\Map', $this->get('ivory_google_map.coordinate.builder'), $this->get('ivory_google_map.bound.builder'));
+        $this->services['ivory_google_map.map.builder'] = $instance = new \Ivory\GoogleMapBundle\Model\MapBuilder('Ivory\\GoogleMap\\Map', $this->get('ivory_google_map.coordinate.builder'), $this->get('ivory_google_map.bound.builder'));
+        $instance->setLibraries(array());
+        return $instance;
     }
     protected function getIvoryGoogleMap_MapTypeControlService()
     {
@@ -844,6 +875,16 @@ class appProdProjectContainer extends Container
     protected function getIvoryGoogleMap_Marker_BuilderService()
     {
         $this->services['ivory_google_map.marker.builder'] = $instance = new \Ivory\GoogleMapBundle\Model\Overlays\MarkerBuilder('Ivory\\GoogleMap\\Overlays\\Marker', $this->get('ivory_google_map.coordinate.builder'));
+        $instance->setOptions(array());
+        return $instance;
+    }
+    protected function getIvoryGoogleMap_MarkerClusterService()
+    {
+        return $this->get('ivory_google_map.marker_cluster.builder')->build();
+    }
+    protected function getIvoryGoogleMap_MarkerCluster_BuilderService()
+    {
+        $this->services['ivory_google_map.marker_cluster.builder'] = $instance = new \Ivory\GoogleMapBundle\Model\Overlays\MarkerClusterBuilder('Ivory\\GoogleMap\\Overlays\\MarkerCluster');
         $instance->setOptions(array());
         return $instance;
     }
@@ -881,6 +922,13 @@ class appProdProjectContainer extends Container
     protected function getIvoryGoogleMap_PanControl_BuilderService()
     {
         return $this->services['ivory_google_map.pan_control.builder'] = new \Ivory\GoogleMapBundle\Model\Controls\PanControlBuilder('Ivory\\GoogleMap\\Controls\\PanControl');
+    }
+    protected function getIvoryGoogleMap_PlacesAutocomplete_Form_TypeService()
+    {
+        if (!isset($this->scopedServices['request'])) {
+            throw new InactiveScopeException('ivory_google_map.places_autocomplete.form.type', 'request');
+        }
+        return $this->services['ivory_google_map.places_autocomplete.form.type'] = $this->scopedServices['request']['ivory_google_map.places_autocomplete.form.type'] = new \Ivory\GoogleMapBundle\Form\Type\PlacesAutocompleteType($this->get('ivory_google_map.places_autocomplete.helper'), $this->get('request'));
     }
     protected function getIvoryGoogleMap_PointService()
     {
@@ -952,6 +1000,10 @@ class appProdProjectContainer extends Container
     {
         return $this->services['ivory_google_map.street_view_control.builder'] = new \Ivory\GoogleMapBundle\Model\Controls\StreetViewControlBuilder('Ivory\\GoogleMap\\Controls\\StreetViewControl');
     }
+    protected function getIvoryGoogleMap_Template_HelperService()
+    {
+        return $this->services['ivory_google_map.template.helper'] = new \Ivory\GoogleMapBundle\Helper\TemplateHelper($this->get('ivory_google_map.helper.map'));
+    }
     protected function getIvoryGoogleMap_ZoomControlService()
     {
         return $this->get('ivory_google_map.zoom_control.builder')->build();
@@ -970,6 +1022,10 @@ class appProdProjectContainer extends Container
         $instance->setDefaultPaginatorOptions(array('pageParameterName' => 'page', 'sortFieldParameterName' => 'sort', 'sortDirectionParameterName' => 'direction', 'filterFieldParameterName' => 'filterField', 'filterValueParameterName' => 'filterValue', 'distinct' => true));
         return $instance;
     }
+    protected function getKnpPaginator_Helper_ProcessorService()
+    {
+        return $this->services['knp_paginator.helper.processor'] = new \Knp\Bundle\PaginatorBundle\Helper\Processor($this->get('templating.helper.router'), $this->get('translator.default'));
+    }
     protected function getKnpPaginator_Subscriber_FiltrationService()
     {
         return $this->services['knp_paginator.subscriber.filtration'] = new \Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber();
@@ -986,13 +1042,17 @@ class appProdProjectContainer extends Container
     {
         return $this->services['knp_paginator.subscriber.sortable'] = new \Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber();
     }
+    protected function getKnpPaginator_Templating_Helper_PaginationService()
+    {
+        return $this->services['knp_paginator.templating.helper.pagination'] = new \Knp\Bundle\PaginatorBundle\Templating\PaginationHelper($this->get('knp_paginator.helper.processor'), $this->get('templating.engine.php'));
+    }
     protected function getKnpPaginator_Twig_Extension_PaginationService()
     {
-        return $this->services['knp_paginator.twig.extension.pagination'] = new \Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension($this->get('templating.helper.router'), $this->get('translator.default'));
+        return $this->services['knp_paginator.twig.extension.pagination'] = new \Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension($this->get('knp_paginator.helper.processor'));
     }
     protected function getLocaleListenerService()
     {
-        $this->services['locale_listener'] = $instance = new \Symfony\Component\HttpKernel\EventListener\LocaleListener('en', $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE));
+        $this->services['locale_listener'] = $instance = new \Symfony\Component\HttpKernel\EventListener\LocaleListener('fr', $this->get('router', ContainerInterface::NULL_ON_INVALID_REFERENCE));
         $instance->setRequest($this->get('request', ContainerInterface::NULL_ON_INVALID_REFERENCE));
         return $instance;
     }
@@ -1001,10 +1061,6 @@ class appProdProjectContainer extends Container
         $this->services['logger'] = $instance = new \Symfony\Bridge\Monolog\Logger('app');
         $instance->pushHandler($this->get('monolog.handler.main'));
         return $instance;
-    }
-    protected function getMailerService()
-    {
-        return $this->services['mailer'] = new \Swift_Mailer($this->get('swiftmailer.transport'));
     }
     protected function getMonolog_Handler_MainService()
     {
@@ -1135,7 +1191,7 @@ class appProdProjectContainer extends Container
         $t->addHandler(new \Symfony\Component\Security\Http\Logout\SessionLogoutHandler());
         $u = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($s, array('default_target_path' => '/intranet/admin/client', 'login_path' => '/intranet/login', 'always_use_default_target_path' => false, 'target_path_parameter' => '_target_path', 'use_referer' => false));
         $u->setProviderKey('main');
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($r, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_manager')), 'main', $a, $c), 2 => $t, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, $this->get('security.authentication.session_strategy'), $s, 'main', $u, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $s, array('login_path' => '/intranet/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => '/intranet/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '51d98ef76a125', $a), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $r, $f, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $s, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $s, '/intranet/login', false), NULL, NULL, $a));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($r, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $this->get('fos_user.user_manager')), 'main', $a, $c), 2 => $t, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $f, $this->get('security.authentication.session_strategy'), $s, 'main', $u, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($e, $s, array('login_path' => '/intranet/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $a), array('check_path' => '/intranet/login_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $c), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5230ff62db283', $a), 5 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $r, $f, $a)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $s, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($e, $s, '/intranet/login', false), NULL, NULL, $a));
     }
     protected function getSecurity_Rememberme_ResponseListenerService()
     {
@@ -1220,21 +1276,21 @@ class appProdProjectContainer extends Container
     {
         return $this->services['swiftmailer.email_sender.listener'] = new \Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener($this);
     }
-    protected function getSwiftmailer_Plugin_MessageloggerService()
+    protected function getSwiftmailer_Mailer_DefaultService()
     {
-        return $this->services['swiftmailer.plugin.messagelogger'] = new \Swift_Plugins_MessageLogger();
+        return $this->services['swiftmailer.mailer.default'] = new \Swift_Mailer($this->get('swiftmailer.mailer.default.transport'));
     }
-    protected function getSwiftmailer_SpoolService()
+    protected function getSwiftmailer_Mailer_Default_SpoolService()
     {
-        return $this->services['swiftmailer.spool'] = new \Swift_MemorySpool();
+        return $this->services['swiftmailer.mailer.default.spool'] = new \Swift_MemorySpool();
     }
-    protected function getSwiftmailer_TransportService()
+    protected function getSwiftmailer_Mailer_Default_TransportService()
     {
-        return $this->services['swiftmailer.transport'] = new \Swift_Transport_SpoolTransport($this->get('swiftmailer.transport.eventdispatcher'), $this->get('swiftmailer.spool'));
+        return $this->services['swiftmailer.mailer.default.transport'] = new \Swift_Transport_SpoolTransport($this->get('swiftmailer.mailer.default.transport.eventdispatcher'), $this->get('swiftmailer.mailer.default.spool'));
     }
-    protected function getSwiftmailer_Transport_RealService()
+    protected function getSwiftmailer_Mailer_Default_Transport_RealService()
     {
-        $this->services['swiftmailer.transport.real'] = $instance = new \Swift_Transport_EsmtpTransport(new \Swift_Transport_StreamBuffer(new \Swift_StreamFilters_StringReplacementFilterFactory()), array(0 => new \Swift_Transport_Esmtp_AuthHandler(array(0 => new \Swift_Transport_Esmtp_Auth_CramMd5Authenticator(), 1 => new \Swift_Transport_Esmtp_Auth_LoginAuthenticator(), 2 => new \Swift_Transport_Esmtp_Auth_PlainAuthenticator()))), $this->get('swiftmailer.transport.eventdispatcher'));
+        $this->services['swiftmailer.mailer.default.transport.real'] = $instance = new \Swift_Transport_EsmtpTransport(new \Swift_Transport_StreamBuffer(new \Swift_StreamFilters_StringReplacementFilterFactory()), array(0 => new \Swift_Transport_Esmtp_AuthHandler(array(0 => new \Swift_Transport_Esmtp_Auth_CramMd5Authenticator(), 1 => new \Swift_Transport_Esmtp_Auth_LoginAuthenticator(), 2 => new \Swift_Transport_Esmtp_Auth_PlainAuthenticator()))), $this->get('swiftmailer.mailer.default.transport.eventdispatcher'));
         $instance->setHost('localhost');
         $instance->setPort(25);
         $instance->setEncryption(NULL);
@@ -1280,10 +1336,7 @@ class appProdProjectContainer extends Container
     }
     protected function getTemplating_Helper_FormService()
     {
-        $a = new \Symfony\Bundle\FrameworkBundle\Templating\PhpEngine($this->get('templating.name_parser'), $this, $this->get('templating.loader'), $this->get('templating.globals'));
-        $a->setCharset('UTF-8');
-        $a->setHelpers(array('slots' => 'templating.helper.slots', 'assets' => 'templating.helper.assets', 'request' => 'templating.helper.request', 'session' => 'templating.helper.session', 'router' => 'templating.helper.router', 'actions' => 'templating.helper.actions', 'code' => 'templating.helper.code', 'translator' => 'templating.helper.translator', 'form' => 'templating.helper.form', 'logout_url' => 'templating.helper.logout_url', 'security' => 'templating.helper.security', 'assetic' => 'assetic.helper.static', 'ivory_google_map' => 'ivory_google_map.helper.map'));
-        return $this->services['templating.helper.form'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\FormHelper(new \Symfony\Component\Form\FormRenderer(new \Symfony\Component\Form\Extension\Templating\TemplatingRendererEngine($a, array(0 => 'FrameworkBundle:Form')), $this->get('form.csrf_provider', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
+        return $this->services['templating.helper.form'] = new \Symfony\Bundle\FrameworkBundle\Templating\Helper\FormHelper(new \Symfony\Component\Form\FormRenderer(new \Symfony\Component\Form\Extension\Templating\TemplatingRendererEngine($this->get('templating.engine.php'), array(0 => 'FrameworkBundle:Form')), $this->get('form.csrf_provider', ContainerInterface::NULL_ON_INVALID_REFERENCE)));
     }
     protected function getTemplating_Helper_LogoutUrlService()
     {
@@ -1444,7 +1497,7 @@ class appProdProjectContainer extends Container
     protected function getTranslator_DefaultService()
     {
         $this->services['translator.default'] = $instance = new \Symfony\Bundle\FrameworkBundle\Translation\Translator($this, new \Symfony\Component\Translation\MessageSelector(), array('translation.loader.php' => array(0 => 'php'), 'translation.loader.yml' => array(0 => 'yml'), 'translation.loader.xliff' => array(0 => 'xlf', 1 => 'xliff'), 'translation.loader.po' => array(0 => 'po'), 'translation.loader.mo' => array(0 => 'mo'), 'translation.loader.qt' => array(0 => 'ts'), 'translation.loader.csv' => array(0 => 'csv'), 'translation.loader.res' => array(0 => 'res'), 'translation.loader.dat' => array(0 => 'dat'), 'translation.loader.ini' => array(0 => 'ini')), array('cache_dir' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/prod/translations', 'debug' => false));
-        $instance->setFallbackLocales(array(0 => 'en'));
+        $instance->setFallbackLocales(array(0 => 'fr'));
         $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.af.xlf', 'af', 'validators');
         $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ar.xlf', 'ar', 'validators');
         $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.bg.xlf', 'bg', 'validators');
@@ -1534,6 +1587,7 @@ class appProdProjectContainer extends Container
         $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.cs.xlf', 'cs', 'security');
         $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.da.xlf', 'da', 'security');
         $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.de.xlf', 'de', 'security');
+        $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.el.xlf', 'el', 'security');
         $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.en.xlf', 'en', 'security');
         $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.es.xlf', 'es', 'security');
         $instance->addResource('xlf', '/Applications/MAMP/htdocs/symfony/symfony2/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../../Resources/translations/security.fa.xlf', 'fa', 'security');
@@ -1642,10 +1696,10 @@ class appProdProjectContainer extends Container
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\RoutingExtension($this->get('router')));
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\YamlExtension());
         $instance->addExtension(new \Symfony\Bridge\Twig\Extension\HttpKernelExtension($this->get('fragment.handler')));
-        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig')), $this->get('form.csrf_provider', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
+        $instance->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer(new \Symfony\Bridge\Twig\Form\TwigRendererEngine(array(0 => 'form_div_layout.html.twig', 1 => '::forms.html.twig', 2 => 'IvoryGoogleMapBundle:Form:places_autocomplete_widget.html.twig')), $this->get('form.csrf_provider', ContainerInterface::NULL_ON_INVALID_REFERENCE))));
         $instance->addExtension(new \Symfony\Bundle\AsseticBundle\Twig\AsseticExtension($this->get('assetic.asset_factory'), $this->get('templating.name_parser'), false, array(), array(0 => 'MyAppApBundle', 1 => 'FrontEndSuperBundle'), new \Symfony\Bundle\AsseticBundle\DefaultValueSupplier($this)));
         $instance->addExtension(new \Doctrine\Bundle\DoctrineBundle\Twig\DoctrineExtension());
-        $instance->addExtension(new \Ivory\GoogleMapBundle\Twig\GoogleMapExtension($this->get('ivory_google_map.helper.map')));
+        $instance->addExtension(new \Ivory\GoogleMapBundle\Twig\GoogleMapExtension($this->get('ivory_google_map.template.helper')));
         $instance->addExtension($this->get('knp_paginator.twig.extension.pagination'));
         $instance->addGlobal('app', $this->get('templating.globals'));
         return $instance;
@@ -1669,6 +1723,7 @@ class appProdProjectContainer extends Container
         $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/ApBundle/Resources/views', 'MyAppAp');
         $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/friendsofsymfony/user-bundle/FOS/UserBundle/Resources/views', 'FOSUser');
         $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/src/MyApp/UtilisateurBundle/Resources/views', 'MyAppUtilisateur');
+        $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/egeloen/google-map-bundle/Ivory/GoogleMapBundle/Resources/views', 'IvoryGoogleMap');
         $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/vendor/knplabs/knp-paginator-bundle/Knp/Bundle/PaginatorBundle/Resources/views', 'KnpPaginator');
         $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/src/FrontEnd/SuperBundle/Resources/views', 'FrontEndSuper');
         $instance->addPath('/Applications/MAMP/htdocs/symfony/symfony2/app/Resources/views');
@@ -1715,6 +1770,22 @@ class appProdProjectContainer extends Container
     {
         return $this->services['fos_user.entity_manager'] = $this->get('doctrine')->getManager(NULL);
     }
+    protected function getIvoryGoogleMap_Helper_ApiService()
+    {
+        return $this->services['ivory_google_map.helper.api'] = new \Ivory\GoogleMap\Helper\ApiHelper();
+    }
+    protected function getIvoryGoogleMap_Helper_BoundService()
+    {
+        return $this->services['ivory_google_map.helper.bound'] = new \Ivory\GoogleMap\Helper\Base\BoundHelper($this->get('ivory_google_map.helper.coordinate'));
+    }
+    protected function getIvoryGoogleMap_Helper_CoordinateService()
+    {
+        return $this->services['ivory_google_map.helper.coordinate'] = new \Ivory\GoogleMap\Helper\Base\CoordinateHelper();
+    }
+    protected function getIvoryGoogleMap_PlacesAutocomplete_HelperService()
+    {
+        return $this->services['ivory_google_map.places_autocomplete.helper'] = new \Ivory\GoogleMap\Helper\Places\AutocompleteHelper($this->get('ivory_google_map.helper.api'), $this->get('ivory_google_map.helper.coordinate'), $this->get('ivory_google_map.helper.bound'));
+    }
     protected function getRouter_RequestContextService()
     {
         return $this->services['router.request_context'] = new \Symfony\Component\Routing\RequestContext('', 'GET', 'localhost', 'http', 80, 443);
@@ -1725,7 +1796,7 @@ class appProdProjectContainer extends Container
     }
     protected function getSecurity_Authentication_ManagerService()
     {
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_manager'), $this->get('security.user_checker'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('51d98ef76a125')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_manager'), $this->get('security.user_checker'), 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5230ff62db283')), true);
         $instance->setEventDispatcher($this->get('event_dispatcher'));
         return $instance;
     }
@@ -1741,9 +1812,16 @@ class appProdProjectContainer extends Container
     {
         return $this->services['security.user_checker'] = new \Symfony\Component\Security\Core\User\UserChecker();
     }
-    protected function getSwiftmailer_Transport_EventdispatcherService()
+    protected function getSwiftmailer_Mailer_Default_Transport_EventdispatcherService()
     {
-        return $this->services['swiftmailer.transport.eventdispatcher'] = new \Swift_Events_SimpleEventDispatcher();
+        return $this->services['swiftmailer.mailer.default.transport.eventdispatcher'] = new \Swift_Events_SimpleEventDispatcher();
+    }
+    protected function getTemplating_Engine_PhpService()
+    {
+        $this->services['templating.engine.php'] = $instance = new \Symfony\Bundle\FrameworkBundle\Templating\PhpEngine($this->get('templating.name_parser'), $this, $this->get('templating.loader'), $this->get('templating.globals'));
+        $instance->setCharset('UTF-8');
+        $instance->setHelpers(array('slots' => 'templating.helper.slots', 'assets' => 'templating.helper.assets', 'request' => 'templating.helper.request', 'session' => 'templating.helper.session', 'router' => 'templating.helper.router', 'actions' => 'templating.helper.actions', 'code' => 'templating.helper.code', 'translator' => 'templating.helper.translator', 'form' => 'templating.helper.form', 'logout_url' => 'templating.helper.logout_url', 'security' => 'templating.helper.security', 'assetic' => 'assetic.helper.static', 'ivory_google_map' => 'ivory_google_map.template.helper', 'knp_pagination' => 'knp_paginator.templating.helper.pagination'));
+        return $instance;
     }
     protected function getTemplating_LocatorService()
     {
@@ -1815,7 +1893,7 @@ class appProdProjectContainer extends Container
             'mailer_host' => 'localhost',
             'mailer_user' => NULL,
             'mailer_password' => NULL,
-            'locale' => 'en',
+            'locale' => 'fr',
             'secret' => 'ThisTokenIsNotSoSecretChangeIt',
             'controller_resolver.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerResolver',
             'controller_name_converter.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerNameParser',
@@ -1863,9 +1941,11 @@ class appProdProjectContainer extends Container
             'debug.errors_logger_listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\ErrorsLoggerListener',
             'kernel.secret' => 'ThisTokenIsNotSoSecretChangeIt',
             'kernel.http_method_override' => true,
+            'kernel.trusted_hosts' => array(
+            ),
             'kernel.trusted_proxies' => array(
             ),
-            'kernel.default_locale' => 'en',
+            'kernel.default_locale' => 'fr',
             'session.class' => 'Symfony\\Component\\HttpFoundation\\Session\\Session',
             'session.flashbag.class' => 'Symfony\\Component\\HttpFoundation\\Session\\Flash\\FlashBag',
             'session.attribute_bag.class' => 'Symfony\\Component\\HttpFoundation\\Session\\Attribute\\AttributeBag',
@@ -2063,6 +2143,8 @@ class appProdProjectContainer extends Container
             'twig.exception_listener.controller' => 'twig.controller.exception:showAction',
             'twig.form.resources' => array(
                 0 => 'form_div_layout.html.twig',
+                1 => '::forms.html.twig',
+                2 => 'IvoryGoogleMapBundle:Form:places_autocomplete_widget.html.twig',
             ),
             'twig.options' => array(
                 'debug' => false,
@@ -2106,27 +2188,32 @@ class appProdProjectContainer extends Container
             'swiftmailer.plugin.impersonate.class' => 'Swift_Plugins_ImpersonatePlugin',
             'swiftmailer.plugin.messagelogger.class' => 'Swift_Plugins_MessageLogger',
             'swiftmailer.plugin.antiflood.class' => 'Swift_Plugins_AntiFloodPlugin',
-            'swiftmailer.plugin.antiflood.threshold' => 99,
-            'swiftmailer.plugin.antiflood.sleep' => 0,
-            'swiftmailer.data_collector.class' => 'Symfony\\Bridge\\Swiftmailer\\DataCollector\\MessageDataCollector',
             'swiftmailer.transport.smtp.class' => 'Swift_Transport_EsmtpTransport',
-            'swiftmailer.transport.smtp.encryption' => NULL,
-            'swiftmailer.transport.smtp.port' => 25,
-            'swiftmailer.transport.smtp.host' => 'localhost',
-            'swiftmailer.transport.smtp.username' => NULL,
-            'swiftmailer.transport.smtp.password' => NULL,
-            'swiftmailer.transport.smtp.auth_mode' => NULL,
-            'swiftmailer.transport.smtp.timeout' => 30,
-            'swiftmailer.transport.smtp.source_ip' => NULL,
             'swiftmailer.plugin.blackhole.class' => 'Swift_Plugins_BlackholePlugin',
+            'swiftmailer.spool.file.class' => 'Swift_FileSpool',
             'swiftmailer.spool.memory.class' => 'Swift_MemorySpool',
             'swiftmailer.email_sender.listener.class' => 'Symfony\\Bundle\\SwiftmailerBundle\\EventListener\\EmailSenderListener',
-            'swiftmailer.spool.memory.path' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/prod/swiftmailer/spool',
+            'swiftmailer.data_collector.class' => 'Symfony\\Bundle\\SwiftmailerBundle\\DataCollector\\MessageDataCollector',
+            'swiftmailer.mailer.default.transport.name' => 'smtp',
+            'swiftmailer.mailer.default.delivery.enabled' => true,
+            'swiftmailer.mailer.default.transport.smtp.encryption' => NULL,
+            'swiftmailer.mailer.default.transport.smtp.port' => 25,
+            'swiftmailer.mailer.default.transport.smtp.host' => 'localhost',
+            'swiftmailer.mailer.default.transport.smtp.username' => NULL,
+            'swiftmailer.mailer.default.transport.smtp.password' => NULL,
+            'swiftmailer.mailer.default.transport.smtp.auth_mode' => NULL,
+            'swiftmailer.mailer.default.transport.smtp.timeout' => 30,
+            'swiftmailer.mailer.default.transport.smtp.source_ip' => NULL,
+            'swiftmailer.spool.default.memory.path' => '/Applications/MAMP/htdocs/symfony/symfony2/app/cache/prod/swiftmailer/spool/default',
+            'swiftmailer.mailer.default.spool.enabled' => true,
+            'swiftmailer.mailer.default.single_address' => NULL,
             'swiftmailer.spool.enabled' => true,
-            'swiftmailer.sender_address' => NULL,
+            'swiftmailer.delivery.enabled' => true,
             'swiftmailer.single_address' => NULL,
-            'swiftmailer.delivery_whitelist' => array(
+            'swiftmailer.mailers' => array(
+                'default' => 'swiftmailer.mailer.default',
             ),
+            'swiftmailer.default_mailer' => 'default',
             'assetic.asset_factory.class' => 'Symfony\\Bundle\\AsseticBundle\\Factory\\AssetFactory',
             'assetic.asset_manager.class' => 'Assetic\\Factory\\LazyAssetManager',
             'assetic.asset_manager_cache_warmer.class' => 'Symfony\\Bundle\\AsseticBundle\\CacheWarmer\\AssetManagerCacheWarmer',
@@ -2284,84 +2371,92 @@ class appProdProjectContainer extends Container
                 0 => 'Registration',
                 1 => 'Default',
             ),
+            'ivory_google_map.helper.api.class' => 'Ivory\\GoogleMap\\Helper\\ApiHelper',
             'ivory_google_map.coordinate.class' => 'Ivory\\GoogleMap\\Base\\Coordinate',
             'ivory_google_map.coordinate.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Base\\CoordinateBuilder',
-            'ivory_google_map.coordinate.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Base\\CoordinateHelper',
+            'ivory_google_map.coordinate.helper.class' => 'Ivory\\GoogleMap\\Helper\\Base\\CoordinateHelper',
             'ivory_google_map.bound.class' => 'Ivory\\GoogleMap\\Base\\Bound',
             'ivory_google_map.bound.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Base\\BoundBuilder',
-            'ivory_google_map.bound.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Base\\BoundHelper',
+            'ivory_google_map.bound.helper.class' => 'Ivory\\GoogleMap\\Helper\\Base\\BoundHelper',
             'ivory_google_map.point.class' => 'Ivory\\GoogleMap\\Base\\Point',
             'ivory_google_map.point.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Base\\PointBuilder',
-            'ivory_google_map.point.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Base\\PointHelper',
+            'ivory_google_map.point.helper.class' => 'Ivory\\GoogleMap\\Helper\\Base\\PointHelper',
             'ivory_google_map.size.class' => 'Ivory\\GoogleMap\\Base\\Size',
             'ivory_google_map.size.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Base\\SizeBuilder',
-            'ivory_google_map.size.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Base\\SizeHelper',
+            'ivory_google_map.size.helper.class' => 'Ivory\\GoogleMap\\Helper\\Base\\SizeHelper',
             'ivory_google_map.map_type_control.class' => 'Ivory\\GoogleMap\\Controls\\MapTypeControl',
             'ivory_google_map.map_type_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\MapTypeControlBuilder',
-            'ivory_google_map.map_type_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\MapTypeControlHelper',
+            'ivory_google_map.map_type_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\MapTypeControlHelper',
             'ivory_google_map.overview_map_control.class' => 'Ivory\\GoogleMap\\Controls\\OverviewMapControl',
             'ivory_google_map.overview_map_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\OverviewMapControlBuilder',
-            'ivory_google_map.overview_map_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\OverviewMapControlHelper',
+            'ivory_google_map.overview_map_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\OverviewMapControlHelper',
             'ivory_google_map.pan_control.class' => 'Ivory\\GoogleMap\\Controls\\PanControl',
             'ivory_google_map.pan_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\PanControlBuilder',
-            'ivory_google_map.pan_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\PanControlHelper',
+            'ivory_google_map.pan_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\PanControlHelper',
             'ivory_google_map.rotate_control.class' => 'Ivory\\GoogleMap\\Controls\\RotateControl',
             'ivory_google_map.rotate_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\RotateControlBuilder',
-            'ivory_google_map.rotate_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\RotateControlHelper',
+            'ivory_google_map.rotate_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\RotateControlHelper',
             'ivory_google_map.scale_control.class' => 'Ivory\\GoogleMap\\Controls\\ScaleControl',
             'ivory_google_map.scale_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\ScaleControlBuilder',
-            'ivory_google_map.scale_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\ScaleControlHelper',
+            'ivory_google_map.scale_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\ScaleControlHelper',
             'ivory_google_map.street_view_control.class' => 'Ivory\\GoogleMap\\Controls\\StreetViewControl',
             'ivory_google_map.street_view_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\StreetViewControlBuilder',
-            'ivory_google_map.street_view_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\StreetViewControlHelper',
+            'ivory_google_map.street_view_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\StreetViewControlHelper',
             'ivory_google_map.zoom_control.class' => 'Ivory\\GoogleMap\\Controls\\ZoomControl',
             'ivory_google_map.zoom_control.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Controls\\ZoomControlBuilder',
-            'ivory_google_map.zoom_control.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\ZoomControlHelper',
-            'ivory_google_map.control_position.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\ControlPositionHelper',
-            'ivory_google_map.map_type_control_style.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\MapTypeControlStyleHelper',
-            'ivory_google_map.scale_control_style.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\ScaleControlStyleHelper',
-            'ivory_google_map.zoom_control_style.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Controls\\ZoomControlStyleHelper',
+            'ivory_google_map.zoom_control.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\ZoomControlHelper',
+            'ivory_google_map.control_position.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\ControlPositionHelper',
+            'ivory_google_map.map_type_control_style.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\MapTypeControlStyleHelper',
+            'ivory_google_map.scale_control_style.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\ScaleControlStyleHelper',
+            'ivory_google_map.zoom_control_style.helper.class' => 'Ivory\\GoogleMap\\Helper\\Controls\\ZoomControlStyleHelper',
             'ivory_google_map.event_manager.class' => 'Ivory\\GoogleMap\\Events\\EventManager',
             'ivory_google_map.event_manager.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Events\\EventManagerBuilder',
-            'ivory_google_map.event_manager.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Events\\EventManagerHelper',
+            'ivory_google_map.event_manager.helper.class' => 'Ivory\\GoogleMap\\Helper\\Events\\EventManagerHelper',
             'ivory_google_map.event.class' => 'Ivory\\GoogleMap\\Events\\Event',
             'ivory_google_map.event.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Events\\EventBuilder',
-            'ivory_google_map.event.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Events\\EventHelper',
             'ivory_google_map.kml_layer.class' => 'Ivory\\GoogleMap\\Layers\\KMLLayer',
             'ivory_google_map.kml_layer.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Layers\\KMLLayerBuilder',
-            'ivory_google_map.kml_layer.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Layers\\KMLLayerHelper',
-            'ivory_google_map.animation.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\AnimationHelper',
+            'ivory_google_map.kml_layer.helper.class' => 'Ivory\\GoogleMap\\Helper\\Layers\\KMLLayerHelper',
+            'ivory_google_map.animation.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\AnimationHelper',
             'ivory_google_map.circle.class' => 'Ivory\\GoogleMap\\Overlays\\Circle',
             'ivory_google_map.circle.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\CircleBuilder',
-            'ivory_google_map.circle.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\CircleHelper',
+            'ivory_google_map.circle.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\CircleHelper',
             'ivory_google_map.encoded_polyline.class' => 'Ivory\\GoogleMap\\Overlays\\EncodedPolyline',
             'ivory_google_map.encoded_polyline.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\EncodedPolylineBuilder',
-            'ivory_google_map.encoded_polyline.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\EncodedPolylineHelper',
-            'ivory_google_map.encoding.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Geometry\\EncodingHelper',
+            'ivory_google_map.encoded_polyline.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\EncodedPolylineHelper',
+            'ivory_google_map.encoding.helper.class' => 'Ivory\\GoogleMap\\Helper\\Geometry\\EncodingHelper',
             'ivory_google_map.ground_overlay.class' => 'Ivory\\GoogleMap\\Overlays\\GroundOverlay',
             'ivory_google_map.ground_overlay.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\GroundOverlayBuilder',
-            'ivory_google_map.ground_overlay.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\GroundOverlayHelper',
+            'ivory_google_map.ground_overlay.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\GroundOverlayHelper',
             'ivory_google_map.info_window.class' => 'Ivory\\GoogleMap\\Overlays\\InfoWindow',
             'ivory_google_map.info_window.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\InfoWindowBuilder',
-            'ivory_google_map.info_window.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\InfoWindowHelper',
+            'ivory_google_map.info_window.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\InfoWindowHelper',
+            'ivory_google_map.marker_cluster.class' => 'Ivory\\GoogleMap\\Overlays\\MarkerCluster',
+            'ivory_google_map.marker_cluster.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\MarkerClusterBuilder',
+            'ivory_google_map.marker_cluster.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerCluster\\MarkerClusterHelper',
+            'ivory_google_map.marker_cluster.helper.abstract.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerCluster\\AbstractMarkerClusterHelper',
+            'ivory_google_map.marker_cluster.helper.default.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerCluster\\DefaultMarkerClusterHelper',
+            'ivory_google_map.marker_cluster.helper.js.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerCluster\\JsMarkerClusterHelper',
             'ivory_google_map.marker.class' => 'Ivory\\GoogleMap\\Overlays\\Marker',
             'ivory_google_map.marker.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\MarkerBuilder',
-            'ivory_google_map.marker.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\MarkerHelper',
+            'ivory_google_map.marker.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerHelper',
             'ivory_google_map.marker_image.class' => 'Ivory\\GoogleMap\\Overlays\\MarkerImage',
             'ivory_google_map.marker_image.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\MarkerImageBuilder',
-            'ivory_google_map.marker_image.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\MarkerImageHelper',
+            'ivory_google_map.marker_image.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerImageHelper',
             'ivory_google_map.marker_shape.class' => 'Ivory\\GoogleMap\\Overlays\\MarkerShape',
             'ivory_google_map.marker_shape.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\MarkerShapeBuilder',
-            'ivory_google_map.marker_shape.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\MarkerShapeHelper',
+            'ivory_google_map.marker_shape.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\MarkerShapeHelper',
             'ivory_google_map.polygon.class' => 'Ivory\\GoogleMap\\Overlays\\Polygon',
             'ivory_google_map.polygon.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\PolygonBuilder',
-            'ivory_google_map.polygon.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\PolygonHelper',
+            'ivory_google_map.polygon.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\PolygonHelper',
             'ivory_google_map.polyline.class' => 'Ivory\\GoogleMap\\Overlays\\Polyline',
             'ivory_google_map.polyline.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\PolylineBuilder',
-            'ivory_google_map.polyline.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\PolylineHelper',
+            'ivory_google_map.polyline.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\PolylineHelper',
             'ivory_google_map.rectangle.class' => 'Ivory\\GoogleMap\\Overlays\\Rectangle',
             'ivory_google_map.rectangle.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Overlays\\RectangleBuilder',
-            'ivory_google_map.rectangle.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\Overlays\\RectangleHelper',
+            'ivory_google_map.rectangle.helper.class' => 'Ivory\\GoogleMap\\Helper\\Overlays\\RectangleHelper',
+            'ivory_google_map.places_autocomplete.form.type.class' => 'Ivory\\GoogleMapBundle\\Form\\Type\\PlacesAutocompleteType',
+            'ivory_google_map.places_autocomplete.helper.class' => 'Ivory\\GoogleMap\\Helper\\Places\\AutocompleteHelper',
             'ivory_google_map.geocoder.class' => 'Ivory\\GoogleMap\\Services\\Geocoding\\Geocoder',
             'ivory_google_map.geocoder.provider.class' => 'Ivory\\GoogleMap\\Services\\Geocoding\\GeocoderProvider',
             'ivory_google_map.geocoder.adapter.class' => 'Geocoder\\HttpAdapter\\CurlHttpAdapter',
@@ -2370,12 +2465,18 @@ class appProdProjectContainer extends Container
             'ivory_google_map.directions.class' => 'Ivory\\GoogleMap\\Services\\Directions\\Directions',
             'ivory_google_map.directions_request.class' => 'Ivory\\GoogleMap\\Services\\Directions\\DirectionsRequest',
             'ivory_google_map.directions_request.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Services\\Directions\\DirectionsRequestBuilder',
+            'ivory_google_map.distance_matrix.class' => 'Ivory\\GoogleMap\\Services\\DistanceMatrix\\DistanceMatrix',
+            'ivory_google_map.distance_matrix_request.class' => 'Ivory\\GoogleMap\\Services\\DistanceMatrix\\DistanceMatrixRequest',
+            'ivory_google_map.distance_matrix_request.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\Services\\DistanceMatrix\\DistanceMatrixRequestBuilder',
             'ivory_google_map.map.class' => 'Ivory\\GoogleMap\\Map',
             'ivory_google_map.map.builder.class' => 'Ivory\\GoogleMapBundle\\Model\\MapBuilder',
-            'ivory_google_map.map.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\MapHelper',
-            'ivory_google_map.map_type_id.helper.class' => 'Ivory\\GoogleMap\\Templating\\Helper\\MapTypeIdHelper',
+            'ivory_google_map.map.helper.class' => 'Ivory\\GoogleMap\\Helper\\MapHelper',
+            'ivory_google_map.map_type_id.helper.class' => 'Ivory\\GoogleMap\\Helper\\MapTypeIdHelper',
             'ivory_google_map.twig.extension.class' => 'Ivory\\GoogleMapBundle\\Twig\\GoogleMapExtension',
+            'ivory_google_map.template.helper.class' => 'Ivory\\GoogleMapBundle\\Helper\\TemplateHelper',
             'knp_paginator.class' => 'Knp\\Component\\Pager\\Paginator',
+            'knp_paginator.templating.helper.pagination.class' => 'Knp\\Bundle\\PaginatorBundle\\Templating\\PaginationHelper',
+            'knp_paginator.helper.processor.class' => 'Knp\\Bundle\\PaginatorBundle\\Helper\\Processor',
             'knp_paginator.template.pagination' => 'KnpPaginatorBundle:Pagination:sliding.html.twig',
             'knp_paginator.template.filtration' => 'KnpPaginatorBundle:Pagination:filtration.html.twig',
             'knp_paginator.template.sortable' => 'KnpPaginatorBundle:Pagination:sortable_link.html.twig',

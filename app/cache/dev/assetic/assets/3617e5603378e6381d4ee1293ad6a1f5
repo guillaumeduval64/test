@@ -1,0 +1,27 @@
+$(document).ready(function() {
+
+     var div = document.getElementById('currentMatch');
+    alert(div);
+if (div.innerText > 32) {
+    newColor = "green";
+} else {
+    newColor = "red";
+}
+
+var length = arr.length,
+    element = null;
+for (var i = 0; i < length; i++) {
+  element = arr[i];
+if (element.innerText > 32) {
+    newColor = "green";
+} else {
+    newColor = "red";
+        element.style.color = newColor;
+
+}v}
+
+
+});
+
+
+

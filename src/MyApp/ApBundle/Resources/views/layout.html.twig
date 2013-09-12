@@ -14,8 +14,8 @@
 {% javascripts
     '@MyAppApBundle/Resources/public/js/jquery-ui-1.10.1.js'
     '@MyAppApBundle/Resources/public/js/bootstrap.js'
-    '@MyAppApBundle/Resources/public/js/flat-ui/bootstrap-switch.js'
     '@MyAppApBundle/Resources/public/js/jquery.maskedinput.js'
+    '@MyAppApBundle/Resources/public/js/couleurs-stats.js'
     '@MyAppApBundle/Resources/public/js/date.js' %}
     <script src="{{ asset_url }}"></script>
         <script type="text/javascript"
@@ -35,7 +35,9 @@ $('input.form_recherche').typeahead({
     });
 });
 </script>         
-   
+
+
+
 <script>
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
@@ -60,14 +62,10 @@ $('input.form_recherche').typeahead({
       }  
 </script>
 
-<script>
-
-
-</script>
 
     </head>
     <body class="homepage">
-     <div id="top">
+     <div id="statistics">
         <table>
             <tr>
             <td></td>
@@ -93,43 +91,21 @@ $('input.form_recherche').typeahead({
                 <td>
                     E
                 </td>
-                <td>
-                </td>
-                <td>
-                    95
-                </td>
-                <td>
-                    {% render(controller("MyAppApBundle:Dashboard:nbEstimation")) %}
-                </td>
+                {% render(controller("MyAppApBundle:Dashboard:nbEstimation")) %}
             </tr>
 
             <tr>
                 <td>
                     S
                 </td>
-                <td>
-                </td>
-                <td>
-                    95
-                </td>
-                <td>
-                    110
-                </td>
+                {% render(controller("MyAppApBundle:Dashboard:nbContrat")) %}
             </tr>
 
             <tr>
                 <td>
                     P
                 </td>
-                <td>
-                    {% render (controller("MyAppApBundle:Dashboard:produitUtilisateurSemaine")) %}
-                </td>
-                <td>
-                    95
-                </td>
-                <td>
-                    110
-                </td>
+                {% render(controller("MyAppApBundle:Dashboard:nbProduction")) %}
             </tr>
         </table>
     </div>
@@ -178,24 +154,6 @@ $('input.form_recherche').typeahead({
 
                 <div id="header">
                        
-             
-                   
-
-
-                          <div id="stat">          
-
-{% block stat %}
-Statistiques:
-
-{% render(controller("MyAppApBundle:Dashboard:nbContrat")) %}
-{% render (controller("MyAppApBundle:Dashboard:nbClient")) %}
-{% render (controller("MyAppApBundle:Dashboard:nbEstimation")) %}
-{% render (controller("MyAppApBundle:Dashboard:produitUtilisateur")) %}
-
- <div id="chart_div" style="width: 300px; height: 300px;"></div>
-{% endblock %}
-
-                </div>
                     {% block content %}
                     {% for flashMessage in app.session.flashbag.get('notice') %}
     <div class="flash notice">

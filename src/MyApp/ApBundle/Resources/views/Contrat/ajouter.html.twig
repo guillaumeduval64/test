@@ -5,6 +5,13 @@
 <a href="{{ path('myapp_estimation_voirClient', { 'id': client.id }) }}">Retour fiche Client</a>
 
 <form action="" method="post" {{ form_enctype(form) }}>
+<table><tr><td>
+</td>
+<td>
+		{{ form_row(form.clientService) }}
+
+</td>
+</tr></table>
     {{ form_widget(form) }}
     <input type="image" src="{{ asset('bundles/myappap/images/add.png') }}" />
 </form>

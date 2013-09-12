@@ -1,0 +1,19 @@
+$(document).ready(function() {
+
+     var div = document.getElementById('currentMatch');
+     var divv = document.getElementTagName('td');
+
+     for (var i = 0 ; i < divvLength ; i++) {
+if (divv.innerText{i} > 32) {
+    newColor = "green";
+} else {
+    newColor = "red";
+}
+    div.style.color = newColor;
+}
+
+});
+
+
+
+if (elements[i].className === 'draggableBox')

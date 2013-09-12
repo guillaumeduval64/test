@@ -165,10 +165,16 @@ class ClientService extends \MyApp\ApBundle\Entity\ClientService implements \Doc
         return parent::getImage();
     }
 
+    public function removeContrat(\MyApp\ApBundle\Entity\Contrat $contrat)
+    {
+        $this->__load();
+        return parent::removeContrat($contrat);
+    }
+
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'prix', 'note', 'created', 'updated', 'client', 'dateTable', 'service', 'image');
+        return array('__isInitialized__', 'id', 'prix', 'note', 'created', 'updated', 'client', 'dateTable', 'contrat', 'service', 'image');
     }
 
     public function __clone()

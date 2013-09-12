@@ -1,0 +1,8 @@
+$(document).ready(function() {
+
+     var div = document.getElementById('currentMatch');
+ 
+    alert(div);
+    alert('test');
+
+});

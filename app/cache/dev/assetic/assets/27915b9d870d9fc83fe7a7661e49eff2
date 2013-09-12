@@ -1,0 +1,17 @@
+$(document).ready(function() {
+
+     var div = document.getElementById('currentMatch').rows[0].cells.length;
+    alert(div);
+     for (var i = 0 ; i < divvLength ; i++) {
+if (divv.innerText{i} > 32) {
+    newColor = "green";
+} else {
+    newColor = "red";
+}
+    div.style.color = newColor;
+}
+}
+});
+
+
+
