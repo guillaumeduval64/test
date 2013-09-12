@@ -134,16 +134,6 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
         // line 27
         echo "            <script type=\"text/javascript\" src=\"https://www.google.com/jsapi\"></script>
 
-<script>
-    //bootstrap typeahead not working on search, je ne sais pas pk
-\$(document).ready(function() {
-\$('input.form_recherche').typeahead({
-  name: 'accounts',
-  local: ['timtrueman', 'JakeHarding', 'vskarich']
-    });
-});
-</script>         
-
 
 
 <script>
@@ -157,7 +147,7 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
     //    ]); 
       
       var test = ";
-        // line 51
+        // line 41
         if (array_key_exists("test", $context)) {
             echo " ";
             echo twig_jsonencode_filter((isset($context["test"]) ? $context["test"] : $this->getContext($context, "test")));
@@ -200,9 +190,9 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
                     P
                 </td>
                     ";
-        // line 87
+        // line 77
         echo $this->env->getExtension('actions')->renderUri($this->env->getExtension('http_kernel')->controller("MyAppApBundle:Dashboard:nbClient"), array());
-        // line 88
+        // line 78
         echo "            </tr>
 
             <tr>
@@ -210,9 +200,9 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
                     E
                 </td>
                 ";
-        // line 94
+        // line 84
         echo $this->env->getExtension('actions')->renderUri($this->env->getExtension('http_kernel')->controller("MyAppApBundle:Dashboard:nbEstimation"), array());
-        // line 95
+        // line 85
         echo "            </tr>
 
             <tr>
@@ -220,9 +210,9 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
                     S
                 </td>
                 ";
-        // line 101
+        // line 91
         echo $this->env->getExtension('actions')->renderUri($this->env->getExtension('http_kernel')->controller("MyAppApBundle:Dashboard:nbContrat"), array());
-        // line 102
+        // line 92
         echo "            </tr>
 
             <tr>
@@ -230,9 +220,9 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
                     P
                 </td>
                 ";
-        // line 108
+        // line 98
         echo $this->env->getExtension('actions')->renderUri($this->env->getExtension('http_kernel')->controller("MyAppApBundle:Dashboard:nbProduction"), array());
-        // line 109
+        // line 99
         echo "            </tr>
         </table>
     </div>
@@ -240,18 +230,18 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
         <div id=\"test\">
                     <div id=\"recherche\">
                         ";
-        // line 115
+        // line 105
         $this->displayBlock('recherche', $context, $blocks);
-        // line 117
+        // line 107
         echo "                            ";
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session"), "flashbag"), "get", array(0 => "notice"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 118
+            // line 108
             echo "                              <div class=\"alert\">
                               <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
                               <strong><img src=\"";
-            // line 120
+            // line 110
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/valid.png"), "html", null, true);
             echo "\" title=\"Client\"/>";
             echo twig_escape_filter($this->env, (isset($context["flashMessage"]) ? $context["flashMessage"] : $this->getContext($context, "flashMessage")), "html", null, true);
@@ -262,7 +252,7 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 123
+        // line 113
         echo "                    </div>
 
             <div id=\"menu\">
@@ -270,62 +260,62 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
                         <ul>
                                 
                                         <li><a href=\"";
-        // line 129
+        // line 119
         echo $this->env->getExtension('routing')->getPath("myapp_client_lister");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/grey_menu/administrator.png"), "html", null, true);
         echo "\" title=\"Client\"/></a></li>
                                    
                                     <li><a href=\"";
-        // line 131
+        // line 121
         echo $this->env->getExtension('routing')->getPath("myapp_rdv_lister");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/grey_menu/bell.png"), "html", null, true);
         echo "\" title=\"RDV\"/></a></li>
                                    
                                         <li><a href=\"";
-        // line 133
+        // line 123
         echo $this->env->getExtension('routing')->getPath("myapp_contrat_lister");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/grey_menu/clipboard.png"), "html", null, true);
         echo "\" title=\"Contrat\"/></a></li>
                                   
                                         <li><a href=\"";
-        // line 135
+        // line 125
         echo $this->env->getExtension('routing')->getPath("myapp_production_booke");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/grey_menu/calendar.png"), "html", null, true);
         echo "\" title=\"Production\"/></a></li>
                                  
                                         <li><a href=\"";
-        // line 137
+        // line 127
         echo $this->env->getExtension('routing')->getPath("myapp_comptabilite_lister");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/grey_menu/money_bag.png"), "html", null, true);
         echo "\" title=\"Comptabilité\"/></a></li>
                                    
                                         <li><a href=\"";
-        // line 139
+        // line 129
         echo $this->env->getExtension('routing')->getPath("myapp_map_voir");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/grey_menu/world.png"), "html", null, true);
         echo "\" title=\"Carte\"/></a></li>
                                         <!--<li><a href=\"";
-        // line 140
+        // line 130
         echo $this->env->getExtension('routing')->getPath("myapp_map_journey");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/grey_menu/world.png"), "html", null, true);
         echo "\" title=\"Carte\"/></a></li>             -->
                                     
                                         <li><a href=\"";
-        // line 142
+        // line 132
         echo $this->env->getExtension('routing')->getPath("myapp_message_liste");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/grey_menu/emoticon_grin.png"), "html", null, true);
         echo "\" title=\"Message\"/></a></li>
                                     
                                         <li><a href=\"";
-        // line 144
+        // line 134
         echo $this->env->getExtension('routing')->getPath("myapp_dashboard_principal");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/stats_lines.png"), "html", null, true);
@@ -338,7 +328,7 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
             <div id=\"page\">
                  <div id=\"logo\">
         <!--<img src=\"";
-        // line 152
+        // line 142
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/logo.png"), "html", null, true);
         echo "\" title=\"Client\"/>-->
                 </div>
@@ -346,57 +336,57 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
                 <div id=\"header\">
                        
                     ";
-        // line 157
+        // line 147
         $this->displayBlock('content', $context, $blocks);
-        // line 164
+        // line 154
         echo "                    
                         ";
-        // line 165
+        // line 155
         $this->displayBlock('principalNote', $context, $blocks);
-        // line 168
+        // line 158
         echo "                    <div id=\"right\">
                         ";
-        // line 169
+        // line 159
         $this->displayBlock('right', $context, $blocks);
-        // line 171
+        // line 161
         echo "                    </div>
                     
                     <div id=\"billFinal\">
                         ";
-        // line 174
+        // line 164
         $this->displayBlock('billFinal', $context, $blocks);
-        // line 176
+        // line 166
         echo "                    </div>
 
                     ";
-        // line 178
+        // line 168
         $this->displayBlock('javascripts', $context, $blocks);
         echo "             
                 </div>
                 <div id=\"noteRight\">
                     ";
-        // line 181
+        // line 171
         $this->displayBlock('note', $context, $blocks);
-        // line 183
+        // line 173
         echo "                    ";
         $this->displayBlock('bill', $context, $blocks);
-        // line 185
+        // line 175
         echo "                </div>    
                 <div id=\"footer\">                            
                     ";
-        // line 187
+        // line 177
         $this->env->loadTemplate("MyAppUtilisateurBundle::connexion.html.twig")->display($context);
-        // line 188
+        // line 178
         echo "                    <p>";
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("rights"), "html", null, true);
         echo " © 2012</p>
                                     <div id=\"choisir_langue\">Choisir la langue :
                     <a href=\"";
-        // line 190
+        // line 180
         echo $this->env->getExtension('routing')->getPath("myapp_choisir_langue", array("langue" => "fr"));
         echo "\">FR</a> |
                     <a href=\"";
-        // line 191
+        // line 181
         echo $this->env->getExtension('routing')->getPath("myapp_choisir_langue", array("langue" => "en"));
         echo "\">EN</a>
                 </div>
@@ -414,25 +404,25 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
         echo "Intranet";
     }
 
-    // line 115
+    // line 105
     public function block_recherche($context, array $blocks = array())
     {
-        // line 116
+        // line 106
         echo "                        ";
     }
 
-    // line 157
+    // line 147
     public function block_content($context, array $blocks = array())
     {
-        // line 158
+        // line 148
         echo "                    ";
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session"), "flashbag"), "get", array(0 => "notice"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
-            // line 159
+            // line 149
             echo "    <div class=\"flash notice\">
         ";
-            // line 160
+            // line 150
             echo twig_escape_filter($this->env, (isset($context["flashMessage"]) ? $context["flashMessage"] : $this->getContext($context, "flashMessage")), "html", null, true);
             echo "
     </div>
@@ -441,48 +431,48 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 163
+        // line 153
         echo "                    ";
     }
 
-    // line 165
+    // line 155
     public function block_principalNote($context, array $blocks = array())
     {
-        // line 166
+        // line 156
         echo "                    <div id=\"principalNote\"></div>
                         ";
     }
 
-    // line 169
+    // line 159
     public function block_right($context, array $blocks = array())
     {
-        // line 170
+        // line 160
         echo "                        ";
     }
 
-    // line 174
+    // line 164
     public function block_billFinal($context, array $blocks = array())
     {
-        // line 175
+        // line 165
         echo "                        ";
     }
 
-    // line 178
+    // line 168
     public function block_javascripts($context, array $blocks = array())
     {
     }
 
-    // line 181
+    // line 171
     public function block_note($context, array $blocks = array())
     {
-        // line 182
+        // line 172
         echo "                    ";
     }
 
-    // line 183
+    // line 173
     public function block_bill($context, array $blocks = array())
     {
-        // line 184
+        // line 174
         echo "                    ";
     }
 
@@ -498,6 +488,6 @@ class __TwigTemplate_0fc7ab66170cb5638471187fcb7e7190 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  486 => 184,  483 => 183,  479 => 182,  476 => 181,  471 => 178,  467 => 175,  464 => 174,  460 => 170,  457 => 169,  452 => 166,  449 => 165,  445 => 163,  436 => 160,  433 => 159,  428 => 158,  425 => 157,  421 => 116,  418 => 115,  412 => 4,  400 => 191,  396 => 190,  390 => 188,  388 => 187,  384 => 185,  381 => 183,  379 => 181,  373 => 178,  369 => 176,  367 => 174,  362 => 171,  360 => 169,  357 => 168,  355 => 165,  352 => 164,  350 => 157,  342 => 152,  329 => 144,  322 => 142,  315 => 140,  309 => 139,  302 => 137,  295 => 135,  288 => 133,  281 => 131,  274 => 129,  266 => 123,  255 => 120,  251 => 118,  246 => 117,  244 => 115,  236 => 109,  234 => 108,  226 => 102,  224 => 101,  216 => 95,  214 => 94,  206 => 88,  204 => 87,  161 => 51,  135 => 27,  67 => 20,  63 => 14,  54 => 10,  50 => 9,  46 => 8,  42 => 7,  37 => 5,  33 => 4,  28 => 1,);
+        return array (  476 => 174,  473 => 173,  469 => 172,  466 => 171,  461 => 168,  457 => 165,  454 => 164,  450 => 160,  447 => 159,  442 => 156,  439 => 155,  435 => 153,  426 => 150,  423 => 149,  418 => 148,  415 => 147,  411 => 106,  408 => 105,  402 => 4,  390 => 181,  386 => 180,  380 => 178,  378 => 177,  374 => 175,  371 => 173,  369 => 171,  363 => 168,  359 => 166,  357 => 164,  352 => 161,  350 => 159,  347 => 158,  345 => 155,  342 => 154,  340 => 147,  332 => 142,  319 => 134,  312 => 132,  305 => 130,  299 => 129,  292 => 127,  285 => 125,  278 => 123,  271 => 121,  264 => 119,  256 => 113,  245 => 110,  241 => 108,  236 => 107,  234 => 105,  226 => 99,  224 => 98,  216 => 92,  214 => 91,  206 => 85,  204 => 84,  196 => 78,  194 => 77,  151 => 41,  135 => 27,  67 => 20,  63 => 14,  54 => 10,  50 => 9,  46 => 8,  42 => 7,  37 => 5,  33 => 4,  28 => 1,);
     }
 }
