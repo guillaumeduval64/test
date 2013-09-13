@@ -13,6 +13,21 @@ use Doctrine\ORM\EntityRepository;
 class ClientRepository extends EntityRepository
 {
     
+public function getAllClientsByFranchise($user)
+  {
+ 
+$qb = $this->createQueryBuilder('a')
+                  ->join('a.city', 'c')           
+                  ->where("a.user LIKE :user ")
+                  ->setParameter('user', $user)    
+                  ->orderBy('a.id', 'DESC');
+
+    $qb = $this->whereCurrentYear($qb);
+
+    return $qb->getQuery()
+              ->getResult();
+  }
+
 public function getAllClientsByFranchiseCount($user)
   {
  

@@ -7,6 +7,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity
+* @ORM\Entity(repositoryClass="ContratRepository")
  * @UniqueEntity("numero")
  */
 class Contrat

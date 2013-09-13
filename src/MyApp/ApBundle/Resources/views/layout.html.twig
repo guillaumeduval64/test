@@ -14,8 +14,8 @@
 {% javascripts
     '@MyAppApBundle/Resources/public/js/jquery-ui-1.10.1.js'
     '@MyAppApBundle/Resources/public/js/bootstrap.js'
-    '@MyAppApBundle/Resources/public/js/flat-ui/bootstrap-switch.js'
     '@MyAppApBundle/Resources/public/js/jquery.maskedinput.js'
+    '@MyAppApBundle/Resources/public/js/couleurs-stats.js'
     '@MyAppApBundle/Resources/public/js/date.js' %}
     <script src="{{ asset_url }}"></script>
         <script type="text/javascript"
@@ -26,16 +26,8 @@
 {% endjavascripts %}
             <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
-<script>
-    //bootstrap typeahead not working on search, je ne sais pas pk
-$(document).ready(function() {
-$('input.form_recherche').typeahead({
-  name: 'accounts',
-  local: ['timtrueman', 'JakeHarding', 'vskarich']
-    });
-});
-</script>         
-   
+
+
 <script>
       google.load("visualization", "1", {packages:["corechart"]});
       google.setOnLoadCallback(drawChart);
@@ -60,80 +52,30 @@ $('input.form_recherche').typeahead({
       }  
 </script>
 
-<script>
-
-
-</script>
 
     </head>
     <body class="homepage">
-     <div id="top">
-        <table>
-            <tr>
-            <td></td>
-                <td>
-                    S
-                </td>
-                <td>
-                    M
-                </td>
-                <td>
-                    A
-                </td>
-            </tr>
+    <div id="header-wrapper">
+     <div id="statistics">
+     <div id="b">
+     <div id="a">
 
-            <tr>
-                <td>
-                    P
-                </td>
-                    {% render (controller("MyAppApBundle:Dashboard:nbClient")) %}
-            </tr>
+                    {% render(controller("MyAppApBundle:Dashboard:nbClient")) %}
+</div>
+     <div id="a">
+                {% render(controller("MyAppApBundle:Dashboard:nbEstimation")) %}
+</div>
+<div id="a">
 
-            <tr>
-                <td>
-                    E
-                </td>
-                <td>
-                </td>
-                <td>
-                    95
-                </td>
-                <td>
-                    {% render(controller("MyAppApBundle:Dashboard:nbEstimation")) %}
-                </td>
-            </tr>
+                {% render(controller("MyAppApBundle:Dashboard:nbContrat")) %}
 
-            <tr>
-                <td>
-                    S
-                </td>
-                <td>
-                </td>
-                <td>
-                    95
-                </td>
-                <td>
-                    110
-                </td>
-            </tr>
+</div>
+<div id="a">
 
-            <tr>
-                <td>
-                    P
-                </td>
-                <td>
-                    {% render (controller("MyAppApBundle:Dashboard:produitUtilisateurSemaine")) %}
-                </td>
-                <td>
-                    95
-                </td>
-                <td>
-                    110
-                </td>
-            </tr>
-        </table>
+                {% render(controller("MyAppApBundle:Dashboard:nbProduction")) %}
     </div>
-        <div id="header-wrapper">
+    </div>
+     </div>   
         <div id="test">
                     <div id="recherche">
                         {% block recherche %}
@@ -178,24 +120,6 @@ $('input.form_recherche').typeahead({
 
                 <div id="header">
                        
-             
-                   
-
-
-                          <div id="stat">          
-
-{% block stat %}
-Statistiques:
-
-{% render(controller("MyAppApBundle:Dashboard:nbContrat")) %}
-{% render (controller("MyAppApBundle:Dashboard:nbClient")) %}
-{% render (controller("MyAppApBundle:Dashboard:nbEstimation")) %}
-{% render (controller("MyAppApBundle:Dashboard:produitUtilisateur")) %}
-
- <div id="chart_div" style="width: 300px; height: 300px;"></div>
-{% endblock %}
-
-                </div>
                     {% block content %}
                     {% for flashMessage in app.session.flashbag.get('notice') %}
     <div class="flash notice">

@@ -142,14 +142,15 @@ class ClientController extends ContainerAware
                 }
          }
    
-        $query = $this->container->get('doctrine')
-                        ->getManager()
-                        ->getRepository('MyAppApBundle:Client')
-                        ->findByUser($user);
+                $qb = $em->createQueryBuilder();
+        $qb->select('c')
+        ->from('MyAppApBundle:Client', 'c')
+        ->andWhere('c.user = :user')
+        ->setParameter('user', $user);
 
         $paginator = $this->container->get('knp_paginator');
         $pagination = $paginator->paginate(
-            $query,
+            $qb,
             $this->container->get('request')->query->get('page', 1)/*page number*/,
             15/*limit per page*/
                 );

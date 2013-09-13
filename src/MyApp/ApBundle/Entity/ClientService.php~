@@ -269,4 +269,14 @@ class ClientService
     {
         return $this->image;
     }
+
+    /**
+     * Remove contrat
+     *
+     * @param \MyApp\ApBundle\Entity\Contrat $contrat
+     */
+    public function removeContrat(\MyApp\ApBundle\Entity\Contrat $contrat)
+    {
+        $this->contrat->removeElement($contrat);
+    }
 }

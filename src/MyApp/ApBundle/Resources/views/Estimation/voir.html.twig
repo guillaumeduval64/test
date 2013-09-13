@@ -31,7 +31,7 @@
 <address>
   <b><a href="#myModal"  data-toggle="modal">{{ client.nom|upper }}  {{ client.prenom|capitalize }}</a></b><br>
   {{ client.number }} {{ client.street }}<br>
-  {{ client.city.city|capitalize }}, {{ client.pc }}<br>
+  {{ client.city.city|capitalize }}, {{ client.pc|upper }}<br>
 
 {% for p in client.phones %}
     {{ p.phoneType.phoneType|capitalize }}: {{ p.phone }}
