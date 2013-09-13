@@ -16,17 +16,42 @@ class __TwigTemplate_7d0e21eaab4db17a25a06cf37ef2219c extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<td>";
+        echo "        <table id=\"porte\">
+            <tr>
+                <td rowspan=\"3\">
+                   <h1>S</h1>
+                </td>
+
+<td><h6>";
+        // line 7
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nbContratWeek"]) ? $context["nbContratWeek"] : $this->getContext($context, "nbContratWeek")), 0, array(), "array"), 1, array(), "array"), "html", null, true);
-        echo "</td>
-<td>";
-        // line 2
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nbContratMonth"]) ? $context["nbContratMonth"] : $this->getContext($context, "nbContratMonth")), 0, array(), "array"), 1, array(), "array"), "html", null, true);
-        echo "</td>
-<td>";
-        // line 3
+        echo "</h6></td>
+<td><h6>";
+        // line 8
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nbContratWeek"]) ? $context["nbContratWeek"] : $this->getContext($context, "nbContratWeek")), 0, array(), "array"), 1, array(), "array"), "html", null, true);
+        echo "</h6></td>
+</tr>
+<tr>
+<td><h6>";
+        // line 11
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nbContrat"]) ? $context["nbContrat"] : $this->getContext($context, "nbContrat")), 0, array(), "array"), 1, array(), "array"), "html", null, true);
-        echo "</td>";
+        echo "</h6></td>
+<td><h6>";
+        // line 12
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nbContrat"]) ? $context["nbContrat"] : $this->getContext($context, "nbContrat")), 0, array(), "array"), 1, array(), "array"), "html", null, true);
+        echo "</h6></td>
+</tr>
+<tr>
+<td><h6>";
+        // line 15
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nbContratWeek"]) ? $context["nbContratWeek"] : $this->getContext($context, "nbContratWeek")), 0, array(), "array"), 1, array(), "array"), "html", null, true);
+        echo "</h6></td>
+<td><h6>";
+        // line 16
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["nbContratMonth"]) ? $context["nbContratMonth"] : $this->getContext($context, "nbContratMonth")), 0, array(), "array"), 1, array(), "array"), "html", null, true);
+        echo "</h6></td>
+</tr>
+</table>";
     }
 
     public function getTemplateName()
@@ -41,6 +66,6 @@ class __TwigTemplate_7d0e21eaab4db17a25a06cf37ef2219c extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  24 => 2,  19 => 1,  526 => 211,  523 => 210,  519 => 209,  516 => 208,  511 => 205,  507 => 202,  504 => 201,  500 => 197,  497 => 196,  492 => 193,  489 => 192,  485 => 190,  476 => 187,  473 => 186,  468 => 185,  465 => 184,  459 => 179,  457 => 178,  455 => 177,  453 => 176,  451 => 175,  447 => 173,  444 => 172,  440 => 125,  437 => 124,  431 => 4,  419 => 218,  415 => 217,  409 => 215,  407 => 214,  403 => 212,  400 => 210,  398 => 208,  392 => 205,  388 => 203,  386 => 201,  381 => 198,  379 => 196,  376 => 195,  374 => 192,  371 => 191,  369 => 184,  365 => 182,  363 => 172,  349 => 161,  336 => 153,  329 => 151,  322 => 149,  316 => 148,  309 => 146,  302 => 144,  295 => 142,  288 => 140,  281 => 138,  273 => 132,  262 => 129,  258 => 127,  253 => 126,  251 => 124,  229 => 104,  227 => 103,  219 => 97,  217 => 96,  209 => 90,  207 => 89,  160 => 49,  136 => 27,  68 => 20,  64 => 14,  55 => 10,  51 => 9,  47 => 8,  43 => 7,  34 => 4,  29 => 1,  38 => 5,  35 => 5,  30 => 3,  83 => 31,  74 => 25,  65 => 19,  57 => 14,  53 => 13,  46 => 9,  42 => 8,  39 => 7,  33 => 5,  31 => 4,  28 => 3,);
+        return array (  51 => 16,  47 => 15,  41 => 12,  31 => 8,  27 => 7,  40 => 11,  36 => 10,  30 => 7,  26 => 6,  19 => 1,  452 => 150,  449 => 149,  445 => 148,  442 => 147,  437 => 144,  433 => 141,  430 => 140,  426 => 136,  423 => 135,  418 => 132,  415 => 131,  411 => 129,  402 => 126,  399 => 125,  394 => 124,  391 => 123,  387 => 82,  384 => 81,  378 => 4,  366 => 157,  362 => 156,  356 => 154,  354 => 153,  350 => 151,  347 => 149,  345 => 147,  339 => 144,  335 => 142,  333 => 140,  328 => 137,  326 => 135,  323 => 134,  321 => 131,  318 => 130,  316 => 123,  308 => 118,  295 => 110,  288 => 108,  281 => 106,  275 => 105,  268 => 103,  261 => 101,  254 => 99,  247 => 97,  240 => 95,  232 => 89,  221 => 86,  217 => 84,  212 => 83,  210 => 81,  203 => 76,  201 => 75,  195 => 71,  193 => 70,  188 => 67,  186 => 66,  182 => 64,  180 => 63,  151 => 41,  135 => 27,  67 => 20,  63 => 14,  54 => 10,  50 => 15,  46 => 14,  42 => 7,  37 => 11,  33 => 4,  28 => 1,);
     }
 }

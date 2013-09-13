@@ -1,3 +1,17 @@
-<td>{{ nbProductionWeek[0][1] }}</td>
-<td>{{ nbProductionMonth[0][1] }}</td>
-<td>{{ nbProduction[0][1] }}</td>
+<table id="porte">
+            <tr>
+                <td rowspan="3">
+                   <h1>P</h1>
+    </td>
+		<td><h6>{{ nbProductionWeek[0][1] }}</h6></td>
+		<td><h6>{{ nbProductionMonth[0][1] }}</h6></td>
+	</tr>
+	<tr>
+		<td><h6>{{ nbProductionMonth[0][1] }}</h6></td>
+		<td><h6>{{ nbProductionMonth[0][1] }}</h6></td>
+	</tr>
+	<tr>
+		<td><h6>{{ nbProduction[0][1] }}</h6></td>
+		<td><h6>{{ nbProduction[0][1] }} - {{ nbProductionObj[0] }}</h6></td>
+	</tr>
+</table>

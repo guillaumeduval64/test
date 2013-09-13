@@ -75,45 +75,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-            if (0 === strpos($pathinfo, '/js/5a75dc3')) {
-                // _assetic_5a75dc3
-                if ($pathinfo === '/js/5a75dc3.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => '5a75dc3',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_5a75dc3',);
-                }
-
-                if (0 === strpos($pathinfo, '/js/5a75dc3_')) {
-                    // _assetic_5a75dc3_0
-                    if ($pathinfo === '/js/5a75dc3_jquery-ui-1.10.1_1.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '5a75dc3',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_5a75dc3_0',);
-                    }
-
-                    if (0 === strpos($pathinfo, '/js/5a75dc3_bootstrap')) {
-                        // _assetic_5a75dc3_1
-                        if ($pathinfo === '/js/5a75dc3_bootstrap_2.js') {
-                            return array (  '_controller' => 'assetic.controller:render',  'name' => '5a75dc3',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_5a75dc3_1',);
-                        }
-
-                        // _assetic_5a75dc3_2
-                        if ($pathinfo === '/js/5a75dc3_bootstrap-switch_3.js') {
-                            return array (  '_controller' => 'assetic.controller:render',  'name' => '5a75dc3',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_5a75dc3_2',);
-                        }
-
-                    }
-
-                    // _assetic_5a75dc3_3
-                    if ($pathinfo === '/js/5a75dc3_jquery.maskedinput_4.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '5a75dc3',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_5a75dc3_3',);
-                    }
-
-                    // _assetic_5a75dc3_4
-                    if ($pathinfo === '/js/5a75dc3_date_5.js') {
-                        return array (  '_controller' => 'assetic.controller:render',  'name' => '5a75dc3',  'pos' => 4,  '_format' => 'js',  '_route' => '_assetic_5a75dc3_4',);
-                    }
-
-                }
-
-            }
-
             if (0 === strpos($pathinfo, '/js/1ea8096')) {
                 // _assetic_1ea8096
                 if ($pathinfo === '/js/1ea8096.js') {

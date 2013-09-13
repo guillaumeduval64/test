@@ -26,6 +26,28 @@ body {
 
 }
 
+#statistics{
+height: 110px;
+background-color: #F6F6F6;
+border-bottom: 1px solid #CCC;
+}
+
+#statistics h1{
+    color: #E9E581;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#statistics h6{
+    height: 10px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#a { min-width:100px; width: 100px; float: left;margin-left: 160px;}
+
+#porte table {
+display: inline-block;
+}
+
 #currentMatch{
     color: blue;
 }

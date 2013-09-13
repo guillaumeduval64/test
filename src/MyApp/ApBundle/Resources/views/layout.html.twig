@@ -55,51 +55,27 @@
 
     </head>
     <body class="homepage">
+    <div id="header-wrapper">
      <div id="statistics">
-        <table>
-            <tr>
-            <td></td>
-                <td>
-                    S
-                </td>
-                <td>
-                    M
-                </td>
-                <td>
-                    A
-                </td>
-            </tr>
+     <div id="b">
+     <div id="a">
 
-            <tr>
-                <td>
-                    P
-                </td>
-                    {% render (controller("MyAppApBundle:Dashboard:nbClient")) %}
-            </tr>
-
-            <tr>
-                <td>
-                    E
-                </td>
+                    {% render(controller("MyAppApBundle:Dashboard:nbClient")) %}
+</div>
+     <div id="a">
                 {% render(controller("MyAppApBundle:Dashboard:nbEstimation")) %}
-            </tr>
+</div>
+<div id="a">
 
-            <tr>
-                <td>
-                    S
-                </td>
                 {% render(controller("MyAppApBundle:Dashboard:nbContrat")) %}
-            </tr>
 
-            <tr>
-                <td>
-                    P
-                </td>
+</div>
+<div id="a">
+
                 {% render(controller("MyAppApBundle:Dashboard:nbProduction")) %}
-            </tr>
-        </table>
     </div>
-        <div id="header-wrapper">
+    </div>
+     </div>   
         <div id="test">
                     <div id="recherche">
                         {% block recherche %}

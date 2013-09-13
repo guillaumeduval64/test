@@ -21,6 +21,10 @@ public function nbProductionAction()
                          ->getRepository('MyAppApBundle:Contrat')
                          ->getAllProductionsFranchiseCount($user);
 
+                         $nbProductionObj=$this->container->get('doctrine.orm.entity_manager')
+                         ->getRepository('MyAppApBundle:Objectif')
+                         ->getObjectifByFranchise($user);
+
 $nbProductionMonth = $this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Contrat')
                          ->getAllProductionsFranchiseCountMonth($user);
@@ -35,6 +39,7 @@ $nbProductionWeek = $this->container->get('doctrine.orm.entity_manager')
                 'nbProductionMonth' => $nbProductionMonth,
                 'nbProductionWeek' => $nbProductionWeek,
                 'user' => $user,
+                'nbProductionObj' => $nbProductionObj,
   ));
 }  
 

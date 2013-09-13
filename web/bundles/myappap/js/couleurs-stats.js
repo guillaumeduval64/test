@@ -2,9 +2,9 @@ $(document).ready(function() {
 
      var div = document.getElementById('currentMatch');
 if (div.innerText > 32) {
-    newColor = "green";
+    newColor = '#E9E581';
 } else {
-    newColor = "red";
+    newColor = "black";
 }
     div.style.color = newColor;
 });
