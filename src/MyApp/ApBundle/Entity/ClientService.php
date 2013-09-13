@@ -27,12 +27,6 @@ class ClientService
      * @ORM\OneToOne(targetEntity="DateTable", cascade={"remove", "persist"})
      */    
     private $dateTable;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="Contrat", cascade={"persist","remove"})
-     * @Assert\NotBlank()
-     */    
-    public $contrat;
     
      /**
      * @ORM\ManyToOne(targetEntity="Service", cascade={"persist","remove"})
@@ -268,15 +262,5 @@ class ClientService
     public function getImage()
     {
         return $this->image;
-    }
-
-    /**
-     * Remove contrat
-     *
-     * @param \MyApp\ApBundle\Entity\Contrat $contrat
-     */
-    public function removeContrat(\MyApp\ApBundle\Entity\Contrat $contrat)
-    {
-        $this->contrat->removeElement($contrat);
     }
 }

@@ -33,3 +33,11 @@ be1f60,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_f
 9a81b5,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbClient,1378936739,c4826f
 4f781f,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbEstimation,1378936739,c4826f
 e044a7,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AproduitUtilisateur,1378936739,c4826f
+793e3c,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/intranet/admin/client/,1378936877,
+abf03f,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbClient,1378936877,793e3c
+9edfd3,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbEstimation,1378936877,793e3c
+0c3af5,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AproduitUtilisateurSemaine,1378936877,793e3c
+70c4da,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbContrat,1378936877,793e3c
+ab8229,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbClient,1378936877,793e3c
+91ddc1,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AnbEstimation,1378936877,793e3c
+ee4d18,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DMyAppApBundle%253ADashboard%253AproduitUtilisateur,1378936877,793e3c
