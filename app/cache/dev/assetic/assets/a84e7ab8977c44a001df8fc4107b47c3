@@ -1,0 +1,21 @@
+$(document).ready(function() {
+
+     var div = [];
+
+var items = document.getElementsByClassName('currentMatch');
+    for (var i = 0; i < items.length; i++)
+        alert(items[i].innerText);
+});
+/*
+     	document.getElementById('currentMatch');
+if (div.innerText > 32) {
+    newColor = '#E9E581';
+} else {
+    newColor = "black";
+}
+    div.style.color = newColor;
+    alert(div.length[1]);
+});
+
+*/
+

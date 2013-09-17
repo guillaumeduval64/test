@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
+
 class DashboardController extends ContainerAware
 {
     public function voirAction() 
@@ -17,6 +18,7 @@ class DashboardController extends ContainerAware
 public function nbProductionAction()
      {   
                 $user = $this->container->get('security.context')->getToken()->getUsername();
+
   $nbProduction = $this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Contrat')
                          ->getAllProductionsFranchiseCount($user);
@@ -24,6 +26,9 @@ public function nbProductionAction()
                          $nbProductionObj=$this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Objectif')
                          ->getObjectifByFranchise($user);
+$difObjectifProd = $nbProduction[0][1] - $nbProductionObj[0] ->getMontant();
+
+$nbProductionObj = $nbProductionObj[0] ->getMontant();
 
 $nbProductionMonth = $this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Contrat')
@@ -38,8 +43,9 @@ $nbProductionWeek = $this->container->get('doctrine.orm.entity_manager')
                 'nbProduction' => $nbProduction,
                 'nbProductionMonth' => $nbProductionMonth,
                 'nbProductionWeek' => $nbProductionWeek,
-                'user' => $user,
                 'nbProductionObj' => $nbProductionObj,
+                'user' => $user,
+                'difObjectifProd' => $difObjectifProd,
   ));
 }  
 

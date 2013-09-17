@@ -1,0 +1,29 @@
+$(document).ready(function() {
+var test;
+var items = document.getElementsByClassName('currentMatch');
+
+    for (var i = 0; i < items.length; i++){
+        test = items[i].innerText;
+    var array=[];
+    array.push(test);
+alert(array);
+if (array > 32) {
+    newColor = '#E9E581';
+    items.style.color = newColor;
+    alert(items.style.color);
+} else {
+    newColor = "black";
+}
+
+    /*
+if (test > 32) {
+    newColor = '#E9E581';
+    test.style.color = newColor;
+    alert(test.style.color);
+    alert(item.style.color);
+} else {
+    newColor = "black";
+    */
+}
+
+});

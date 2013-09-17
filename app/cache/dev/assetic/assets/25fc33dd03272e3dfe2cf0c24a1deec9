@@ -1,0 +1,13 @@
+$(document).ready(function() {
+
+var items = document.getElementsByClassName('currentMatch');
+    for (var i = 0; i < items.length; i++)
+        alert(items[i].innerText)
+if (item.innerText > 32) {
+    newColor = '#E9E581';
+} else {
+    newColor = "black";
+}
+    item.style.color = newColor;
+alert(item.style.color);
+});

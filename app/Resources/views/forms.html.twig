@@ -16,10 +16,10 @@
 {% spaceless %}
 <tr>
     <td>
-        {{ form_label(form) }}
-    </td>
-<td>
-        <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+        <label class="input-control checkbox">
+            <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+            <span class="helper">{{ form_label(form) }}</span>
+        </label>
 </td>
 </tr>
 

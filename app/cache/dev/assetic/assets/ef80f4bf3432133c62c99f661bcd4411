@@ -1,0 +1,17 @@
+$(document).ready(function() {
+
+var items = document.getElementsByClassName('currentMatch');
+    for (var i = 0; i < items.length; i++){
+        alert(items[i].innerText);
+    
+if (item[i].innerText > 32) {
+    newColor = '#E9E581';
+    item.style.color = newColor;
+    alert(item.style.color);
+} else {
+    newColor = "black";
+}
+}
+    
+alert(item.style.color);
+});

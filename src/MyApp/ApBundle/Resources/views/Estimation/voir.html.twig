@@ -2,21 +2,20 @@
 {% block title %}{{ client.nom|upper }} {{ client.prenom|capitalize }}{% endblock %}
 
 {% block recherche %}
-<div id= "no-margin">
+    <div id= "no-margin">
 <ul class="pager">
-  <li>                <a href="{{ path('myapp_estimation_suivant', { 'id': client.id, 'client': client, 'etat': client.etat, 'param':'Prev' }) }}"> Précèdent</a>
+  <li class="icon-arrow-left-2">                <a href="{{ path('myapp_estimation_suivant', { 'id': client.id, 'client': client, 'etat': client.etat, 'param':'Prev' }) }}"> Précèdent</a>
   </li>
 <li><b>État: {{ client.etat }} </b></li>
-  <li><a href="{{ path('myapp_estimation_suivant', { 'id': client.id, 'etat': client.etat, 'param':'Next' }) }}"> Suivant</a>
+  <li class="icon-arrow-right-2"><a href="{{ path('myapp_estimation_suivant', { 'id': client.id, 'etat': client.etat, 'param':'Next' }) }}"> Suivant</a>
 </li>
 </ul>
 </div>
 {% endblock %}
 
 {% block principalNote %}
-
-{% include 'MyAppApBundle:Client:ajouter.html.twig' %}
-<div class= "left-map">
+<div class= "info-client">
+<div class="right-map">
 <table id="map">
             <tr>
                 <td>
@@ -25,11 +24,13 @@
                 </td>
             </tr>
             </table>
+            </div>
+            <div class="client">
                                <h6><a href="{{ path('myapp_estimation_suivant', { 'id': client.id, 'client': client, 'param':'Prev' }) }}"> Précèdent</a><a href="{{ path('myapp_estimation_suivant', { 'id': client.id, 'client': client, 'param':'Next' }) }}"> Suivant</a></h6>
     <h6>Créé par: {{ client.user|capitalize }} le {{ client.dateTable.date|date('d M y') }}</h6>
     <h6>Service demandés: {{ client.service.type|capitalize }}</h6>
 <address>
-  <b><a href="#myModal"  data-toggle="modal">{{ client.nom|upper }}  {{ client.prenom|capitalize }}</a></b><br>
+<b><a href="{{ path('myapp_client_modifier', { 'id': client.id }) }}">{{ client.nom|upper }}  {{ client.prenom|capitalize }}</a></b><br>
   {{ client.number }} {{ client.street }}<br>
   {{ client.city.city|capitalize }}, {{ client.pc|upper }}<br>
 
@@ -44,7 +45,7 @@
 <br>
 <a href="mailto:{{ client.email }}">{{ client.email }}</a>
 </address>
-    
+    </div>
     <pre id="note">Notes: <a rel="modal-profile" href="#"><img src="{{ asset('bundles/myappap/images/add.png') }}" title="Ajouter Note Client"/></a></pre>
                     
 {% for n in notes %}
@@ -77,7 +78,7 @@
             <td><a href="{{ path('myapp_service_supprimerService', { 'idd': s.id,'id': client.id  }) }}"><img src="{{ asset('bundles/myappap/images/cross.png') }}" title="Supprimer service"/></a></td>
           
         {% if s.image.webpath is defined %}
-        <td><span class="icone"><img src="{{ asset(s.image.webPath) }}" alt="{{ s.image.alt }}" class="img-polaroid"/></span></td>
+        <td><span class="icone"><img src="{{ asset(s.image.webPath) }}" alt="{{ s.image.alt }}" class="img-polaroid"  width="100px" height="100px" /></span></td>
         {% else %}
         <td/>
  {% endif %}
@@ -127,7 +128,7 @@
 {% endif %}   
         </div>
         
-    <div class="modal-profile">
+    <div class="modale-profile">
 <h2>Ajouter une note:</h2>
     <a class="modal-close-profile" title="Close profile window" href="#"><img src="{{ asset('bundles/myappap/images/cross.png') }}" title="Fermer la fenêtre"/></a>
 
@@ -137,30 +138,29 @@
     <input type="submit" />
 </form>
         </div>
-        
-   
 </table>   
-    
-<script type="text/javascript">
-$.fn.center = function () {
-        this.css("position","absolute");
-        this.css("top", ( jQuery(window).height() - this.height() ) / 2+jQuery(window).scrollTop() + "px");
-        this.css("left", ( jQuery(window).width() - this.width() ) / 2+jQuery(window).scrollLeft() + "px");
-        return this;
-      }
- 
-    $(".modal-profile").center();
- 
- 
-    $('a[rel="modal-profile"]').click(function() {
-        $('.modal-profile').fadeIn("slow");
-        $('.modal-lightsout').fadeTo("slow", .9);
+    <script type="text/javascript">
+   $(document).ready(function(){
+        $.Dialog({
+            'title'       : 'My dialog title',
+            'content'     : 'HTML content',
+            'draggable'   : true,
+            'overlay'     : true,
+            'closeButton' : true,
+            'buttonsAlign': 'right',
+            'keepOpened'  : false,
+            'position'    : {
+                'zone'    : 'right'
+            },
+            'buttons'     : {
+                'button1'     : {
+                    'action': function(){}
+                },
+                'button2'     : {
+                    'action': function(){}
+                }
+            }
+        });
     });
- 
-    $('a.modal-close-profile, .modal-lightsout').click(function() {
-        $('.modal-profile').fadeOut("slow");
-        $('.modal-lightsout').fadeOut("slow");
-    });
-</script>
-    
+    </script>
 {% endblock %}

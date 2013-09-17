@@ -14,11 +14,6 @@ var $newLinkLi = $('<li></li>').append($addTagLink);
 
         // add a new tag form (see next code block)
         addPhoneForm($collectionHolder, $newLinkLi);
-   
-
-function addPhoneForm2() {
-alert("Hello World!");
-}
 
 function addPhoneForm($collectionHolder, $newLinkLi) {
     // Get the data-prototype explained earlier
