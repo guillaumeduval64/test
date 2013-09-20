@@ -16,16 +16,17 @@ class DashboardController extends ContainerAware
      }  
 
 public function nbProductionAction()
-     {   
+     {  
                 $user = $this->container->get('security.context')->getToken()->getUsername();
 
   $nbProduction = $this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Contrat')
                          ->getAllProductionsFranchiseCount($user);
 
-                         $nbProductionObj=$this->container->get('doctrine.orm.entity_manager')
-                         ->getRepository('MyAppApBundle:Objectif')
-                         ->getObjectifByFranchise($user);
+$nbProductionObj=$this->container->get('doctrine.orm.entity_manager')
+    ->getRepository('MyAppApBundle:Objectif')
+    ->getObjectifProdByFranchise($user);
+
 $difObjectifProd = $nbProduction[0][1] - $nbProductionObj[0] ->getMontant();
 
 $nbProductionObj = $nbProductionObj[0] ->getMontant();
@@ -34,18 +35,36 @@ $nbProductionMonth = $this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Contrat')
                          ->getAllProductionsFranchiseCountMonth($user);
 
+$nbProductionObjM=$this->container->get('doctrine.orm.entity_manager')
+    ->getRepository('MyAppApBundle:Objectif')
+    ->getObjectifProdByFranchise($user);
+
+$difObjectifProdM = $nbProductionMonth[0][1] - $nbProductionObjM[0] ->getMontant();
+
+$nbProductionObjM = $nbProductionObjM[0] ->getMontant();
+
 $nbProductionWeek = $this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Contrat')
                          ->getAllProductionsFranchiseCountWeek($user);
 
+$nbProductionObjW=$this->container->get('doctrine.orm.entity_manager')
+    ->getRepository('MyAppApBundle:Objectif')
+    ->getObjectifProdByFranchise($user);
+
+$difObjectifProdW = $nbProductionWeek[0][1] - $nbProductionObjW[0] ->getMontant();
+
+$nbProductionObjW = $nbProductionObjW[0] ->getMontant();
+
+
         return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbProduction.html.twig', 
   array(
                 'nbProduction' => $nbProduction,
-                'nbProductionMonth' => $nbProductionMonth,
-                'nbProductionWeek' => $nbProductionWeek,
                 'nbProductionObj' => $nbProductionObj,
-                'user' => $user,
                 'difObjectifProd' => $difObjectifProd,
+                'nbProductionMonth' => $nbProductionMonth,
+                'nbProductionObjM' => $nbProductionObjM,
+                'nbProductionWeek' => $nbProductionWeek,
+                'user' => $user,    
   ));
 }  
 

@@ -21,6 +21,14 @@
         <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD5L1XB5XpNDaBBRJgxFnOnM--NpHEcE-U&sensor=true">
     </script>
+
+    <script type="text/javascript">
+  
+  function overlay() {
+  el = document.getElementById("overlay");
+  el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
+</script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> 
 <script type="text/javascript"> </script>
 {% endjavascripts %}
@@ -54,13 +62,6 @@
         <div id="test">
                     <div id="recherche" class="bg-color-blue">
                         {% block recherche %}
-                        <div class="login">
-                        {% include "MyAppUtilisateurBundle::connexion.html.twig" %}
-                    <p>{{ "rights" | trans }} © 2012</p>
-                                    <div id="choisir_langue">Choisir la langue :
-                    <a href="{{ path('myapp_choisir_langue', {'langue' : 'fr'}) }}">FR</a> |
-                    <a href="{{ path('myapp_choisir_langue', {'langue' : 'en'}) }}">EN</a>
-</div>
                         
                             {% for flashMessage in app.session.flashbag.get('notice') %}
                               <div class="alert">
@@ -147,5 +148,14 @@
                     {% endblock %}
                 </div>    
                 </div>
+                <div>
+                                        <div class="login">
+                {% include "MyAppUtilisateurBundle::connexion.html.twig" %}
+                </div>
+                                    <p>{{ "rights" | trans }} © 2012</p>
+                                    <div id="choisir_langue">Choisir la langue :
+                    <a href="{{ path('myapp_choisir_langue', {'langue' : 'fr'}) }}">FR</a> |
+                    <a href="{{ path('myapp_choisir_langue', {'langue' : 'en'}) }}">EN</a>
+</div>
     </body>
 </html>

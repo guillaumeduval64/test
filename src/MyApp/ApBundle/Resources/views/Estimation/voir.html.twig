@@ -2,18 +2,15 @@
 {% block title %}{{ client.nom|upper }} {{ client.prenom|capitalize }}{% endblock %}
 
 {% block recherche %}
-    <div id= "no-margin">
-<ul class="pager">
-  <li class="icon-arrow-left-2">                <a href="{{ path('myapp_estimation_suivant', { 'id': client.id, 'client': client, 'etat': client.etat, 'param':'Prev' }) }}"> Précèdent</a>
-  </li>
-<li><b>État: {{ client.etat }} </b></li>
-  <li class="icon-arrow-right-2"><a href="{{ path('myapp_estimation_suivant', { 'id': client.id, 'etat': client.etat, 'param':'Next' }) }}"> Suivant</a>
-</li>
-</ul>
-</div>
+
 {% endblock %}
 
 {% block principalNote %}
+    <div>
+        <button>    <a href="{{ path('myapp_estimation_suivant', { 'id': client.id, 'client': client, 'etat': client.etat, 'param':'Prev' }) }}" class="icon-arrow-left-2"> Précèdent</a></button>
+<b>État: {{ client.etat }} </b>
+  <button><a href="{{ path('myapp_estimation_suivant', { 'id': client.id, 'etat': client.etat, 'param':'Next' }) }}" class="icon-arrow-right-2"> Suivant</a></button>
+</div>
 <div class= "info-client">
 <div class="right-map">
 <table id="map">
@@ -38,9 +35,7 @@
     {{ p.phoneType.phoneType|capitalize }}: {{ p.phone }}
     <br>
 {% else %}
-
         Aucun Téléphone.
-
 {% endfor %}
 <br>
 <a href="mailto:{{ client.email }}">{{ client.email }}</a>
@@ -114,10 +109,6 @@
             {% else %}
                 <td>N/A</td>
             {% endif %}
-                
-
-
-
          </tr>       
 {% else %}
     <tr>
@@ -128,9 +119,7 @@
 {% endif %}   
         </div>
         
-    <div class="modale-profile">
 <h2>Ajouter une note:</h2>
-    <a class="modal-close-profile" title="Close profile window" href="#"><img src="{{ asset('bundles/myappap/images/cross.png') }}" title="Fermer la fenêtre"/></a>
 
     <form action="" method="post" {{ form_enctype(formNote) }}>
     {{ form_widget(formNote) }}
@@ -139,28 +128,4 @@
 </form>
         </div>
 </table>   
-    <script type="text/javascript">
-   $(document).ready(function(){
-        $.Dialog({
-            'title'       : 'My dialog title',
-            'content'     : 'HTML content',
-            'draggable'   : true,
-            'overlay'     : true,
-            'closeButton' : true,
-            'buttonsAlign': 'right',
-            'keepOpened'  : false,
-            'position'    : {
-                'zone'    : 'right'
-            },
-            'buttons'     : {
-                'button1'     : {
-                    'action': function(){}
-                },
-                'button2'     : {
-                    'action': function(){}
-                }
-            }
-        });
-    });
-    </script>
 {% endblock %}

@@ -36,10 +36,11 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
     public function block_recherche($context, array $blocks = array())
     {
         // line 5
-        echo "<form id=\"form_recherche\" data-provide=\"typeahead\" action=\"";
+        echo "<div class=\"recherche\">
+<form id=\"form_recherche\" data-provide=\"typeahead\" action=\"";
+        // line 6
         echo $this->env->getExtension('routing')->getPath("myapp_client_rechercher");
         echo "\" method=\"post\" >
-
                             ";
         // line 7
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formRecherche"), "motcle"), 'widget', array("attr" => array("tabindex" => "1", "autocomplete" => "off", "class" => "form_recherche search-query")));
@@ -49,32 +50,30 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
         // line 9
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/search.png"), "html", null, true);
         echo "\" alt=\"Search\" />
-                <a href=\"#myModal\" role=\"button\" class=\"btn\" data-toggle=\"modal\">Ajouter client</a>
-</form>
+                </form>
+</div>
 ";
     }
 
     // line 14
     public function block_content($context, array $blocks = array())
     {
-        // line 15
-        echo " <!-- Modal -->
+        echo " 
+                <button><a href='#' onclick='overlay()'>Ajouter un client</a></button>
 
-     ";
-        // line 17
-        $this->env->loadTemplate("MyAppApBundle:Client:ajouter.html.twig")->display($context);
-        // line 18
-        echo "
- 
 <div class=\"loading\"></div>
 <div id=\"resultatsRecherche\"> 
     ";
-        // line 22
+        // line 19
         $this->env->loadTemplate("MyAppApBundle:Client:liste.html.twig")->display($context);
-        // line 23
+        // line 20
         echo "</div>
+     ";
+        // line 21
+        $this->env->loadTemplate("MyAppApBundle:Client:ajouter.html.twig")->display($context);
+        // line 22
+        echo "
 <script>
-   
         \$(\".loading\").hide();
         \$(\"#form_recherche\").submit(function(){ 
             \$(\".loading\").show();
@@ -83,7 +82,7 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
             \$.ajax({
                 type: \"POST\",
                 url: \"";
-        // line 33
+        // line 31
         echo $this->env->getExtension('routing')->getPath("myapp_client_rechercher");
         echo "\",
                 data: DATA,
@@ -96,26 +95,6 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
             return false;
         });
         
-        \$.fn.center = function () {
-        this.css(\"position\",\"absolute\");
-        this.css(\"top\", ( jQuery(window).height() - this.height() ) / 2+jQuery(window).scrollTop() + \"px\");
-        this.css(\"left\", ( jQuery(window).width() - this.width() ) / 2+jQuery(window).scrollLeft() + \"px\");
-        return this;
-      }
- 
-    \$(\".modal-profileClient\").center();
- 
- 
-    \$('a[rel=\"modal-profileClient\"]').click(function() {
-        \$('.modal-profileClient').fadeIn(\"slow\");
-        \$('.modal-lightsoutClient').fadeTo(\"slow\", .9);
-    });
- 
-    \$('a.modal-close-profileClient, .modal-lightsoutClient').click(function() {
-        \$('.modal-profileClient').fadeOut(\"slow\");
-        \$('.modal-lightsoutClient').fadeOut(\"slow\");
-    });
-            
 </script>
 ";
     }
@@ -132,6 +111,6 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  87 => 33,  75 => 23,  73 => 22,  67 => 18,  65 => 17,  61 => 15,  58 => 14,  50 => 9,  45 => 7,  39 => 5,  36 => 4,  30 => 2,);
+        return array (  86 => 31,  75 => 22,  73 => 21,  70 => 20,  68 => 19,  59 => 14,  51 => 9,  46 => 7,  42 => 6,  39 => 5,  36 => 4,  30 => 2,);
     }
 }

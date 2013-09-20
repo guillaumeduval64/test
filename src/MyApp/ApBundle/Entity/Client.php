@@ -74,16 +74,6 @@ class Client
     public $phones;
    
      /**
-     * @ORM\Column(type="string",length=255, nullable=true)
-     */    
-    private $phoneNumber;
-    
-     /**
-     * @ORM\Column(type="string",length=255, nullable=true)
-     */    
-    private $phoneNumberCell;
-    
-     /**
      * @ORM\Column(type="string",length=255)
      */ 
     private $etat;
@@ -241,25 +231,6 @@ class Client
         return $this->street;
     }
     
-    /**
-     * Set phoneNumber
-     *
-     * @param string $phoneNumber
-     */
-    public function setPhoneNumber($phoneNumber)
-    {
-        $this->phoneNumber = $phoneNumber;
-    }
-
-    /**
-     * Get phoneNumber
-     *
-     * @return string 
-     */
-    public function getPhoneNumber()
-    {
-        return $this->phoneNumber;
-    }
     /**
      * Add titles
      *
@@ -579,26 +550,6 @@ class Client
     public function getDateTable()
     {
         return $this->dateTable;
-    }
-
-    /**
-     * Set phoneNumberCell
-     *
-     * @param string $phoneNumberCell
-     */
-    public function setPhoneNumberCell($phoneNumberCell)
-    {
-        $this->phoneNumberCell = $phoneNumberCell;
-    }
-
-    /**
-     * Get phoneNumberCell
-     *
-     * @return string 
-     */
-    public function getPhoneNumberCell()
-    {
-        return $this->phoneNumberCell;
     }
 
     /**

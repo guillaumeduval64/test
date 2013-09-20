@@ -21,13 +21,17 @@ class __TwigTemplate_137cd3650d084617afbc6c194125f1ce extends Twig_Template
                 <td rowspan=\"3\">
                    <h1>P</h1>
     </td>
-\t\t<td><h6>";
+\t\t<td class=\"currentMatch\" data-nbProductionObj=";
         // line 6
+        if (array_key_exists("nbProductionObj", $context)) {
+            echo twig_escape_filter($this->env, $this->getContext($context, "nbProductionObj"), "html", null, true);
+        }
+        echo "><h6>";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "nbProductionWeek"), 0, array(), "array"), 1, array(), "array"), "html", null, true);
         echo "</h6></td>
 \t\t<td><h6>";
         // line 7
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "nbProductionMonth"), 0, array(), "array"), 1, array(), "array"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getContext($context, "nbProductionObj"), "html", null, true);
         echo "</h6></td>
 \t</tr>
 \t<tr>
@@ -37,8 +41,8 @@ class __TwigTemplate_137cd3650d084617afbc6c194125f1ce extends Twig_Template
         echo "</h6></td>
 \t\t<td><h6>";
         // line 11
-        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "nbProductionMonth"), 0, array(), "array"), 1, array(), "array"), "html", null, true);
-        echo "</h6></td>
+        echo twig_escape_filter($this->env, $this->getContext($context, "nbProductionObjM"), "html", null, true);
+        echo "<h6></td>
 \t</tr>
 \t<tr>
 \t\t<td><h6>";
@@ -66,6 +70,6 @@ class __TwigTemplate_137cd3650d084617afbc6c194125f1ce extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  50 => 15,  46 => 14,  40 => 11,  36 => 10,  30 => 7,  26 => 6,  19 => 1,);
+        return array (  54 => 15,  44 => 11,  34 => 7,  51 => 16,  47 => 15,  41 => 12,  37 => 11,  31 => 8,  27 => 7,  50 => 14,  46 => 14,  40 => 10,  36 => 10,  30 => 7,  26 => 6,  19 => 1,);
     }
 }

@@ -77,14 +77,9 @@ class __TwigTemplate_ac64e0326fbf44fac7cbf3691a804534 extends Twig_Template
         // line 17
         echo "<tr>
     <td>
-        ";
-        // line 19
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'label');
-        echo "
-    </td>
-<td>
-        <input type=\"checkbox\" ";
-        // line 22
+        <label class=\"input-control checkbox\">
+            <input type=\"checkbox\" ";
+        // line 20
         $this->displayBlock("widget_attributes", $context, $blocks);
         if (array_key_exists("value", $context)) {
             echo " value=\"";
@@ -95,6 +90,11 @@ class __TwigTemplate_ac64e0326fbf44fac7cbf3691a804534 extends Twig_Template
             echo " checked=\"checked\"";
         }
         echo " />
+            <span class=\"helper\">";
+        // line 21
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'label');
+        echo "</span>
+        </label>
 </td>
 </tr>
 
@@ -198,6 +198,6 @@ class __TwigTemplate_ac64e0326fbf44fac7cbf3691a804534 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  189 => 54,  180 => 52,  176 => 51,  171 => 50,  169 => 49,  166 => 48,  144 => 42,  141 => 41,  138 => 40,  135 => 39,  132 => 38,  129 => 37,  126 => 36,  123 => 35,  120 => 34,  117 => 33,  114 => 32,  111 => 31,  109 => 30,  106 => 29,  88 => 22,  82 => 19,  78 => 17,  76 => 16,  64 => 8,  60 => 7,  54 => 4,  49 => 3,  47 => 2,  44 => 1,  40 => 48,  34 => 29,  29 => 15,  25 => 13,  23 => 1,  31 => 28,  26 => 2,  20 => 1,  87 => 33,  75 => 23,  73 => 15,  67 => 18,  65 => 17,  61 => 15,  58 => 14,  50 => 9,  45 => 7,  39 => 5,  36 => 46,  30 => 2,);
+        return array (  189 => 54,  180 => 52,  176 => 51,  171 => 50,  169 => 49,  166 => 48,  144 => 42,  141 => 41,  138 => 40,  135 => 39,  132 => 38,  129 => 37,  126 => 36,  123 => 35,  120 => 34,  117 => 33,  114 => 32,  111 => 31,  109 => 30,  106 => 29,  95 => 21,  83 => 20,  78 => 17,  76 => 16,  64 => 8,  60 => 7,  54 => 4,  49 => 3,  44 => 1,  40 => 48,  34 => 29,  29 => 15,  25 => 13,  23 => 1,  31 => 28,  26 => 2,  20 => 1,  87 => 32,  75 => 22,  73 => 15,  70 => 20,  68 => 19,  61 => 16,  52 => 10,  47 => 2,  42 => 6,  39 => 5,  36 => 46,  30 => 2,);
     }
 }

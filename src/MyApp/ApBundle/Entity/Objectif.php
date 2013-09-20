@@ -21,6 +21,11 @@ class Objectif
      * @ORM\Column(type="string",length=255)
      */    
     private $montant;
+
+    /**
+     * @ORM\Column(type="string",length=255)
+     */    
+    private $année;
     
      /**
      * @ORM\OneToOne(targetEntity="MyApp\UtilisateurBundle\Entity\Utilisateur", cascade={"remove", "persist"})
@@ -145,5 +150,28 @@ class Objectif
     public function getUtilisateur()
     {
         return $this->utilisateur;
+    }
+
+    /**
+     * Set année
+     *
+     * @param string $année
+     * @return Objectif
+     */
+    public function setAnnée($année)
+    {
+        $this->année = $année;
+    
+        return $this;
+    }
+
+    /**
+     * Get année
+     *
+     * @return string 
+     */
+    public function getAnnée()
+    {
+        return $this->année;
     }
 }

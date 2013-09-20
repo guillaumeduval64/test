@@ -42,15 +42,6 @@ class ClientForm extends AbstractType
             ->add('phones', 'collection', array('type'         => new PhoneForm(),
                                                           'allow_add'    => true,
                                                           'allow_delete' => true))
-
-            ->add('phoneNumber','text',array(
-                    'label' => 'Téléphone: ',
-                    'required' => false,
-                ))
-            ->add('phoneNumberCell','text',array(
-                    'label' => 'Téléphone 2: ',
-                    'required' => false,
-                ))
             ->add('email','text',array(
                     'label' => 'Email: ',
                     'required' => false,
