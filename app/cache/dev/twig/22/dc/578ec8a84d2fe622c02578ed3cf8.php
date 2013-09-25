@@ -59,7 +59,7 @@ class __TwigTemplate_22dc578ec8a84d2fe622c02578ed3cf8 extends Twig_Template
   <button><a href=\"";
         // line 12
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("myapp_estimation_suivant", array("id" => $this->getAttribute($this->getContext($context, "client"), "id"), "etat" => $this->getAttribute($this->getContext($context, "client"), "etat"), "param" => "Next")), "html", null, true);
-        echo "\" class=\"icon-arrow-right-2\"> Suivant</a><button>
+        echo "\" class=\"icon-arrow-right-2\"> Suivant</a></button>
 </div>
 <div class= \"info-client\">
 <div class=\"right-map\">
@@ -151,18 +151,16 @@ class __TwigTemplate_22dc578ec8a84d2fe622c02578ed3cf8 extends Twig_Template
         echo "</a>
 </address>
     </div>
-    <pre id=\"note\">Notes: <a rel=\"modal-profile\" href=\"#\"><img src=\"";
-        // line 44
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/add.png"), "html", null, true);
-        echo "\" title=\"Ajouter Note Client\"/></a></pre>
+    <pre id=\"note\"><a href=\"#myModal\" role=\"button\" class=\"btn\" data-toggle=\"modal\">Note</a>
+</pre>
                     
 ";
-        // line 46
+        // line 47
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "notes"));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["n"]) {
-            // line 47
+            // line 48
             echo "    <span class=\"dateSpan\"><b>";
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getContext($context, "n"), "created"), "d/m/y"), "html", null, true);
             echo ": ";
@@ -174,7 +172,7 @@ class __TwigTemplate_22dc578ec8a84d2fe622c02578ed3cf8 extends Twig_Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 49
+            // line 50
             echo "
         Aucunes notes trouvées
 
@@ -183,20 +181,20 @@ class __TwigTemplate_22dc578ec8a84d2fe622c02578ed3cf8 extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['n'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 54
         echo "    </div>
 
 ";
     }
 
-    // line 57
+    // line 58
     public function block_right($context, array $blocks = array())
     {
-        // line 58
+        // line 59
         echo "<div >
 
       <div>  <pre id=\"vertical\">Services<a href=\"";
-        // line 60
+        // line 61
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("myapp_estimation_creerService", array("id" => $this->getAttribute($this->getContext($context, "client"), "id")), array("map" => $this->getContext($context, "map"))), "html", null, true);
         echo "\"> <img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/add.png"), "html", null, true);
@@ -207,42 +205,42 @@ class __TwigTemplate_22dc578ec8a84d2fe622c02578ed3cf8 extends Twig_Template
 
     
 ";
-        // line 66
+        // line 67
         if ($this->getContext($context, "clientServices")) {
-            // line 67
+            // line 68
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getContext($context, "clientServices"));
             $context['_iterated'] = false;
             foreach ($context['_seq'] as $context["_key"] => $context["s"]) {
-                // line 68
+                // line 69
                 echo "        <tr>
             <td><span class=\"dateSpan\"><b>";
-                // line 69
+                // line 70
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getContext($context, "s"), "created"), "d/m/y"), "html", null, true);
                 echo "</b></span></td>
             <td>";
-                // line 70
+                // line 71
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "s"), "service"), "type"), "html", null, true);
                 echo "</td>
             <td>";
-                // line 71
+                // line 72
                 echo twig_escape_filter($this->env, twig_number_format_filter($this->env, $this->getAttribute($this->getContext($context, "s"), "prix"), 2, ",", "."), "html", null, true);
                 echo "\$</td>
             <td>";
-                // line 72
+                // line 73
                 echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, $this->getAttribute($this->getContext($context, "s"), "note")), "html", null, true);
                 echo "</td> 
             <td><a href=\"";
-                // line 73
+                // line 74
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("myapp_service_supprimerService", array("idd" => $this->getAttribute($this->getContext($context, "s"), "id"), "id" => $this->getAttribute($this->getContext($context, "client"), "id"))), "html", null, true);
                 echo "\"><img src=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/cross.png"), "html", null, true);
                 echo "\" title=\"Supprimer service\"/></a></td>
           
         ";
-                // line 75
+                // line 76
                 if ($this->getAttribute($this->getAttribute($this->getContext($context, "s", true), "image", array(), "any", false, true), "webpath", array(), "any", true, true)) {
-                    // line 76
+                    // line 77
                     echo "        <td><span class=\"icone\"><img src=\"";
                     echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl($this->getAttribute($this->getAttribute($this->getContext($context, "s"), "image"), "webPath")), "html", null, true);
                     echo "\" alt=\"";
@@ -250,17 +248,17 @@ class __TwigTemplate_22dc578ec8a84d2fe622c02578ed3cf8 extends Twig_Template
                     echo "\" class=\"img-polaroid\"  width=\"100px\" height=\"100px\" /></span></td>
         ";
                 } else {
-                    // line 78
+                    // line 79
                     echo "        <td/>
  ";
                 }
-                // line 80
+                // line 81
                 echo "        </tr>
 ";
                 $context['_iterated'] = true;
             }
             if (!$context['_iterated']) {
-                // line 82
+                // line 83
                 echo "        <tr>
             <td>Aucun Services trouvés</td>
         </tr>
@@ -270,11 +268,11 @@ class __TwigTemplate_22dc578ec8a84d2fe622c02578ed3cf8 extends Twig_Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['s'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 87
+            // line 88
             echo "    </table>
  ";
         }
-        // line 89
+        // line 90
         echo "
               </div>
               </div>
@@ -282,68 +280,68 @@ class __TwigTemplate_22dc578ec8a84d2fe622c02578ed3cf8 extends Twig_Template
 <div>
 
              <pre id=\"vertical\">Contrats<a href=\"";
-        // line 95
+        // line 96
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("myapp_contrat_ajouter", array("id" => $this->getAttribute($this->getContext($context, "client"), "id"))), "html", null, true);
         echo "\"> <img src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/add.png"), "html", null, true);
         echo "\" title=\"Ajouter Contrat\"/></a></pre>
 
      ";
-        // line 97
+        // line 98
         if ($this->getContext($context, "clientservicestest")) {
-            // line 98
+            // line 99
             echo "<table id=\"tbestimation\">
 ";
-            // line 99
+            // line 100
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getContext($context, "clientservicestest"));
             $context['_iterated'] = false;
             foreach ($context['_seq'] as $context["_key"] => $context["co"]) {
-                // line 100
+                // line 101
                 echo "        <tr>
             <td><span class=\"dateSpan\"><b>";
-                // line 101
+                // line 102
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getContext($context, "co"), "created"), "d/m/y"), "html", null, true);
                 echo ":</b></span></td>
             <td>";
-                // line 102
+                // line 103
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "co"), "numero"), "html", null, true);
                 echo "</td>
             <td>";
-                // line 103
+                // line 104
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "co"), "service"), "html", null, true);
                 echo "</td>
             <td>";
-                // line 104
+                // line 105
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "co"), "prix"), "html", null, true);
                 echo "\$</td>
 
             <td><a href=\"";
-                // line 106
+                // line 107
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("myapp_contrat_voir", array("id" => $this->getAttribute($this->getContext($context, "co"), "id"))), "html", null, true);
                 echo "\"><img src=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/binoculars.png"), "html", null, true);
                 echo "\" alt=\"Stats\"/></a></td></td>
             ";
-                // line 107
+                // line 108
                 if (($this->getAttribute($this->getContext($context, "co"), "date") != null)) {
-                    // line 108
+                    // line 109
                     echo "                <td>";
                     echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($this->getContext($context, "co"), "date"), "d M y"), "html", null, true);
                     echo "</td
             ";
                 } else {
-                    // line 110
+                    // line 111
                     echo "                <td>N/A</td>
             ";
                 }
-                // line 112
+                // line 113
                 echo "         </tr>       
 ";
                 $context['_iterated'] = true;
             }
             if (!$context['_iterated']) {
-                // line 114
+                // line 115
                 echo "    <tr>
         <td>Aucunes contrats trouvées</td>
     </tr>
@@ -352,32 +350,40 @@ class __TwigTemplate_22dc578ec8a84d2fe622c02578ed3cf8 extends Twig_Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['co'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 118
+            // line 119
             echo "    </table> 
 ";
         }
-        // line 119
+        // line 120
         echo "   
         </div>
-        
-<h2>Ajouter une note:</h2>
+<!-- Button to trigger modal -->
 
-    <form action=\"\" method=\"post\" ";
-        // line 124
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "formNote"), 'enctype');
-        echo ">
+ 
+<!-- Modal -->
+<div id=\"myModal\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
+  <div class=\"modal-header\">
+    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>
+    <h3 id=\"myModalLabel\">Ajouter une note:</h3>
+  </div>
+  <div class=\"modal-body\">
+
+    <form action=\"\" method=\"post\">
     ";
-        // line 125
+        // line 134
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "formNote"), 'widget');
         echo "
     ";
-        // line 126
+        // line 135
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "formNote"), 'rest');
         echo "
-    <input type=\"submit\" />
-</form>
-        </div>
-</table>   
+ 
+  </div>
+  <div class=\"modal-footer\">
+    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
+    <input type=\"submit\" class=\"btn btn-primary\" value=\"Ajouter\" title=\"Ajouter\"></form>
+  </div>
+</div> 
 ";
     }
 
@@ -393,6 +399,6 @@ class __TwigTemplate_22dc578ec8a84d2fe622c02578ed3cf8 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  375 => 126,  371 => 125,  367 => 124,  360 => 119,  356 => 118,  347 => 114,  341 => 112,  337 => 110,  331 => 108,  329 => 107,  323 => 106,  318 => 104,  314 => 103,  310 => 102,  306 => 101,  303 => 100,  298 => 99,  295 => 98,  293 => 97,  286 => 95,  278 => 89,  274 => 87,  264 => 82,  258 => 80,  254 => 78,  246 => 76,  244 => 75,  237 => 73,  233 => 72,  229 => 71,  225 => 70,  221 => 69,  218 => 68,  213 => 67,  211 => 66,  200 => 60,  196 => 58,  193 => 57,  187 => 53,  178 => 49,  166 => 47,  161 => 46,  156 => 44,  148 => 41,  145 => 40,  138 => 38,  127 => 35,  122 => 34,  115 => 32,  109 => 31,  101 => 30,  96 => 28,  90 => 27,  84 => 26,  75 => 20,  71 => 19,  61 => 12,  57 => 11,  53 => 10,  50 => 9,  47 => 8,  42 => 5,  39 => 4,  31 => 2,);
+        return array (  378 => 135,  374 => 134,  358 => 120,  354 => 119,  345 => 115,  339 => 113,  335 => 111,  329 => 109,  327 => 108,  321 => 107,  316 => 105,  312 => 104,  308 => 103,  304 => 102,  301 => 101,  296 => 100,  293 => 99,  291 => 98,  284 => 96,  276 => 90,  272 => 88,  262 => 83,  256 => 81,  252 => 79,  244 => 77,  242 => 76,  235 => 74,  231 => 73,  227 => 72,  223 => 71,  219 => 70,  216 => 69,  211 => 68,  209 => 67,  198 => 61,  194 => 59,  191 => 58,  185 => 54,  176 => 50,  164 => 48,  159 => 47,  148 => 41,  145 => 40,  138 => 38,  127 => 35,  122 => 34,  115 => 32,  109 => 31,  101 => 30,  96 => 28,  90 => 27,  84 => 26,  75 => 20,  71 => 19,  61 => 12,  57 => 11,  53 => 10,  50 => 9,  47 => 8,  42 => 5,  39 => 4,  31 => 2,);
     }
 }

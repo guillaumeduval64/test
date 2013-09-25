@@ -1,9 +1,14 @@
-<div id="overlay">
+<!-- Button to trigger modal -->
+
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
-    <button class="md-close">×</button>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
     <h3 id="myModalLabel">Ajout d'un client:</h3>
   </div>
-         <form action="" method="POST" class="form-horizontal">
+  <div class="modal-body">
+    <form action="" method="POST" class="form-horizontal">
 
     <table>
         <tr>
@@ -70,12 +75,13 @@
     </ul>
         <br>
           {{ form_rest(form) }}
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
-    <input type="submit" class="btn btn-primary" value="Ajouter" title="Ajouter">
-     </form>   
+ 
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <input type="submit" class="btn btn-primary" value="Ajouter" title="Ajouter"></form>
+  </div>
 </div>
-
-
 
 {% javascripts
 

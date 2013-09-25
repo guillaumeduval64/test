@@ -2939,7 +2939,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5239d560f3be5</argument>
+            <argument>52432afd14e10</argument>
           </service>
         </argument>
       </argument>
@@ -3281,7 +3281,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5239d560f3be5</argument>
+            <argument>52432afd14e10</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -4232,8 +4232,40 @@
       <argument>Ivory\GoogleMap\Overlays\InfoWindow</argument>
       <argument type="service" id="ivory_google_map.coordinate.builder"/>
       <argument type="service" id="ivory_google_map.size.builder"/>
+      <call method="setPrefixJavascriptVariable">
+        <argument>info_window_</argument>
+      </call>
+      <call method="setPosition">
+        <argument>0</argument>
+        <argument>0</argument>
+        <argument>true</argument>
+      </call>
+      <call method="setPixelOffset">
+        <argument>1.1</argument>
+        <argument>2.1</argument>
+        <argument>px</argument>
+        <argument>pt</argument>
+      </call>
+      <call method="setContent">
+        <argument>&lt;p&gt;Default content&lt;/p&gt;</argument>
+      </call>
+      <call method="setOpen">
+        <argument>false</argument>
+      </call>
+      <call method="setAutoOpen">
+        <argument>true</argument>
+      </call>
+      <call method="setOpenEvent">
+        <argument>click</argument>
+      </call>
+      <call method="setAutoClose">
+        <argument>false</argument>
+      </call>
       <call method="setOptions">
-        <argument type="collection"/>
+        <argument type="collection">
+          <argument key="disableAutoPan">true</argument>
+          <argument key="zIndex">10</argument>
+        </argument>
       </call>
     </service>
     <service id="ivory_google_map.marker_cluster" class="Ivory\GoogleMap\Overlays\MarkerCluster" factory-method="build" factory-service="ivory_google_map.marker_cluster.builder" scope="prototype"/>
@@ -4329,6 +4361,50 @@
       <argument type="service" id="ivory_google_map.bound.builder"/>
       <call method="setLibraries">
         <argument type="collection"/>
+      </call>
+      <call method="setPrefixJavascriptVariable">
+        <argument>map_</argument>
+      </call>
+      <call method="setHtmlContainerId">
+        <argument>map_canvas</argument>
+      </call>
+      <call method="setAsync">
+        <argument>false</argument>
+      </call>
+      <call method="setAutoZoom">
+        <argument>false</argument>
+      </call>
+      <call method="setCenter">
+        <argument>45.50867</argument>
+        <argument>-73.55399</argument>
+        <argument>true</argument>
+      </call>
+      <call method="setBound">
+        <argument>-2.1</argument>
+        <argument>-3.9</argument>
+        <argument>2.6</argument>
+        <argument>1.4</argument>
+        <argument>true</argument>
+        <argument>true</argument>
+      </call>
+      <call method="setLanguage">
+        <argument>en</argument>
+      </call>
+      <call method="setMapOptions">
+        <argument type="collection">
+          <argument key="disableDefaultUI">false</argument>
+          <argument key="disableDoubleClickZoom">false</argument>
+          <argument key="mapTypeId">roadmap</argument>
+          <argument key="zoom">10</argument>
+        </argument>
+      </call>
+      <call method="setStylesheetOptions">
+        <argument type="collection">
+          <argument key="border">1px solid #000</argument>
+          <argument key="background_color">#fff</argument>
+          <argument key="width">250px</argument>
+          <argument key="height">250px</argument>
+        </argument>
       </call>
     </service>
     <service id="ivory_google_map.helper.map" class="Ivory\GoogleMap\Helper\MapHelper">

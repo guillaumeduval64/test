@@ -59,7 +59,7 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
     public function block_content($context, array $blocks = array())
     {
         echo " 
-                <button><a href='#' onclick='overlay()'>Ajouter un client</a></button>
+    <a href=\"#myModal\" role=\"button\" class=\"btn\" data-toggle=\"modal\">Ajouter client:</a>
 
 <div class=\"loading\"></div>
 <div id=\"resultatsRecherche\"> 

@@ -99,18 +99,6 @@ class Client extends \MyApp\ApBundle\Entity\Client implements \Doctrine\ORM\Prox
         return parent::getStreet();
     }
 
-    public function setPhoneNumber($phoneNumber)
-    {
-        $this->__load();
-        return parent::setPhoneNumber($phoneNumber);
-    }
-
-    public function getPhoneNumber()
-    {
-        $this->__load();
-        return parent::getPhoneNumber();
-    }
-
     public function addTitles(\MyApp\ApBundle\Entity\Titles $titles)
     {
         $this->__load();
@@ -303,18 +291,6 @@ class Client extends \MyApp\ApBundle\Entity\Client implements \Doctrine\ORM\Prox
         return parent::getDateTable();
     }
 
-    public function setPhoneNumberCell($phoneNumberCell)
-    {
-        $this->__load();
-        return parent::setPhoneNumberCell($phoneNumberCell);
-    }
-
-    public function getPhoneNumberCell()
-    {
-        $this->__load();
-        return parent::getPhoneNumberCell();
-    }
-
     public function setLat($lat)
     {
         $this->__load();
@@ -396,7 +372,7 @@ class Client extends \MyApp\ApBundle\Entity\Client implements \Doctrine\ORM\Prox
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'user', 'ancien', 'nom', 'prenom', 'number', 'street', 'pc', 'lat', 'lng', 'phoneNumber', 'phoneNumberCell', 'etat', 'flag', 'email', 'date', 'heure', 'created', 'updated', 'city', 'phones', 'service', 'note', 'dateTable', 'contrat', 'titles');
+        return array('__isInitialized__', 'id', 'user', 'ancien', 'nom', 'prenom', 'number', 'street', 'pc', 'lat', 'lng', 'etat', 'flag', 'email', 'date', 'heure', 'created', 'updated', 'city', 'phones', 'service', 'note', 'dateTable', 'contrat', 'titles');
     }
 
     public function __clone()

@@ -41,7 +41,8 @@
 <a href="mailto:{{ client.email }}">{{ client.email }}</a>
 </address>
     </div>
-    <pre id="note">Notes: <a rel="modal-profile" href="#"><img src="{{ asset('bundles/myappap/images/add.png') }}" title="Ajouter Note Client"/></a></pre>
+    <pre id="note"><a href="#myModal" role="button" class="btn" data-toggle="modal">Note</a>
+</pre>
                     
 {% for n in notes %}
     <span class="dateSpan"><b>{{ n.created|date('d/m/y') }}: {{ n.type }}</b></span> {{ n.note|capitalize }}<br>
@@ -118,14 +119,25 @@
     </table> 
 {% endif %}   
         </div>
-        
-<h2>Ajouter une note:</h2>
+<!-- Button to trigger modal -->
 
-    <form action="" method="post" {{ form_enctype(formNote) }}>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Ajouter une note:</h3>
+  </div>
+  <div class="modal-body">
+
+    <form action="" method="post">
     {{ form_widget(formNote) }}
     {{ form_rest(formNote) }}
-    <input type="submit" />
-</form>
-        </div>
-</table>   
+ 
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <input type="submit" class="btn btn-primary" value="Ajouter" title="Ajouter"></form>
+  </div>
+</div> 
 {% endblock %}

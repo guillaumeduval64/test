@@ -126,12 +126,12 @@ class __TwigTemplate_61c7806573860d7673754d2f97e2efad extends Twig_Template
         echo "</table>
 ";
         // line 27
-        echo "<div class=\"navigation\">
-<table><tr><td>    ";
+        echo "<div class=\"pagination\">
+   ";
         // line 28
         echo $this->env->getExtension('knp_pagination')->render($this->getContext($context, "pagination"));
         echo "
-</td></tr></table>
+
 </div>";
     }
 
