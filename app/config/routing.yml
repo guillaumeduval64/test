@@ -9,7 +9,9 @@ MyAppUtilisateurBundle:
 
 MyAppApBundle:
     resource: "@MyAppApBundle/Resources/config/routing.yml"
-    prefix:   /intranet
+    prefix:   /{_locale}/intranet
+    requirements:
+        _locale: en|fr
 
 # Internal routing configuration to handle ESI
 #_internal:

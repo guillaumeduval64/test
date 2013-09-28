@@ -2,15 +2,7 @@
 <html>
     <head>    
          <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100% }
-      
-      #map_canvas { height: 100%;
-                    margin: 2px;
-                    border-style:solid;
-                    border-width:1px; }
-    </style>
+        <link rel="stylesheet" href="{{ asset('bundles/myappap/css/map.css') }}" type="text/css" media="all" />
     <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyD5L1XB5XpNDaBBRJgxFnOnM--NpHEcE-U&sensor=true">
     </script>
@@ -105,5 +97,6 @@ default:
     
     
 <body onload="initialize()">
-  <div id="map_canvas" style="width: 80%; height: 80%;"></div>
+{% include 'MyAppApBundle:Map:voir.html.twig' %}
+  
 </body>

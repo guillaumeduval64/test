@@ -24,225 +24,224 @@ fos_user_change_password:
     prefix: /change-password  
     
 myapp_choisir_langue:
-   pattern: /{_locale}/choisir-langue/{langue}
+   pattern: /choisir-langue/{langue}
    defaults: { _controller: MyAppApBundle:Message:choisirLangue }
     
 myapp_client_rechercher:
-  pattern: /{_locale}/client/rechercher
+  pattern: /client/rechercher
   defaults: { _controller: MyAppApBundle:Client:rechercher }
   requirements:
     _method: POST
     
 myapp_contrat_rechercher:
-  pattern: /{_locale}/contrat/rechercher
+  pattern: /contrat/rechercher
   defaults: { _controller: MyAppApBundle:Contrat:rechercher }
   requirements:
     _method: POST
     
 myapp_client_date:
-    pattern: /{_locale}/admin/client/date
+    pattern: /admin/client/date
     defaults: { _controller: MyAppApBundle:Client:date }
     requirements:
      _method: POST
 
 myapp_client_lister:
     pattern: /admin/client/
-    defaults: { _controller: MyAppApBundle:Client:lister, _locale: en  }
-    requirements:
-        _locale: en|fr|de
+    defaults: { _controller: MyAppApBundle:Client:lister  }
+
     
 myapp_client_liste:
     resource: "@MyAppApBundle/Controller/ClientController.php"
     type:     annotation
     
 myapp_client_ajouter:
-    pattern: /{_locale}/admin/client/ajouter
+    pattern: //admin/client/ajouter
     defaults: { _controller: MyAppApBundle:Client:ajouter }
     
 myapp_client_note:
-    pattern: /{_locale}/admin/{id}/note
+    pattern: /admin/{id}/note
     defaults: { _controller: MyAppApBundle:Client:note }
     requirements:
 
 
 myapp_client_modifier:
-    pattern: /{_locale}/admin/client/{id}/modifier
+    pattern: /admin/client/{id}/modifier
     defaults: { _controller: MyAppApBundle:Client:modifier }
     
 myapp_client_supprimer:
-    pattern: /{_locale}/admin/client/{id}/supprimer
+    pattern: /admin/client/{id}/supprimer
     defaults: { _controller: MyAppApBundle:Client:supprimer }
     
 myapp_production_ajouter:
-    pattern: /{_locale}/admin/production/{id}/ajouter
+    pattern: /admin/production/{id}/ajouter
     defaults: { _controller: MyAppApBundle:Production:ajouter }
     
 myapp_production_lister:
-    pattern: /{_locale}/admin/production/
+    pattern: /admin/production/
     defaults: { _controller: MyAppApBundle:Production:lister }
     
 myapp_production_booke:
-    pattern: /{_locale}/admin/production/booke
+    pattern: /admin/production/booke
     defaults: { _controller: MyAppApBundle:Production:booke }
     
 myapp_production_termine:
-    pattern: /{_locale}/admin/production/termine
+    pattern: /admin/production/termine
     defaults: { _controller: MyAppApBundle:Production:termine }
    
 myapp_production_modifier:
-    pattern: /{_locale}/admin/production/modifier/{id}
+    pattern: /admin/production/modifier/{id}
     defaults: { _controller: MyAppApBundle:Production:modifier }
     
 myapp_production_comptabilite:
-    pattern: /{_locale}/admin/production/comptabilite/{id}
+    pattern: /admin/production/comptabilite/{id}
     defaults: { _controller: MyAppApBundle:Production:comptabilite }
     
 myapp_comptabilite_ajouter:
-    pattern:  /{_locale}/admin/comptabilite/ajouter
+    pattern:  /admin/comptabilite/ajouter
     defaults: { _controller: MyAppApBundle:Comptabilite:ajouter }
     
 myapp_comptabilite_supprimer:
-    pattern:  /{_locale}/admin/comptabilite/{id}/supprimer
+    pattern:  /admin/comptabilite/{id}/supprimer
     defaults: { _controller: MyAppApBundle:Comptabilite:supprimer }
     
 myapp_comptabilite_lister:
-    pattern:  /{_locale}/admin/comptabilite/
+    pattern:  /admin/comptabilite/
     defaults: { _controller: MyAppApBundle:Comptabilite:lister }
     
 myapp_comptabilite_voir:
-    pattern:  /{_locale}/admin/comptabilite/bill/{id}
+    pattern:  /admin/comptabilite/bill/{id}
     defaults: { _controller: MyAppApBundle:Comptabilite:voir }
     
 myapp_comptabilite_voirEssence:
-    pattern:  /{_locale}/admin/comptabilite/bill/autre/{id}
+    pattern:  /admin/comptabilite/bill/autre/{id}
     defaults: { _controller: MyAppApBundle:Comptabilite:voirEssence }
     
 myapp_satisfaction_ajouter:
-    pattern:  /{_locale}/admin/{id}/satisfaction
+    pattern:  /admin/{id}/satisfaction
     defaults: { _controller: MyAppApBundle:Satisfaction:ajouter }
     
 myapp_satisfaction_remerciement:
-    pattern:  /{_locale}/admin/{id}/remerciement
+    pattern:  /admin/{id}/remerciement
     defaults: { _controller: MyAppApBundle:Satisfaction:email }
     
 myapp_satisfaction_equipe:
-    pattern:  /{_locale}/admin/{id}/satisfaction_equipe
+    pattern:  //admin/{id}/satisfaction_equipe
     defaults: { _controller: MyAppApBundle:Satisfaction:equipe }
     
 myapp_service_ajouter:
-    pattern:  /{_locale}/admin/{id}/services
+    pattern:  //admin/{id}/services
     defaults: { _controller: MyAppApBundle:Client:creerService }
     
 myapp_service_supprimerService:
-    pattern:  /{_locale}/admin/{idd}/{id}/services/supprimer
+    pattern:  //admin/{idd}/{id}/services/supprimer
     defaults: { _controller: MyAppApBundle:Client:supprimerService }
     
 myapp_estimation_voirClient:
-    pattern:  /{_locale}/admin/{id}/estimation
+    pattern:  /admin/{id}/estimation
     defaults: { _controller: MyAppApBundle:Estimation:voirClient }
     
 myapp_estimation_suivant:
-    pattern:  /{_locale}/admin/{id}/estimation/suivant
+    pattern:  /admin/{id}/estimation/suivant
     defaults: { _controller: MyAppApBundle:Estimation:suivant }
     
 myapp_estimation_creerService:
-    pattern:  /{_locale}/admin/{id}/estimation/ajouter
+    pattern:  /admin/{id}/estimation/ajouter
     defaults: { _controller: MyAppApBundle:Client:creerService }
     
 myapp_contrat_ajouter:
-    pattern:  /{_locale}/admin/{id}/contrat
+    pattern:  /admin/{id}/contrat
     defaults: { _controller: MyAppApBundle:Contrat:ajouter }
     
 myapp_contrat_supprimerService:
-    pattern:  /{_locale}/admin/{id}/{idd}/supprimer
+    pattern:  /admin/{id}/{idd}/supprimer
     defaults: { _controller: MyAppApBundle:Contrat:supprimerService }
     
 myapp_contrat_lister:
-    pattern:  /{_locale}/admin/contrat/liste
+    pattern:  /admin/contrat/liste
     defaults: { _controller: MyAppApBundle:Contrat:lister }
     
     
 myapp_contrat_listerEstimation:
-    pattern:  /{_locale}/admin/contrat/liste-Estimation
+    pattern:  /admin/contrat/liste-Estimation
     defaults: { _controller: MyAppApBundle:Contrat:listerEstimation }
     
 myapp_contrat_listerAnnule:
-    pattern:  /{_locale}/admin/contrat/liste-Annule
+    pattern:  /admin/contrat/liste-Annule
     defaults: { _controller: MyAppApBundle:Contrat:listerAnnule }
     
 myapp_contrat_voir:
-    pattern:  /{_locale}/admin/contrat/voir/{id}
+    pattern:  /admin/contrat/voir/{id}
     defaults: { _controller: MyAppApBundle:Contrat:voir }
     
 myapp_contrat_pdf:
-  pattern: /{_locale}/testpdf
+  pattern: /testpdf
   defaults: { _controller: MyAppApBundle:Contrat:pdf }
     
 myapp_production_start:
-    pattern: /{_locale}/admin/production/{id}/start/
+    pattern: /admin/production/{id}/start/
     defaults: { _controller: MyAppApBundle:Production:start }
     
 myapp_production_stop:
-    pattern: /{_locale}/admin/production/{id}/stop/{test}
+    pattern: /admin/production/{id}/stop/{test}
     defaults: { _controller: MyAppApBundle:Production:stop }
     
     
 myapp_production_stat:
-    pattern: /{_locale}/admin/production/stat/{id}
+    pattern: /admin/production/stat/{id}
     defaults: { _controller: MyAppApBundle:Production:stat }
     
 myapp_map_voir:
-    pattern: /{_locale}/admin/map/voir
+    pattern: /admin/map/voir
     defaults: { _controller: MyAppApBundle:Map:voirToutClient }
     
 myapp_map_journey:
-    pattern: /{_locale}/admin/map/jour/
+    pattern: /admin/map/jour/
     defaults: { _controller: MyAppApBundle:Map:journey }
     
 myapp_map_voirClient:
-    pattern: /{_locale}/admin/map/voir/{id}
+    pattern: /admin/map/voir/{id}
     defaults: { _controller: MyAppApBundle:Map:voirClient }
     
 myapp_message_liste:
-    pattern: /{_locale}/admin/message/liste
+    pattern: /admin/message/liste
     defaults: { _controller: MyAppApBundle:Message:lister }
     
 myapp_message_ajouter:
-    pattern: /{_locale}/admin/message/ajouter
+    pattern: /admin/message/ajouter
     defaults: { _controller: MyAppApBundle:Message:ajouter }
  
 myapp_rdv_lister:
-    pattern: /{_locale}/admin/rendez-vous/liste
+    pattern: /admin/rendez-vous/liste
     defaults: { _controller: MyAppApBundle:Rdv:lister}
     
 myapp_rdv_listerRdv:
-    pattern: /{_locale}/admin/rendez-vous/liste-RDV
+    pattern: /admin/rendez-vous/liste-RDV
     defaults: { _controller: MyAppApBundle:Rdv:listerRdv}
     
 myapp_rdv_listerRien:
-    pattern: /{_locale}/admin/rendez-vous/liste-Rien
+    pattern: /admin/rendez-vous/liste-Rien
     defaults: { _controller: MyAppApBundle:Rdv:listerRien}
     
 myapp_rdv_listerDone:
-    pattern: /{_locale}/admin/rendez-vous/liste-Done
+    pattern: /admin/rendez-vous/liste-Done
     defaults: { _controller: MyAppApBundle:Rdv:listerDone}
     
 myapp_rdv_listerSeconde:
-    pattern: /{_locale}/admin/rendez-vous/Second-service
+    pattern: /admin/rendez-vous/Second-service
     defaults: { _controller: MyAppApBundle:Rdv:listerSeconde}
     
 myapp_rdv_listerAnnee:
-    pattern: /{_locale}/admin/rendez-vous/2013
+    pattern: /admin/rendez-vous/2013
     defaults: { _controller: MyAppApBundle:Rdv:listerAnnee}
     
 myapp_client_index:
-    pattern: /{_locale}/admin/mail/liste
+    pattern: /admin/mail/liste
     defaults: { _controller: MyAppApBundle:Client:index}
     
 myapp_clientContrat_voir:
-    pattern: /{_locale}/admin/contrat_client/voir/{id}
+    pattern: /admin/contrat_client/voir/{id}
     defaults: { _controller: MyAppApBundle:ClientContrat:voir}
     
 myapp_dashboard_principal:
-    pattern: /{_locale}/admin/dashboard
+    pattern: /admin/dashboard
     defaults: { _controller: MyAppApBundle:Dashboard:voir}

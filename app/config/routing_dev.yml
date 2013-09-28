@@ -13,3 +13,6 @@ _configurator:
 _main:
     resource: routing.yml
 
+MyAppApBundle_traduction:
+    pattern:  /traduction/{name}
+    defaults: { _controller: MyAppApBundle:Blog:traduction }

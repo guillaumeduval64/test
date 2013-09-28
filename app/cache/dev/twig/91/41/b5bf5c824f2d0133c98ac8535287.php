@@ -20,15 +20,10 @@ class __TwigTemplate_9141b5bf5c824f2d0133c98ac8535287 extends Twig_Template
 <html>
     <head>    
          <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\" />
-    <style type=\"text/css\">
-      html { height: 100% }
-      body { height: 100% }
-      
-      #map_canvas { height: 100%;
-                    margin: 2px;
-                    border-style:solid;
-                    border-width:1px; }
-    </style>
+        <link rel=\"stylesheet\" href=\"";
+        // line 5
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/css/map.css"), "html", null, true);
+        echo "\" type=\"text/css\" media=\"all\" />
     <script type=\"text/javascript\"
       src=\"http://maps.googleapis.com/maps/api/js?key=AIzaSyD5L1XB5XpNDaBBRJgxFnOnM--NpHEcE-U&sensor=true\">
     </script>
@@ -46,7 +41,7 @@ class __TwigTemplate_9141b5bf5c824f2d0133c98ac8535287 extends Twig_Template
     // Define the list of markers.
     // This could be generated server-side with a script creating the array.
         var markers= ";
-        // line 30
+        // line 22
         echo twig_jsonencode_filter($this->getContext($context, "markers"));
         echo ";
     // Create the markers ad infowindows.
@@ -126,7 +121,11 @@ default:
     
     
 <body onload=\"initialize()\">
-  <div id=\"map_canvas\" style=\"width: 80%; height: 80%;\"></div>
+";
+        // line 100
+        $this->env->loadTemplate("MyAppApBundle:Map:voir.html.twig")->display($context);
+        // line 101
+        echo "  
 </body>
 ";
     }
@@ -143,6 +142,6 @@ default:
 
     public function getDebugInfo()
     {
-        return array (  50 => 30,  19 => 1,);
+        return array (  128 => 101,  126 => 100,  45 => 22,  25 => 5,  19 => 1,);
     }
 }

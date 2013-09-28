@@ -20,8 +20,11 @@ $.fn.center = function () {
     });
 
 
-    
-    
+    //Il faut que je valide ca vpour fermer la fenêtre modale!!!!!! de la merde!
+function closeWin()
+{
+$('.modal-profile').close();
+}
     
     
     

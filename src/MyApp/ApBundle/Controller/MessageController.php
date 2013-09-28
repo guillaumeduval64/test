@@ -15,15 +15,16 @@ class MessageController extends ContainerAware
         if($langue != null)
         {
             // On enregistre la langue en session
-            $this->container->get('session')->setLocale($langue);
+            $this->container->get('session')->set('_locale', 'en');
         }
-
+        $request = $this->container->get('request');
+        $request->setLocale($langue);
+        var_dump( $this->container->get('session'));
+        var_dump( $request);
+      //  die();
         // on tente de rediriger vers la page d'origine
-        $url = $this->container->get('request')->headers->get('referer');
-        if(empty($url)) {
-            $url = $this->container->get('router')->generate('myapp_client_lister');
-        }
-        return new RedirectResponse($url);
+
+         return new RedirectResponse($this->container->get('router')->generate('myapp_client_lister'),array('locale'=>$langue)); 
     }
     
     public function topAction($max = 5)

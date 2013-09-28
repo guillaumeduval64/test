@@ -10,7 +10,7 @@
 {% block travailleurAutonome %}
 
 <table>
-    <tr><td>Travailleur Autonome:</td></tr>
+    <tr><td><b><h2>Travailleur Autonome:</b></h2></td></tr>
     <tr><td></td></tr>
     <tr>
         <td><b>Nom:</b></td> 
@@ -37,7 +37,7 @@
 
 {% block client %}
 <table>
-    <tr><td>Client:</td></tr>
+    <tr><td><b><h2>Client:</h2></b></td></tr>
     <tr><td></td></tr>
     <tr>
         <td><b>Nom:</b></td> 
@@ -60,10 +60,14 @@
         <td>{{ contrat.production.client.pc|upper }}</td>
     <tr><td></td></tr>
         <tr>
-        <td><b>Telephone: </b></td>
+            {% for s in contrat.production.client.phones %}
+        <td><b>{{ s.phoneType.id }} Téléphone:</b></td>
+        {% endfor %}
         <td><b>Email: </b></td>
     </tr>
-        <td>{{ contrat.production.client.phoneNumber}}</td>
+    {% for s in contrat.production.client.phones %}
+        <td>{{ s.phone}}</td>
+        {% endfor %}
         <td>{{ contrat.production.client.email }}</td>
     <tr><td></td></tr>
 </table>
