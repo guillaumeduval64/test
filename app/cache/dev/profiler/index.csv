@@ -184,3 +184,5 @@ dff8d1,127.0.0.1,POST,http://localhost:81/test/web/app_dev.php/fr/intranet/login
 35d9b5,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/fr/intranet/admin/client/,1392051670,
 3137d7,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/fr/intranet/admin/favicon.ico,1392051684,
 637cdf,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/fr/intranet/admin/favicon.ico,1392051684,
+1b327c,127.0.0.1,GET,http://localhost:81/test/web/app_dev.php/fr/intranet/admin/157/estimation,1392056026,
+9e2759,127.0.0.1,POST,http://localhost:81/test/web/app_dev.php/fr/intranet/admin/157/estimation,1392056520,
