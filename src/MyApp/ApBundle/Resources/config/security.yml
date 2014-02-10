@@ -10,14 +10,14 @@ security:
             pattern:      .*
             form_login:
                 provider:       fos_userbundle
-                login_path:     /intranet/login
+                login_path:     fos_user_security_login
                 use_forward:    false
-                check_path:     /intranet/login_check
+                check_path:     fos_user_security_check
                 failure_path:   null
-                default_target_path: /intranet/admin/client
+                default_target_path: /%locale%/intranet/admin/client
             logout:
-                path:   /intranet/logout
-                target: /intranet/login
+                path:   fos_user_security_logout
+                target: fos_user_security_login
             anonymous:    true
     role_hierarchy:
         ROLE_ADMIN:      ROLE_USER
@@ -39,4 +39,5 @@ security:
         - { path: ^/intranet/change-password, role: ROLE_USER }
 
         # PAGES ACCESSIBLES À TOUS
-        - { path: ^/intranet.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/%locale%/intranet/admin.*, role: ROLE_USER }
+        - { path: ^/%locale%/intranet/login*, role: IS_AUTHENTICATED_ANONYMOUSLY }

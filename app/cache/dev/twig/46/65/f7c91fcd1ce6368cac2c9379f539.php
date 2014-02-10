@@ -12,6 +12,7 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'recherche' => array($this, 'block_recherche'),
+            'page' => array($this, 'block_page'),
             'content' => array($this, 'block_content'),
         );
     }
@@ -32,47 +33,54 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
         echo "Liste des clients";
     }
 
-    // line 4
+    // line 3
     public function block_recherche($context, array $blocks = array())
     {
-        // line 5
-        echo "<div class=\"recherche\">
+        // line 4
+        echo "
 <form id=\"form_recherche\" data-provide=\"typeahead\" action=\"";
-        // line 6
+        // line 5
         echo $this->env->getExtension('routing')->getPath("myapp_client_rechercher");
         echo "\" method=\"post\" >
                             ";
-        // line 7
+        // line 6
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "formRecherche"), "motcle"), 'widget', array("attr" => array("tabindex" => "1", "autocomplete" => "off", "class" => "form_recherche search-query")));
         echo "
 
                 <input type=\"image\" src=\"";
-        // line 9
+        // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/search.png"), "html", null, true);
         echo "\" alt=\"Search\" />
                 </form>
-</div>
+
+
 ";
     }
 
-    // line 14
+    // line 13
+    public function block_page($context, array $blocks = array())
+    {
+        echo " 
+
+                       <span data-view=\"cbp-vm-view-grid\">";
+        // line 15
+        echo $this->env->getExtension('knp_pagination')->render($this->getContext($context, "pagination"));
+        echo "</span>
+";
+    }
+
+    // line 17
     public function block_content($context, array $blocks = array())
     {
         echo " 
-    <a href=\"#myModal\" role=\"button\" class=\"btn\" data-toggle=\"modal\">Ajouter client:</a>
-
 <div class=\"loading\"></div>
 <div id=\"resultatsRecherche\"> 
     ";
-        // line 19
-        $this->env->loadTemplate("MyAppApBundle:Client:liste.html.twig")->display($context);
         // line 20
-        echo "</div>
-     ";
+        $this->env->loadTemplate("MyAppApBundle:Client:liste.html.twig")->display($context);
         // line 21
-        $this->env->loadTemplate("MyAppApBundle:Client:ajouter.html.twig")->display($context);
-        // line 22
-        echo "
+        echo "</div>
+
 <script>
         \$(\".loading\").hide();
         \$(\"#form_recherche\").submit(function(){ 
@@ -111,6 +119,6 @@ class __TwigTemplate_4665f7c91fcd1ce6368cac2c9379f539 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  86 => 31,  75 => 22,  73 => 21,  70 => 20,  68 => 19,  59 => 14,  51 => 9,  46 => 7,  42 => 6,  39 => 5,  36 => 4,  30 => 2,);
+        return array (  94 => 31,  82 => 21,  80 => 20,  73 => 17,  67 => 15,  61 => 13,  52 => 8,  47 => 6,  43 => 5,  40 => 4,  37 => 3,  31 => 2,);
     }
 }

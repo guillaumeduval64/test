@@ -37,6 +37,16 @@ class Client
      * @ORM\Column(type="string",length=22, nullable=true)
      */    
     private $prenom;
+
+        /**
+     * @ORM\Column(type="string",length=22, nullable=true)
+     */    
+    private $phoneNumber;
+
+        /**
+     * @ORM\Column(type="string",length=22, nullable=true)
+     */    
+    private $phoneNumberCell;
     
      /**
      * @ORM\Column(type="string",length=255, nullable=true)
@@ -689,5 +699,51 @@ class Client
     public function getFlag()
     {
         return $this->flag;
+    }
+
+    /**
+     * Set phoneNumber
+     *
+     * @param string $phoneNumber
+     * @return Client
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->phoneNumber = $phoneNumber;
+    
+        return $this;
+    }
+
+    /**
+     * Get phoneNumber
+     *
+     * @return string 
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phoneNumber;
+    }
+
+    /**
+     * Set phoneNumberCell
+     *
+     * @param string $phoneNumberCell
+     * @return Client
+     */
+    public function setPhoneNumberCell($phoneNumberCell)
+    {
+        $this->phoneNumberCell = $phoneNumberCell;
+    
+        return $this;
+    }
+
+    /**
+     * Get phoneNumberCell
+     *
+     * @return string 
+     */
+    public function getPhoneNumberCell()
+    {
+        return $this->phoneNumberCell;
     }
 }

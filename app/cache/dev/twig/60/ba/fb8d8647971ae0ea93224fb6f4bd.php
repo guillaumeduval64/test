@@ -16,10 +16,10 @@ class __TwigTemplate_60bafb8d8647971ae0ea93224fb6f4bd extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "        <table id=\"porte\">
+        echo "        <table class=\"hovered\">
             <tr>
-                <td rowspan=\"3\">
-                   <h1>C</h1>
+                <td class=\"no_bottom_border\" rowspan=\"3\">
+                   <h2>C</h2>
                 </td>
 
 <td><h6>";
@@ -66,6 +66,6 @@ class __TwigTemplate_60bafb8d8647971ae0ea93224fb6f4bd extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  51 => 16,  47 => 15,  41 => 12,  37 => 11,  31 => 8,  27 => 7,  50 => 15,  46 => 14,  40 => 11,  36 => 10,  30 => 7,  26 => 6,  19 => 1,);
+        return array (  50 => 15,  46 => 14,  36 => 10,  30 => 7,  26 => 6,  51 => 16,  47 => 15,  41 => 12,  27 => 7,  19 => 1,  79 => 15,  77 => 14,  74 => 13,  67 => 9,  63 => 8,  59 => 7,  55 => 6,  52 => 5,  49 => 4,  45 => 13,  42 => 12,  40 => 11,  37 => 11,  31 => 8,);
     }
 }

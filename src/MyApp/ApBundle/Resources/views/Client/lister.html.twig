@@ -1,24 +1,24 @@
 {% extends 'MyAppApBundle::layout.html.twig' %}
 {% block title %}Liste des clients{% endblock %}
+                    {% block recherche %}
 
-{% block recherche %}
-<div class="recherche">
 <form id="form_recherche" data-provide="typeahead" action="{{ path('myapp_client_rechercher') }}" method="post" >
                             {{ form_widget(formRecherche.motcle, { 'attr': {'tabindex': '1','autocomplete':'off', 'class': 'form_recherche search-query' } }) }}
 
                 <input type="image" src="{{ asset('bundles/myappap/images/search.png') }}" alt="Search" />
                 </form>
-</div>
+
+
 {% endblock %}
+{% block page %} 
 
+                       <span data-view="cbp-vm-view-grid">{{ knp_pagination_render(pagination) }}</span>
+{% endblock %}
 {% block content %} 
-    <a href="#myModal" role="button" class="btn" data-toggle="modal">Ajouter client:</a>
-
 <div class="loading"></div>
 <div id="resultatsRecherche"> 
     {% include 'MyAppApBundle:Client:liste.html.twig' %}
 </div>
-     {% include 'MyAppApBundle:Client:ajouter.html.twig' %}
 
 <script>
         $(".loading").hide();

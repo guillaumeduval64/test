@@ -12,19 +12,18 @@ class MessageController extends ContainerAware
 {
     public function choisirLangueAction($langue = null)
     {
-        if($langue != null)
-        {
+ 
             // On enregistre la langue en session
-            $this->container->get('session')->set('_locale', 'en');
-        }
+            $this->container->get('session')->set('_locale', $langue);
+
+        
         $request = $this->container->get('request');
+        $request->getLocale();
         $request->setLocale($langue);
-        var_dump( $this->container->get('session'));
-        var_dump( $request);
-      //  die();
+
         // on tente de rediriger vers la page d'origine
 
-         return new RedirectResponse($this->container->get('router')->generate('myapp_client_lister'),array('locale'=>$langue)); 
+         return new RedirectResponse($this->container->get('router')->generate('myapp_client_lister')); 
     }
     
     public function topAction($max = 5)

@@ -5,4 +5,9 @@ services:
 #    my_app_ap.example:
 #        class: %my_app_ap.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    myapp_locale.locale_listener:
+        class: MyApp\ApBundle\EventListener\LocaleListener
+        arguments: ["%kernel.default_locale%"]
+        tags:
+            - { name: kernel.event_subscriber }
 

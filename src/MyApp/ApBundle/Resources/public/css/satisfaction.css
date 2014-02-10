@@ -1,8 +1,6 @@
 html, body, fieldset {
     margin: 0;
     padding: 0;
-    background-image: url(../images/background.png);
-    background-repeat: repeat; 
 }
 
 ol, ul {
@@ -33,23 +31,22 @@ body {
     padding-left: 40px;
     padding-right: 20px;
     min-height: 700px;
-
     background-color: white;
     font-family: Century Gothic, sans-serif;
 }
 
-#logoSatisfaction {    
-    position: fixed;
-    margin: 0 auto;
-    margin-left: 10px;
+#logoSatisfaction {  
+    padding-top: 10px;     
+    margin-left:auto;
+    margin-right:auto;
+    width: 300px;
 }
 
 #logoSatisfaction img{    
-        width: 200px;
-        height: 200px;
-        
-        
-
+        margin-left:auto;
+        margin-right:auto;
+        width: 600px;
+        height: 275px;
 }
 
 #menuTable td{    
@@ -142,14 +139,13 @@ a:hover {
     padding-bottom: 30px;
 }
 
-#satisfaction {    
+#satisfaction {   
+display: block; 
     background-color: white;
     width: 560px;
     margin-top: 50px;
     padding-left: 30px;
     padding-right: 10px;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray; 
     padding-bottom: 30px;
     margin: 0 auto;
     margin-top: 20px;

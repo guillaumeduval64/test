@@ -1,54 +1,20 @@
 {% extends 'MyAppApBundle::layout.html.twig' %}
 
 {% block title %}{{ contrat.contratEstimation }}: {{ contrat.numero|capitalize }}{% endblock %}
-
+{% block recherche %}
+{{ contrat.client.nom|upper }} {{ contrat.client.prenom|capitalize }}
+{% endblock %}
+{% block page %}
+    <a href="{{ path('myapp_clientContrat_voir', { 'id': contrat.id }) }}"><image src="{{ asset('bundles/myappap/images/barcode.png') }}"/></a>
+{% endblock %}
 {% block content %}
-<table>
-    <tr>
-        <td>{{ contrat.client.nom|upper }} {{ contrat.client.prenom|capitalize }}</td>
-    <td><a href="{{ path('myapp_clientContrat_voir', { 'id': contrat.id }) }}"><image src="{{ asset('bundles/myappap/images/barcode.png') }}"></a></td>
-</tr>
-</table>
 {% if message %}
 <img src="{{ asset('bundles/myappap/images/check.png') }}"/>
 {% endif %}
 
-
-<form action="" method="post" {{ form_enctype(form) }} class="form-horizontal">  
-    <table>
-        <tr>    
-            <td>
-            {{ form_widget(form.date, { 'attr': {'placeholder': 'Date', 'class':'input-small date'} }) }}            
-            </td>
-        </tr>
-        <tr>    
-            <td>
-            {{ form_widget(form.contratEstimation, { 'attr': {'placeholder': 'Date', 'class':'input-medium'} }) }}
-            </td>
-        </tr>
-        <tr>    
-            <td>
-            <div class="input-prepend">
-                <span class="add-on">$</span>
-                {{ form_widget(form.depot, { 'attr': {'placeholder': 'Montant du dépôt', 'class':'input-medium dollars'} }) }}
-            </div>
-            </td>
-        </tr>
-        <tr>    
-            <td>
-            {{ form_widget(form.dateDepot, { 'attr': {'placeholder': 'Date du dépôt', 'class':'input-small date'} }) }}
-            </td>
-        </tr>
-        <tr>    
-            <td>
-            <button type="submit" class="btn">Envoyer</button>
-            </td>
-        </tr>
-    </table>
-</form>
-
+<div id="fiche">
 <table>
-<tr><td><h1>Fiche: </h1></td><td>créé le: {{ contrat.created|date('d/m/y') }}</td></tr>
+<tr><td>Créé le: {{ contrat.created|date('d/m/y') }}</td></tr>
     <tr>
         <td><a href="{{ path('myapp_production_modifier', { 'id': contrat.production.id }) }}">Modifier production</a></td>
     </tr>
@@ -90,12 +56,44 @@
 {% endfor %}
 
     
-    </tr>    
-    
-    
-    
-    
+    </tr>        
 </table> 
- <br>
+--------------------------------------
+
+<h3>Etat du contrat:</h3>
+<form action="" method="post" {{ form_enctype(form) }} class="form-horizontal">  
+    <table>
+        <tr>    
+            <td>
+            {{ form_widget(form.date, { 'attr': {'placeholder': 'Date', 'class':'input-small date'} }) }}            
+            </td>
+        </tr>
+        <tr>    
+            <td>
+            {{ form_widget(form.contratEstimation, { 'attr': {'placeholder': 'Date', 'class':'input-medium'} }) }}
+            </td>
+        </tr>
+        <tr>    
+            <td>
+            <div class="input-prepend">
+                <span class="add-on">$</span>
+                {{ form_widget(form.depot, { 'attr': {'placeholder': 'Montant du dépôt', 'class':'input-medium dollars'} }) }}
+            </div>
+            </td>
+        </tr>
+        <tr>    
+            <td>
+            {{ form_widget(form.dateDepot, { 'attr': {'placeholder': 'Date du dépôt', 'class':'input-small date'} }) }}
+            </td>
+        </tr>
+        <tr>    
+            <td>
+            <button type="submit" class="btn">Envoyer</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</div>
                                               
 {% endblock %}

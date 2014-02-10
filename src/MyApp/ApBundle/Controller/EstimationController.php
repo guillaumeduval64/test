@@ -27,32 +27,9 @@ class EstimationController extends ContainerAware
     { 
       $em = $this->container->get('doctrine')->getEntityManager();
       $client = $em->find('MyAppApBundle:Client', $id);
-      $form = $this->container->get('form.factory')->create(new ClientForm(), $client);
-         $request = $this->container->get('request');
 
-            if ($request->getMethod() == 'POST') 
-            {
-                        $form->bind($request);
 
-                if ($form->isValid()) 
-                {
-                            $this->container->get('session')->getFlashBag()->add('notice', 'Your changes were saved!');
 
-                        $date = new DateTable();
-                        $client->setDateTable($date);
-                        $date ->setDate(new \DateTime());
-                        $em->persist($client);
-                        $em->flush();
-                        if (isset($id)) 
-                            {
-                            $message='Client modifié avec succès !';
-                            }
-                        else 
-                            {
-                            $message='Client ajouté avec succès !';
-                            }
-                }
-              }
 
              $query = $em->createQuery('SELECT a.city FROM MyAppApBundle:Client c JOIN c.city a 
      WHERE c.id = :id')->setParameter('id', $id);
@@ -61,7 +38,7 @@ class EstimationController extends ContainerAware
       $geocoder = $this->container->get('ivory_google_map.geocoder');
       $test= $client ->getNumber()." ".$client ->getStreet()." ".$city[0]['city']." ".$client -> getPc();
       $response = $geocoder->geocode($test);
-      
+
       $map = $this->container->get('ivory_google_map.map');
       
       // Requests the ivory google map marker service
@@ -104,7 +81,6 @@ GROUP BY c.id');
  $clientservicestest = $conn->prepare($sql);
 $clientservicestest->bindValue("clientid", $client->getId());
 $clientservicestest->execute();        
-        
     if (!$client) 
     {
         throw new NotFoundHttpException("service non trouvé");
@@ -118,27 +94,25 @@ $clientservicestest->execute();
                     
             if ($formNote->isValid()) 
                 {   
-                    $note ->setClient($client);
+                    $note->setClient($client);
                     $note ->setType('Pap');
                     $em->persist($note);
                     $em->flush();
                     $message='Note ajouté avec succès !';
                     
-                     $notes= $em->getRepository('MyAppApBundle:Note')->findByClient($id);
-                return new RedirectResponse($this->container->get('router')->generate('myapp_estimation_voirClient', array("id" => $client->getId())));
+                    
                 }
        
         }
          
           $notes= $em->getRepository('MyAppApBundle:Note')->findByClient($id);
-         
+      
          
          
     return $this->container->get('templating')->renderResponse('MyAppApBundle:Estimation:voir.html.twig', array(
     'client' => $client,
     'notes' => $notes,
     'message' => $message,
-    'form' => $form->createView(),
     'clientServices' => $clientServices,
     'formNote' => $formNote->createView(),
     'response' => $response,

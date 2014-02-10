@@ -16,51 +16,94 @@ class DashboardController extends ContainerAware
      }  
 
 public function nbProductionAction()
-     {  
-                $user = $this->container->get('security.context')->getToken()->getUsername();
+     { 
+
+  $user = $this->container->get('security.context')->getToken()->getUser();
+
+  if($user ='anon.'){
+$userId =1;
+$user = 'rado';
+  }else{
+   $userId = $user->getId(); 
+   $user = $user->getUsername();
+  }
 
   $nbProduction = $this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Contrat')
                          ->getAllProductionsFranchiseCount($user);
 
+$year = date("o");
+$month = date("m");
+$week = date("W");
+
 $nbProductionObj=$this->container->get('doctrine.orm.entity_manager')
-    ->getRepository('MyAppApBundle:Objectif')
-    ->getObjectifProdByFranchise($user);
+    ->getRepository('MyAppApBundle:ObjectifSemaine')
+    ->getObjectifProdByFranchise($userId, $year);
 
-$difObjectifProd = $nbProduction[0][1] - $nbProductionObj[0] ->getMontant();
+$nbContrat = $nbProductionObj[0]->getObjectif()->getNbContrat() ;
 
-$nbProductionObj = $nbProductionObj[0] ->getMontant();
+
+$nbProductionObj = $nbProductionObj[0] ->getValeur();
+
+$difObjectifProd = $nbProduction[0][1] - $nbProductionObj;
+if ($nbProduction[0][1]>0) {
+  $percentageObjectifProd = ($nbProduction[0][1]/$nbContrat)*100;
+}else{
+  $percentageObjectifProd =0;
+  $nbProductionObj ;
+}
+
 
 $nbProductionMonth = $this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Contrat')
                          ->getAllProductionsFranchiseCountMonth($user);
 
 $nbProductionObjM=$this->container->get('doctrine.orm.entity_manager')
-    ->getRepository('MyAppApBundle:Objectif')
-    ->getObjectifProdByFranchise($user);
+    ->getRepository('MyAppApBundle:ObjectifSemaine')
+    ->getObjectifProdByFranchiseMonth($userId,$month);
 
-$difObjectifProdM = $nbProductionMonth[0][1] - $nbProductionObjM[0] ->getMontant();
 
-$nbProductionObjM = $nbProductionObjM[0] ->getMontant();
+
+if ($nbProductionMonth[0][1]>0) {
+  $nbProductionObjM = $nbProductionObjM[0] ->getValeur();
+  $difObjectifProdM = $nbProductionMonth[0][1] - $nbProductionObjM;
+
+  $percentageObjectifProdM = ($nbProductionMonth[0][1])/($difObjectifProdM*$nbContrat)*100;
+
+
+}else{
+  $percentageObjectifProdM =0;
+ 
+  $nbProductionObjM[0] ->getValeur();
+}
 
 $nbProductionWeek = $this->container->get('doctrine.orm.entity_manager')
                          ->getRepository('MyAppApBundle:Contrat')
                          ->getAllProductionsFranchiseCountWeek($user);
 
 $nbProductionObjW=$this->container->get('doctrine.orm.entity_manager')
-    ->getRepository('MyAppApBundle:Objectif')
-    ->getObjectifProdByFranchise($user);
+    ->getRepository('MyAppApBundle:ObjectifSemaine')
+    ->getObjectifProdByFranchiseWeek($userId, $week);
 
-$difObjectifProdW = $nbProductionWeek[0][1] - $nbProductionObjW[0] ->getMontant();
 
-$nbProductionObjW = $nbProductionObjW[0] ->getMontant();
+if ($nbProductionWeek[0][1]>0) {
+  $nbProductionObjW = $nbProductionObjW[0] ->getValeur();
+  $difObjectifProdW = $nbProductionWeek[0][1] - $nbProductionObjW;
+  $percentageObjectifProdW =($nbProductionWeek[0][1])/($difObjectifProdW*$nbContrat)*100;
+
+}else{
+  $percentageObjectifProdW =0;
+  $nbProductionObjW[0] ->getValeur();
+}
 
 
         return $this->container->get('templating')->renderResponse('MyAppApBundle:Dashboard:nbProduction.html.twig', 
   array(
                 'nbProduction' => $nbProduction,
                 'nbProductionObj' => $nbProductionObj,
-                'difObjectifProd' => $difObjectifProd,
+                'percentageObjectifProd' => $percentageObjectifProd,
+                'percentageObjectifProdM' => $percentageObjectifProdM,
+                'percentageObjectifProdW' => $percentageObjectifProdW,
                 'nbProductionMonth' => $nbProductionMonth,
                 'nbProductionObjM' => $nbProductionObjM,
                 'nbProductionWeek' => $nbProductionWeek,

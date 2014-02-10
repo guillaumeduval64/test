@@ -8,10 +8,13 @@
 <table><tr><td>
 </td>
 <td>
+
 		{{ form_row(form.clientService) }}
 
 </td>
 </tr></table>
+            {{ form_widget(form.date, { 'attr': {'placeholder': 'Date de rappel', 'class':'input-small date'} }) }}
+
     {{ form_widget(form) }}
     <input type="image" src="{{ asset('bundles/myappap/images/add.png') }}" />
 </form>

@@ -18,9 +18,19 @@ class Objectif
     private $id;
     
      /**
+     * @ORM\OneToMany(targetEntity="ObjectifSemaine", mappedBy="Objectif", cascade={"persist","remove"})
+     */    
+    private $objectifSemaine;
+
+    /**
      * @ORM\Column(type="string",length=255)
      */    
-    private $montant;
+    private $contratMoyen;
+
+    /**
+     * @ORM\Column(type="string",length=255)
+     */    
+    public $nbContrat;
 
     /**
      * @ORM\Column(type="string",length=255)
@@ -47,6 +57,7 @@ class Objectif
         $this->titles = new \Doctrine\Common\Collections\ArrayCollection();
         $this->setCreated(new \DateTime());
         $this->setUpdated(new \DateTime());
+        $this->nbContrat = 10;
     }
     
 
@@ -58,29 +69,6 @@ class Objectif
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set montant
-     *
-     * @param string $montant
-     * @return Objectif
-     */
-    public function setMontant($montant)
-    {
-        $this->montant = $montant;
-    
-        return $this;
-    }
-
-    /**
-     * Get montant
-     *
-     * @return string 
-     */
-    public function getMontant()
-    {
-        return $this->montant;
     }
 
     /**
@@ -173,5 +161,84 @@ class Objectif
     public function getAnnée()
     {
         return $this->année;
+    }
+
+    /**
+     * Add objectifSemaine
+     *
+     * @param \MyApp\ApBundle\Entity\ObjectifSemaine $objectifSemaine
+     * @return Objectif
+     */
+    public function addObjectifSemaine(\MyApp\ApBundle\Entity\ObjectifSemaine $objectifSemaine)
+    {
+        $this->objectifSemaine[] = $objectifSemaine;
+    
+        return $this;
+    }
+
+    /**
+     * Remove objectifSemaine
+     *
+     * @param \MyApp\ApBundle\Entity\ObjectifSemaine $objectifSemaine
+     */
+    public function removeObjectifSemaine(\MyApp\ApBundle\Entity\ObjectifSemaine $objectifSemaine)
+    {
+        $this->objectifSemaine->removeElement($objectifSemaine);
+    }
+
+    /**
+     * Get objectifSemaine
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getObjectifSemaine()
+    {
+        return $this->objectifSemaine;
+    }
+
+    /**
+     * Set contratMoyen
+     *
+     * @param string $contratMoyen
+     * @return Objectif
+     */
+    public function setContratMoyen($contratMoyen)
+    {
+        $this->contratMoyen = $contratMoyen;
+    
+        return $this;
+    }
+
+    /**
+     * Get contratMoyen
+     *
+     * @return string 
+     */
+    public function getContratMoyen()
+    {
+        return $this->contratMoyen;
+    }
+
+    /**
+     * Set nbContrat
+     *
+     * @param string $nbContrat
+     * @return Objectif
+     */
+    public function setNbContrat($nbContrat)
+    {
+        $this->nbContrat = $nbContrat;
+    
+        return $this;
+    }
+
+    /**
+     * Get nbContrat
+     *
+     * @return string 
+     */
+    public function getNbContrat()
+    {
+        return $this->nbContrat;
     }
 }

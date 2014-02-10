@@ -9,12 +9,12 @@
 <table>
 <tr>
 {# sorting of properties based on query components #}
-    <th>{{ pagination.sortable('Période', 'p.period')|raw }}</th>
-      <th>{{ pagination.sortable('Mois', 'p.previsionDateProd')|raw }}</th>
-    <th>{{ pagination.sortable('Rappel', 'p.dateProd')|raw }}</th>
-    <th>{{ pagination.sortable('Nom', 'p.client.nom')|raw }}</th>
-    <th>{{ pagination.sortable('Prénom', 'p.client.prenom')|raw }}</th>
-    <th>{{ pagination.sortable('Tél.', 'p.client.phoneNumber')|raw }}</th>
+    <th>{{ knp_pagination_sortable(pagination, 'Période', 'p.period')|raw }}</th>
+      <th>{{ knp_pagination_sortable(pagination, 'Mois', 'p.previsionDateProd')|raw }}</th>
+    <th>{{ knp_pagination_sortable(pagination, 'Rappel', 'p.dateProd')|raw }}</th>
+    <th>{{ knp_pagination_sortable(pagination, 'Nom', 'p.client.nom')|raw }}</th>
+    <th>{{ knp_pagination_sortable(pagination, 'Prénom', 'p.client.prenom')|raw }}</th>
+    <th>{{ knp_pagination_sortable(pagination, 'Tél.', 'p.client.phoneNumber')|raw }}</th>
     <th>Note</th>
     <th></th>
 </tr>
@@ -37,7 +37,7 @@
 </table>
 {# display navigation #}
 <div class="navigation">
-    {{ pagination.render()|raw }}
+{{ knp_pagination_render(pagination) }}
 </div>
   </div>
 </div>

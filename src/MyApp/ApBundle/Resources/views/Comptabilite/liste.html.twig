@@ -6,9 +6,9 @@
     <table>
         <tr>
 {# sorting of properties based on query components #}
-            <th>{{ pagination.sortable('Date', 'c.created')|raw }}</th>
+            <th>{{ knp_pagination_sortable(pagination, 'Date', 'c.created')|raw }}</th>
             <th>Type</th>
-            <th>{{ pagination.sortable('Montant', 'c.montant')|raw }}</th>
+            <th>{{ knp_pagination_sortable(pagination, 'Montant', 'c.montant')|raw }}</th>
         </tr>
         {% for c in pagination %}
         <tr {% if loop.index is odd %}class="color"{% endif %}>
@@ -28,7 +28,7 @@
         
     {# display navigation #}
     <div class="navigation">
-        {{ pagination.render()|raw }}
+        {{ knp_pagination_render(pagination)|raw }}
     </div>
 </div>
 

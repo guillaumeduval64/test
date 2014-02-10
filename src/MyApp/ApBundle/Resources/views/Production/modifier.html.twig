@@ -1,84 +1,104 @@
 {% extends 'MyAppApBundle::layout.html.twig' %}
 
-{% block title %}Modifier production: {{ production.client.nom|upper }} {{ production.client.prenom|capitalize }} {% endblock %}    
-
-{% block content %}
-
-<table id="modifierProd">
-    <tr>
-        <td>
-            <a href="{{ path('myapp_estimation_voirClient', { 'id': production.client.id }) }}"><img src="{{ asset('bundles/myappap/images/user.png') }}" title="Voir Fiche client"/></a>
-        </td>
-        <td>
-            <a href="#myModalTest" role="button" class="btn" data-toggle="modal"> <img src="{{ asset('bundles/myappap/images/money.png') }}" title="Ajouter compta"/></a></td>
-
-        <td>
-            <a href="#myModal" role="button" class="btn" data-toggle="modal"><img src="{{ asset('bundles/myappap/images/add.png') }}" title="Début"/></a>
-        </td>
-<td> 
-    <p><a href="{{ path('myapp_satisfaction_ajouter', { 'id': production.id }) }}"><img src="{{ asset('bundles/myappap/images/check.png') }}" title="Début"/><a></p>
-</td>
-    </tr>
-</table> 
-<p><b>{{ contrat[0].contratEstimation }}: {{ contrat[0].numero }}</b></p>
-{% if message %}
+{% block title %}Modifier production{% endblock %}    
+{% block recherche %}
+ {{ production.client.nom|capitalize }} {{ production.client.prenom|capitalize }} - {{ contrat[0].contratEstimation }}: {{ contrat[0].numero }}
+ {% if message %}
 <p><img src="{{ asset('bundles/myappap/images/check.png') }}" title="Ajouté"/> {{ message }}</p>
 {% endif %}
- 
-<!-- Modal -->
-<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Planning:</h3>
-  </div>       
-    <div class="modal-body">
-        <form action="{{ path('myapp_production_start', {'id': production.id}) }}" method="post" {{ form_enctype(form) }}>
-    {{ form_widget(formStart) }}
-<input type="image" src="{{ asset('bundles/myappap/images/add.png') }}" title="Ajouter" />
-            </form>
+{% endblock %}  
 
-<table>
-    <th></th>
-    <th></th>
-<th>Début à:</th>
-<th>Fin à:</th>
-<th>Ne pas tenir compte de cette colonne!</th>
-{% for key, e in equipe %}        
-    <tr>
-        <td>{{ key+1 }}:</td> 
-        <td> {{ e.heureD|date('d/m/y') }} </td> 
-        <td><b>{{ e.heureD|date('H:i') }}</b></td>
-        <td>
-        {% if e.heureF|date('H:i') != '00:00' %}  
-        <b>{{ e.heureF|date('H:i') }}</b>
-        {% else %}
-            <a href="{{ path('myapp_production_stop', { 'id': production.id, 'test': e.id }) }}">Stop</a> 
-        {% endif %}  
-        </td> 
-        <td> {{ e.prenom }}</td> 
-{# Je voudrais metre le nom des travailleurs et leur temps de début, fin...#}
+{% block page %}
+ <a href="{{ path('myapp_estimation_voirClient', { 'id': production.client.id }) }}"><img src="{{ asset('bundles/myappap/images/user.png') }}" title="Voir Fiche client"/>
+    <a href="{{ path('myapp_satisfaction_ajouter', { 'id': production.id }) }}"><img src="{{ asset('bundles/myappap/images/check.png') }}" title="Début"/></a>
+{% endblock %}  
 
-    
-    </tr> 
-{% else %} 
-À définir  
- {% endfor %}
-</table>
-    </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
-    <input type="text" class="btn btn-primary" value="Ajouter" title="Ajouter">
-  </div>
+{% block principalNote %}
+<div id="containerProd">
+
+<div id="prodBlock">
+<h3>Etat de la production:</h3>
+
+
+
+
+<form class="form-horizontal" action="" method="post" {{ form_enctype(formEtat) }}>
+    <table id="tableauProd">   
+        <tr>
+            <td>
+                
+                    <div class="error">
+            {{ form_errors(formEtat) }}
+                        </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                                {{ form_errors(formEtat.period) }} 
+                    </td>
+                    <td>
+{#{{ form_errors(formEtat.previsionDateProd) }} #}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                                {{ form_widget(formEtat.period, {'class':'input-small date'}) }} 
+                    </td>
+                    </tr>
+                    <tr>
+                    <td>
+{{ form_widget(formEtat.previsionDateProd) }}                    
+                </td>
+            </tr>
+            <tr>
+               <td>
+        {#                        {{ form_widget(formEtat.dateProd, { 'attr': {'placeholder': 'Date', 'class':'input-small date'} }) }}#}
+                </td>
+                                    </tr>
+                    <tr>
+                <td>
+                                {{ form_errors(formEtat.previsionHeureD) }}
+                                {{ form_widget(formEtat.previsionHeureD, { 'attr': {'placeholder': 'Début', 'class':'input-small timepicker'} }) }}
+                </td>
+                                    </tr>
+                    <tr>
+                <td>
+                                {{ form_errors(formEtat.previsionHeureF) }}
+                                {{ form_widget(formEtat.previsionHeureF, { 'attr': {'placeholder': 'Fin', 'class':'input-small timepicker'} }) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                                {{ form_label(formEtat.statut) }}
+                                {{ form_errors(formEtat.statut) }}
+                                {{ form_widget(formEtat.statut) }}
+                </td>
+                </tr>
+                <tr>
+                <td>
+                                {{ form_label(formEtat.contratCree) }}
+                                {{ form_errors(formEtat.contratCree) }}
+                                {{ form_widget(formEtat.contratCree) }}
+                </td>
+            </tr>
+
+                <tr>
+                    <td>
+                                {{ form_widget(formEtat.dateProd, { 'attr': {'placeholder': 'Date de prod', 'class':'input-small date'} }) }}
+
+                                {{ form_rest(formEtat) }}  
+                            <input type="image" src="{{ asset('bundles/myappap/images/add.png') }}" title="Ajouter" />
+                        </td>
+                    </tr>
+                    
+                </table>
+</form>
 </div>
+<div id="prodBlock">
 
-<!-- Modal Comptabilite -->
-<div id="myModalTest" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Ajout d'une facture:</h3>
-  </div>       
-    <div class="modal-body">
-        <form action="{{ path('myapp_production_comptabilite', { 'id': production.id }) }}" method="post" {{ form_enctype(form) }}>
+    <h3>Ajout d'une facture:</h3>
+          <form action="{{ path('myapp_production_comptabilite', { 'id': production.id }) }}" method="post" {{ form_enctype(form) }}>
+     
     <table>           
         <tr>
             <td>
@@ -134,96 +154,53 @@
                                         <tr>
                                             <td>
       {{ form_rest(form) }}  
-                                                    <input type="image" src="{{ asset('bundles/myappap/images/add.png') }}" />
+                                                     
                                                 </td>
                                             </tr>
                                     </table>
 
-                                </form>
+                                
 
-    </div>
-  <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
-    <input type="text" class="btn btn-primary" value="Ajouter" title="Ajouter">
-  </div>
+    <input type="image" class="btn btn-primary" value="Ajouter" title="Ajouter">
+ 
+
+   </form>
 </div>
-     
+<div id="prodBlock">
 
+    <h3 >Planning:</h3>
+          <form action="{{ path('myapp_production_start', {'id': production.id}) }}" method="post" {{ form_enctype(form) }}>    
+    {{ form_widget(formStart) }}
 
+<table>
+    <th></th>
+    <th></th>
+<th>Début à:</th>
+<th>Fin à:</th>
+<th>Ne pas tenir compte de cette colonne!</th>
+{% for key, e in equipe %}        
+    <tr>
+        <td>{{ key+1 }}:</td> 
+        <td> {{ e.heureD|date('d/m/y') }} </td> 
+        <td><b>{{ e.heureD|date('H:i') }}</b></td>
+        <td>
+        {% if e.heureF|date('H:i') != '00:00' %}  
+        <b>{{ e.heureF|date('H:i') }}</b>
+        {% else %}
+            <a href="{{ path('myapp_production_stop', { 'id': production.id, 'test': e.id }) }}">Stop</a> 
+        {% endif %}  
+        </td> 
+        <td> {{ e.prenom }}</td> 
+{# Je voudrais metre le nom des travailleurs et leur temps de début, fin...#}
 
-
-
-
-
-
-
-<form class="form-horizontal" action="" method="post" {{ form_enctype(formEtat) }}>
-    <table id="tableauProd">   
-        <tr>
-            <td>
-                
-                    <div class="error">
-            {{ form_errors(formEtat) }}
-                        </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                                {{ form_errors(formEtat.period) }} 
-                    </td>
-                    <td>
-{{ form_errors(formEtat.previsionDateProd) }}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                                {{ form_widget(formEtat.period, {'class':'input-small date'}) }} 
-                    </td>
-                    </tr>
-                    <tr>
-                    <td>
-{{ form_widget(formEtat.previsionDateProd) }}                    
-                </td>
-            </tr>
-            <tr>
-               <td>
-                                {{ form_widget(formEtat.dateProd, { 'attr': {'placeholder': 'Date', 'class':'input-small date'} }) }}
-                </td>
-                                    </tr>
-                    <tr>
-                <td>
-                                {{ form_errors(formEtat.previsionHeureD) }}
-                                {{ form_widget(formEtat.previsionHeureD, { 'attr': {'placeholder': 'Début', 'class':'input-mini timepicker'} }) }}
-                </td>
-                                    </tr>
-                    <tr>
-                <td>
-                                {{ form_errors(formEtat.previsionHeureF) }}
-                                {{ form_widget(formEtat.previsionHeureF, { 'attr': {'placeholder': 'Fin', 'class':'input-mini timepicker'} }) }}
-                </td>
-            </tr>
-            <tr>
-                <td>
-                                {{ form_label(formEtat.statut) }}
-                                {{ form_errors(formEtat.statut) }}
-                                {{ form_widget(formEtat.statut) }}
-                </td>
-                </tr>
-                <tr>
-                <td>
-                                {{ form_label(formEtat.contratCree) }}
-                                {{ form_errors(formEtat.contratCree) }}
-                                {{ form_widget(formEtat.contratCree) }}
-                </td>
-            </tr>
-
-                <tr>
-                    <td>
-                                {{ form_rest(formEtat) }}  
-                            <input type="image" src="{{ asset('bundles/myappap/images/add.png') }}" title="Ajouter" />
-                        </td>
-                    </tr>
-                    
-                </table>
-</form>
+    
+    </tr> 
+{% else %} 
+À définir  
+ {% endfor %}
+</table>
+    <input type="image" class="btn btn-primary" value="Ajouter" title="Ajouter">
+  </form>
+</div>
+</div>
 {% endblock %}

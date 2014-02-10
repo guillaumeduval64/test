@@ -24,7 +24,8 @@ class ClientServiceForm extends AbstractType
             ->add('note','textarea',array('attr' => array(
                 'rows' => '4', 'cols' =>'40' ),
                 'required' => false,))
-            ->add('image', new ImageForm())
+            ->add('image', new ImageForm(),
+             array('required' => false))
             ;
             }
                 

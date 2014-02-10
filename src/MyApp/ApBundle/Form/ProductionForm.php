@@ -25,7 +25,7 @@ class ProductionForm extends AbstractType
             ->add('statut','choice', array(
                 'choices' => array('Non Booké'=>'Non Booké','Booké'=>'Booké','Terminé'=>'Terminé'),
                 'label' => 'Statut: '))
-            
+       
             ->add('dateProd','date', array(
                     'widget' => 'single_text',
                     'format' => 'dd MMM yyyy',

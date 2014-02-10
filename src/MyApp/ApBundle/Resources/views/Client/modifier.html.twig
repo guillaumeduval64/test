@@ -10,7 +10,7 @@
 {% endif %}
 
  <form action="" method="POST" class="form-horizontal">
-    <table>
+    <table id="no_border">
         <tr>
             <td>{{ form_errors(form) }}</td>
         </tr>
@@ -34,7 +34,7 @@
         </tr>
    </table>
    <br>     
-   <table>
+   <table id="no_border">
         <tr>
             <td>{{ form_widget(form.nom, { 'attr': {'placeholder': 'nom', 'class':'input-small'} }) }}</td>
             <td>{{ form_widget(form.prenom, { 'attr': {'placeholder': 'prenom', 'class':'input-small'} }) }}</td>
@@ -44,7 +44,7 @@
         </tr>
     </table>
    <br>
-   <table>
+   <table id="no_border">
         <tr>
             <td>{{ form_widget(form.number, { 'attr': {'placeholder': 'num', 'class':'input-mini'} }) }}</td>
             <td>{{ form_widget(form.street, { 'attr': {'placeholder': 'rue', 'class':'input-medium'} }) }}</td>
@@ -56,10 +56,9 @@
             </td>
             </tr>
                </table>
-   <table>
+   <table id="no_border">
                         <tr>
             <td>{{ form_widget(form.date, { 'attr': {'placeholder': 'Date', 'class':'input-small date'} }) }}</td>
-            <td><input type="image" src="{{ asset('bundles/myappap/images/add.png') }}" title="Ajouter"/></td>
             </tr>
    </table>
 
@@ -75,6 +74,7 @@
     </ul>   
         <br>
 {{ form_rest(form) }}
+<input type="image" src="{{ asset('bundles/myappap/images/add.png') }}" value="Ajouter" title="Ajouter"/>
 </form>
 
 

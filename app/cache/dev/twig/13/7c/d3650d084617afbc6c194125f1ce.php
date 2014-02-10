@@ -16,10 +16,10 @@ class __TwigTemplate_137cd3650d084617afbc6c194125f1ce extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<table id=\"porte\">
+        echo "<table  id=\"\" class=\"hovered\">
             <tr>
-                <td rowspan=\"3\">
-                   <h1>P</h1>
+                <td class=\"no_bottom_border\" rowspan=\"3\">
+                   <h2>P</h2>
     </td>
 \t\t<td class=\"currentMatch\" data-nbProductionObj=";
         // line 6
@@ -31,8 +31,8 @@ class __TwigTemplate_137cd3650d084617afbc6c194125f1ce extends Twig_Template
         echo "</h6></td>
 \t\t<td><h6>";
         // line 7
-        echo twig_escape_filter($this->env, $this->getContext($context, "nbProductionObj"), "html", null, true);
-        echo "</h6></td>
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, $this->getContext($context, "percentageObjectifProdW"), 0, ".", ","), "html", null, true);
+        echo "%</h6></td>
 \t</tr>
 \t<tr>
 \t\t<td><h6>";
@@ -41,8 +41,8 @@ class __TwigTemplate_137cd3650d084617afbc6c194125f1ce extends Twig_Template
         echo "</h6></td>
 \t\t<td><h6>";
         // line 11
-        echo twig_escape_filter($this->env, $this->getContext($context, "nbProductionObjM"), "html", null, true);
-        echo "<h6></td>
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, $this->getContext($context, "percentageObjectifProdM"), 0, ".", ","), "html", null, true);
+        echo "%</h6></td>
 \t</tr>
 \t<tr>
 \t\t<td><h6>";
@@ -51,8 +51,8 @@ class __TwigTemplate_137cd3650d084617afbc6c194125f1ce extends Twig_Template
         echo "</h6></td>
 \t\t<td><h6>";
         // line 15
-        echo twig_escape_filter($this->env, $this->getContext($context, "difObjectifProd"), "html", null, true);
-        echo "</h6></td>
+        echo twig_escape_filter($this->env, twig_number_format_filter($this->env, $this->getContext($context, "percentageObjectifProd"), 0, ".", ","), "html", null, true);
+        echo "%</h6></td>
 \t</tr>
 </table>
 ";
@@ -70,6 +70,6 @@ class __TwigTemplate_137cd3650d084617afbc6c194125f1ce extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  54 => 15,  44 => 11,  34 => 7,  51 => 16,  47 => 15,  41 => 12,  37 => 11,  31 => 8,  27 => 7,  50 => 14,  46 => 14,  40 => 10,  36 => 10,  30 => 7,  26 => 6,  19 => 1,);
+        return array (  54 => 15,  44 => 11,  34 => 7,  50 => 14,  46 => 14,  36 => 10,  30 => 7,  26 => 6,  51 => 16,  47 => 15,  41 => 12,  27 => 7,  19 => 1,  79 => 15,  77 => 14,  74 => 13,  67 => 9,  63 => 8,  59 => 7,  55 => 6,  52 => 5,  49 => 4,  45 => 13,  42 => 12,  40 => 10,  37 => 11,  31 => 8,);
     }
 }

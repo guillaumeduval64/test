@@ -45,6 +45,10 @@ myapp_client_date:
     requirements:
      _method: POST
 
+myapp_front_index:
+    pattern: /admin/index/
+    defaults: { _controller: MyAppApBundle:Front:index  }
+
 myapp_client_lister:
     pattern: /admin/client/
     defaults: { _controller: MyAppApBundle:Client:lister  }
@@ -55,7 +59,7 @@ myapp_client_liste:
     type:     annotation
     
 myapp_client_ajouter:
-    pattern: //admin/client/ajouter
+    pattern: /admin/client/ajouter
     defaults: { _controller: MyAppApBundle:Client:ajouter }
     
 myapp_client_note:

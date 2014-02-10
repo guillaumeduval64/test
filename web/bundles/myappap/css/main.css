@@ -64,8 +64,9 @@ display: inline-block;
 #test {
     color: #000;
     width:948px;
-    min-height: 400px;
+    height: 500px;
     margin: 0 auto;
+
      
 }
 

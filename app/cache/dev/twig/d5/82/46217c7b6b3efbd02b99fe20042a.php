@@ -16,19 +16,30 @@ class __TwigTemplate_d58246217c7b6b3efbd02b99fe20042a extends Twig_Template
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<!-- Button to trigger modal -->
+        echo "<div id=\"ajout_client\">
+";
+        // line 2
+        if ($this->getContext($context, "message")) {
+            // line 3
+            echo twig_escape_filter($this->env, $this->getContext($context, "message"), "html", null, true);
+            echo "
+";
+        }
+        // line 5
+        echo "
+    <h3>Ajout d'un client:</h3>
+  
+    <form action=\"";
+        // line 8
+        echo $this->env->getExtension('routing')->getPath("myapp_client_ajouter");
+        echo "\" method=\"POST\" ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'enctype');
+        echo ">
 
- 
-<!-- Modal -->
-<div id=\"myModal\" class=\"modal hide fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-  <div class=\"modal-header\">
-    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">×</button>
-    <h3 id=\"myModalLabel\">Ajout d'un client:</h3>
-  </div>
-  <div class=\"modal-body\">
-    <form action=\"\" method=\"POST\" class=\"form-horizontal\">
 
-    <table>
+
+<table>
+   
         <tr>
             <td>";
         // line 15
@@ -74,80 +85,73 @@ class __TwigTemplate_d58246217c7b6b3efbd02b99fe20042a extends Twig_Template
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "heure"), 'errors', array("attr" => array("class" => "input-small")));
         echo "</td>
         </tr>
-   </table>
-   <br>     
-   <table>
+
         <tr>
             <td>";
-        // line 39
+        // line 37
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "nom"), 'widget', array("attr" => array("placeholder" => "nom", "class" => "input-small")));
         echo "</td>
             <td>";
-        // line 40
+        // line 38
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "prenom"), 'widget', array("attr" => array("placeholder" => "prenom", "class" => "input-small")));
         echo "</td>
         </tr>
         <tr>
             <td>";
-        // line 43
+        // line 41
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "email"), 'widget', array("attr" => array("placeholder" => "Email", "class" => "input-medium")));
         echo "</td>
         </tr>
-    </table>
-   <br>
-   <table>
+
         <tr>
             <td>";
-        // line 49
+        // line 45
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "number"), 'widget', array("attr" => array("placeholder" => "num", "class" => "span1")));
         echo "</td>
             <td>";
-        // line 50
+        // line 46
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "street"), 'widget', array("attr" => array("placeholder" => "rue", "class" => "span2")));
         echo "</td>
                <td>
             ";
-        // line 52
+        // line 48
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "city"), 'widget', array("attr" => array("class" => "span2")));
         echo "
             </td>
             <td>
             ";
-        // line 55
+        // line 51
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "pc"), 'widget', array("attr" => array("placeholder" => "CP", "class" => "span1")));
         echo "
             </td>
             </tr>
-               </table>
-   <table>
                         <tr>
             <td>";
-        // line 61
+        // line 55
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "date"), 'widget', array("attr" => array("placeholder" => "Date", "class" => "input-medium date")));
         echo "</td>
             <td></td>
             </tr>
    </table>
-   
     <h3>Phones:</h3>
     <ul class=\"phones\" data-prototype=\"";
-        // line 67
+        // line 60
         echo twig_escape_filter($this->env, $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getAttribute($this->getAttribute($this->getContext($context, "form"), "phones"), "vars"), "prototype"), 'widget'));
         echo "\">
         ";
-        // line 69
+        // line 62
         echo "        ";
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getContext($context, "form"), "phones"));
         foreach ($context['_seq'] as $context["_key"] => $context["phone"]) {
-            // line 70
+            // line 63
             echo "
             <li>";
-            // line 71
+            // line 64
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "phone"), "phoneType"), 'row', array("attr" => array("placeholder" => "Phone", "class" => "span2")));
             echo "
             ";
-            // line 72
+            // line 65
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "phone"), "phone"), 'row');
             echo "</li>
             ----------------------------------------------------------
@@ -156,31 +160,29 @@ class __TwigTemplate_d58246217c7b6b3efbd02b99fe20042a extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['phone'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 75
+        // line 68
         echo "    </ul>
         <br>
           ";
-        // line 77
+        // line 70
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'rest');
         echo "
  
-  </div>
-  <div class=\"modal-footer\">
-    <button class=\"btn\" data-dismiss=\"modal\" aria-hidden=\"true\">Close</button>
-    <input type=\"submit\" class=\"btn btn-primary\" value=\"Ajouter\" title=\"Ajouter\"></form>
-  </div>
+    <input type=\"submit\" class=\"btn btn-primary\" value=\"Ajouter\" title=\"Ajouter\">
+  </form>
 </div>
 
 ";
-        // line 86
+        // line 76
         if (isset($context['assetic']['debug']) && $context['assetic']['debug']) {
             // asset "99471e3_0"
             $context["asset_url"] = isset($context['assetic']['use_controller']) && $context['assetic']['use_controller'] ? $this->env->getExtension('routing')->getPath("_assetic_99471e3_0") : $this->env->getExtension('assets')->getAssetUrl("_controller/js/99471e3_phone_1.js");
-            // line 89
+            // line 79
             echo "    <script src=\"";
             echo twig_escape_filter($this->env, $this->getContext($context, "asset_url"), "html", null, true);
             echo "\"></script>
-      
+        
+</script>
 ";
         } else {
             // asset "99471e3"
@@ -188,7 +190,8 @@ class __TwigTemplate_d58246217c7b6b3efbd02b99fe20042a extends Twig_Template
             echo "    <script src=\"";
             echo twig_escape_filter($this->env, $this->getContext($context, "asset_url"), "html", null, true);
             echo "\"></script>
-      
+        
+</script>
 ";
         }
         unset($context["asset_url"]);
@@ -206,6 +209,6 @@ class __TwigTemplate_d58246217c7b6b3efbd02b99fe20042a extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  180 => 89,  176 => 86,  164 => 77,  160 => 75,  151 => 72,  147 => 71,  144 => 70,  139 => 69,  135 => 67,  126 => 61,  117 => 55,  111 => 52,  106 => 50,  102 => 49,  93 => 43,  87 => 40,  83 => 39,  74 => 33,  70 => 32,  63 => 28,  59 => 27,  55 => 26,  49 => 23,  42 => 19,  35 => 15,  19 => 1,);
+        return array (  181 => 79,  177 => 76,  168 => 70,  164 => 68,  155 => 65,  151 => 64,  148 => 63,  143 => 62,  139 => 60,  131 => 55,  124 => 51,  118 => 48,  113 => 46,  109 => 45,  102 => 41,  96 => 38,  92 => 37,  85 => 33,  81 => 32,  70 => 27,  66 => 26,  60 => 23,  53 => 19,  29 => 5,  24 => 3,  22 => 2,  54 => 15,  44 => 11,  34 => 8,  50 => 14,  46 => 15,  36 => 10,  30 => 7,  26 => 6,  51 => 16,  47 => 15,  41 => 12,  27 => 7,  19 => 1,  79 => 15,  77 => 14,  74 => 28,  67 => 9,  63 => 8,  59 => 7,  55 => 6,  52 => 5,  49 => 4,  45 => 13,  42 => 12,  40 => 10,  37 => 11,  31 => 8,);
     }
 }

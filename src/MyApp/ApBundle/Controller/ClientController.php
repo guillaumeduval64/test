@@ -46,7 +46,7 @@ class ClientController extends ContainerAware
                 $qb = $em->createQueryBuilder();
                 $qb ->select('a')
                   ->from('MyAppApBundle:Client', 'a')
-                  ->where("a.nom LIKE :motcle OR a.prenom LIKE :motcle OR a.phoneNumber LIKE :motcle OR a.street LIKE :motcle ")
+                  ->where("a.nom LIKE :motcle OR a.prenom LIKE :motcle OR a.street LIKE :motcle ")
                   ->orderBy('a.nom', 'ASC')
                   ->setParameter('motcle', '%'.$motcle.'%');
                $query = $qb->getQuery();               
@@ -146,6 +146,7 @@ class ClientController extends ContainerAware
         $qb->select('c')
         ->from('MyAppApBundle:Client', 'c')
         ->andWhere('c.user = :user')
+        ->orderBy('c.created', 'DESC')
         ->setParameter('user', $user);
 
         $paginator = $this->container->get('knp_paginator');
@@ -204,6 +205,8 @@ class ClientController extends ContainerAware
                     $message='Client ajouté avec succès'; 
                     
                 }
+    return new RedirectResponse($this->container->get('router')->generate('myapp_front_index',array( 'message'=>'Ajouté!'))); 
+
 
          }
 

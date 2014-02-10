@@ -12,16 +12,7 @@ use Doctrine\ORM\EntityRepository;
  */
 class ObjectifRepository extends EntityRepository
 {
-    
-public function getObjectifProdByFranchise($user)
-  {
- 
-$qb = $this->createQueryBuilder('a')
-                ->orderBy('a.id', 'DESC');
 
-    return $qb->getQuery()
-              ->getResult();
-  }
 }
 
 

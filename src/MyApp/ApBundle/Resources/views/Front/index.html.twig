@@ -1,0 +1,18 @@
+{% extends 'MyAppApBundle::layout.html.twig' %}
+{% block title %}Dashboard{% endblock %}
+{% block principalNote %}
+{% block statistics %}
+<div id="stat">
+    <div id="tableau_stat">  {% render(controller("MyAppApBundle:Dashboard:nbClient")) %}</div>
+    <div id="tableau_stat">{% render(controller("MyAppApBundle:Dashboard:nbEstimation")) %}</div>
+    <div id="tableau_stat">{% render(controller("MyAppApBundle:Dashboard:nbContrat")) %}</div>
+    <div id="tableau_stat">{% render(controller("MyAppApBundle:Dashboard:nbProduction")) %}</div> 
+</div>
+{% endblock %}
+
+{% block quickAddClient %}
+{% render(controller("MyAppApBundle:Client:ajouter")) %}
+
+
+{% endblock %}
+{% endblock %}

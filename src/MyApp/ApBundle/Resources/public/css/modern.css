@@ -81,9 +81,6 @@ textarea {
  * Addresses margins handled incorrectly in IE6/7
  */
 body {
-  margin: 0;
-  width: 1100px;
-  min-height: 850px;
   margin-left:auto;
 margin-right:auto;
 border-style: solid;
@@ -7369,11 +7366,17 @@ License:	CC BY-SA 3.0 -- http://creativecommons.org/licenses/by-sa/3.0/
 }
 .right-map{
 	float: right;
-	width: 270px;
+	width: 400px;
 }
 .client{
 	padding-top: 20px;
-	width: 500px;
+	width: 250px;
+	float:left;
+	margin-left:40px;
+}
+
+#client_suivant{
+	display: inline-block;
 }
 
 #no-margin {
@@ -7388,12 +7391,10 @@ list-style-type: none;
 text-align: center;
 }
 #no-margin ul li{ display: inline; }
-.info-client {
-	width: 800px;
-}
+
 .page-region{
 	padding-left: 15px;
-	padding-top: 60px;
+	padding-right: 15px;
 }
 
 #overlay {
@@ -7416,14 +7417,133 @@ border: none;
 
 #recherche {
 	padding-left: 5px;
-	padding-top: 5px;
 }
 .login {
 	float: right;
-	background-color: #fff;
 }
-#choisir_langue{
-	float: right;
-	background-color: #fff;
+.login h5{
+	float:left;
+}
+
+#choisir_langue li{
+    list-style-type: none;
+    float:left;
+    margin-right: 15px;
+    margin-left:15px;
+}
+
+#choisir_langue h5{
+    float:left;
+    padding-top:2px;
+}
+
+#top{
+    padding-top:10px;
+    height:50px;
+}
+#reserved{
+    float:right;
+    padding-right:5px;
+}
+#ajout_client table tbody tr td {
+    border:none;
+}
+
+#contrat table tbody tr td {
+	border: none;
+}
+
+#fiche table tbody tr td {
+	border: none;
+}
+
+#menu_prod table tbody tr td {
+	border: none;
+}
+
+#feuille_temps table tbody tr td {
+	border: none;
+}
+
+.modal-body table tbody tr td {
+	border: none;
+}
+#tableau_prod table tbody tr td {
+	border: none;
+}
+#no_border  tbody tr td {
+	border: none;
+}
+
+
+#stat_layout {
+  height:130px;
+}
+
+#tableau_stat table{
+  
+  float:left;
+	width: 100px;
+	margin: 20px 10px 0px 15px;
+}
+.no_bottom_border{
+	border-bottom:none;
+}
+
+#note{
+	width:375px;
+	float:left;
+}
+
+#inlign {
+  padding-top:10px;
+  height:20px;
+}
+#inlign span{
+  float:left;
+}
+#service {
+	clear:both;
+	  width:1050px;
+	  text-align:center;
+}
+
+#menu_prod table{
+	width:0%;
+}
+#ajout_client{
+	width:300px;
+	clear:both;
+}
+#stat{
+	width:800px;
+	height:175px;
+}
+#index{
+	margin-left:20px;
+	margin-top:20px;
+}
+
+#blockProd{
+	width: 520px;
+	background-color:#2d89f0; 
+    padding-left:5px;
+    margin-left:10px;
+}
+
+#blockProdBack{
+	height: 400px;
+	float: left;
+}
+
+#blockProd h3{
+	color:white;	
+}
+
+#footer{
 	clear: both;
+}
+
+.pagination{
+	height: 20px;
 }

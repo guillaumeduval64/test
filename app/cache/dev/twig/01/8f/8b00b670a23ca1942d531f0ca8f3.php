@@ -46,19 +46,25 @@ class __TwigTemplate_018f8b00b670a23ca1942d531f0ca8f3 extends Twig_Template
 <table><tr><td>
 </td>
 <td>
+
 \t\t";
-        // line 11
+        // line 12
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "clientService"), 'row');
         echo "
 
 </td>
 </tr></table>
+            ";
+        // line 16
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute($this->getContext($context, "form"), "date"), 'widget', array("attr" => array("placeholder" => "Date de rappel", "class" => "input-small date")));
+        echo "
+
     ";
-        // line 15
+        // line 18
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getContext($context, "form"), 'widget');
         echo "
     <input type=\"image\" src=\"";
-        // line 16
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/myappap/images/add.png"), "html", null, true);
         echo "\" />
 </form>
@@ -78,6 +84,6 @@ class __TwigTemplate_018f8b00b670a23ca1942d531f0ca8f3 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  62 => 16,  58 => 15,  51 => 11,  44 => 7,  38 => 5,  35 => 4,  29 => 2,);
+        return array (  68 => 19,  64 => 18,  59 => 16,  52 => 12,  44 => 7,  38 => 5,  35 => 4,  29 => 2,);
     }
 }
